@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPTIMUS Command Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #06080f;
+      --bg-card: #0d1117;
+      --bg-el: #161b22;
+      --border: #21262d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --cyan: #39d2c0;
+      --cyan-alt: #58a6ff;
+      --pink: #e879f9;
+      --green: #3fb950;
+      --yellow: #f0b429;
+      --red: #f85149;
+      --purple: #c084fc;
+      --orange: #ffa726;
+      --logo-gradient: linear-gradient(135deg, #58a6ff 0%, #bc8cff 50%, #f778ba 100%);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      background: var(--logo-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .week-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(88, 166, 255, 0.3);
+      border-top-color: var(--cyan-alt);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Weekly Tabs */
+    .weekly-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-behavior: smooth;
+    }
+
+    .weekly-tabs::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .weekly-tabs::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .weekly-tabs::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    .week-pill {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .week-pill:hover {
+      border-color: var(--cyan-alt);
+      color: var(--text-primary);
+    }
+
+    .week-pill.active {
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.2) 0%, rgba(196, 132, 252, 0.2) 100%);
+      border-color: var(--cyan-alt);
+      color: var(--cyan-alt);
+    }
+
+    /* Section Tabs */
+    .section-tabs {
+      display: flex;
+      gap: 8px;
+      padding: 0;
+      margin-bottom: 24px;
+      background: var(--bg-el);
+      border-radius: 12px;
+      padding: 4px;
+      width: fit-content;
+    }
+
+    .section-tab {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .section-tab:hover {
+      background: rgba(88, 166, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .section-tab.active {
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.3) 0%, rgba(232, 121, 249, 0.3) 100%);
+      color: var(--text-primary);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-content {
+      display: none;
+    }
+
+    .section-content.active {
+      display: block;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--cyan-alt);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.15);
+    }
+
+    .card.hero {
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-el) 100%);
+      border-top: 3px solid;
+      margin-bottom: 24px;
+    }
+
+    .card.hero.purple {
+      border-top-color: var(--purple);
+    }
+
+    .card.hero.orange {
+      border-top-color: var(--orange);
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--cyan-alt);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--bg-el);
+      color: var(--text-secondary);
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:hover {
+      background: rgba(88, 166, 255, 0.05);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-status {
+      background: rgba(63, 185, 80, 0.2);
+      color: var(--green);
+    }
+
+    .badge-critical {
+      background: rgba(248, 81, 73, 0.2);
+      color: var(--red);
+    }
+
+    .badge-pending {
+      background: rgba(240, 180, 41, 0.2);
+      color: var(--yellow);
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+      margin-right: 4px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Task Cards */
+    .task-card {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .task-card:hover {
+      border-color: var(--cyan-alt);
+      background: var(--bg-card);
+    }
+
+    .task-card.high {
+      border-left: 4px solid var(--red);
+    }
+
+    .task-card.medium {
+      border-left: 4px solid var(--yellow);
+    }
+
+    .task-card.low {
+      border-left: 4px solid var(--green);
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .task-title {
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .task-icon {
+      font-size: 16px;
+    }
+
+    .task-meta {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .task-badge {
+      background: var(--bg);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    .task-description {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .task-checklist {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      color: var(--text-secondary);
+    }
+
+    .checkbox {
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .claude-prompt {
+      margin-top: 12px;
+      padding: 12px;
+      background: rgba(88, 166, 255, 0.1);
+      border-left: 2px solid var(--cyan-alt);
+      border-radius: 4px;
+      font-family: 'Monaco', monospace;
+      font-size: 11px;
+      color: var(--cyan);
+      line-height: 1.4;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .claude-prompt.expanded {
+      max-height: 500px;
+    }
+
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      font-size: 11px;
+    }
+
+    .copy-button {
+      background: var(--cyan-alt);
+      color: var(--bg);
+      border: none;
+      padding: 4px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .copy-button:hover {
+      background: var(--cyan);
+    }
+
+    /* Priority Container */
+    .priority-group {
+      margin-bottom: 24px;
+    }
+
+    .priority-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* Idea Cards */
+    .idea-card {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .idea-card:hover {
+      border-color: var(--cyan-alt);
+      background: var(--bg-card);
+    }
+
+    .idea-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .idea-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .idea-category {
+      background: rgba(57, 210, 192, 0.2);
+      color: var(--cyan);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .idea-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .idea-essay {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .idea-essay.expanded {
+      max-height: 600px;
+    }
+
+    .idea-seeds {
+      margin-top: 8px;
+      padding: 8px;
+      background: var(--bg);
+      border-radius: 4px;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .seed-tag {
+      display: inline-block;
+      background: var(--bg-el);
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-right: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .grid-2-fixed {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    /* Source Card */
+    .source-card {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .source-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .source-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+
+    .source-stat {
+      background: var(--bg);
+      padding: 8px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .source-stat-value {
+      font-weight: 600;
+      color: var(--cyan-alt);
+    }
+
+    .source-stat-label {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .findings-list {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .finding-item {
+      margin-bottom: 6px;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .finding-item:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    /* Red Flag */
+    .red-flag {
+      background: linear-gradient(135deg, rgba(248, 81, 73, 0.2) 0%, rgba(248, 81, 73, 0.05) 100%);
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .red-flag-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .red-flag-text {
+      font-size: 13px;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* Executive Summary */
+    .executive-summary {
+      border-top: 3px solid var(--cyan-alt);
+      margin-bottom: 24px;
+    }
+
+    .summary-text {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    /* Priority Cards */
+    .priority-card {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      border-left: 4px solid var(--cyan-alt);
+    }
+
+    .priority-card strong {
+      color: var(--cyan-alt);
+    }
+
+    .priority-number {
+      font-size: 10px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+    }
+
+    .priority-content {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .priority-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    /* Quick Wins */
+    .quick-win-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .quick-win {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      border-left: 3px solid var(--green);
+    }
+
+    .quick-win-title {
+      font-weight: 500;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .quick-win-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-secondary);
+    }
+
+    /* Alignment Table */
+    .alignment-table {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .alignment-cell {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .check {
+      color: var(--green);
+    }
+
+    .cross {
+      color: var(--red);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .grid-2-fixed {
+        grid-template-columns: 1fr;
+      }
+
+      .section-tab {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      .stats-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      td, th {
+        padding: 8px;
+      }
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .subsection-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 24px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Skill Cards */
+    .skill-card {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .skill-rank {
+      display: inline-block;
+      background: rgba(88, 166, 255, 0.2);
+      color: var(--cyan-alt);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .skill-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .skill-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 11px;
+    }
+
+    .skill-stat {
+      background: var(--bg);
+      padding: 6px;
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
+
+    .skill-pattern {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .skill-action {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .action-yellow {
+      background: rgba(240, 180, 41, 0.2);
+      color: var(--yellow);
+    }
+
+    .action-gray {
+      background: rgba(139, 148, 158, 0.2);
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-top">
+      <div class="logo">⚙️ OPTIMUS</div>
+      <div style="display: flex; gap: 16px; align-items: center;">
+        <span class="week-label" id="headerWeek">Loading weeks...</span>
+        <div id="loadingSpinner" style="display: none;">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="weekly-tabs" id="weeklyTabs"></div>
+  </div>
+
+  <div class="container">
+    <div style="margin: 24px 0;">
+      <div class="section-tabs" id="sectionTabs">
+        <button class="section-tab active" data-section="overview">🤖 Overview</button>
+        <button class="section-tab" data-section="lifeAdmin">📋 Life Admin</button>
+        <button class="section-tab" data-section="ideas">🐝 Ideas</button>
+        <button class="section-tab" data-section="skills">🔍 Skills</button>
+      </div>
+    </div>
+
+    <!-- OVERVIEW SECTION -->
+    <div id="overview" class="section-content active">
+      <div class="stats-strip" id="overviewStats"></div>
+
+      <div class="card executive-summary">
+        <h3 style="font-size: 13px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; letter-spacing: 0.3px;">Executive Summary</h3>
+        <div class="summary-text" id="executiveSummary"></div>
+      </div>
+
+      <div class="section-title">Cross-Source Alignment</div>
+      <div class="card" style="overflow-x: auto;">
+        <table class="alignment-table">
+          <thead>
+            <tr>
+              <th style="text-align: left;">Initiative</th>
+              <th>Granola</th>
+              <th>OMI</th>
+              <th>Notion</th>
+              <th>Airtable</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="alignmentBody"></tbody>
+        </table>
+      </div>
+
+      <div class="red-flag">
+        <div class="red-flag-label">⚠️ Red Flag</div>
+        <div class="red-flag-text" id="redFlagText"></div>
+      </div>
+
+      <div class="section-title">Top 5 Priorities</div>
+      <div class="grid-2" id="prioritiesContainer"></div>
+
+      <div class="section-title">Quick Wins</div>
+      <div class="quick-win-list" id="quickWinsContainer"></div>
+
+      <div class="section-title">Data Sources</div>
+      <div class="grid-4" id="sourcesContainer"></div>
+    </div>
+
+    <!-- LIFE ADMIN SECTION -->
+    <div id="lifeAdmin" class="section-content">
+      <div class="card hero purple" style="margin-bottom: 24px;">
+        <div style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Life Admin</div>
+        <div style="color: var(--text-secondary); font-size: 13px;">Personal & team tasks that keep the ship running</div>
+      </div>
+
+      <div class="stats-strip" id="lifeAdminStats"></div>
+
+      <div id="lifeAdminTasks"></div>
+    </div>
+
+    <!-- IDEAS SECTION -->
+    <div id="ideas" class="section-content">
+      <div class="card hero orange" style="margin-bottom: 24px;">
+        <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; font-style: italic;">"Live in the future, then build what's missing."</div>
+        <div style="font-size: 18px; font-weight: 700;">Idea Index</div>
+      </div>
+
+      <div class="card" style="overflow-x: auto; margin-bottom: 24px;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Impact</th>
+              <th>Novelty</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="ideasIndex"></tbody>
+        </table>
+      </div>
+
+      <div id="ideasContainer"></div>
+
+      <div style="text-align: center; font-size: 13px; color: var(--text-secondary); font-style: italic; margin-top: 24px;" id="pgQuoteBottom"></div>
+    </div>
+
+    <!-- SKILLS SECTION -->
+    <div id="skills" class="section-content">
+      <div style="background: linear-gradient(135deg, rgba(63, 185, 80, 0.2) 0%, rgba(57, 210, 192, 0.2) 100%); border: 1px solid var(--green); border-radius: 8px; padding: 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 20px;">✓</div>
+        <div>
+          <div style="font-weight: 600; font-size: 13px;">ACTIVE</div>
+          <div style="font-size: 11px; color: var(--text-secondary);" id="nextScanTime"></div>
+        </div>
+      </div>
+
+      <div class="section-title">Data Sources</div>
+      <div class="card" style="overflow-x: auto; margin-bottom: 24px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Signal</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="dataSourcesTable"></tbody>
+        </table>
+      </div>
+
+      <div class="section-title">Skill Candidates</div>
+      <div id="skillCandidates"></div>
+
+      <div class="section-title">Cross-Source Patterns</div>
+      <div id="crossSourcePatterns"></div>
+
+      <div class="section-title">Pipeline</div>
+      <div class="card" style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Skill</th>
+              <th>Score</th>
+              <th>Week Identified</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="pipelineTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class Optimus {
+      constructor() {
+        this.weeks = {};
+        this.weekIndex = [];
+        this.currentWeek = null;
+        this.init();
+      }
+
+      async init() {
+        try {
+          await this.loadWeekIndex();
+          await this.loadWeek(this.weekIndex[0]);
+          this.setupEventListeners();
+          this.render();
+        } catch (e) {
+          console.error("Failed to initialize:", e);
+        }
+      }
+
+      async loadWeekIndex() {
+        try {
+          const response = await fetch('./weeks/index.json');
+          if (!response.ok) throw new Error('Week index not found');
+          const data = await response.json();
+          this.weekIndex = (data.weeks || []).map(w => typeof w === 'string' ? w : w.date);
+        } catch (e) {
+          console.warn("Week index not found, scanning directory...");
+          this.weekIndex = ['2026-04-05'];
+        }
+      }
+
+      async loadWeek(weekDate) {
+        if (this.weeks[weekDate]) {
+          this.currentWeek = this.weeks[weekDate];
+          return;
+        }
+
+        try {
+          this.showLoading(true);
+          const response = await fetch(`./weeks/${weekDate}.json`);
+          if (!response.ok) throw new Error('Week not found');
+          const data = await response.json();
+          this.weeks[weekDate] = data;
+          this.currentWeek = data;
+        } finally {
+          this.showLoading(false);
+        }
+      }
+
+      showLoading(show) {
+        document.getElementById('loadingSpinner').style.display = show ? 'block' : 'none';
+      }
+
+      setupEventListeners() {
+        // Section tabs
+        document.querySelectorAll('.section-tab').forEach(btn => {
+          btn.addEventListener('click', (e) => this.switchSection(e.target.dataset.section));
+        });
+
+        // Week tabs
+        this.renderWeekTabs();
+      }
+
+      renderWeekTabs() {
+        const container = document.getElementById('weeklyTabs');
+        container.innerHTML = this.weekIndex.map(week => {
+          const date = new Date(week);
+          const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+          return `<button class="week-pill ${week === this.currentWeek?.weekOf ? 'active' : ''}" data-week="${week}">${label}</button>`;
+        }).join('');
+
+        container.querySelectorAll('.week-pill').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            await this.loadWeek(e.target.dataset.week);
+            this.renderWeekTabs();
+            this.render();
+          });
+        });
+      }
+
+      switchSection(section) {
+        document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.section-tab').forEach(el => el.classList.remove('active'));
+
+        document.getElementById(section).classList.add('active');
+        document.querySelector(`.section-tab[data-section="${section}"]`).classList.add('active');
+      }
+
+      render() {
+        if (!this.currentWeek) return;
+
+        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;
+
+        this.renderOverview();
+        this.renderLifeAdmin();
+        this.renderIdeas();
+        this.renderSkills();
+      }
+
+      renderOverview() {
+        const data = this.currentWeek.overview;
+
+        // Stats
+        const statsHTML = `
+          <div class="stat"><div class="stat-value">${data.stats.meetings}</div><div class="stat-label">Meetings</div></div>
+          <div class="stat"><div class="stat-value">${data.stats.decisions}</div><div class="stat-label">Decisions</div></div>
+          <div class="stat"><div class="stat-value">${data.stats.unactionedCommitments}</div><div class="stat-label">Unactioned</div></div>
+          <div class="stat"><div class="stat-value">${data.stats.cgmTasksDue}</div><div class="stat-label">CGM Due</div></div>
+          <div class="stat"><div class="stat-value">${data.stats.priorityHours}h</div><div class="stat-label">Priority Hours</div></div>
+          <div class="stat"><div class="stat-value">${data.stats.airtableOverduePercent}%</div><div class="stat-label">Overdue</div></div>
+        `;
+        document.getElementById('overviewStats').innerHTML = statsHTML;
+
+        // Executive Summary
+        document.getElementById('executiveSummary').innerHTML = data.executiveSummary;
+
+        // Alignment Table
+        const alignmentHTML = data.crossSourceAlignment.map(init => `
+          <tr>
+            <td><strong>${init.initiative}</strong></td>
+            <td class="alignment-cell">${init.granola ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+            <td class="alignment-cell">${init.omi ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+            <td class="alignment-cell">${init.notion ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+            <td class="alignment-cell">${init.airtable ? '<span class="check">✓</span>' : '<span class="cross">✗</span>'}</td>
+            <td><span class="badge ${init.status === 'critical' ? 'badge-critical' : 'badge-status'}">${init.statusLabel}</span></td>
+          </tr>
+        `).join('');
+        document.getElementById('alignmentBody').innerHTML = alignmentHTML;
+
+        // Red Flag
+        document.getElementById('redFlagText').textContent = data.redFlag;
+
+        // Priorities
+        const prioritiesHTML = data.priorities.map((p, i) => `
+          <div class="priority-card">
+            <div class="priority-number">Priority ${i + 1}</div>
+            <div class="priority-content">${p.title}</div>
+            <div class="priority-meta">
+              <span>${p.time}</span>
+              <span>${p.sources}</span>
+            </div>
+            <div style="font-size: 11px; color: var(--text-secondary); margin-top: 6px;">${p.detail}</div>
+          </div>
+        `).join('');
+        document.getElementById('prioritiesContainer').innerHTML = prioritiesHTML;
+
+        // Quick Wins
+        const quickWinsHTML = data.quickWins.map(w => `
+          <div class="quick-win">
+            <div class="quick-win-title">${w.text}</div>
+            <div class="quick-win-meta">
+              <span>${w.time}</span>
+              <span style="color: var(--text-secondary);">${w.detail}</span>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('quickWinsContainer').innerHTML = quickWinsHTML;
+
+        // Sources
+        const sourcesHTML = [
+          { label: 'Granola', emoji: '🎙️', key: 'granola' },
+          { label: 'Airtable', emoji: '📋', key: 'airtable' },
+          { label: 'OMI', emoji: '🧠', key: 'omi' },
+          { label: 'Notion', emoji: '📝', key: 'notion' }
+        ].map(source => {
+          const src = data[source.key];
+          const stats = source.key === 'granola' ?
+            `<div class="source-stat"><div class="source-stat-value">${src.meetingsReviewed}</div><div class="source-stat-label">Meetings</div></div><div class="source-stat"><div class="source-stat-value">${src.keyDecisions}</div><div class="source-stat-label">Decisions</div></div>` :
+            source.key === 'airtable' ?
+            `<div class="source-stat"><div class="source-stat-value">${src.totalTasks}</div><div class="source-stat-label">Total</div></div><div class="source-stat"><div class="source-stat-value">${src.overdue}</div><div class="source-stat-label">Overdue</div></div>` :
+            source.key === 'omi' ?
+            `<div class="source-stat"><div class="source-stat-value">${src.conversations}</div><div class="source-stat-label">Convs</div></div><div class="source-stat"><div class="source-stat-value">${src.memories}</div><div class="source-stat-label">Memories</div></div>` :
+            `<div class="source-stat"><div class="source-stat-value">${src.gaps.length}</div><div class="source-stat-label">Gaps</div></div><div class="source-stat"><div class="source-stat-value">3</div><div class="source-stat-label">At-risk</div></div>`;
+
+          return `
+            <div class="source-card">
+              <div class="source-header">${source.emoji} ${source.label}</div>
+              <div class="source-stats">${stats}</div>
+              <div style="padding-top: 12px; border-top: 1px solid var(--border);"></div>
+            </div>
+          `;
+        }).join('');
+        document.getElementById('sourcesContainer').innerHTML = sourcesHTML;
+      }
+
+      renderLifeAdmin() {
+        const data = this.currentWeek.lifeAdmin;
+
+        // Stats
+        const statsHTML = `
+          <div class="stat"><div class="stat-value">${data.totalTasks}</div><div class="stat-label">Tasks</div></div>
+          <div class="stat"><div class="stat-value">${data.totalHours}h</div><div class="stat-label">Hours</div></div>
+          <div class="stat"><div class="stat-value">${data.highCount}</div><div class="stat-label">High Priority</div></div>
+          <div class="stat"><div class="stat-value">${data.mediumCount}</div><div class="stat-label">Medium</div></div>
+          <div class="stat"><div class="stat-value">${data.lowCount}</div><div class="stat-label">Low</div></div>
+        `;
+        document.getElementById('lifeAdminStats').innerHTML = statsHTML;
+
+        // Group by priority
+        const byPriority = { high: [], medium: [], low: [] };
+        data.tasks.forEach(t => byPriority[t.priority].push(t));
+
+        const tasksHTML = Object.entries(byPriority).map(([priority, tasks]) => {
+          if (tasks.length === 0) return '';
+          return `
+            <div class="priority-group">
+              <div class="priority-title">${priority.toUpperCase()} PRIORITY</div>
+              ${tasks.map(t => `
+                <div class="task-card ${priority}" onclick="this.querySelector('.claude-prompt')?.classList.toggle('expanded')">
+                  <div class="task-header">
+                    <div class="task-title">
+                      <span class="task-icon">${t.icon}</span>
+                      ${t.title}
+                    </div>
+                  </div>
+                  <div class="task-meta">
+                    <span class="task-badge">${t.time}</span>
+                    <span class="task-badge">${t.source}</span>
+                  </div>
+                  <div class="task-description">${t.description}</div>
+                  ${t.checklist ? `
+                    <div class="task-checklist">
+                      ${t.checklist.map(item => `<div class="checklist-item"><div class="checkbox"></div> ${item}</div>`).join('')}
+                    </div>
+                  ` : ''}
+                  ${t.claudePrompt ? `
+                    <div class="claude-prompt">
+                      <div class="prompt-header">
+                        <span>Claude Prompt</span>
+                        <button class="copy-button" onclick="event.stopPropagation(); const btn=this; navigator.clipboard.writeText(this.closest('.claude-prompt').querySelector('pre').textContent).then(()=>{btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000)})">Copy</button>
+                      </div>
+                      <pre style="margin: 0; white-space: pre-wrap; word-break: break-word;">${t.claudePrompt}</pre>
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }).join('');
+
+        document.getElementById('lifeAdminTasks').innerHTML = tasksHTML;
+      }
+
+      renderIdeas() {
+        const data = this.currentWeek.ideas;
+
+        // Index table
+        const indexHTML = data.ideas.map((idea, i) => `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${idea.category}</td>
+            <td><strong>${idea.title}</strong></td>
+            <td>${idea.impact}</td>
+            <td>${idea.novelty}</td>
+            <td><span class="badge badge-status">${idea.status}</span></td>
+          </tr>
+        `).join('');
+        document.getElementById('ideasIndex').innerHTML = indexHTML;
+
+        // Idea cards
+        const ideasHTML = data.ideas.map(idea => `
+          <div class="idea-card" onclick="this.querySelector('.idea-essay')?.classList.toggle('expanded')">
+            <div class="idea-header">
+              <div>
+                <div class="idea-title">${idea.title}</div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 3px;">${idea.subtitle}</div>
+              </div>
+              <div class="idea-category">${idea.category}</div>
+            </div>
+            <div class="idea-meta">
+              <span>Impact: <strong>${idea.impact}</strong></span>
+              <span>Novelty: <strong>${idea.novelty}</strong></span>
+              <span><strong>${idea.edge}</strong></span>
+            </div>
+            <div class="idea-essay">
+              <div style="margin-bottom: 12px;">${idea.essay}</div>
+              <div class="idea-seeds">
+                <strong style="color: var(--text-primary);">Seeds:</strong><br>
+                ${idea.seeds.map(s => `<span class="seed-tag">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('ideasContainer').innerHTML = ideasHTML;
+
+        document.getElementById('pgQuoteBottom').textContent = data.pgQuoteBottom;
+      }
+
+      renderSkills() {
+        const data = this.currentWeek.skills;
+
+        document.getElementById('nextScanTime').textContent = `Next scan: ${data.nextScan}`;
+
+        // Data Sources
+        const sourcesHTML = data.dataSources.map(src => `
+          <tr>
+            <td><strong>${src.name}</strong></td>
+            <td>${src.signal}</td>
+            <td style="font-size: 12px; color: var(--text-secondary);">${src.desc}</td>
+            <td><span class="badge badge-status">● ${src.status.toUpperCase()}</span></td>
+          </tr>
+        `).join('');
+        document.getElementById('dataSourcesTable').innerHTML = sourcesHTML;
+
+        // Candidates
+        const candidatesHTML = data.candidates.map(c => `
+          <div class="skill-card">
+            <div class="skill-rank">#${c.rank}</div>
+            <div class="skill-title">${c.name}</div>
+            <div class="skill-meta">
+              <div class="skill-stat"><strong>${c.score}</strong> Score</div>
+              <div class="skill-stat"><strong>${c.timeSaved}</strong> Saved</div>
+              <div class="skill-stat"><strong>${c.complexity}</strong> Complexity</div>
+            </div>
+            <div style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;"><strong>Frequency:</strong> ${c.frequency}</div>
+            <div class="skill-pattern">${c.pattern}</div>
+            <div>
+              <span class="skill-action ${c.actionColor === 'yellow' ? 'action-yellow' : 'action-gray'}">${c.action}</span>
+              <div style="margin-top: 8px; display: flex; gap: 4px; flex-wrap: wrap;">
+                ${c.sources.map(s => `<span style="background: var(--bg); padding: 2px 6px; border-radius: 3px; font-size: 10px; color: var(--text-secondary);">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+        document.getElementById('skillCandidates').innerHTML = candidatesHTML;
+
+        // Cross-source patterns
+        const patternsHTML = data.crossSourcePatterns.map(p => `
+          <div class="card" style="margin-bottom: 12px;">
+            <div style="font-weight: 600; margin-bottom: 6px;">${p.title}</div>
+            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 6px;">${p.desc}</div>
+            <div style="font-family: monospace; font-size: 11px; color: var(--cyan); background: var(--bg); padding: 8px; border-radius: 4px;">${p.flow}</div>
+          </div>
+        `).join('');
+        document.getElementById('crossSourcePatterns').innerHTML = patternsHTML;
+
+        // Pipeline
+        const pipelineHTML = data.pipeline.map(item => `
+          <tr>
+            <td><span class="badge ${item.status === 'evaluating' ? 'badge-pending' : 'badge-status'}">${item.status}</span></td>
+            <td><strong>${item.name}</strong></td>
+            <td>${item.score}</td>
+            <td>${item.weekIdentified}</td>
+            <td style="font-size: 11px;">${item.action}</td>
+          </tr>
+        `).join('');
+        document.getElementById('pipelineTable').innerHTML = pipelineHTML;
+      }
+    }
+
+    // Initialize
+    new Optimus();
+  </script>
+</body>
+</html>

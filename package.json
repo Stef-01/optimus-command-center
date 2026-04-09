@@ -1,0 +1,10 @@
+{
+  "name": "optimus-command-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OPTIMUS — AI Command Center. Weekly briefings from Granola, OMI, Notion, and Airtable.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
