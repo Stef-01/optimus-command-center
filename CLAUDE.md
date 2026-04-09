@@ -35,6 +35,55 @@ npx serve . — local dev server
 See planning.md for the full V1-V11 implementation roadmap.
 See optimus-planning-v2.md in C:\Users\stefa\Documents\ for the detailed spec.
 
+## Commands (V1+)
+- `npm run manifest` — regenerate public/optimus.json from latest week JSON
+- `npm run delta` — compute changes since last run, write to jobs/inbox/
+- `npm run watch` — run manifest + delta in sequence (use for scheduled tasks)
+
+## Job Queue
+- `jobs/inbox/` — new delta files land here
+- `jobs/ready/` — jobs approved to run
+- `jobs/running/` — in-flight jobs
+- `jobs/review/` — completed jobs needing human review
+- `jobs/done/` — closed jobs
+- `jobs/archive/` — long-term storage
+- `.cache/` — previous-manifest.json (not committed, used by delta-parser)
+
+## Tools Integration
+
+**Before starting any Optimus work session, verify these tools are active.**
+
+### 1. claude-mem (session memory)
+MUST be running during all Optimus sessions for continuity across runs.
+- Start: `npx claude-mem start`
+- View: http://localhost:37777
+- Purpose: captures what was worked on, decisions made, and context from prior sessions so future runs don't start from scratch.
+
+### 2. QMD (semantic search)
+Use for searching across Stefan-Brain wiki and Optimus weekly JSON files.
+- Command: `qmd search "query"`
+- Use instead of manually reading week files when answering questions about past weeks or finding relevant context.
+
+### 3. superpowers plugin
+Use for all non-trivial Optimus development work. Follow the structured workflow:
+**design → plan → implement → test → review**
+- Don't skip the planning phase. `/ce:plan` before writing code.
+- Use `/ce:brainstorm` when exploring new Optimus features.
+
+### 4. compound-engineering plugin
+- `/ce:brainstorm` — new feature ideas
+- `/ce:plan` — implementation planning (required before non-trivial work)
+- `/ce:work` — execution
+- `/ce:review` — code review
+- `/ce:compound` — document learnings after significant changes
+
+### 5. karpathy-llm-wiki skill
+Use for ingesting sources into Stefan-Brain. When new Granola/OMI/Gmail data is processed, also ingest summaries into the wiki so the brain stays current.
+
+### 6. Obsidian Stefan-Brain vault
+Located at: `C:\Users\stefa\Stefan-Brain`
+Every significant Optimus decision, architecture change, or weekly summary should be ingested into the brain. This is the persistent knowledge layer behind Optimus.
+
 ## Critical Rules
 1. Keep the frontend simple — no framework, no build step. Vanilla HTML/CSS/JS.
 2. Data lives in JSON files — the pipeline generates JSON, the frontend renders it.

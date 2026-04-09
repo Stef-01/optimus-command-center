@@ -1,0 +1,294 @@
+{
+  "computed_at": "2026-04-09T11:29:12.738Z",
+  "from_week": null,
+  "to_week": "2026-04-05",
+  "bootstrap": true,
+  "changes": [
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-001",
+      "data": {
+        "id": "task-001",
+        "title": "Bloodborne Virus Clearance",
+        "type": "verbal-commitment",
+        "priority": "high",
+        "status": "open",
+        "project": "OMI conversation",
+        "due": null,
+        "notes": "Complete bloodborne virus clearance documentation for clinical work — compliance requirement."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-002",
+      "data": {
+        "id": "task-002",
+        "title": "Team Hours Expansion",
+        "type": "verbal-commitment",
+        "priority": "high",
+        "status": "open",
+        "project": "OMI (3+ conversations)",
+        "due": null,
+        "notes": "Recurring verbal commitment to increase Dalia's and Jennifer's hours — never actioned."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-003",
+      "data": {
+        "id": "task-003",
+        "title": "Ethics Assessment Submission",
+        "type": "verbal-commitment",
+        "priority": "high",
+        "status": "open",
+        "project": "OMI + Airtable",
+        "due": null,
+        "notes": "IRB modification mentioned in conversation — has a corresponding Airtable task."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-004",
+      "data": {
+        "id": "task-004",
+        "title": "Jennifer Delegation SOP",
+        "type": "verbal-commitment",
+        "priority": "medium",
+        "status": "open",
+        "project": "OMI (4+ conversations)",
+        "due": null,
+        "notes": "You keep saying Jennifer should own more outreach — still no SOP or framework."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-005",
+      "data": {
+        "id": "task-005",
+        "title": "Hackathon Follow-Up",
+        "type": "verbal-commitment",
+        "priority": "medium",
+        "status": "open",
+        "project": "OMI memory",
+        "due": null,
+        "notes": "Post-hackathon connections going cold. Action before they expire."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-006",
+      "data": {
+        "id": "task-006",
+        "title": "Case Report Draft",
+        "type": "verbal-commitment",
+        "priority": "medium",
+        "status": "open",
+        "project": "OMI + Granola",
+        "due": null,
+        "notes": "Clinical case report draft needed."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "task",
+      "id": "task-007",
+      "data": {
+        "id": "task-007",
+        "title": "Amazon Lab Supply Order",
+        "type": "verbal-commitment",
+        "priority": "low",
+        "status": "open",
+        "project": "OMI memory",
+        "due": null,
+        "notes": "Pending lab supply order."
+      }
+    },
+    {
+      "type": "added",
+      "entity": "project",
+      "id": "proj-001",
+      "data": {
+        "id": "proj-001",
+        "name": "AI Nutrition Platform",
+        "stage": "paused",
+        "desired_outputs": [
+          "System hygiene, not panic"
+        ]
+      }
+    },
+    {
+      "type": "added",
+      "entity": "project",
+      "id": "proj-002",
+      "data": {
+        "id": "proj-002",
+        "name": "CGM Study",
+        "stage": "active",
+        "desired_outputs": [
+          "5 participant follow-ups, hard deadline Friday"
+        ]
+      }
+    },
+    {
+      "type": "added",
+      "entity": "project",
+      "id": "proj-003",
+      "data": {
+        "id": "proj-003",
+        "name": "Nepal Grant",
+        "stage": "active",
+        "desired_outputs": [
+          "Decisions made but invisible"
+        ]
+      }
+    },
+    {
+      "type": "added",
+      "entity": "project",
+      "id": "proj-004",
+      "data": {
+        "id": "proj-004",
+        "name": "Team Expansion",
+        "stage": "paused",
+        "desired_outputs": [
+          "Advance Team Expansion"
+        ]
+      }
+    },
+    {
+      "type": "added",
+      "entity": "project",
+      "id": "proj-005",
+      "data": {
+        "id": "proj-005",
+        "name": "Jennifer Delegation",
+        "stage": "paused",
+        "desired_outputs": [
+          "Advance Jennifer Delegation"
+        ]
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-001",
+      "data": {
+        "id": "idea-001",
+        "title": "The Cultural Plate",
+        "energy": "high",
+        "theme": "Startup",
+        "next_action": "Continue development"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-002",
+      "data": {
+        "id": "idea-002",
+        "title": "The Competence Marketplace",
+        "energy": "high",
+        "theme": "Startup",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-003",
+      "data": {
+        "id": "idea-003",
+        "title": "Flavor Roulette",
+        "energy": "medium",
+        "theme": "Game",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-004",
+      "data": {
+        "id": "idea-004",
+        "title": "Glucose Poker",
+        "energy": "medium",
+        "theme": "Game",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-005",
+      "data": {
+        "id": "idea-005",
+        "title": "The Competence Ratio",
+        "energy": "high",
+        "theme": "Essay",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-006",
+      "data": {
+        "id": "idea-006",
+        "title": "The Grandmother Hypothesis",
+        "energy": "high",
+        "theme": "Essay",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-007",
+      "data": {
+        "id": "idea-007",
+        "title": "The Decision Fossil Record",
+        "energy": "high",
+        "theme": "Tool",
+        "next_action": "Continue development"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-008",
+      "data": {
+        "id": "idea-008",
+        "title": "The Nutrition Colonialism Map",
+        "energy": "high",
+        "theme": "Visual",
+        "next_action": "Draft initial concept"
+      }
+    },
+    {
+      "type": "added",
+      "entity": "idea",
+      "id": "idea-009",
+      "data": {
+        "id": "idea-009",
+        "title": "The 20-Minute Thesis",
+        "energy": "high",
+        "theme": "Wild",
+        "next_action": "Draft initial concept"
+      }
+    }
+  ],
+  "summary": {
+    "total": 21,
+    "added": 21,
+    "changed": 0,
+    "removed": 0,
+    "promoted_ideas": 0,
+    "dropped_ideas": 0
+  }
+}

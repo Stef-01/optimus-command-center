@@ -5,6 +5,9 @@
   "description": "OPTIMUS — AI Command Center. Weekly briefings from Granola, OMI, Notion, and Airtable.",
   "scripts": {
     "dev": "npx serve .",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "manifest": "node scripts/generate-manifest.js",
+    "delta": "node scripts/delta-parser.js",
+    "watch": "node scripts/watch.js"
   }
 }
