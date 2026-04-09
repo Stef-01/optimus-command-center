@@ -77,8 +77,10 @@ function runCodex(job) {
   console.log(`\n▶ Invoking Codex for job: ${job.id}`);
   console.log(`  Prompt: ${prompt.slice(0, 120)}${prompt.length > 120 ? '...' : ''}`);
 
-  const result = spawnSync('codex', ['--full-auto', '-q', prompt], {
+  // Pass prompt via stdin ('-') to avoid shell quoting/newline issues on Windows
+  const result = spawnSync('codex', ['exec', '--full-auto', '-'], {
     encoding: 'utf8',
+    input: prompt,
     shell: true,
     cwd: ROOT,
     timeout: 300_000, // 5 minute timeout
@@ -116,7 +118,7 @@ function processRoute7(job, jobPath) {
       fallback: true,
       fallback_reason: 'Codex CLI not installed',
       fallback_prompt: buildPrompt(job),
-      fallback_command: `codex --full-auto -q "${buildPrompt(job).replace(/"/g, '\\"')}"`,
+      fallback_command: `codex exec --full-auto "${buildPrompt(job).replace(/"/g, '\\"')}"`,
       reviewed_at: new Date().toISOString(),
     };
 
