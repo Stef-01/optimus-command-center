@@ -60,9 +60,12 @@ MUST be running during all Optimus sessions for continuity across runs.
 - Purpose: captures what was worked on, decisions made, and context from prior sessions so future runs don't start from scratch.
 
 ### 2. QMD (semantic search)
-Use for searching across Stefan-Brain wiki and Optimus weekly JSON files.
-- Command: `qmd search "query"`
-- Use instead of manually reading week files when answering questions about past weeks or finding relevant context.
+QMD semantic search is configured across stefan-brain, sous, and optimus collections. Use `qmd search` before answering questions about architecture, decisions, or prior work.
+- `qmd search "query"` — BM25 keyword search (fast)
+- `qmd vsearch "query"` — vector similarity search (semantic, finds conceptually related content)
+- `qmd query "query"` — combined BM25 + vector + reranking (best quality, ~2s)
+- Collections: `sous`, `stefan-brain`, `optimus` — filter with `-c collection-name`
+- Use instead of manually reading week files or index.md when answering questions about past context.
 
 ### 3. superpowers plugin
 Use for all non-trivial Optimus development work. Follow the structured workflow:
