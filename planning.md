@@ -164,10 +164,13 @@ Replace hand-authored data with pipeline-generated public/weeks/YYYY-MM-DD.json 
 - Build compression pipeline: raw sources → Gemma extract → compact packets for Claude
 - Implement hash-based change detection (skip unchanged sources)
 
-### V7: Job Queue System
-- File-based queue (jobs/inbox → ready → running → done)
-- Router script that applies routing rules (7 tiers)
-- Job status tracking and audit trail
+### V7: Job Queue System ✓ BUILT (2026-04-09)
+- File-based queue (jobs/inbox → ready → running → done) ✓
+- Router script (`scripts/router.js`) applies all 7 routing rules ✓
+- Executor (`scripts/executor.js`) dispatches jobs to workers by route ✓
+- Codex worker (`scripts/codex-worker.js`) handles Route 5 + Route 7 ✓
+- npm scripts: `route`, `execute`, `codex`, `pipeline` ✓
+- Job status tracking and audit trail ✓
 
 ### V8: Daily Digest & Dashboard
 - HTML weekly dashboard with Sous design system
