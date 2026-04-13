@@ -93,3 +93,19 @@ Every significant Optimus decision, architecture change, or weekly summary shoul
 3. Automation pipeline runs as Claude scheduled tasks, not as backend services.
 4. Every week gets its own JSON file — no overwriting, full history preserved.
 5. The dashboard must work on mobile (Stefan checks it on his phone).
+
+## Karpathy Coding Principles
+
+Behavioral guidelines to reduce common LLM coding mistakes.
+
+### 1. Think Before Coding
+Before implementing: state assumptions explicitly, surface tradeoffs, push back on complexity, stop and ask when unclear. Don't pick silently between interpretations.
+
+### 2. Simplicity First
+Minimum code that solves the problem. No features beyond what was asked. No abstractions for single-use code. No speculative flexibility. If you write 200 lines and it could be 50, rewrite it.
+
+### 3. Surgical Changes
+Touch only what you must. Don't improve adjacent code, refactor things that aren't broken, or clean up pre-existing dead code. Every changed line should trace directly to the user's request. Remove only imports/variables/functions that YOUR changes made unused.
+
+### 4. Goal-Driven Execution
+Transform tasks into verifiable goals. For multi-step tasks, state a brief plan with verify steps. Define success criteria before starting so you can loop independently without constant clarification.
