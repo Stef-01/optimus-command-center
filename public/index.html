@@ -963,6 +963,10 @@
         <div style="color:var(--text-secondary)">Grant pipeline, work stream progress, and relationship health for the NOURISH research lab.</div>
       </div>
 
+      <!-- Sub-Projects -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Sub-Projects</div>
+      <div id="nourishProjects" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:32px"></div>
+
       <!-- Grant Opportunities -->
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities</div>
       <div id="nourishGrants" style="display:grid;gap:12px;margin-bottom:32px"></div>
@@ -1320,22 +1324,54 @@
         const data = this.currentWeek.nourish;
         if (!data) return;
 
+        const PROJECTS = [
+          { id: 'cgm',        label: 'CGM Trial',            color: '#1f6feb', keywords: ['cgm', 'dietary pattern', 'niddk', 'diverse population'] },
+          { id: 'pbdi',       label: 'PBDI Teaching Kitchen', color: '#2ea043', keywords: ['cooking', 'pbdi', 'teaching kitchen', 'community cooking'] },
+          { id: 'pfeme',      label: 'PFEME Resident Ed',     color: '#f0883e', keywords: ['pfeme', 'pgx', 'pharmacogenomics', 'nida', 'precision medicine'] },
+          { id: 'nepal',      label: 'Nepal Grant',           color: '#8957e5', keywords: ['nepal', 'global health'] },
+          { id: 'mealpairer', label: 'Meal Pairer AI',        color: '#39d2c0', keywords: ['sous', 'meal pairer', 'ai pipeline', 'social impact', 'ahrq'] },
+          { id: 'vr',         label: 'VR',                    color: '#8b949e', keywords: ['vr', 'ar nutrition', 'virtual reality', 'augmented reality', 'isabela moise'] }
+        ];
+
+        const matchProjects = (g) => {
+          const text = ((g.name || '') + ' ' + (g.match || '')).toLowerCase();
+          return PROJECTS.filter(p => p.keywords.some(kw => text.includes(kw)));
+        };
+
+        // Sub-project cards
+        const projEl = document.getElementById('nourishProjects');
+        if (projEl) {
+          const counts = Object.fromEntries(PROJECTS.map(p => [p.id, 0]));
+          if (data.grants) data.grants.forEach(g => matchProjects(g).forEach(p => counts[p.id]++));
+          projEl.innerHTML = PROJECTS.map(p => `
+            <div class="card" style="border-top:3px solid ${p.color};padding:12px 14px">
+              <div style="font-weight:700;font-size:13px;color:${p.color};margin-bottom:4px">${p.label}</div>
+              <div style="font-size:11px;color:var(--text-secondary)">${counts[p.id]} grant${counts[p.id] !== 1 ? 's' : ''} aligned</div>
+            </div>
+          `).join('');
+        }
+
         // Grants
         const grantsEl = document.getElementById('nourishGrants');
         if (grantsEl && data.grants) {
-          grantsEl.innerHTML = data.grants.map(g => `
-            <div class="card">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <div>
-                  <div style="font-weight:700">${g.name}</div>
-                  <div style="color:var(--text-secondary)">${g.funder} | $${g.amount}</div>
+          grantsEl.innerHTML = data.grants.map(g => {
+            const aligned = matchProjects(g);
+            const tags = aligned.map(p => `<span style="background:${p.color}22;color:${p.color};border:1px solid ${p.color}55;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:600">${p.label}</span>`).join('');
+            return `
+              <div class="card">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">${g.name}</div>
+                    <div style="color:var(--text-secondary)">${g.funder} | $${g.amount}</div>
+                  </div>
+                  <div style="background:#2D6A4F;color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap">${g.score}/100</div>
                 </div>
-                <div style="background:#2D6A4F;color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap">${g.score}/100</div>
+                <div style="margin-top:8px;color:var(--text-secondary)">Deadline: ${g.deadline}</div>
+                <div style="margin-top:4px">${g.match}</div>
+                ${aligned.length ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">${tags}</div>` : ''}
               </div>
-              <div style="margin-top:8px;color:var(--text-secondary)">Deadline: ${g.deadline}</div>
-              <div style="margin-top:4px">${g.match}</div>
-            </div>
-          `).join('');
+            `;
+          }).join('');
         }
 
         // Tasks by Work Stream
