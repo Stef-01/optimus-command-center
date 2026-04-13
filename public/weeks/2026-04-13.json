@@ -154,5 +154,64 @@
       { "status": "backlog", "name": "CGM Follow-Up Templates", "score": 65, "weekIdentified": "Apr 7", "action": "Needs spec" },
       { "status": "backlog", "name": "Decision Record Writer", "score": 58, "weekIdentified": "Apr 7", "action": "Needs spec" }
     ]
+  },
+
+  "nourish": {
+    "grants": [
+      {
+        "name": "NIH R21 — Dietary Patterns & CGM in Diverse Populations",
+        "funder": "NIH / NIDDK",
+        "amount": "275,000",
+        "deadline": "Jun 5, 2026",
+        "score": 91,
+        "match": "Direct fit: CGM + nutrition intervention in underserved communities aligns with NOURISH core protocol."
+      },
+      {
+        "name": "USDA AFRI — Food Systems & Metabolic Health",
+        "funder": "USDA / NIFA",
+        "amount": "500,000",
+        "deadline": "May 15, 2026",
+        "score": 84,
+        "match": "Strong alignment with NOURISH community food access work and dietary behavior change arm."
+      },
+      {
+        "name": "Robert Wood Johnson Foundation — Healthier Diet Initiative",
+        "funder": "RWJF",
+        "amount": "150,000",
+        "deadline": "Jul 1, 2026",
+        "score": 78,
+        "match": "Health equity focus matches NOURISH's South Bay community partner recruitment strategy."
+      },
+      {
+        "name": "ADA Innovation Award — Technology-Assisted Nutrition Counseling",
+        "funder": "American Diabetes Association",
+        "amount": "100,000",
+        "deadline": "May 30, 2026",
+        "score": 72,
+        "match": "AI nutrition platform component maps directly to ADA's tech-assisted diabetes prevention priority."
+      },
+      {
+        "name": "California Department of Public Health — Chronic Disease Prevention",
+        "funder": "CDPH",
+        "amount": "200,000",
+        "deadline": "Aug 1, 2026",
+        "score": 65,
+        "match": "State-level fit for NOURISH's California community cohort; requires local partner co-PI."
+      }
+    ],
+    "tasks_by_workstream": {
+      "WS1 — IRB & Compliance": 4,
+      "WS2 — Recruitment": 7,
+      "WS3 — Data Collection": 5,
+      "WS4 — Analysis": 3,
+      "WS5 — Dissemination": 2
+    },
+    "relationships": [
+      { "name": "Dalia (Research Assistant)", "status": "yellow", "lastContact": "Apr 7", "suggestedAction": "Confirm hours increase this week" },
+      { "name": "Jennifer (Outreach RA)", "status": "yellow", "lastContact": "Apr 7", "suggestedAction": "Send delegation SOP + hours proposal" },
+      { "name": "PI / Faculty Advisor", "status": "green", "lastContact": "Apr 10", "suggestedAction": "Send IRB status update" },
+      { "name": "Stanford IRB Office", "status": "red", "lastContact": "Mar 28", "suggestedAction": "Follow up on protocol modification status" },
+      { "name": "Community Partner — South Bay", "status": "yellow", "lastContact": "Apr 3", "suggestedAction": "Schedule Q2 check-in call" }
+    ]
   }
 }
