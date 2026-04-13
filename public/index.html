@@ -943,88 +943,93 @@
       opacity: 1;
     }
 
-    /* Week Navigation */
+    /* Week navigation */
     .week-nav {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 4px 0;
+      gap: 6px;
     }
+
     .week-nav-btn {
       background: var(--bg-el);
       border: 1px solid var(--border);
       color: var(--text-secondary);
       border-radius: 6px;
-      padding: 4px 10px;
+      padding: 4px 8px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1;
-      transition: all 0.15s;
+      transition: all 0.2s;
     }
+
     .week-nav-btn:hover:not(:disabled) {
       border-color: var(--cyan-alt);
       color: var(--text-primary);
     }
+
     .week-nav-btn:disabled {
       opacity: 0.3;
-      cursor: not-allowed;
+      cursor: default;
     }
-    .week-nav-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-primary);
-      min-width: 170px;
-      text-align: center;
-    }
-    .week-nav-select {
+
+    .week-jump-select {
       background: var(--bg-el);
       border: 1px solid var(--border);
-      color: var(--text-secondary);
+      color: var(--text-primary);
       border-radius: 6px;
       padding: 4px 8px;
       font-size: 12px;
       cursor: pointer;
       font-family: inherit;
     }
-    .week-nav-select:hover {
+
+    .week-jump-select:focus {
+      outline: none;
       border-color: var(--cyan-alt);
     }
 
-    /* Source Health Badges */
+    /* Source health badges */
     .source-health-row {
       display: flex;
-      gap: 6px;
-      margin-bottom: 16px;
+      gap: 8px;
       flex-wrap: wrap;
+      margin-bottom: 16px;
     }
-    .source-badge {
+
+    .health-badge {
+      position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       padding: 4px 10px;
       border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--bg-el);
       font-size: 11px;
-      font-weight: 500;
+      font-weight: 600;
       cursor: default;
-      position: relative;
       white-space: nowrap;
     }
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
+
+    .health-badge.green {
+      background: rgba(63, 185, 80, 0.15);
+      border: 1px solid rgba(63, 185, 80, 0.4);
+      color: var(--green);
     }
-    .source-badge.ok .badge-dot { background: var(--green); }
-    .source-badge.null .badge-dot { background: var(--red); }
-    .source-badge.stale .badge-dot { background: var(--yellow); }
-    .source-badge.ok { border-color: rgba(63, 185, 80, 0.3); }
-    .source-badge.null { border-color: rgba(248, 81, 73, 0.2); }
-    .source-badge.stale { border-color: rgba(240, 180, 41, 0.3); }
-    .badge-status-icon { font-size: 10px; }
-    .badge-tooltip {
+
+    .health-badge.red {
+      background: rgba(248, 81, 73, 0.15);
+      border: 1px solid rgba(248, 81, 73, 0.4);
+      color: var(--red);
+    }
+
+    .health-badge.yellow {
+      background: rgba(240, 180, 41, 0.15);
+      border: 1px solid rgba(240, 180, 41, 0.4);
+      color: var(--yellow);
+    }
+
+    .health-badge .badge-tooltip {
+      visibility: hidden;
+      opacity: 0;
       position: absolute;
       bottom: calc(100% + 6px);
       left: 50%;
@@ -1032,30 +1037,30 @@
       background: #1c2128;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 8px 10px;
+      padding: 6px 10px;
       font-size: 11px;
+      font-weight: 400;
       color: var(--text-primary);
       white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.15s;
-      z-index: 50;
+      z-index: 200;
       pointer-events: none;
-      line-height: 1.6;
+      transition: opacity 0.15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
     }
-    .source-badge:hover .badge-tooltip {
-      opacity: 1;
+
+    .health-badge:hover .badge-tooltip {
       visibility: visible;
+      opacity: 1;
     }
 
     /* Delta indicators */
     .delta {
-      font-size: 10px;
-      font-weight: 700;
-      margin-top: 3px;
-      display: block;
-      letter-spacing: 0.2px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 3px;
+      vertical-align: middle;
     }
+
     .delta.up { color: var(--green); }
     .delta.down { color: var(--red); }
     .delta.flat { color: var(--text-secondary); }
@@ -1065,21 +1070,19 @@
   <div class="header">
     <div class="header-top">
       <div class="logo">⚙️ OPTIMUS</div>
-      <div style="display: flex; gap: 16px; align-items: center;">
-        <span class="week-label" id="headerWeek">Loading weeks...</span>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div class="week-nav">
+          <button class="week-nav-btn" id="prevWeekBtn" title="Older week" disabled>◀</button>
+          <select class="week-jump-select" id="weekJumpSelect"></select>
+          <button class="week-nav-btn" id="nextWeekBtn" title="Newer week" disabled>▶</button>
+        </div>
+        <span class="week-label" id="headerWeek"></span>
         <div id="loadingSpinner" style="display: none;">
           <div class="loading-spinner"></div>
         </div>
       </div>
     </div>
-    <div class="week-nav" id="weekNav">
-      <button class="week-nav-btn" id="prevWeekBtn" disabled>◀</button>
-      <span class="week-nav-label" id="weekNavLabel">—</span>
-      <button class="week-nav-btn" id="nextWeekBtn" disabled>▶</button>
-      <select class="week-nav-select" id="weekJumpSelect">
-        <option value="">Jump to...</option>
-      </select>
-    </div>
+    <div class="weekly-tabs" id="weeklyTabs"></div>
   </div>
 
   <div class="container">
@@ -1095,7 +1098,7 @@
 
     <!-- OVERVIEW SECTION -->
     <div id="overview" class="section-content active">
-      <div class="source-health-row" id="sourceBadges"></div>
+      <div class="source-health-row" id="sourceHealthBadges"></div>
       <div class="stats-strip" id="overviewStats"></div>
 
       <div class="card executive-summary">
@@ -1182,12 +1185,12 @@
         <div style="color:var(--text-secondary)">Grant pipeline, work stream progress, and relationship health for the NOURISH research lab.</div>
       </div>
 
-      <!-- Sub-Projects -->
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">NOURISH Sub-Projects</div>
+      <!-- Projects -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Projects</div>
       <div id="nourishProjects" class="nourish-projects"></div>
 
-      <!-- Grant Opportunities by Alignment -->
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities by Alignment</div>
+      <!-- Grant Opportunities -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities</div>
       <div id="nourishGrants" style="display:grid;gap:12px;margin-bottom:32px"></div>
 
       <!-- Tasks by Work Stream -->
@@ -1196,12 +1199,7 @@
 
       <!-- Relationship Health -->
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Relationship Health</div>
-      <div id="nourishRelationships" style="display:grid;gap:6px"></div>
-
-      <!-- Footer note -->
-      <div style="margin-top:32px;font-size:12px;font-style:italic;color:var(--text-secondary);text-align:center">
-        Project-level metrics and team activity will enrich automatically when Airtable connection is restored.
-      </div>
+      <div id="nourishRelationships" style="display:grid;gap:8px"></div>
     </div>
 
     <!-- SKILLS SECTION -->
@@ -1254,61 +1252,12 @@
   </div>
 
   <script>
-    const NOURISH_PROJECTS = [
-      {
-        id: 'cgm', name: 'CGM Trial', emoji: '📊',
-        color: '#3b82f6', bg: 'rgba(59,130,246,0.15)',
-        desc: '60-person RCT: dietary patterns + continuous glucose monitoring',
-        keywords: ['cgm', 'dietary pattern', 'glycemic', 'blood glucose', 'niddk', 'pilot rct', 'diverse population', 'rct', 'glucose'],
-        rationale: 'Mentions CGM, dietary patterns, or glucose monitoring — core CGM Trial methods.'
-      },
-      {
-        id: 'pbdi', name: 'PBDI Teaching Kitchen', emoji: '🍳',
-        color: '#22c55e', bg: 'rgba(34,197,94,0.15)',
-        desc: 'Community cooking program with 30,000+ participants',
-        keywords: ['cooking', 'teaching kitchen', 'pbdi', 'community cooking', '30,000', 'culturally tailored', 'cultural nutrition', 'engagement in cooking', 'community program'],
-        rationale: 'Aligned with PBDI Teaching Kitchen community cooking and cultural nutrition mandate.'
-      },
-      {
-        id: 'pfeme', name: 'PFEME Resident Ed', emoji: '💊',
-        color: '#f97316', bg: 'rgba(249,115,22,0.15)',
-        desc: 'Pharmacogenomics-guided medication education',
-        keywords: ['pgx', 'pharmacogenomics', 'pfeme', 'precision medicine', 'nida', 'medication', 'copilot', 'drug'],
-        rationale: 'References pharmacogenomics or precision medicine — PFEME core domain.'
-      },
-      {
-        id: 'nepal', name: 'Nepal Grant', emoji: '🏔️',
-        color: '#a855f7', bg: 'rgba(168,85,247,0.15)',
-        desc: 'Global health AI initiative',
-        keywords: ['nepal', 'global health', 'uday', 'global health proposal'],
-        rationale: 'Tied to Nepal/global health initiative with Uday.'
-      },
-      {
-        id: 'mealpairer', name: 'Meal Pairer AI', emoji: '🤖',
-        color: '#06b6d4', bg: 'rgba(6,182,212,0.15)',
-        desc: 'AI-powered nutrition recommendations (Sous / NORA)',
-        keywords: ['sous', 'ai opportunity', 'google.org', 'social impact', 'nora', 'hackathon', 'healthcare from the eye', 'eye', 'meal pairer', 'ai pipeline'],
-        rationale: 'Aligned with Meal Pairer AI / Sous pipeline and AI-for-health mandate.'
-      },
-      {
-        id: 'vr', name: 'VR Nutrition', emoji: '🥽',
-        color: '#64748b', bg: 'rgba(100,116,139,0.15)',
-        desc: 'VR/AR nutrition education & clinical training',
-        keywords: ['vr', ' ar ', 'virtual reality', 'augmented reality', 'minal', 'isabela', 'chpr', 'ar nutrition', 'vr/ar', 'vr nutrition', 'novel method', 'behavior change'],
-        rationale: 'Involves VR/AR education or mentions key VR collaborators (Minal, Isabela, CHPR).'
-      }
-    ];
-
-    function tagGrantWithProjects(grant) {
-      const haystack = (grant.name + ' ' + (grant.match || '')).toLowerCase();
-      return NOURISH_PROJECTS.filter(p => p.keywords.some(kw => haystack.includes(kw)));
-    }
-
-        class Optimus {
+    class Optimus {
       constructor() {
         this.weeks = {};
         this.weekIndex = [];
         this.currentWeek = null;
+        this.currentWeekDate = null;
         this.prevWeek = null;
         this.init();
       }
@@ -1316,11 +1265,12 @@
       async init() {
         try {
           await this.loadWeekIndex();
-          const urlWeek = new URLSearchParams(location.search).get('week');
-          const startWeek = (urlWeek && this.weekIndex.includes(urlWeek)) ? urlWeek : this.weekIndex[0];
+          const urlParams = new URLSearchParams(window.location.search);
+          const weekParam = urlParams.get('week');
+          const startWeek = (weekParam && this.weekIndex.includes(weekParam))
+            ? weekParam
+            : this.weekIndex[0];
           await this.loadWeek(startWeek);
-          const prevDate = this.getPrevWeekDate(startWeek);
-          if (prevDate) await this.loadWeek(prevDate);
           this.setupEventListeners();
           this.render();
         } catch (e) {
@@ -1341,21 +1291,46 @@
       }
 
       async loadWeek(weekDate) {
-        if (this.weeks[weekDate]) {
-          this.currentWeek = this.weeks[weekDate];
-          return;
+        if (!this.weeks[weekDate]) {
+          try {
+            this.showLoading(true);
+            const response = await fetch(`./weeks/${weekDate}.json`);
+            if (!response.ok) throw new Error('Week not found');
+            this.weeks[weekDate] = await response.json();
+          } finally {
+            this.showLoading(false);
+          }
         }
+        this.currentWeek = this.weeks[weekDate];
+        this.currentWeekDate = weekDate;
 
-        try {
-          this.showLoading(true);
-          const response = await fetch(`./weeks/${weekDate}.json`);
-          if (!response.ok) throw new Error('Week not found');
-          const data = await response.json();
-          this.weeks[weekDate] = data;
-          this.currentWeek = data;
-        } finally {
-          this.showLoading(false);
+        // Eagerly load previous week for deltas
+        const idx = this.weekIndex.indexOf(weekDate);
+        const prevDate = idx >= 0 && idx < this.weekIndex.length - 1
+          ? this.weekIndex[idx + 1] : null;
+        if (prevDate && !this.weeks[prevDate]) {
+          try {
+            const r = await fetch(`./weeks/${prevDate}.json`);
+            if (r.ok) this.weeks[prevDate] = await r.json();
+          } catch(e) {}
         }
+        this.prevWeek = prevDate ? (this.weeks[prevDate] || null) : null;
+      }
+
+      async switchWeek(weekDate) {
+        await this.loadWeek(weekDate);
+        const url = new URL(window.location.href);
+        url.searchParams.set('week', weekDate);
+        history.pushState({ week: weekDate }, '', url);
+        this.renderWeekTabs();
+        this.render();
+      }
+
+      async navigateWeek(delta) {
+        const idx = this.weekIndex.indexOf(this.currentWeekDate);
+        const newIdx = idx + delta;
+        if (newIdx < 0 || newIdx >= this.weekIndex.length) return;
+        await this.switchWeek(this.weekIndex[newIdx]);
       }
 
       showLoading(show) {
@@ -1368,94 +1343,55 @@
           btn.addEventListener('click', (e) => this.switchSection(e.target.dataset.section));
         });
 
-        // Week navigation buttons
-        document.getElementById('prevWeekBtn').addEventListener('click', () => {
-          const prev = this.getPrevWeekDate(this.currentWeek?.weekOf);
-          if (prev) this.switchToWeek(prev);
+        // Prev/next week buttons
+        document.getElementById('prevWeekBtn')?.addEventListener('click', () => this.navigateWeek(1));
+        document.getElementById('nextWeekBtn')?.addEventListener('click', () => this.navigateWeek(-1));
+
+        // Jump-to dropdown
+        document.getElementById('weekJumpSelect')?.addEventListener('change', (e) => this.switchWeek(e.target.value));
+
+        // Browser back/forward
+        window.addEventListener('popstate', async (e) => {
+          const week = e.state?.week || this.weekIndex[0];
+          await this.loadWeek(week);
+          this.renderWeekTabs();
+          this.render();
         });
-        document.getElementById('nextWeekBtn').addEventListener('click', () => {
-          const next = this.getNextWeekDate(this.currentWeek?.weekOf);
-          if (next) this.switchToWeek(next);
-        });
-        document.getElementById('weekJumpSelect').addEventListener('change', (e) => {
-          if (e.target.value) { this.switchToWeek(e.target.value); e.target.value = ''; }
-        });
+
+        // Week pills
+        this.renderWeekTabs();
       }
 
-      async switchToWeek(weekDate) {
-        await this.loadWeek(weekDate);
-        const prevDate = this.getPrevWeekDate(weekDate);
-        if (prevDate) await this.loadWeek(prevDate);
-        const url = new URL(location.href);
-        url.searchParams.set('week', weekDate);
-        history.pushState(null, '', url);
-        this.render();
-      }
-
-      getPrevWeekDate(weekDate) {
-        const idx = this.weekIndex.indexOf(weekDate);
-        return (idx >= 0 && idx < this.weekIndex.length - 1) ? this.weekIndex[idx + 1] : null;
-      }
-
-      getNextWeekDate(weekDate) {
-        const idx = this.weekIndex.indexOf(weekDate);
-        return (idx > 0) ? this.weekIndex[idx - 1] : null;
-      }
-
-      getWeekRangeLabel(weekDateStr) {
-        const end = new Date(weekDateStr + 'T12:00:00');
-        const start = new Date(end);
-        start.setDate(start.getDate() - 6);
-        const mo = { month: 'short', day: 'numeric' };
-        const startStr = start.toLocaleDateString('en-US', mo);
-        const endStr = end.toLocaleDateString('en-US', { ...mo, year: 'numeric' });
-        return `Week of ${startStr}–${endStr}`;
-      }
-
-      renderWeekNav() {
-        const curr = this.currentWeek?.weekOf;
-        if (!curr) return;
-
-        // Label
-        document.getElementById('weekNavLabel').textContent = this.getWeekRangeLabel(curr);
-
-        // Prev/next buttons
-        document.getElementById('prevWeekBtn').disabled = !this.getPrevWeekDate(curr);
-        document.getElementById('nextWeekBtn').disabled = !this.getNextWeekDate(curr);
-
-        // Jump dropdown
-        const sel = document.getElementById('weekJumpSelect');
-        sel.innerHTML = '<option value="">Jump to...</option>' +
-          this.weekIndex.map(w => {
-            const label = this.getWeekRangeLabel(w);
-            return `<option value="${w}" ${w === curr ? 'disabled' : ''}>${label}</option>`;
+      renderWeekTabs() {
+        // Week pills
+        const container = document.getElementById('weeklyTabs');
+        if (container) {
+          container.innerHTML = this.weekIndex.map(week => {
+            const date = new Date(week + 'T00:00:00');
+            const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            return `<button class="week-pill ${week === this.currentWeekDate ? 'active' : ''}" data-week="${week}">${label}</button>`;
           }).join('');
-      }
+          container.querySelectorAll('.week-pill').forEach(btn => {
+            btn.addEventListener('click', (e) => this.switchWeek(e.target.dataset.week));
+          });
+        }
 
-      getOverviewStats(weekData) {
-        const stats = weekData?.overview?.stats || {};
-        const omi = weekData?.overview?.omi || {};
-        const lifeAdmin = weekData?.lifeAdmin || {};
-        const nourish = weekData?.nourish || {};
-        const candidates = [
-          { key: 'meetings', label: 'Meetings', suffix: '' },
-          { key: 'decisions', label: 'Decisions', suffix: '' },
-          { key: 'unactionedCommitments', label: 'Unactioned', suffix: '' },
-          { key: 'cgmTasksDue', label: 'CGM Due', suffix: '' },
-          { key: 'priorityHours', label: 'Priority Hrs', suffix: 'h' },
-          { key: 'airtableOverduePercent', label: 'Overdue', suffix: '%' },
-          { key: 'omiMemories', label: 'Memories', suffix: '' },
-          { key: 'omiConversations', label: 'Conversations', suffix: '' },
-          { key: 'omiTranscripts', label: 'Transcripts', suffix: '' },
-          { key: 'omiWords', label: 'OMI Words', suffix: '' },
-          { key: 'wikiPages', label: 'Wiki Pages', suffix: '' },
-        ];
-        return candidates
-          .map(c => {
-            const val = stats[c.key] ?? omi[c.key.replace('omi', '').toLowerCase()] ?? null;
-            return { ...c, val };
-          })
-          .filter(c => c.val !== null && c.val !== undefined && typeof c.val === 'number');
+        // Jump-to dropdown
+        const select = document.getElementById('weekJumpSelect');
+        if (select) {
+          select.innerHTML = this.weekIndex.map(week => {
+            const date = new Date(week + 'T00:00:00');
+            const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            return `<option value="${week}" ${week === this.currentWeekDate ? 'selected' : ''}>Week of ${label}</option>`;
+          }).join('');
+        }
+
+        // Prev/next buttons — weekIndex is newest-first, so prev = higher index (older)
+        const idx = this.weekIndex.indexOf(this.currentWeekDate);
+        const prevBtn = document.getElementById('prevWeekBtn');
+        const nextBtn = document.getElementById('nextWeekBtn');
+        if (prevBtn) prevBtn.disabled = idx >= this.weekIndex.length - 1;
+        if (nextBtn) nextBtn.disabled = idx <= 0;
       }
 
       switchSection(section) {
@@ -1469,13 +1405,9 @@
       render() {
         if (!this.currentWeek) return;
 
-        const currDate = this.currentWeek.weekOf;
-        const prevDate = this.getPrevWeekDate(currDate);
-        this.prevWeek = prevDate ? (this.weeks[prevDate] || null) : null;
+        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel || '';
 
-        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;
-        this.renderWeekNav();
-
+        this.renderSourceHealthBadges(this.currentWeek);
         this.renderOverview();
         this.renderLifeAdmin();
         this.renderNourish();
@@ -1483,83 +1415,105 @@
         this.renderSkills();
       }
 
-      renderSourceBadges() {
-        const data = this.currentWeek.overview || {};
+      renderSourceHealthBadges(data) {
+        const el = document.getElementById('sourceHealthBadges');
+        if (!el) return;
+        const ov = data.overview || {};
+        const stats = ov.stats || {};
+
+        // Detect presence + build tooltip text for each source
+        const granolaData = ov.granola || null;
+        const airtableData = ov.airtable || null;
+        const omiPresent = ov.omi || (stats.omiWords != null && stats.omiWords > 0);
+        const notionData = ov.notion || null;
+
         const sources = [
-          { key: 'granola', label: 'Granola', icon: '🎙️' },
-          { key: 'airtable', label: 'Airtable', icon: '📋' },
-          { key: 'notion', label: 'Notion', icon: '📝' },
-          { key: 'omi', label: 'OMI', icon: '🧠' },
-          { key: 'slack', label: 'Slack', icon: '💬' },
+          {
+            name: 'Granola', emoji: '🎙️',
+            ok: !!(granolaData),
+            tip: granolaData
+              ? `${granolaData.meetingsReviewed ?? 0} meetings · ${granolaData.keyDecisions ?? 0} decisions`
+              : 'No Granola data this week'
+          },
+          {
+            name: 'Airtable', emoji: '📋',
+            ok: !!(airtableData),
+            tip: airtableData
+              ? `${airtableData.totalTasks ?? 0} tasks · ${airtableData.overdue ?? 0} overdue`
+              : 'No Airtable data this week'
+          },
+          {
+            name: 'OMI', emoji: '🧠',
+            ok: !!(omiPresent),
+            tip: ov.omi
+              ? `${ov.omi.conversations ?? 0} convs · ${ov.omi.memories ?? 0} memories`
+              : stats.omiWords
+              ? `${stats.omiConversations ?? 0} convs · ${(stats.omiWords ?? 0).toLocaleString()} words`
+              : 'No OMI data this week'
+          },
+          {
+            name: 'Notion', emoji: '📝',
+            ok: !!(notionData),
+            tip: notionData
+              ? `${notionData.gaps?.length ?? 0} relationship gaps`
+              : 'No Notion data this week'
+          },
+          {
+            name: 'Slack', emoji: '💬',
+            ok: false,
+            tip: 'Slack not connected'
+          },
         ];
 
-        const html = sources.map(s => {
-          // Check direct overview field, then stats sub-field
-          const val = data[s.key] ?? data.stats?.[s.key] ?? null;
-          let state, statusIcon, tooltip;
-
-          if (val === null || val === undefined) {
-            state = 'null';
-            statusIcon = '✗';
-            tooltip = 'No data pulled this week';
-          } else if (val.error || val.stale) {
-            state = 'stale';
-            statusIcon = '⚠';
-            tooltip = val.error || 'Data may be stale';
-          } else {
-            state = 'ok';
-            statusIcon = '✓';
-            // Build tooltip details
-            const parts = [];
-            if (val.meetingsReviewed) parts.push(`${val.meetingsReviewed} meetings`);
-            if (val.conversations)    parts.push(`${val.conversations} conversations`);
-            if (val.memories)         parts.push(`${val.memories} memories`);
-            if (val.words)            parts.push(`${val.words.toLocaleString()} words`);
-            if (val.wikiPages)        parts.push(`${val.wikiPages} wiki pages`);
-            if (val.totalTasks)       parts.push(`${val.totalTasks} tasks`);
-            if (val.overdue !== undefined) parts.push(`${val.overdue} overdue`);
-            if (val.dateRange || val.dateWindow) parts.push(val.dateRange || val.dateWindow);
-            tooltip = parts.length ? parts.join(' · ') : 'Connected';
-          }
-
-          return `<div class="source-badge ${state}">
-            <span class="badge-dot"></span>
-            <span>${s.icon} ${s.label}</span>
-            <span class="badge-status-icon">${statusIcon}</span>
-            <span class="badge-tooltip">${tooltip}</span>
-          </div>`;
+        el.innerHTML = sources.map(s => {
+          const cls = s.ok ? 'green' : 'red';
+          const sym = s.ok ? '✓' : '✗';
+          return `<span class="health-badge ${cls}">${s.emoji} ${s.name} ${sym}<span class="badge-tooltip">${s.tip}</span></span>`;
         }).join('');
-
-        document.getElementById('sourceBadges').innerHTML = html;
       }
 
       renderOverview() {
         const data = this.currentWeek.overview;
+        const stats = data.stats || {};
+        const prevStats = this.prevWeek?.overview?.stats || {};
+        const prevLA = this.prevWeek?.lifeAdmin;
+        const prevNourish = this.prevWeek?.nourish;
+        const la = this.currentWeek.lifeAdmin;
+        const nourish = this.currentWeek.nourish;
 
-        // Source health badges
-        this.renderSourceBadges();
+        // Delta helper: invert=true means lower is better (green)
+        const delta = (cur, prev, invert = false) => {
+          if (cur == null || prev == null) return '';
+          const diff = Number(cur) - Number(prev);
+          if (diff === 0) return '<span class="delta flat">=</span>';
+          const good = invert ? diff < 0 : diff > 0;
+          return `<span class="delta ${good ? 'up' : 'down'}">${diff > 0 ? '↑' : '↓'}${Math.abs(diff)}</span>`;
+        };
 
-        // Stats — dynamic, works with any week schema
-        const currStats = this.getOverviewStats(this.currentWeek);
-        const prevStatsMap = this.prevWeek
-          ? Object.fromEntries(this.getOverviewStats(this.prevWeek).map(s => [s.key, s.val]))
-          : {};
+        // Adaptive metrics — render whichever fields exist in current week
+        const metricDefs = [
+          { val: stats.meetings,               prev: prevStats.meetings,               label: 'Meetings',       suffix: '',  invert: false },
+          { val: stats.decisions,              prev: prevStats.decisions,              label: 'Decisions',      suffix: '',  invert: false },
+          { val: stats.unactionedCommitments,  prev: prevStats.unactionedCommitments,  label: 'Unactioned',     suffix: '',  invert: true  },
+          { val: stats.cgmTasksDue,            prev: prevStats.cgmTasksDue,            label: 'CGM Due',        suffix: '',  invert: true  },
+          { val: stats.priorityHours,          prev: prevStats.priorityHours,          label: 'Priority Hrs',   suffix: 'h', invert: false },
+          { val: stats.airtableOverduePercent, prev: prevStats.airtableOverduePercent, label: 'Overdue %',      suffix: '%', invert: true  },
+          { val: stats.omiWords,               prev: prevStats.omiWords,               label: 'OMI Words',      suffix: '',  invert: false },
+          { val: stats.omiConversations,       prev: prevStats.omiConversations,       label: 'OMI Convs',      suffix: '',  invert: false },
+          { val: stats.omiMemories,            prev: prevStats.omiMemories,            label: 'OMI Memories',   suffix: '',  invert: false },
+          { val: stats.wikiPages,              prev: prevStats.wikiPages,              label: 'Wiki Pages',     suffix: '',  invert: false },
+          { val: la?.totalTasks,               prev: prevLA?.totalTasks,               label: 'Tasks',          suffix: '',  invert: false },
+          { val: nourish?.grants?.length,      prev: prevNourish?.grants?.length,      label: 'Grants',         suffix: '',  invert: false },
+        ];
 
-        const statsHTML = currStats.map(s => {
-          const displayVal = s.val >= 1000 ? s.val.toLocaleString() : s.val;
-          let deltaHTML = '';
-          if (prevStatsMap[s.key] !== undefined) {
-            const diff = s.val - prevStatsMap[s.key];
-            if (diff > 0)      deltaHTML = `<span class="delta up">↑ +${Math.abs(diff).toLocaleString()}</span>`;
-            else if (diff < 0) deltaHTML = `<span class="delta down">↓ −${Math.abs(diff).toLocaleString()}</span>`;
-            else               deltaHTML = `<span class="delta flat">= same</span>`;
-          }
-          return `<div class="stat">
-            <div class="stat-value">${displayVal}${s.suffix}</div>
-            <div class="stat-label">${s.label}</div>
-            ${deltaHTML}
-          </div>`;
-        }).join('');
+        const statsHTML = metricDefs
+          .filter(m => m.val != null)
+          .map(m => `
+            <div class="stat">
+              <div class="stat-value">${m.val}${m.suffix}${delta(m.val, m.prev, m.invert)}</div>
+              <div class="stat-label">${m.label}</div>
+            </div>
+          `).join('');
         document.getElementById('overviewStats').innerHTML = statsHTML;
 
         // Executive Summary
@@ -1742,9 +1696,57 @@
         const data = this.currentWeek.nourish;
         if (!data) return;
 
-        // Use top-level NOURISH_PROJECTS constant
-        const PROJECTS = NOURISH_PROJECTS;
-        const matchProjects = tagGrantWithProjects;
+        // Project definitions with colors, keywords, and alignment rationale
+        const PROJECTS = [
+          {
+            id: 'cgm', name: 'CGM Trial', emoji: '📊',
+            color: '#1e6fcc', bg: 'rgba(30,111,204,0.15)',
+            desc: '60-person RCT: dietary patterns + continuous glucose monitoring',
+            keywords: ['cgm', 'dietary pattern', 'glycemic', 'blood glucose', 'niddk', 'pilot rct', 'diverse population', 'rct', 'glucose'],
+            rationale: 'Mentions CGM, dietary patterns, or glucose monitoring — core CGM Trial methods.'
+          },
+          {
+            id: 'pbdi', name: 'PBDI Teaching Kitchen', emoji: '🍳',
+            color: '#2D6A4F', bg: 'rgba(45,106,79,0.15)',
+            desc: 'Community cooking program with 30,000+ participants',
+            keywords: ['cooking', 'teaching kitchen', 'pbdi', 'community cooking', '30,000', 'culturally tailored', 'cultural nutrition', 'engagement in cooking', 'community program'],
+            rationale: 'Aligned with PBDI Teaching Kitchen community cooking and cultural nutrition mandate.'
+          },
+          {
+            id: 'pfeme', name: 'PFEME', emoji: '💊',
+            color: '#d97706', bg: 'rgba(217,119,6,0.15)',
+            desc: 'Pharmacogenomics-guided medication education',
+            keywords: ['pgx', 'pharmacogenomics', 'pfeme', 'precision medicine', 'nida', 'medication', 'copilot', 'drug'],
+            rationale: 'References pharmacogenomics or precision medicine — PFEME core domain.'
+          },
+          {
+            id: 'nepal', name: 'Nepal Grant', emoji: '🏔️',
+            color: '#7c3aed', bg: 'rgba(124,58,237,0.15)',
+            desc: 'Global health AI initiative',
+            keywords: ['nepal', 'global health', 'uday', 'global health proposal'],
+            rationale: 'Tied to Nepal/global health initiative with Uday.'
+          },
+          {
+            id: 'mealpairer', name: 'Meal Pairer AI', emoji: '🤖',
+            color: '#0891b2', bg: 'rgba(8,145,178,0.15)',
+            desc: 'AI-powered nutrition recommendations (Sous / NORA)',
+            keywords: ['sous', 'ai opportunity', 'google.org', 'social impact', 'nora', 'hackathon', 'healthcare from the eye', 'eye', 'meal pairer', 'ai pipeline'],
+            rationale: 'Aligned with Meal Pairer AI / Sous pipeline and AI-for-health mandate.'
+          },
+          {
+            id: 'vr', name: 'VR', emoji: '🥽',
+            color: '#6b7280', bg: 'rgba(107,114,128,0.15)',
+            desc: 'VR/AR nutrition education & clinical training',
+            keywords: ['vr', ' ar ', 'virtual reality', 'augmented reality', 'minal', 'isabela', 'chpr', 'ar nutrition', 'vr/ar', 'vr nutrition', 'novel method', 'behavior change'],
+            rationale: 'Involves VR/AR education or mentions key VR collaborators (Minal, Isabela, CHPR).'
+          }
+        ];
+
+        // Match a grant to projects via keyword search in name + match fields
+        function matchProjects(grant) {
+          const haystack = (grant.name + ' ' + (grant.match || '')).toLowerCase();
+          return PROJECTS.filter(p => p.keywords.some(kw => haystack.includes(kw)));
+        }
 
         // Render project cards with aligned grant counts
         const projEl = document.getElementById('nourishProjects');
@@ -1762,7 +1764,6 @@
               <div class="project-card-name" style="color:${p.color}">${p.name}</div>
               <div class="project-card-desc">${p.desc}</div>
               <div class="project-card-count" style="color:${p.color}">${grantCounts[p.id]} grant${grantCounts[p.id] !== 1 ? 's' : ''} aligned</div>
-              <div style="font-size:10px;color:var(--text-secondary);font-style:italic;margin-top:4px">Details pending Airtable sync</div>
             </div>
           `).join('');
         }
@@ -1820,14 +1821,11 @@
         if (relEl && data.relationships) {
           const statusColor = { green: '#3fb950', yellow: '#f0b429', red: '#f85149' };
           relEl.innerHTML = data.relationships.map(r => `
-            <div class="card" style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px">
-              <div style="width:8px;height:8px;border-radius:50%;background:${statusColor[r.status] || '#8b949e'};flex-shrink:0;margin-top:5px"></div>
-              <div style="flex:1;min-width:0">
-                <div style="font-weight:600;font-size:13px">${r.name}
-                  <span style="font-weight:400;color:var(--text-secondary);font-size:11px;margin-left:6px">${r.lastContact}</span>
-                </div>
-                <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">${r.suggestedAction}</div>
-              </div>
+            <div class="card" style="display:flex;align-items:center;gap:16px">
+              <div style="width:10px;height:10px;border-radius:50%;background:${statusColor[r.status] || '#8b949e'};flex-shrink:0"></div>
+              <div style="flex:1;font-weight:600">${r.name}</div>
+              <div style="color:var(--text-secondary);font-size:12px;white-space:nowrap">${r.lastContact}</div>
+              <div style="color:var(--text-secondary);font-size:13px">${r.suggestedAction}</div>
             </div>
           `).join('');
         }
