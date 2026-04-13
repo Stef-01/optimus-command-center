@@ -942,14 +942,141 @@
       visibility: visible;
       opacity: 1;
     }
+
+    /* Week navigation */
+    .week-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .week-nav-btn {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+
+    .week-nav-btn:hover:not(:disabled) {
+      border-color: var(--cyan-alt);
+      color: var(--text-primary);
+    }
+
+    .week-nav-btn:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    .week-jump-select {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .week-jump-select:focus {
+      outline: none;
+      border-color: var(--cyan-alt);
+    }
+
+    /* Source health badges */
+    .source-health-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .health-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    .health-badge.green {
+      background: rgba(63, 185, 80, 0.15);
+      border: 1px solid rgba(63, 185, 80, 0.4);
+      color: var(--green);
+    }
+
+    .health-badge.red {
+      background: rgba(248, 81, 73, 0.15);
+      border: 1px solid rgba(248, 81, 73, 0.4);
+      color: var(--red);
+    }
+
+    .health-badge.yellow {
+      background: rgba(240, 180, 41, 0.15);
+      border: 1px solid rgba(240, 180, 41, 0.4);
+      color: var(--yellow);
+    }
+
+    .health-badge .badge-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1c2128;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-primary);
+      white-space: nowrap;
+      z-index: 200;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+
+    .health-badge:hover .badge-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Delta indicators */
+    .delta {
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 3px;
+      vertical-align: middle;
+    }
+
+    .delta.up { color: var(--green); }
+    .delta.down { color: var(--red); }
+    .delta.flat { color: var(--text-secondary); }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-top">
       <div class="logo">⚙️ OPTIMUS</div>
-      <div style="display: flex; gap: 16px; align-items: center;">
-        <span class="week-label" id="headerWeek">Loading weeks...</span>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div class="week-nav">
+          <button class="week-nav-btn" id="prevWeekBtn" title="Older week" disabled>◀</button>
+          <select class="week-jump-select" id="weekJumpSelect"></select>
+          <button class="week-nav-btn" id="nextWeekBtn" title="Newer week" disabled>▶</button>
+        </div>
+        <span class="week-label" id="headerWeek"></span>
         <div id="loadingSpinner" style="display: none;">
           <div class="loading-spinner"></div>
         </div>
@@ -971,6 +1098,7 @@
 
     <!-- OVERVIEW SECTION -->
     <div id="overview" class="section-content active">
+      <div class="source-health-row" id="sourceHealthBadges"></div>
       <div class="stats-strip" id="overviewStats"></div>
 
       <div class="card executive-summary">
@@ -1129,13 +1257,20 @@
         this.weeks = {};
         this.weekIndex = [];
         this.currentWeek = null;
+        this.currentWeekDate = null;
+        this.prevWeek = null;
         this.init();
       }
 
       async init() {
         try {
           await this.loadWeekIndex();
-          await this.loadWeek(this.weekIndex[0]);
+          const urlParams = new URLSearchParams(window.location.search);
+          const weekParam = urlParams.get('week');
+          const startWeek = (weekParam && this.weekIndex.includes(weekParam))
+            ? weekParam
+            : this.weekIndex[0];
+          await this.loadWeek(startWeek);
           this.setupEventListeners();
           this.render();
         } catch (e) {
@@ -1156,21 +1291,46 @@
       }
 
       async loadWeek(weekDate) {
-        if (this.weeks[weekDate]) {
-          this.currentWeek = this.weeks[weekDate];
-          return;
+        if (!this.weeks[weekDate]) {
+          try {
+            this.showLoading(true);
+            const response = await fetch(`./weeks/${weekDate}.json`);
+            if (!response.ok) throw new Error('Week not found');
+            this.weeks[weekDate] = await response.json();
+          } finally {
+            this.showLoading(false);
+          }
         }
+        this.currentWeek = this.weeks[weekDate];
+        this.currentWeekDate = weekDate;
 
-        try {
-          this.showLoading(true);
-          const response = await fetch(`./weeks/${weekDate}.json`);
-          if (!response.ok) throw new Error('Week not found');
-          const data = await response.json();
-          this.weeks[weekDate] = data;
-          this.currentWeek = data;
-        } finally {
-          this.showLoading(false);
+        // Eagerly load previous week for deltas
+        const idx = this.weekIndex.indexOf(weekDate);
+        const prevDate = idx >= 0 && idx < this.weekIndex.length - 1
+          ? this.weekIndex[idx + 1] : null;
+        if (prevDate && !this.weeks[prevDate]) {
+          try {
+            const r = await fetch(`./weeks/${prevDate}.json`);
+            if (r.ok) this.weeks[prevDate] = await r.json();
+          } catch(e) {}
         }
+        this.prevWeek = prevDate ? (this.weeks[prevDate] || null) : null;
+      }
+
+      async switchWeek(weekDate) {
+        await this.loadWeek(weekDate);
+        const url = new URL(window.location.href);
+        url.searchParams.set('week', weekDate);
+        history.pushState({ week: weekDate }, '', url);
+        this.renderWeekTabs();
+        this.render();
+      }
+
+      async navigateWeek(delta) {
+        const idx = this.weekIndex.indexOf(this.currentWeekDate);
+        const newIdx = idx + delta;
+        if (newIdx < 0 || newIdx >= this.weekIndex.length) return;
+        await this.switchWeek(this.weekIndex[newIdx]);
       }
 
       showLoading(show) {
@@ -1183,25 +1343,55 @@
           btn.addEventListener('click', (e) => this.switchSection(e.target.dataset.section));
         });
 
-        // Week tabs
+        // Prev/next week buttons
+        document.getElementById('prevWeekBtn')?.addEventListener('click', () => this.navigateWeek(1));
+        document.getElementById('nextWeekBtn')?.addEventListener('click', () => this.navigateWeek(-1));
+
+        // Jump-to dropdown
+        document.getElementById('weekJumpSelect')?.addEventListener('change', (e) => this.switchWeek(e.target.value));
+
+        // Browser back/forward
+        window.addEventListener('popstate', async (e) => {
+          const week = e.state?.week || this.weekIndex[0];
+          await this.loadWeek(week);
+          this.renderWeekTabs();
+          this.render();
+        });
+
+        // Week pills
         this.renderWeekTabs();
       }
 
       renderWeekTabs() {
+        // Week pills
         const container = document.getElementById('weeklyTabs');
-        container.innerHTML = this.weekIndex.map(week => {
-          const date = new Date(week);
-          const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-          return `<button class="week-pill ${week === this.currentWeek?.weekOf ? 'active' : ''}" data-week="${week}">${label}</button>`;
-        }).join('');
-
-        container.querySelectorAll('.week-pill').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
-            await this.loadWeek(e.target.dataset.week);
-            this.renderWeekTabs();
-            this.render();
+        if (container) {
+          container.innerHTML = this.weekIndex.map(week => {
+            const date = new Date(week + 'T00:00:00');
+            const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            return `<button class="week-pill ${week === this.currentWeekDate ? 'active' : ''}" data-week="${week}">${label}</button>`;
+          }).join('');
+          container.querySelectorAll('.week-pill').forEach(btn => {
+            btn.addEventListener('click', (e) => this.switchWeek(e.target.dataset.week));
           });
-        });
+        }
+
+        // Jump-to dropdown
+        const select = document.getElementById('weekJumpSelect');
+        if (select) {
+          select.innerHTML = this.weekIndex.map(week => {
+            const date = new Date(week + 'T00:00:00');
+            const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            return `<option value="${week}" ${week === this.currentWeekDate ? 'selected' : ''}>Week of ${label}</option>`;
+          }).join('');
+        }
+
+        // Prev/next buttons — weekIndex is newest-first, so prev = higher index (older)
+        const idx = this.weekIndex.indexOf(this.currentWeekDate);
+        const prevBtn = document.getElementById('prevWeekBtn');
+        const nextBtn = document.getElementById('nextWeekBtn');
+        if (prevBtn) prevBtn.disabled = idx >= this.weekIndex.length - 1;
+        if (nextBtn) nextBtn.disabled = idx <= 0;
       }
 
       switchSection(section) {
@@ -1215,8 +1405,9 @@
       render() {
         if (!this.currentWeek) return;
 
-        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;
+        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel || '';
 
+        this.renderSourceHealthBadges(this.currentWeek);
         this.renderOverview();
         this.renderLifeAdmin();
         this.renderNourish();
@@ -1224,18 +1415,105 @@
         this.renderSkills();
       }
 
+      renderSourceHealthBadges(data) {
+        const el = document.getElementById('sourceHealthBadges');
+        if (!el) return;
+        const ov = data.overview || {};
+        const stats = ov.stats || {};
+
+        // Detect presence + build tooltip text for each source
+        const granolaData = ov.granola || null;
+        const airtableData = ov.airtable || null;
+        const omiPresent = ov.omi || (stats.omiWords != null && stats.omiWords > 0);
+        const notionData = ov.notion || null;
+
+        const sources = [
+          {
+            name: 'Granola', emoji: '🎙️',
+            ok: !!(granolaData),
+            tip: granolaData
+              ? `${granolaData.meetingsReviewed ?? 0} meetings · ${granolaData.keyDecisions ?? 0} decisions`
+              : 'No Granola data this week'
+          },
+          {
+            name: 'Airtable', emoji: '📋',
+            ok: !!(airtableData),
+            tip: airtableData
+              ? `${airtableData.totalTasks ?? 0} tasks · ${airtableData.overdue ?? 0} overdue`
+              : 'No Airtable data this week'
+          },
+          {
+            name: 'OMI', emoji: '🧠',
+            ok: !!(omiPresent),
+            tip: ov.omi
+              ? `${ov.omi.conversations ?? 0} convs · ${ov.omi.memories ?? 0} memories`
+              : stats.omiWords
+              ? `${stats.omiConversations ?? 0} convs · ${(stats.omiWords ?? 0).toLocaleString()} words`
+              : 'No OMI data this week'
+          },
+          {
+            name: 'Notion', emoji: '📝',
+            ok: !!(notionData),
+            tip: notionData
+              ? `${notionData.gaps?.length ?? 0} relationship gaps`
+              : 'No Notion data this week'
+          },
+          {
+            name: 'Slack', emoji: '💬',
+            ok: false,
+            tip: 'Slack not connected'
+          },
+        ];
+
+        el.innerHTML = sources.map(s => {
+          const cls = s.ok ? 'green' : 'red';
+          const sym = s.ok ? '✓' : '✗';
+          return `<span class="health-badge ${cls}">${s.emoji} ${s.name} ${sym}<span class="badge-tooltip">${s.tip}</span></span>`;
+        }).join('');
+      }
+
       renderOverview() {
         const data = this.currentWeek.overview;
+        const stats = data.stats || {};
+        const prevStats = this.prevWeek?.overview?.stats || {};
+        const prevLA = this.prevWeek?.lifeAdmin;
+        const prevNourish = this.prevWeek?.nourish;
+        const la = this.currentWeek.lifeAdmin;
+        const nourish = this.currentWeek.nourish;
 
-        // Stats
-        const statsHTML = `
-          <div class="stat"><div class="stat-value">${data.stats.meetings}</div><div class="stat-label">Meetings</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.decisions}</div><div class="stat-label">Decisions</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.unactionedCommitments}</div><div class="stat-label">Unactioned</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.cgmTasksDue}</div><div class="stat-label">CGM Due</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.priorityHours}h</div><div class="stat-label">Priority Hours</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.airtableOverduePercent}%</div><div class="stat-label">Overdue</div></div>
-        `;
+        // Delta helper: invert=true means lower is better (green)
+        const delta = (cur, prev, invert = false) => {
+          if (cur == null || prev == null) return '';
+          const diff = Number(cur) - Number(prev);
+          if (diff === 0) return '<span class="delta flat">=</span>';
+          const good = invert ? diff < 0 : diff > 0;
+          return `<span class="delta ${good ? 'up' : 'down'}">${diff > 0 ? '↑' : '↓'}${Math.abs(diff)}</span>`;
+        };
+
+        // Adaptive metrics — render whichever fields exist in current week
+        const metricDefs = [
+          { val: stats.meetings,               prev: prevStats.meetings,               label: 'Meetings',       suffix: '',  invert: false },
+          { val: stats.decisions,              prev: prevStats.decisions,              label: 'Decisions',      suffix: '',  invert: false },
+          { val: stats.unactionedCommitments,  prev: prevStats.unactionedCommitments,  label: 'Unactioned',     suffix: '',  invert: true  },
+          { val: stats.cgmTasksDue,            prev: prevStats.cgmTasksDue,            label: 'CGM Due',        suffix: '',  invert: true  },
+          { val: stats.priorityHours,          prev: prevStats.priorityHours,          label: 'Priority Hrs',   suffix: 'h', invert: false },
+          { val: stats.airtableOverduePercent, prev: prevStats.airtableOverduePercent, label: 'Overdue %',      suffix: '%', invert: true  },
+          { val: stats.omiWords,               prev: prevStats.omiWords,               label: 'OMI Words',      suffix: '',  invert: false },
+          { val: stats.omiConversations,       prev: prevStats.omiConversations,       label: 'OMI Convs',      suffix: '',  invert: false },
+          { val: stats.omiMemories,            prev: prevStats.omiMemories,            label: 'OMI Memories',   suffix: '',  invert: false },
+          { val: stats.wikiPages,              prev: prevStats.wikiPages,              label: 'Wiki Pages',     suffix: '',  invert: false },
+          { val: la?.totalTasks,               prev: prevLA?.totalTasks,               label: 'Tasks',          suffix: '',  invert: false },
+          { val: nourish?.grants?.length,      prev: prevNourish?.grants?.length,      label: 'Grants',         suffix: '',  invert: false },
+        ];
+
+        const statsHTML = metricDefs
+          .filter(m => m.val != null)
+          .map(m => `
+            <div class="stat">
+              <div class="stat-value">${m.val}${m.suffix}${delta(m.val, m.prev, m.invert)}</div>
+              <div class="stat-label">${m.label}</div>
+            </div>
+          `).join('');
         document.getElementById('overviewStats').innerHTML = statsHTML;
 
         // Executive Summary
