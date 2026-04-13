@@ -1,90 +1,80 @@
 {
-  "updated_at": "2026-04-09T11:29:08.463Z",
-  "week_of": "2026-04-05",
+  "updated_at": "2026-04-13T07:19:52.875Z",
+  "week_of": "2026-04-13",
   "focus": [
-    "Granola meetings reveal a decisive strategic pivot toward TDA + FlavorDB for the AI nutrition platform — you have technical direction, a collaborator (Sean), and momentum",
-    "OMI confirms this is your highest-energy initiative, plus recurring intent to expand team hours and formalize delegation",
-    "The real priorities: lock TDA architecture, capture 3 unactioned verbal commitments, clear CGM batch due Friday"
+    "OMI captured a high-signal week — 149 conversations, 164 memories, 81,772 words of spoken context",
+    "This is the richest data week yet",
+    "Full analysis pending: Granola, Airtable, and Notion sources will be pulled in the next dashboard run"
   ],
   "tasks": [
     {
       "id": "task-001",
-      "title": "Bloodborne Virus Clearance",
+      "title": "Bloodborne Virus (BBV) Clearance — CARRY-OVER",
       "type": "verbal-commitment",
       "priority": "high",
       "status": "open",
-      "project": "OMI conversation",
+      "project": "OMI (Apr 5 carry-over)",
       "due": null,
-      "notes": "Complete bloodborne virus clearance documentation for clinical work — compliance requirement."
+      "notes": "Still pending from last week. Clinical compliance requirement — cannot start rotations without this. Check if it's been done, if not action immediately."
     },
     {
       "id": "task-002",
-      "title": "Team Hours Expansion",
+      "title": "Team Hours Expansion — Dalia + Jennifer",
       "type": "verbal-commitment",
       "priority": "high",
       "status": "open",
-      "project": "OMI (3+ conversations)",
+      "project": "OMI (multiple conversations, 2+ weeks)",
       "due": null,
-      "notes": "Recurring verbal commitment to increase Dalia's and Jennifer's hours — never actioned."
+      "notes": "Verbal commitment to increase Dalia and Jennifer's hours has appeared in OMI across multiple weeks now. Must convert to action this week."
     },
     {
       "id": "task-003",
-      "title": "Ethics Assessment Submission",
+      "title": "Jennifer Delegation SOP",
       "type": "verbal-commitment",
       "priority": "high",
       "status": "open",
-      "project": "OMI + Airtable",
+      "project": "OMI (4+ conversations across 2 weeks)",
       "due": null,
-      "notes": "IRB modification mentioned in conversation — has a corresponding Airtable task."
+      "notes": "Jennifer is meant to own more outreach and communication. No SOP or framework exists yet. Create it this week."
     },
     {
       "id": "task-004",
-      "title": "Jennifer Delegation SOP",
+      "title": "IRB Ethics Assessment / Protocol Review",
       "type": "verbal-commitment",
       "priority": "medium",
       "status": "open",
-      "project": "OMI (4+ conversations)",
+      "project": "OMI + Airtable (Apr 5 carry-over)",
       "due": null,
-      "notes": "You keep saying Jennifer should own more outreach — still no SOP or framework."
+      "notes": "IRB modification or ethics assessment pending. Confirm current status and submit if ready."
     },
     {
       "id": "task-005",
-      "title": "Hackathon Follow-Up",
+      "title": "Case Report — Draft or Advance",
       "type": "verbal-commitment",
       "priority": "medium",
       "status": "open",
-      "project": "OMI memory",
+      "project": "OMI + Granola (Apr 5 carry-over)",
       "due": null,
-      "notes": "Post-hackathon connections going cold. Action before they expire."
+      "notes": "Clinical case report draft in progress. Move it forward this week — even 30 minutes of writing creates momentum."
     },
     {
       "id": "task-006",
-      "title": "Case Report Draft",
-      "type": "verbal-commitment",
-      "priority": "medium",
-      "status": "open",
-      "project": "OMI + Granola",
-      "due": null,
-      "notes": "Clinical case report draft needed."
-    },
-    {
-      "id": "task-007",
-      "title": "Amazon Lab Supply Order",
+      "title": "Lab Supply Order — Pending",
       "type": "verbal-commitment",
       "priority": "low",
       "status": "open",
-      "project": "OMI memory",
+      "project": "OMI memory (Apr 5 carry-over)",
       "due": null,
-      "notes": "Pending lab supply order."
+      "notes": "Pending lab supply order — check if this is still needed or was completed."
     }
   ],
   "projects": [
     {
       "id": "proj-001",
       "name": "AI Nutrition Platform",
-      "stage": "paused",
+      "stage": "active",
       "desired_outputs": [
-        "System hygiene, not panic"
+        "OMI extracted — complete the picture with other sources"
       ]
     },
     {
@@ -92,7 +82,7 @@
       "name": "CGM Study",
       "stage": "active",
       "desired_outputs": [
-        "5 participant follow-ups, hard deadline Friday"
+        "Advance CGM Study"
       ]
     },
     {
@@ -100,89 +90,17 @@
       "name": "Nepal Grant",
       "stage": "active",
       "desired_outputs": [
-        "Decisions made but invisible"
+        "Advance Nepal Grant"
       ]
     },
     {
       "id": "proj-004",
       "name": "Team Expansion",
-      "stage": "paused",
+      "stage": "active",
       "desired_outputs": [
-        "Advance Team Expansion"
-      ]
-    },
-    {
-      "id": "proj-005",
-      "name": "Jennifer Delegation",
-      "stage": "paused",
-      "desired_outputs": [
-        "Advance Jennifer Delegation"
+        "Repeated 3+ times in OMI across weeks — must action"
       ]
     }
   ],
-  "ideas": [
-    {
-      "id": "idea-001",
-      "title": "The Cultural Plate",
-      "energy": "high",
-      "theme": "Startup",
-      "next_action": "Continue development"
-    },
-    {
-      "id": "idea-002",
-      "title": "The Competence Marketplace",
-      "energy": "high",
-      "theme": "Startup",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-003",
-      "title": "Flavor Roulette",
-      "energy": "medium",
-      "theme": "Game",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-004",
-      "title": "Glucose Poker",
-      "energy": "medium",
-      "theme": "Game",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-005",
-      "title": "The Competence Ratio",
-      "energy": "high",
-      "theme": "Essay",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-006",
-      "title": "The Grandmother Hypothesis",
-      "energy": "high",
-      "theme": "Essay",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-007",
-      "title": "The Decision Fossil Record",
-      "energy": "high",
-      "theme": "Tool",
-      "next_action": "Continue development"
-    },
-    {
-      "id": "idea-008",
-      "title": "The Nutrition Colonialism Map",
-      "energy": "high",
-      "theme": "Visual",
-      "next_action": "Draft initial concept"
-    },
-    {
-      "id": "idea-009",
-      "title": "The 20-Minute Thesis",
-      "energy": "high",
-      "theme": "Wild",
-      "next_action": "Draft initial concept"
-    }
-  ]
+  "ideas": []
 }
