@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>OPTIMUS Command Center</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -10,6 +10,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button, a, [role="button"], select, input {
+      touch-action: manipulation;
     }
 
     :root {
@@ -36,6 +41,8 @@
       font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 14px;
       line-height: 1.6;
+      min-height: 100dvh;
+      -webkit-text-size-adjust: 100%;
     }
 
     /* Header */
@@ -740,28 +747,295 @@
       color: var(--red);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .grid-2-fixed {
-        grid-template-columns: 1fr;
+    /* ============================================
+       RESPONSIVE — TABLET (max-width: 900px)
+       ============================================ */
+    @media (max-width: 900px) {
+      .container { padding: 0 16px; }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-2-fixed { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       RESPONSIVE — PHONE (max-width: 640px)
+       ============================================ */
+    @media (max-width: 640px) {
+      /* Font scale */
+      body { font-size: 15px; line-height: 1.6; }
+      .section-title { font-size: 15px; }
+      .subsection-title { font-size: 12px; }
+
+      /* Header */
+      .header { padding: 10px 14px; }
+      .header-top { margin-bottom: 8px; }
+      .logo { font-size: 20px; }
+      .week-label { display: none; }
+
+      /* Week nav touch targets */
+      .week-nav-btn { min-height: 44px; min-width: 44px; padding: 8px 10px; font-size: 15px; }
+      .week-jump-select { min-height: 44px; font-size: 13px; padding: 6px 10px; }
+      .week-pill { min-height: 36px; padding: 8px 14px; font-size: 13px; }
+
+      /* Hide desktop section tabs — bottom bar takes over */
+      #sectionTabs { display: none; }
+
+      /* Container — full bleed, bottom padding for tab bar */
+      .container {
+        padding: 0 12px;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+        max-width: 100%;
       }
 
-      .section-tab {
-        padding: 6px 12px;
-        font-size: 12px;
+      /* Grids → single column */
+      .grid-2, .grid-4, .grid-2-fixed { grid-template-columns: 1fr; gap: 12px; }
+
+      /* NOURISH projects — 2 col on phone */
+      .nourish-projects { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+      /* Stats — 2 col */
+      .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .stat { padding: 10px; }
+      .stat-value { font-size: 22px; }
+      .stat-label { font-size: 10px; }
+
+      /* Cards full-width */
+      .card { padding: 14px; }
+      .card:hover { transform: none; }
+      .task-card, .idea-card, .skill-card { padding: 14px; }
+
+      /* Tables scroll */
+      table { font-size: 12px; }
+      td, th { padding: 8px 6px; }
+
+      /* Copy button touch target */
+      .copy-button { min-height: 36px; padding: 6px 12px; font-size: 11px; }
+
+      /* Section-tab safety (if visible on some screens) */
+      .section-tab { min-height: 44px; padding: 10px 14px; }
+
+      /* Red flag full bleed feel */
+      .red-flag { border-radius: 6px; padding: 14px; }
+
+      /* Source health row wrap tighter */
+      .source-health-row { gap: 6px; margin-bottom: 12px; }
+      .health-badge { font-size: 10px; padding: 6px 10px; min-height: 32px; }
+
+      /* Section content tab switch animation */
+      .section-content.active { animation: fadeIn 0.15s ease; }
+
+      /* Hero cards */
+      .card.hero { padding: 16px; margin-bottom: 16px; }
+      .card.hero > div:first-child { font-size: 22px !important; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       MOBILE TEST MODE (?mobile=test)
+       Forces mobile styles regardless of viewport
+       ============================================ */
+    html.mobile-test-mode .mobile-tab-bar { display: flex !important; }
+    html.mobile-test-mode .fab            { display: flex !important; }
+    html.mobile-test-mode #sectionTabs    { display: none !important; }
+    html.mobile-test-mode .container {
+      padding: 0 12px !important;
+      padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    html.mobile-test-mode .grid-2,
+    html.mobile-test-mode .grid-4,
+    html.mobile-test-mode .grid-2-fixed   { grid-template-columns: 1fr !important; }
+    html.mobile-test-mode .nourish-projects { grid-template-columns: repeat(2,1fr) !important; }
+    html.mobile-test-mode .stats-strip    { grid-template-columns: repeat(2,1fr) !important; }
+    html.mobile-test-mode .week-label     { display: none !important; }
+
+    /* ============================================
+       BOTTOM TAB BAR
+       ============================================ */
+    .mobile-tab-bar {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .mobile-tab-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background: var(--bg-card);
+        border-top: 1px solid var(--border);
+        z-index: 1000;
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    }
+
+    .mobile-tab-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-family: inherit;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: color 0.15s;
+      touch-action: manipulation;
+      min-height: 56px;
+      padding: 0 4px;
+    }
+
+    .mobile-tab-item.active {
+      color: var(--cyan-alt);
+    }
+
+    .mobile-tab-item.active .mobile-tab-icon {
+      transform: scale(1.1);
+    }
+
+    .mobile-tab-icon {
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 0.15s;
+    }
+
+    /* ============================================
+       FLOATING ACTION BUTTON (FAB)
+       ============================================ */
+    .fab {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .fab {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+        right: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cyan-alt), var(--pink));
+        border: none;
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 999;
+        box-shadow: 0 4px 20px rgba(88, 166, 255, 0.4);
+        touch-action: manipulation;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
 
-      .stats-strip {
-        grid-template-columns: repeat(2, 1fr);
+      .fab:active { transform: scale(0.92); }
+      .fab.open { transform: rotate(45deg); }
+    }
+
+    .fab-sheet {
+      display: none;
+      position: fixed;
+      bottom: calc(134px + env(safe-area-inset-bottom, 0px));
+      right: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      z-index: 998;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      min-width: 220px;
+      animation: sheetIn 0.15s ease;
+    }
+
+    .fab-sheet.open { display: block; }
+
+    @keyframes sheetIn {
+      from { opacity: 0; transform: translateY(8px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .fab-action {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      touch-action: manipulation;
+      min-height: 52px;
+      transition: background 0.1s;
+    }
+
+    .fab-action:last-child { border-bottom: none; }
+    .fab-action:active { background: var(--bg-el); }
+
+    /* ============================================
+       COLLAPSIBLE MOBILE CARDS
+       ============================================ */
+    .mobile-collapsible {
+      cursor: pointer;
+    }
+
+    .mobile-expand-indicator {
+      display: none;
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .mobile-expand-indicator { display: block; }
+
+      .mobile-collapsible .mobile-hidden-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
       }
 
-      table {
-        font-size: 12px;
+      .mobile-collapsible.expanded .mobile-hidden-content {
+        max-height: 2000px;
       }
 
-      td, th {
-        padding: 8px;
+      .mobile-collapsible.expanded .mobile-expand-indicator {
+        display: none;
       }
+
+      .mobile-collapse-arrow {
+        display: inline-block;
+        color: var(--text-secondary);
+        font-size: 14px;
+        transition: transform 0.2s;
+        flex-shrink: 0;
+        margin-left: 8px;
+      }
+
+      .mobile-collapsible.expanded .mobile-collapse-arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media (min-width: 641px) {
+      .mobile-collapse-arrow { display: none; }
+      .mobile-collapsible .mobile-hidden-content { max-height: none !important; overflow: visible; }
     }
 
     /* Section Titles */
@@ -1251,6 +1525,39 @@
     </div>
   </div>
 
+  <!-- Mobile Bottom Tab Bar -->
+  <nav class="mobile-tab-bar" id="mobileTabBar" aria-label="Main navigation">
+    <button class="mobile-tab-item active" data-section="overview" aria-label="Strategy overview">
+      <span class="mobile-tab-icon">⚙️</span>
+      <span>Strategy</span>
+    </button>
+    <button class="mobile-tab-item" data-section="lifeAdmin" aria-label="Life admin tasks">
+      <span class="mobile-tab-icon">📋</span>
+      <span>Tasks</span>
+    </button>
+    <button class="mobile-tab-item" data-section="nourish" aria-label="NOURISH grants">
+      <span class="mobile-tab-icon">🌿</span>
+      <span>Grants</span>
+    </button>
+    <button class="mobile-tab-item" data-section="ideas" aria-label="Ideas">
+      <span class="mobile-tab-icon">🐝</span>
+      <span>Ideas</span>
+    </button>
+    <button class="mobile-tab-item" data-section="skills" aria-label="Skills pipeline">
+      <span class="mobile-tab-icon">🔍</span>
+      <span>Skills</span>
+    </button>
+  </nav>
+
+  <!-- Floating Action Button -->
+  <button class="fab" id="fabBtn" aria-label="Quick actions" aria-expanded="false">⚡</button>
+  <div class="fab-sheet" id="fabSheet" role="menu">
+    <button class="fab-action" id="fabBrief" role="menuitem">🌅 Run today's brief</button>
+    <button class="fab-action" id="fabFire" role="menuitem">🔥 What's on fire?</button>
+    <button class="fab-action" id="fabSearch" role="menuitem">🔍 Search weeks</button>
+    <button class="fab-action" id="fabSettings" role="menuitem">⚙️ Settings</button>
+  </div>
+
   <script>
     class Optimus {
       constructor() {
@@ -1264,13 +1571,19 @@
 
       async init() {
         try {
-          await this.loadWeekIndex();
+          // Mobile test mode: ?mobile=test forces mobile layout regardless of viewport
           const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('mobile') === 'test') {
+            document.documentElement.classList.add('mobile-test-mode');
+          }
+
+          await this.loadWeekIndex();
           const weekParam = urlParams.get('week');
           const startWeek = (weekParam && this.weekIndex.includes(weekParam))
             ? weekParam
             : this.weekIndex[0];
           await this.loadWeek(startWeek);
+          this.currentSection = 'overview';
           this.setupEventListeners();
           this.render();
         } catch (e) {
@@ -1338,9 +1651,14 @@
       }
 
       setupEventListeners() {
-        // Section tabs
+        // Section tabs (desktop)
         document.querySelectorAll('.section-tab').forEach(btn => {
-          btn.addEventListener('click', (e) => this.switchSection(e.target.dataset.section));
+          btn.addEventListener('click', (e) => this.switchSection(e.currentTarget.dataset.section));
+        });
+
+        // Mobile bottom tab bar
+        document.querySelectorAll('.mobile-tab-item').forEach(btn => {
+          btn.addEventListener('click', (e) => this.switchSection(e.currentTarget.dataset.section));
         });
 
         // Prev/next week buttons
@@ -1360,6 +1678,97 @@
 
         // Week pills
         this.renderWeekTabs();
+
+        // Swipe gesture — left/right to switch tabs
+        this.setupSwipe();
+
+        // FAB
+        this.setupFAB();
+      }
+
+      setupSwipe() {
+        const SECTIONS = ['overview', 'lifeAdmin', 'nourish', 'ideas', 'skills'];
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchStartTime = 0;
+
+        document.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+          const dx = e.changedTouches[0].clientX - touchStartX;
+          const dy = e.changedTouches[0].clientY - touchStartY;
+          const dt = Date.now() - touchStartTime;
+
+          // Must be fast (<400ms), horizontal (>50px), not too vertical (<30px)
+          if (dt > 400 || Math.abs(dx) < 50 || Math.abs(dy) > 30) return;
+
+          const cur = this.currentSection || 'overview';
+          const idx = SECTIONS.indexOf(cur);
+          if (idx === -1) return;
+
+          if (dx < -50 && idx < SECTIONS.length - 1) {
+            // Swipe left → next tab
+            requestAnimationFrame(() => this.switchSection(SECTIONS[idx + 1]));
+          } else if (dx > 50 && idx > 0) {
+            // Swipe right → prev tab
+            requestAnimationFrame(() => this.switchSection(SECTIONS[idx - 1]));
+          }
+        }, { passive: true });
+      }
+
+      setupFAB() {
+        const fab = document.getElementById('fabBtn');
+        const sheet = document.getElementById('fabSheet');
+        if (!fab || !sheet) return;
+
+        const toggleSheet = () => {
+          const open = sheet.classList.toggle('open');
+          fab.classList.toggle('open', open);
+          fab.setAttribute('aria-expanded', open);
+        };
+
+        const closeSheet = () => {
+          sheet.classList.remove('open');
+          fab.classList.remove('open');
+          fab.setAttribute('aria-expanded', 'false');
+        };
+
+        fab.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleSheet();
+        });
+
+        // Close on outside tap
+        document.addEventListener('click', (e) => {
+          if (!sheet.contains(e.target) && e.target !== fab) closeSheet();
+        });
+
+        document.getElementById('fabBrief')?.addEventListener('click', () => {
+          closeSheet();
+          alert('Today\'s brief: coming soon — will dispatch a Claude scheduled task.');
+        });
+
+        document.getElementById('fabFire')?.addEventListener('click', () => {
+          closeSheet();
+          this.switchSection('overview');
+          setTimeout(() => {
+            document.querySelector('.red-flag')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        });
+
+        document.getElementById('fabSearch')?.addEventListener('click', () => {
+          closeSheet();
+          alert('Cross-week search: coming soon.');
+        });
+
+        document.getElementById('fabSettings')?.addEventListener('click', () => {
+          closeSheet();
+          alert('Settings: coming soon.');
+        });
       }
 
       renderWeekTabs() {
@@ -1397,9 +1806,13 @@
       switchSection(section) {
         document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('.section-tab').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.mobile-tab-item').forEach(el => el.classList.remove('active'));
 
-        document.getElementById(section).classList.add('active');
-        document.querySelector(`.section-tab[data-section="${section}"]`).classList.add('active');
+        document.getElementById(section)?.classList.add('active');
+        document.querySelector(`.section-tab[data-section="${section}"]`)?.classList.add('active');
+        document.querySelector(`.mobile-tab-item[data-section="${section}"]`)?.classList.add('active');
+
+        this.currentSection = section;
       }
 
       render() {
@@ -1612,32 +2025,35 @@
             <div class="priority-group">
               <div class="priority-title">${priority.toUpperCase()} PRIORITY</div>
               ${tasks.map(t => `
-                <div class="task-card ${priority}" onclick="this.querySelector('.claude-prompt')?.classList.toggle('expanded')">
+                <div class="task-card ${priority} mobile-collapsible" onclick="this.classList.toggle('expanded'); this.querySelector('.claude-prompt')?.classList.toggle('expanded')">
                   <div class="task-header">
                     <div class="task-title">
                       <span class="task-icon">${t.icon}</span>
-                      ${t.title}
+                      ${t.title}<span class="mobile-collapse-arrow">⌄</span>
                     </div>
                   </div>
                   <div class="task-meta">
                     <span class="task-badge">${t.time}</span>
                     <span class="task-badge">${t.source}</span>
                   </div>
-                  <div class="task-description">${t.description}</div>
-                  ${t.checklist ? `
-                    <div class="task-checklist">
-                      ${t.checklist.map(item => `<div class="checklist-item"><div class="checkbox"></div> ${item}</div>`).join('')}
-                    </div>
-                  ` : ''}
-                  ${t.claudePrompt ? `
-                    <div class="claude-prompt">
-                      <div class="prompt-header">
-                        <span>Claude Prompt</span>
-                        <button class="copy-button" onclick="event.stopPropagation(); const btn=this; navigator.clipboard.writeText(this.closest('.claude-prompt').querySelector('pre').textContent).then(()=>{btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000)})">Copy</button>
+                  <div class="mobile-expand-indicator">Tap to expand…</div>
+                  <div class="mobile-hidden-content">
+                    <div class="task-description">${t.description}</div>
+                    ${t.checklist ? `
+                      <div class="task-checklist">
+                        ${t.checklist.map(item => `<div class="checklist-item"><div class="checkbox"></div> ${item}</div>`).join('')}
                       </div>
-                      <pre style="margin: 0; white-space: pre-wrap; word-break: break-word;">${t.claudePrompt}</pre>
-                    </div>
-                  ` : ''}
+                    ` : ''}
+                    ${t.claudePrompt ? `
+                      <div class="claude-prompt">
+                        <div class="prompt-header">
+                          <span>Claude Prompt</span>
+                          <button class="copy-button" onclick="event.stopPropagation(); const btn=this; navigator.clipboard.writeText(this.closest('.claude-prompt').querySelector('pre').textContent).then(()=>{btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000)})">Copy</button>
+                        </div>
+                        <pre style="margin: 0; white-space: pre-wrap; word-break: break-word;">${t.claudePrompt}</pre>
+                      </div>
+                    ` : ''}
+                  </div>
                 </div>
               `).join('')}
             </div>
@@ -1784,17 +2200,20 @@
               </div>
             ` : '';
             return `
-              <div class="card">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">${g.name}</div>
-                    <div style="color:var(--text-secondary)">${g.funder} | $${g.amount}</div>
+              <div class="card mobile-collapsible" onclick="this.classList.toggle('expanded')">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+                  <div style="flex:1;min-width:0">
+                    <div style="font-weight:700">${g.name}<span class="mobile-collapse-arrow">⌄</span></div>
+                    <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">${g.funder} · $${g.amount}</div>
+                    <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">📅 ${g.deadline}</div>
                   </div>
-                  <div style="background:#2D6A4F;color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;white-space:nowrap">${g.score}/100</div>
+                  <div style="background:#2D6A4F;color:#fff;padding:4px 10px;border-radius:6px;font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0">${g.score}/100</div>
                 </div>
-                <div style="margin-top:8px;color:var(--text-secondary)">Deadline: ${g.deadline}</div>
-                <div style="margin-top:4px">${g.match}</div>
-                ${pillsHTML}
+                <div class="mobile-expand-indicator">Tap to see details…</div>
+                <div class="mobile-hidden-content">
+                  <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">${g.match}</div>
+                  ${pillsHTML}
+                </div>
               </div>
             `;
           }).join('');
