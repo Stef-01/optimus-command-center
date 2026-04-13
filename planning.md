@@ -1,5 +1,30 @@
 # Optimus Command Center — Integrated Architecture & Roadmap
 
+## Architecture Status (Updated Apr 13)
+
+**Consolidated from 7 tasks to 3.** The existing Optimus skill (413 lines) is the SINGLE orchestrator.
+
+Active scheduled tasks:
+- 7am: QMD refresh
+- 8am: Daily morning brief
+- Sunday 8pm: Weekly Optimus Run (Phases 0-8)
+
+Disabled tasks (functionality absorbed into Weekly Optimus Run):
+- brain-daily-log, brain-granola-ingest, brain-weekly-synthesis, daily-feature-ideas, recipe-research-populate
+
+Weekly Optimus Run phases:
+- Phase 0: QMD context retrieval from prior weeks
+- Phase 1: Data collection (Granola + Airtable + Notion + Omi)
+- Phase 2: Post-process to Stefan-Brain + Airtable SOP routing
+- Phase 3: Write weekly JSON to Command Center
+- Phase 4: QMD refresh
+- Phase 5: Brain LINT
+- Phase 6: Slack integration
+- Phase 7: Skill routing (map tasks → 80+ available skills)
+- Phase 8: Skill discovery (find automation candidates)
+
+---
+
 ## Architecture Overview
 
 Optimus is a 5-layer system, not a simple dashboard:
