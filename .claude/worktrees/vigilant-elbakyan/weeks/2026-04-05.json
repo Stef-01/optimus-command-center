@@ -1,0 +1,277 @@
+{
+  "weekOf": "2026-04-05",
+  "weekLabel": "Week of Apr 5",
+  "generatedAt": "2026-04-08T09:00:00Z",
+
+  "overview": {
+    "stats": {
+      "meetings": 5,
+      "decisions": 3,
+      "unactionedCommitments": 3,
+      "cgmTasksDue": 5,
+      "priorityHours": 5.25,
+      "airtableOverduePercent": 94
+    },
+    "executiveSummary": "Granola meetings reveal a <strong>decisive strategic pivot toward TDA + FlavorDB</strong> for the AI nutrition platform — you have technical direction, a collaborator (Sean), and momentum. OMI confirms this is your highest-energy initiative, plus recurring intent to expand team hours and formalize delegation. <strong>The real priorities: lock TDA architecture, capture 3 unactioned verbal commitments, clear CGM batch due Friday.</strong> Airtable shows 94% overdue but most are advisory artifacts — triage is system hygiene, not panic.",
+    "crossSourceAlignment": [
+      { "initiative": "AI Nutrition Platform", "granola": true, "omi": true, "notion": false, "airtable": false, "status": "critical", "statusLabel": "2/4 — invisible" },
+      { "initiative": "CGM Study", "granola": true, "omi": true, "notion": false, "airtable": true, "status": "good", "statusLabel": "3/4" },
+      { "initiative": "Nepal Grant", "granola": true, "omi": true, "notion": true, "airtable": true, "status": "good", "statusLabel": "4/4" },
+      { "initiative": "Team Expansion", "granola": false, "omi": true, "notion": false, "airtable": false, "status": "critical", "statusLabel": "1/4" },
+      { "initiative": "Jennifer Delegation", "granola": false, "omi": true, "notion": false, "airtable": false, "status": "critical", "statusLabel": "1/4" }
+    ],
+    "redFlag": "Your most important initiative (AI Nutrition Platform) exists only in conversations. One 15-min session to create an Airtable epic + Notion decision record would fix this entirely.",
+    "priorities": [
+      { "title": "Lock TDA Architecture with Sean", "time": "2 hrs", "sources": "🎙️+🧠", "detail": "Bradley meeting set direction, OMI strongest signal", "done": false },
+      { "title": "Capture 3 OMI Verbal Commitments", "time": "15 min", "sources": "🧠", "detail": "Repeated across 4+ conversations, zero tasks exist", "done": false },
+      { "title": "CGM Apr 4 Batch", "time": "2 hrs", "sources": "🎙️+📋", "detail": "5 participant follow-ups, hard deadline Friday", "done": false },
+      { "title": "Document TDA + Nepal in Notion", "time": "30 min", "sources": "🎙️", "detail": "Decisions made but invisible", "done": false },
+      { "title": "Airtable Triage Blitz", "time": "30 min", "sources": "📋", "detail": "System hygiene, not panic", "done": false }
+    ],
+    "quickWins": [
+      { "text": "Send FlavorDB screenshot via WhatsApp", "time": "2 min", "detail": "sitting in your head" },
+      { "text": "Create \"AI Nutrition Platform\" epic in Airtable", "time": "3 min", "detail": "makes your top initiative visible" },
+      { "text": "Star/pin Nepal strategy doc in Notion", "time": "1 min", "detail": "easy findability" }
+    ],
+    "granola": {
+      "meetingsReviewed": 5,
+      "dateRange": "Mar 30 – Apr 3, 2026",
+      "keyDecisions": 3,
+      "actionItems": 8,
+      "commitmentsPending": 4,
+      "decisions": [
+        "Core Vision Finalized: AI-powered diabetes-friendly meals tailored to cultural backgrounds. Mediterranean diet gap = core insight.",
+        "TDA Chosen: Topological Data Analysis over LLM prompting for scalability. Sean collaboration confirmed.",
+        "Three-tier validation: Community members, chefs, clinicians each providing different perspectives."
+      ],
+      "commitments": [
+        { "text": "Share ideas document with collaborator", "deadline": "This week", "done": false },
+        { "text": "Send FlavorDB screenshot via WhatsApp", "deadline": "This week", "done": false },
+        { "text": "Connect collaborator with Sean", "deadline": "This week", "done": false },
+        { "text": "Finalize single-cuisine scope", "deadline": "By Friday", "done": false }
+      ]
+    },
+    "omi": {
+      "conversations": 10,
+      "memories": 15,
+      "unactionedCommitments": [
+        { "text": "Increase Dalia's and Jennifer's hours", "mentions": "3+", "detail": "No task, no email, no budget check" },
+        { "text": "Share project/paper for feedback", "mentions": "2", "detail": "No follow-up" },
+        { "text": "Formalize Jennifer delegation", "mentions": "4+", "detail": "No SOP, no handoff" }
+      ],
+      "themes": [
+        { "title": "AI Nutrition Vision", "detail": "Strongest signal. Clear platform vision around TDA + cultural food data." },
+        { "title": "Resource Planning", "detail": "You keep saying you want to increase team hours. Intent-action gap growing." },
+        { "title": "Delegation Architecture", "detail": "Want Jennifer to handle more, but no framework for her to step up." },
+        { "title": "Cost Consciousness", "detail": "CGM costs actively tracked." }
+      ]
+    },
+    "notion": {
+      "gaps": [
+        { "initiative": "AI Nutrition Platform", "evidence": true, "documented": false, "risk": "high" },
+        { "initiative": "Nepal Grant", "evidence": true, "documented": true, "risk": "low" },
+        { "initiative": "CGM Protocol", "evidence": true, "documented": "partial", "risk": "medium" },
+        { "initiative": "Team Expansion", "evidence": "omi-only", "documented": false, "risk": "medium" }
+      ]
+    },
+    "airtable": {
+      "totalTasks": 100,
+      "overdue": 94,
+      "highPriority": 41,
+      "workStreams": [
+        { "name": "WS3: Research", "active": 32, "overdue": 28, "health": "critical" },
+        { "name": "WS1: Partnerships", "active": 18, "overdue": 16, "health": "critical" },
+        { "name": "WS5: Program Mgmt", "active": 14, "overdue": 12, "health": "at-risk" },
+        { "name": "CGM Study", "active": 8, "overdue": 5, "health": "at-risk" },
+        { "name": "WS2: Education", "active": 7, "overdue": 5, "health": "at-risk" },
+        { "name": "WS4: Website", "active": 5, "overdue": 3, "health": "ok" }
+      ]
+    }
+  },
+
+  "lifeAdmin": {
+    "totalTasks": 7,
+    "totalHours": 3.5,
+    "highCount": 3,
+    "mediumCount": 3,
+    "lowCount": 1,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Bloodborne Virus Clearance",
+        "priority": "high",
+        "icon": "🏥",
+        "source": "OMI conversation",
+        "time": "20 min",
+        "description": "Complete bloodborne virus clearance documentation for clinical work — compliance requirement.",
+        "checklist": ["Check Stanford occupational health portal", "Schedule blood draw if needed", "Upload completed documentation"],
+        "claudePrompt": "I need to complete my bloodborne virus clearance for Stanford Medicine clinical rotations. Can you help me:\n1. Draft an email to Stanford Occupational Health asking what documentation I need and if my existing records suffice\n2. Create a checklist of typical bloodborne pathogen clearance requirements (Hep B titer, TB test, etc.)\n3. Draft a follow-up reminder for 1 week from now if I haven't heard back"
+      },
+      {
+        "id": 2,
+        "title": "Team Hours Expansion",
+        "priority": "high",
+        "icon": "👥",
+        "source": "OMI (3+ conversations)",
+        "time": "30 min",
+        "description": "Recurring verbal commitment to increase Dalia's and Jennifer's hours — never actioned.",
+        "checklist": ["Check budget allocation", "Message Dalia and Jennifer with proposed hours", "Update HR/payroll if applicable"],
+        "claudePrompt": "I manage a research team at Stanford (NOURISH lab). I want to increase hours for two team members:\n- Dalia: currently part-time, want to increase by ~5 hrs/week\n- Jennifer: currently part-time, want to increase by ~5 hrs/week\nCan you:\n1. Draft a message to each person proposing the increase and asking their availability\n2. Draft a budget justification paragraph I can send to my PI\n3. Create a simple tracker for their updated weekly schedules"
+      },
+      {
+        "id": 3,
+        "title": "Ethics Assessment Submission",
+        "priority": "high",
+        "icon": "📝",
+        "source": "OMI + Airtable",
+        "time": "45 min",
+        "description": "IRB modification mentioned in conversation — has a corresponding Airtable task.",
+        "checklist": ["Review current IRB protocol", "Draft modification request", "Submit through Stanford IRB portal"],
+        "claudePrompt": "I need to submit an IRB modification for my research study at Stanford. The study involves a nutrition education intervention with CGM data collection. Can you help me:\n1. Create a checklist of typical IRB modification requirements\n2. Draft the \"Description of Changes\" section\n3. Review my modification for common rejection reasons and flag any issues"
+      },
+      {
+        "id": 4,
+        "title": "Jennifer Delegation SOP",
+        "priority": "medium",
+        "icon": "📋",
+        "source": "OMI (4+ conversations)",
+        "time": "30 min",
+        "description": "You keep saying Jennifer should own more outreach — still no SOP or framework.",
+        "checklist": ["Define which tasks Jennifer should own", "Create delegation SOP document", "Share and align on expectations"],
+        "claudePrompt": "I want to delegate more outreach and communication tasks to my team member Jennifer at the NOURISH research lab. Help me create:\n1. A delegation SOP document\n2. An email/message template for standard outreach\n3. A weekly check-in template (5-min async)\n4. A \"decision rights\" matrix"
+      },
+      {
+        "id": 5,
+        "title": "Hackathon Follow-Up",
+        "priority": "medium",
+        "icon": "🚀",
+        "source": "OMI memory",
+        "time": "15 min",
+        "description": "Post-hackathon connections going cold. Action before they expire.",
+        "checklist": ["Review hackathon contacts/notes", "Send follow-up messages", "Add to network tracker"],
+        "claudePrompt": "I recently participated in a hackathon and made several promising connections. Help me:\n1. Draft 3 personalized follow-up emails\n2. Create a simple CRM-style tracker\n3. Suggest 2-3 concrete collaboration ideas"
+      },
+      {
+        "id": 6,
+        "title": "Case Report Draft",
+        "priority": "medium",
+        "icon": "📑",
+        "source": "OMI + Granola",
+        "time": "1-2 hrs",
+        "description": "Clinical case report draft needed.",
+        "checklist": ["Gather clinical data and literature", "Draft case presentation section", "Send to co-author for review"],
+        "claudePrompt": "I'm drafting a clinical case report for publication. Can you help me:\n1. Provide the standard CARE checklist structure\n2. Draft an outline following journal submission guidelines\n3. Write the Introduction section template\n4. Suggest 3-5 target journals"
+      },
+      {
+        "id": 7,
+        "title": "Amazon Lab Supply Order",
+        "priority": "low",
+        "icon": "📦",
+        "source": "OMI memory",
+        "time": "10 min",
+        "description": "Pending lab supply order.",
+        "checklist": ["Review pending supply list", "Place order through Stanford procurement or Amazon", "Track delivery"],
+        "claudePrompt": null
+      }
+    ]
+  },
+
+  "ideas": {
+    "pgQuoteTop": "Live in the future, then build what's missing.",
+    "pgQuoteBottom": "The best startup ideas are the ones that seem like bad ideas to most people.",
+    "ideas": [
+      {
+        "id": 1, "category": "🚀 Startup", "title": "The Cultural Plate", "subtitle": "AI Meal Designer That Respects Your Grandmother",
+        "impact": "Very High", "novelty": "9/10", "status": "in-progress",
+        "edge": "Stanford + clinical + cultural",
+        "seeds": ["OMI voice", "Granola × Bradley mtg", "FlavorDB research"],
+        "essay": "Every diabetes nutrition app recommends the Mediterranean diet. <strong>The problem: 85% of the world doesn't eat Mediterranean food.</strong> Your OMI conversations and Granola meetings reveal the real insight — flavor molecule networks (FlavorDB) can mathematically prove that culturally authentic substitutions are not just \"OK alternatives\" but are genuinely delicious pairings. Imagine an app where you say \"I'm Tamil, diabetic, vegetarian\" and it doesn't say \"eat quinoa\" — it says \"replace white rice with barnyard millet in your sambar, add fenugreek for blood sugar control, and here's how your grandmother would have approved.\" The moat isn't the AI — it's the <strong>community-contributed recipe graph</strong> where every culture's food wisdom becomes network data."
+      },
+      {
+        "id": 2, "category": "🚀 Startup", "title": "The Competence Marketplace", "subtitle": "Uber for Institutional Knowledge",
+        "impact": "Very High", "novelty": "8/10", "status": "not-started",
+        "edge": "Cross-domain perspective (medicine × tech)",
+        "seeds": ["OMI conversation", "team management frustrations", "delegation patterns"],
+        "essay": "Your OMI captured a striking observation: <strong>\"the worsening ratio of competent to incompetent people\"</strong> in organizations. What if competence itself is the scarce resource? Build a platform where the top 10% of performers in any domain can sell micro-consulting (15-minute blocks). A junior accountant at a startup gets 15 minutes with the best CFO at a Fortune 500 company. The pricing is dynamic. <strong>LinkedIn tells you who's competent. Nothing lets you rent that competence by the minute.</strong>"
+      },
+      {
+        "id": 3, "category": "🎮 Game", "title": "Flavor Roulette", "subtitle": "The Molecular Cooking Game",
+        "impact": "High", "novelty": "10/10", "status": "not-started",
+        "edge": "FlavorDB data + research platform",
+        "seeds": ["FlavorDB molecule data", "OMI network effects memory", "CGM study"],
+        "essay": "A mobile game where players are given 3 random ingredients and must compose a dish. <strong>The twist: scoring is based on real flavor molecule overlap from FlavorDB.</strong> Players unlock cultural cuisine packs and discover that apparently bizarre combinations actually share deep molecular harmony. Level 2: add a diabetes constraint. Think Wordle meets MasterChef meets biochemistry. <strong>This could be the engagement layer for your research platform.</strong>"
+      },
+      {
+        "id": 4, "category": "🎮 Game", "title": "Glucose Poker", "subtitle": "Bet Your Biology",
+        "impact": "High", "novelty": "9/10", "status": "not-started",
+        "edge": "CGM study data access",
+        "seeds": ["CGM study data", "Granola participant discussions", "gamification research"],
+        "essay": "A dinner party card game. Each player secretly wears a CGM. You eat the same meal, then bet on who spiked highest. Reveal the data. <strong>Identical meals produce wildly different responses</strong> — your friend's glucose might spike 3x yours from the same pasta. The educational payload is enormous but disguised as chaos."
+      },
+      {
+        "id": 5, "category": "📝 Essay", "title": "The Competence Ratio", "subtitle": "Why Healthcare Fails at Scale",
+        "impact": "Very High", "novelty": "9/10", "status": "not-started",
+        "edge": "NOURISH team dynamics + medical education",
+        "seeds": ["OMI voice note", "NOURISH team dynamics", "medical education observations"],
+        "essay": "Propose the \"Competence Ratio\" as a measurable metric: in any system, there's a threshold below which the system doesn't degrade linearly but <strong>collapses exponentially.</strong> A team of 10 with 8 competent people outperforms a team of 100 with 30 — not by 3x but by 30x. The solution to healthcare workforce shortages isn't \"hire more people\" but \"ruthlessly protect the competence ratio.\""
+      },
+      {
+        "id": 6, "category": "📝 Essay", "title": "The Grandmother Hypothesis", "subtitle": "Of Nutrition Science",
+        "impact": "Very High", "novelty": "10/10", "status": "not-started",
+        "edge": "You're literally building the tools to prove this",
+        "seeds": ["NOURISH cultural nutrition work", "FlavorDB", "Granola meetings on validation"],
+        "essay": "What if grandmother knowledge is actually a distributed clinical trial running across millions of households for centuries? Traditional food wisdom is an unstructured dataset of n=billions. Modern tools (NLP, FlavorDB, CGM) can finally extract the signal. <strong>When you run the numbers, grandmothers are right about 70-80% of their claims.</strong> The remaining 20% reveals cultural-specific metabolic adaptations we didn't know existed."
+      },
+      {
+        "id": 7, "category": "🛠️ Tool", "title": "The Decision Fossil Record", "subtitle": "Never Lose Context Again",
+        "impact": "Very High", "novelty": "8/10", "status": "in-progress",
+        "edge": "Already halfway there with Optimus",
+        "seeds": ["Optimus cross-source gaps", "OMI context decay", "Granola meeting patterns"],
+        "essay": "Build a tool that passively records <em>why</em> decisions were made (from meeting transcripts + voice notes) and creates a \"fossil record.\" Six months from now, when someone asks \"why did we choose TDA over LLM prompting?\", the tool surfaces the exact conversation. <strong>Organizations don't fail from bad decisions. They fail from forgetting why good decisions were made.</strong>"
+      },
+      {
+        "id": 8, "category": "🎨 Visual", "title": "The Nutrition Colonialism Map", "subtitle": "A world map visualization",
+        "impact": "Extremely High", "novelty": "10/10", "status": "not-started",
+        "edge": "FlavorDB coverage + NOURISH equity research",
+        "seeds": ["FlavorDB coverage analysis", "NOURISH equity research", "Optimus Notion gaps"],
+        "essay": "Each country colored by what percentage of its traditional cuisine appears in global nutrition databases. France, Italy, Japan: 80%+. India, Nigeria, Ethiopia, Peru: under 5%. Overlay with diabetes prevalence. <strong>The correlation is devastating and immediate.</strong> Animate as a time-lapse. Submit to The Lancet as a visual essay."
+      },
+      {
+        "id": 9, "category": "🎲 Wild", "title": "The 20-Minute Thesis", "subtitle": "What If Every PhD Took 20 Minutes?",
+        "impact": "Meta-level", "novelty": "10/10", "status": "not-started",
+        "edge": "OMI daily observations + PG philosophy",
+        "seeds": ["OMI daily observations", "PG \"do things that don't scale\"", "academic frustration patterns"],
+        "essay": "Constrain every research question to: \"Can I get a meaningful signal in 20 minutes of data collection?\" For 30 days, capture one micro-thesis per day from voice notes, spend exactly 20 minutes testing it, publish the results. <strong>The bottleneck in science isn't rigor — it's the absurd overhead between having an insight and testing it.</strong>"
+      }
+    ]
+  },
+
+  "skills": {
+    "nextScan": "Monday at 9:00 AM",
+    "dataSources": [
+      { "name": "Granola", "color": "pink", "desc": "Recurring meeting topics, repeated action items, process descriptions", "signal": "Frequency of discussion", "status": "live" },
+      { "name": "Airtable", "color": "blue", "desc": "Tasks with high \"Times Delayed\", recurring patterns, work stream bottlenecks", "signal": "Task repetition data", "status": "live" },
+      { "name": "OMI", "color": "green", "desc": "Voice notes: \"every week I...\", \"I always have to...\", delegation intent", "signal": "Verbal workflow signals", "status": "live" },
+      { "name": "Notion", "color": "yellow", "desc": "Process docs, SOPs, templates, repeated page structures", "signal": "Existing documentation", "status": "live" }
+    ],
+    "candidates": [
+      { "rank": 1, "name": "Meeting Action Item Extraction", "score": 87, "timeSaved": "75 min/week", "pattern": "After every meeting, 3-5 action items discussed but only ~40% make it into Airtable.", "frequency": "5x/week", "complexity": "medium", "action": "Build this week", "actionColor": "yellow", "sources": ["granola", "airtable"] },
+      { "rank": 2, "name": "OMI Commitment Capture", "score": 79, "timeSaved": "50 min/week", "pattern": "Verbal commitments in OMI conversations go unactioned 60%+ of the time.", "frequency": "Daily", "complexity": "low", "action": "Build next week", "actionColor": "yellow", "sources": ["omi", "airtable"] },
+      { "rank": 3, "name": "Weekly Status Report Generation", "score": 72, "timeSaved": "45 min/week", "pattern": "Stefan synthesizes weekly updates manually from multiple sources.", "frequency": "Weekly", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "airtable", "omi", "notion"] },
+      { "rank": 4, "name": "CGM Participant Follow-Up Templating", "score": 65, "timeSaved": "40 min/week", "pattern": "CGM participant communications follow the same structure every time.", "frequency": "3x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["airtable", "granola"] },
+      { "rank": 5, "name": "Notion Decision Record Writer", "score": 58, "timeSaved": "30 min/week", "pattern": "Key decisions happen in meetings but rarely get documented in Notion.", "frequency": "2x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "notion"] }
+    ],
+    "crossSourcePatterns": [
+      { "title": "Meeting → Task → Doc Pipeline", "desc": "Granola meetings generate action items → become Airtable tasks → need Notion docs. Currently manual at every step.", "flow": "Granola → manual entry → Airtable → manual write → Notion" },
+      { "title": "Voice → Task Capture", "desc": "OMI captures verbal commitments that aren't making it into Airtable.", "flow": "OMI voice → lost → should be → Airtable task" },
+      { "title": "Grant Cycle Loop", "desc": "IRB feedback from meetings triggers Notion doc updates, which generate new Airtable tasks.", "flow": "Granola meeting → IRB feedback → Notion update → Airtable task" }
+    ],
+    "pipeline": [
+      { "status": "evaluating", "name": "Meeting Action Item Extraction", "score": 87, "weekIdentified": "Apr 7", "action": "Build this week" },
+      { "status": "evaluating", "name": "OMI Commitment Capture", "score": 79, "weekIdentified": "Apr 7", "action": "Build next week" },
+      { "status": "backlog", "name": "Weekly Status Report", "score": 72, "weekIdentified": "Apr 7", "action": "Needs spec" },
+      { "status": "backlog", "name": "CGM Follow-Up Templates", "score": 65, "weekIdentified": "Apr 7", "action": "Needs spec" },
+      { "status": "backlog", "name": "Decision Record Writer", "score": 58, "weekIdentified": "Apr 7", "action": "Needs spec" }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "optimus-command-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OPTIMUS — AI Command Center. Weekly briefings from Granola, OMI, Notion, and Airtable.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "manifest": "node scripts/generate-manifest.js",
+    "delta": "node scripts/delta-parser.js",
+    "watch": "node scripts/watch.js",
+    "route": "node scripts/router.js",
+    "execute": "node scripts/executor.js",
+    "codex": "node scripts/codex-worker.js",
+    "pipeline": "node scripts/watch.js && node scripts/router.js && node scripts/executor.js"
+  }
+}

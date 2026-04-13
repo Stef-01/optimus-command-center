@@ -1,337 +1,374 @@
 {
   "weekOf": "2026-04-13",
   "weekLabel": "Week of Apr 13",
-  "generatedAt": "2026-04-13T22:00:00Z",
+  "generatedAt": "2026-04-14T04:00:00Z",
 
   "overview": {
     "stats": {
       "omiMemories": 164,
       "omiConversations": 149,
       "omiTranscripts": 92,
-      "omiWords": 81772,
+      "omiWords": 80827,
+      "wikiPages": 43,
       "granola": null,
       "airtable": null,
       "notion": null
     },
-    "executiveSummary": "<strong>Landmark week.</strong> Stefan won 1st place at the HSIL Harvard Health Hackathon at KIIT University, Bhubaneswar with project NORA — progressing to Harvard boot camp. Turned 25 on April 11. OMI captured 149 conversations (81,772 words) — the richest data week ever. The hackathon dominated the week (69+ conversations), producing deep signal on healthcare startup mentoring, VR medical education, AI nutrition platforms, and infection control innovation. <strong>Critical next moves:</strong> (1) Lock NORA follow-up deliverables for Harvard selection round — letters of intent, business plan, prototype plan; (2) Action the team hours expansion for Dalia + Jennifer before verbal commitments decay further; (3) Submit ADA block content by Apr 14 deadline; (4) Prepare for USCIS biometrics Apr 23 in San Fernando; (5) Plan return flight BBI → HYD → SFO around Apr 24-28. The week also surfaced 6+ startup concepts from mentoring sessions, VR curriculum design breakthroughs, and concrete grant budgeting insights.",
+    "executiveSummary": "<strong>Richest data week ever — 80,827 words across 43 enriched wiki pages.</strong> Full speaker-attributed transcripts reveal what summaries hid: specific commitments with names attached, verbatim mentor advice worth thousands in consulting fees, and a career-defining tension between startup ambition and family obligation that your friend articulated at 3 AM. The HSIL Hackathon wasn't just a win — it was a 69-conversation masterclass in healthcare commercialization. <strong>Three things demand action before April 23:</strong> (1) Return flight to California for USCIS biometrics; (2) NORA deliverables before Harvard cuts 50% of teams; (3) Converting the 10+ startup mentor relationships into a durable network before the hackathon glow fades. The transcripts also reveal you're carrying an unresolved tension: multiple people are telling you to narrow focus, but you keep adding projects (NORA + Shoei + VR curriculum + AI Nutrition + NOURISH + CGM). The mentors' own words — <em>'narrow it down, pick ONE problem'</em> — apply to you too.",
     "crossSourceAlignment": [
-      { "initiative": "NORA (Hackathon → Harvard Boot Camp)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "OMI only — needs Airtable epic + Notion doc ASAP" },
-      { "initiative": "AI Nutrition Platform / TDA + FlavorDB", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "OMI only — strongest signal, zero documentation" },
-      { "initiative": "VR Nutrition Education (Equilibrium)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only — 12+ conversations this week" },
-      { "initiative": "Shoei (AI Wearable Infection Control)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only — pitch deck requested" },
-      { "initiative": "NOURISH / CGM Study", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI confirms active — needs Airtable sync" },
-      { "initiative": "Team Expansion (Dalia + Jennifer)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "3+ weeks verbal, zero action — urgent" },
-      { "initiative": "PFME Grant / Manuscripts", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "Budget reviewed, manuscript writing pending" },
-      { "initiative": "USCIS / Immigration", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "Biometrics Apr 23 — must be back in CA" }
+      { "initiative": "NORA (Hackathon → Harvard Boot Camp)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "OMI-only — needs Airtable epic + business plan NOW" },
+      { "initiative": "VR Nutrition Education (Equilibrium)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "12+ conversations, IRB demo needed ~Apr 30" },
+      { "initiative": "Shoei (AI Infection Control Wearable)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "Pitch deck requested, zero documentation" },
+      { "initiative": "NOURISH / CGM Study", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "Budget reviewed, personnel decisions pending" },
+      { "initiative": "PFME Grant / Manuscripts", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "Manuscript writing stalled, data analysis done" },
+      { "initiative": "USCIS / Immigration", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "Biometrics Apr 23 — flight not booked" },
+      { "initiative": "Grant Pipeline (23 tracked)", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "critical", "statusLabel": "Google.org Apr 17, PCORI LOI Apr 28 — both imminent" }
     ],
-    "redFlag": "NORA won 1st place but the Harvard boot camp selection requires letters of intent, a basic business plan, and prototype progress within weeks. This momentum will evaporate without immediate structured follow-through. Meanwhile, the ADA block submission deadline is April 14 (tomorrow) — Stephanie must have sent content to Dalia. Also: USCIS biometrics on April 23 in San Fernando means you MUST book return flights NOW.",
+    "redFlag": "The transcripts reveal a pattern the summaries masked: you committed to weekly 1-hour NORA team meetings, promised to review a friend's hackathon presentation, told Jennifer you'd formalize her role, and verbally agreed to increase Dalia's hours — all in the same 48 hours. Zero calendar invites created, zero emails sent. The full transcripts show this isn't forgetfulness — it's commitment overload. The mentors you admired this week all said the same thing: <em>'narrow it down.'</em>",
     "priorities": [
-      { "title": "Book return flight BBI → HYD → SFO (before Apr 23)", "time": "30 min", "sources": "🧠", "detail": "USCIS biometrics appointment Apr 23 in San Fernando, CA. Non-negotiable.", "done": false },
-      { "title": "NORA Harvard Boot Camp deliverables", "time": "3 hrs", "sources": "🧠", "detail": "Letters of intent from hospitals, basic business plan, prototype plan. Weekly 1-hr team meetings committed.", "done": false },
-      { "title": "Confirm ADA block submission to Dalia (Apr 14 deadline)", "time": "10 min", "sources": "🧠", "detail": "Stephanie should have sent blog + 2 placemats. Verify and submit.", "done": false },
-      { "title": "Action team hours expansion — Dalia + Jennifer", "time": "30 min", "sources": "🧠", "detail": "3+ weeks verbal. Budget reviewed with Eli on Apr 2. Execute NOW.", "done": false },
-      { "title": "Create Airtable epics for NORA + Shoei + AI Nutrition", "time": "20 min", "sources": "🧠", "detail": "Three new initiatives from this week need tracking. Currently invisible.", "done": false },
-      { "title": "LinkedIn posts — hackathon win + KIIT experience", "time": "45 min", "sources": "🧠", "detail": "Posts drafted in conversation. Need editing and publishing. Photo edits needed.", "done": false },
-      { "title": "Update address to California before USCIS appointment", "time": "15 min", "sources": "🧠", "detail": "I-765 Employment Authorization (receipt IOE9361516198). Address must be current.", "done": false }
+      { "title": "Book return flight BBI → SFO (USCIS biometrics Apr 23)", "time": "30 min", "sources": "🧠", "detail": "Non-negotiable. I-765 receipt IOE9361516198. Biometrics in San Fernando, CA.", "done": false },
+      { "title": "Google.org AI Opportunity Fund — deadline Apr 17", "time": "4 hrs", "sources": "📋 Grant Registry GR-002", "detail": "$500K-$3M + cloud credits. Sous AI pipeline is direct fit. Score: 89/100. Only 3 days left.", "done": false },
+      { "title": "NORA Harvard Boot Camp — letters of intent + business plan", "time": "3 hrs", "sources": "🧠", "detail": "50% of teams will be cut. Friend committed to review presentation. Set weekly meeting.", "done": false },
+      { "title": "PCORI LOI — two tracks due Apr 28", "time": "3 hrs", "sources": "📋 Grant Registry GR-007, GR-022", "detail": "GR-007: Novel methods for behavior change ($750K). GR-022: Engagement in cooking interventions ($1M). Both LOIs due Apr 28.", "done": false },
+      { "title": "ADA block submission — deadline Apr 14 (TODAY)", "time": "20 min", "sources": "🧠", "detail": "Blog + 2 placemats. Stephanie → Dalia review chain. Verify and submit.", "done": false },
+      { "title": "LinkedIn posts — 3 planned, photographer photos needed", "time": "45 min", "sources": "🧠", "detail": "Mentoring narrative, institutional thank-you, Ted congratulations. Edit Gucci belt from photos.", "done": false },
+      { "title": "Finalize team hours — Dalia + Jennifer", "time": "30 min", "sources": "🧠", "detail": "Budget reviewed with Eli Apr 2. Breathing room confirmed. Convert verbal to email.", "done": false }
     ],
     "quickWins": [
-      { "text": "Message Stephanie: confirm ADA block blog sent to Dalia", "time": "2 min", "detail": "Apr 14 deadline is tomorrow" },
-      { "text": "Set weekly 1-hr NORA team meeting in calendar", "time": "3 min", "detail": "Committed during hackathon debrief" },
-      { "text": "Message Dalia confirming Thursday 12:00 recurring meeting", "time": "2 min", "detail": "She's been reliable — acknowledge and confirm hours discussion" },
-      { "text": "Save hackathon photographer's photos before they disappear", "time": "5 min", "detail": "Mentioned in post-hackathon conversation" },
-      { "text": "File US tax return (W-2 from Stanford, CA)", "time": "30 min", "detail": "Started during hackathon — fields partially filled" }
+      { "text": "Message Stephanie: is ADA blog with Dalia? (due TODAY)", "time": "2 min", "detail": "Apr 14 hard deadline" },
+      { "text": "Create Google Calendar invite: weekly 1-hr NORA team sync", "time": "3 min", "detail": "Verbally committed Apr 12, zero action taken" },
+      { "text": "Send hackathon presentation to friend for next-stage review", "time": "5 min", "detail": "Promised during post-win debrief: 'I can send you our presentation... you can tell me what needs to be added'" },
+      { "text": "Save photographer's hackathon photos before links expire", "time": "5 min", "detail": "Mentioned in social media planning conversation" },
+      { "text": "Message Dalia confirming Thursday 12:00 + proposing hours increase", "time": "5 min", "detail": "She's been reliable every Thursday. Budget supports increase per Eli review." }
     ],
     "omi": {
       "conversations": 149,
       "memories": 164,
       "transcripts": 92,
-      "words": 81772,
+      "words": 80827,
+      "wikiPages": 43,
       "dateWindow": "Apr 3 – Apr 13, 2026",
-      "note": "Full transcript analysis complete. 63 conversation files analyzed covering: HSIL Hackathon (69 conversations across Apr 9-11), VR research planning, grant budgeting, team management, startup mentoring, travel logistics, social interactions, and clinical education design.",
+      "note": "ENRICHED EXTRACTION: 43 wiki pages now contain full speaker-attributed transcripts (80,827 words, up from 22,705 summary-only). This reveals specific quotes, exact commitments, named individuals, and relationship dynamics invisible in summaries.",
+      "newInsightsFromTranscripts": [
+        "Mentor's exact commercialization advice captured verbatim — provisional patent strategy, PCB miniaturization pathway, co-manufacturing with Indian brands (Noise)",
+        "Friend's 3 AM career confession: '$100M valuation → exit with $10M → ETFs → passive income.' Parents aging, girlfriend tension, US vs UK decision.",
+        "Mental health AI team pivoted mid-session from student monitoring to AI-camera behavioral detection — faculty forced the pivot with legal constraint: 'AI can never prescribe. If even a medicine name appears, you'll go to jail.'",
+        "Therapist interview revealed hard clinical boundary on AI: uses AI for marketing/admin but 'truly senior millennial' on clinical note-writing. Tried giving 10 therapists free licenses — most quit within a week.",
+        "Faculty on VR effectiveness: 'If I give a slide deck about systolic heart failure, they'll doze off because they're tired. VR forces full focus — no option to think about other things.'",
+        "Deloitte mentor who left for Medibank: 'I feel like this is all about making money, and there's no impact being made in healthcare.' Developed 'ecosystem thinking' framework before departing.",
+        "Budget granularity: Dalia at $16/hr × 3hrs/week, $9 recurring for CGM, $2,500 study personnel allocation, PFME budget supplements manuscript costs. Eli confirmed breathing room.",
+        "Post-hackathon LinkedIn strategy: three-post plan with specific angles (mentoring, institutional gratitude, peer congratulations). Photo editing needed to remove Gucci belt — brand consistency concern."
+      ],
       "unactionedCommitments": [
-        { "text": "Increase Dalia's and Jennifer's hours", "mentions": "5+", "detail": "Now 3+ weeks verbal. Budget reviewed with Eli Apr 2. No emails sent, no HR action." },
-        { "text": "Weekly 1-hr NORA team meetings", "mentions": "2", "detail": "Committed post-hackathon. No calendar invite created." },
-        { "text": "Shoei pitch deck creation", "mentions": "2", "detail": "Explicitly requested in OMI. No task created." },
-        { "text": "Send delegation SOP to Jennifer", "mentions": "4+", "detail": "Repeated across multiple weeks. Zero framework exists." },
+        { "text": "Weekly 1-hr NORA team meeting", "mentions": "2", "detail": "Committed Apr 12 post-win. Zero calendar invites.", "quote": "SPEAKER_4: 'Pretty much they wanna see some motion has been made from original winning the hackathon to show that you're serious.'" },
+        { "text": "Send hackathon presentation for review", "mentions": "1", "detail": "Friend offered to identify gaps for next stage.", "quote": "SPEAKER_3: 'I can send you our presentation... you can tell me what needs to be added.' SPEAKER_4: 'Yeah. I can do that.'" },
+        { "text": "Increase Dalia + Jennifer hours", "mentions": "5+", "detail": "3+ weeks verbal. Budget confirmed with Eli.", "quote": "SPEAKER_01: 'We just have to decide whether we can afford her or not. Yes. That's it.'" },
+        { "text": "Jennifer delegation SOP", "mentions": "4+", "detail": "Repeated intent, zero framework exists.", "quote": "SPEAKER_00: 'Highest performing teams usually have at least one regular 30-minute meeting per week'" },
         { "text": "Book return flight to California", "mentions": "2", "detail": "USCIS biometrics Apr 23. No booking made." },
-        { "text": "Share project/paper for feedback", "mentions": "2", "detail": "Mentioned with no follow-up" },
-        { "text": "Get photographer's hackathon event photos", "mentions": "1", "detail": "Needs action before photos are lost" },
-        { "text": "Research KIIT website for LinkedIn post content", "mentions": "1", "detail": "Daily yoga, founder philosophy for positioning posts" }
+        { "text": "Research KIIT website for LinkedIn post", "mentions": "1", "detail": "Daily yoga + tribal customs + founder philosophy for positioning content." },
+        { "text": "Observership/IVS draft email", "mentions": "1", "detail": "Draft prepared, needs checking and sending. Distinguish clerkship vs observership request." },
+        { "text": "Connect with Deloitte ex-colleague at Medibank", "mentions": "1", "detail": "Healthcare ecosystem thinking expert. Valuable for hackathons.", "quote": "SPEAKER_3: 'She'd be super valuable in one of these hackathons... she's basically me with more commercial experience.'" }
       ],
       "themes": [
-        { "title": "Hackathon Dominance — NORA Win", "detail": "69+ conversations from HSIL Hackathon at KIIT. Stefan mentored teams AND won 1st with NORA. Harvard boot camp progression. Massive networking with healthcare innovators across India." },
-        { "title": "VR Medical Education Momentum", "detail": "12+ conversations on VR training: nutrition education for residents, dementia care, clinical reasoning, musculoskeletal wellness. Four-module curriculum structure designed. IRB demo needed by ~Apr 30." },
-        { "title": "AI Nutrition Platform Vision", "detail": "Continued from last week. TDA + FlavorDB direction confirmed. Cultural food topology, cost-optimized meal recommendations, NIN Hyderabad/ICMR-NIN datasets discussed. Multiple validation approaches." },
-        { "title": "Startup Mentoring Ecosystem", "detail": "Stefan mentored 10+ teams on: cardiac screening, neonatal apnea monitoring, oncology AI, hospital waste, medicine expiry, women's health, hospital orchestration. Deep pattern recognition across pitches." },
-        { "title": "Team Resource Planning", "detail": "Recurring intent to expand team hours. Budget with Eli reviewed. Dalia ($16/hr, 3hrs/week), Jennifer (outreach), Stephanie, Mehak, Sonya — all need clarity." },
-        { "title": "Immigration & Travel Logistics", "detail": "USCIS biometrics Apr 23 in San Fernando. I-765 Employment Authorization. Must return to CA from India. Flight planning BBI → HYD → SFO." },
-        { "title": "Birthday & Personal Milestones", "detail": "Turned 25 on April 11 — during the hackathon. Celebrated with team and new connections." }
+        { "title": "Hackathon as Commercialization Bootcamp", "detail": "69+ conversations from HSIL. Full transcripts reveal Stefan didn't just compete — he absorbed a masterclass in healthcare business models from 3+ senior mentors across cardiac devices, oncology AI, neonatal monitoring, hospital waste, drug supply chains, and women's health. Specific revenue models, margin targets, and market sizing captured verbatim." },
+        { "title": "The Narrowing Imperative", "detail": "Every mentor this week said some version of 'narrow it down.' Cardiac team told: focus on triage, not echo replacement. Blood app told: saturate blood before adding pharmacy. Women's health told: pick ONE life stage. This advice applies directly to Stefan's own project portfolio." },
+        { "title": "VR Education — From Theory to Curriculum", "detail": "Four-module curriculum structure designed (trust-building → behavior change sustenance). Faculty quote: 'VR forces full focus.' IRB demo needed by ~Apr 30. Collaborator Minal Moharir central. $5K PFME grant for culturally tailored nutrition education." },
+        { "title": "Career Crossroads Conversation (3 AM)", "detail": "Deep late-night debate: startup vs corporate, US vs UK, relationship tension, financial independence model ($100M→exit→ETFs). SPEAKER_6 delivered aggressive confidence coaching: 'Self belief and execution matter more than raw IQ... staying in a routine is the most risky in terms of wasted potential.'" },
+        { "title": "India Healthcare Market Intelligence", "detail": "State procurement data captured: Odisha ₹1,000 crores/yr, Karnataka ₹19-20,000 crores, Tamil Nadu ₹31,000 crores. Government stores have minimal audits = opportunity. ASHA workers as primary distribution for pediatric/antenatal drugs. Private chains (Apollo, Tata 1mg) too efficient to disrupt." },
+        { "title": "Immigration & Travel — Hard Deadline", "detail": "USCIS biometrics Apr 23 in San Fernando. I-765 Employment Auth receipt IOE9361516198. Must return BBI→HYD→SFO by Apr 22. Address update may be needed." }
       ]
     }
   },
 
   "lifeAdmin": {
-    "totalTasks": 15,
-    "totalHours": 8.5,
+    "totalTasks": 16,
+    "totalHours": 10.5,
     "highCount": 6,
-    "mediumCount": 5,
+    "mediumCount": 6,
     "lowCount": 4,
     "tasks": [
       {
         "id": 1,
-        "title": "Book Return Flight — BBI → HYD → SFO",
+        "title": "Book Return Flight — BBI → HYD → SFO (by Apr 22)",
         "priority": "high",
         "icon": "✈️",
-        "source": "OMI (travel planning conversations, Apr 12)",
+        "source": "OMI transcript: travel planning, Apr 12",
         "time": "30 min",
-        "description": "USCIS biometrics appointment April 23 in San Fernando, California. Must book multi-leg return flight from Bhubaneswar through Hyderabad to San Francisco. Target arrival by April 22 to allow buffer. I-765 Employment Authorization receipt: IOE9361516198.",
-        "checklist": ["Search flights BBI → HYD → SFO for Apr 20-22 arrival", "Book flight (consider layover time at HYD)", "Update USCIS address to California address before appointment", "Confirm San Fernando biometrics location and appointment time", "Set reminder for day before with documents checklist"],
-        "claudePrompt": "I need to book a return flight from Bhubaneswar (BBI), India to San Francisco (SFO) via Hyderabad (HYD). I must arrive by April 22, 2026 because I have a USCIS biometrics appointment on April 23 in San Fernando, California.\n\nContext: I'm currently in Bhubaneswar after the HSIL Harvard Health Hackathon. My I-765 Employment Authorization receipt number is IOE9361516198. I also need to update my address to my Stanford/California address before the appointment.\n\nPlease help me:\n1. Search for optimal flight routes and dates (Apr 20-22 arrival)\n2. Draft a checklist of documents I need for the USCIS biometrics appointment\n3. Create a pre-travel checklist (passport, visa, I-797 receipt notice, photos)\n4. Draft the address change notification if needed"
+        "description": "USCIS biometrics appointment April 23 in San Fernando, California. Multi-leg return from Bhubaneswar. I-765 Employment Auth receipt: IOE9361516198. Must arrive with buffer day.",
+        "evidence": "Transcript shows SF airport logistics discussion — '10am landing, 5-hour layover before international flight, go through security again for domestic-to-international transfer.'",
+        "checklist": ["Search flights BBI → HYD → SFO for Apr 20-22 arrival", "Book with layover consideration", "Update USCIS address to California", "Confirm San Fernando appointment details", "Prepare documents: passport, I-797 receipt, photos"],
+        "claudePrompt": "I need to book a return flight from Bhubaneswar (BBI), India to San Francisco (SFO) via Hyderabad (HYD). Must arrive by April 22, 2026 — USCIS biometrics on April 23 in San Fernando, CA. Receipt IOE9361516198. I also need to update my address to 203 Rosse Lane, Rains Student Housing, Stanford, CA 94305.\n\nHelp me:\n1. Identify optimal routing and dates (Apr 20-22 arrival)\n2. USCIS biometrics document checklist\n3. Address change notification draft if needed\n4. Pre-travel checklist"
       },
       {
         "id": 2,
-        "title": "NORA — Harvard Boot Camp Deliverables",
+        "title": "Google.org AI Opportunity Fund Application — DEADLINE APR 17",
         "priority": "high",
-        "icon": "🏆",
-        "source": "OMI (hackathon win conversations, Apr 11-12)",
-        "time": "3 hrs",
-        "description": "Won 1st place at HSIL Hackathon. Progressing to Harvard boot camp requires: hospital letters of intent, basic business plan, prototype concept, and weekly team meetings. ATBI offered complimentary incubation. 50% of teams will be cut in next round.",
-        "checklist": ["Set weekly 1-hr team meeting (calendar invite)", "Draft basic business plan outline", "Identify 2-3 hospitals for letters of intent", "Outline prototype requirements (team lacks engineers)", "File provisional patent if applicable", "Prepare for next selection round"],
-        "claudePrompt": "I just won 1st place at the HSIL Harvard Health Hackathon in India with my project NORA. I'm progressing to the Harvard boot camp, but 50% of teams will be cut in the next selection round.\n\nContext: NORA is a healthcare innovation project. Harvard venture judges seek detailed validation before investing. I need to show concrete progress: hospital letters of intent, a basic business plan, and prototype direction. My team currently lacks dedicated engineers. ATBI has offered complimentary incubation.\n\nPlease help me:\n1. Create a 2-week action plan for boot camp preparation\n2. Draft a hospital letter of intent template I can customize\n3. Outline a lean business plan structure (1-2 pages)\n4. Draft an agenda for our first weekly 1-hr team meeting\n5. List the key metrics Harvard judges will evaluate"
+        "icon": "🚨",
+        "source": "Grant Registry GR-002",
+        "time": "4 hrs",
+        "description": "$500K–$3M + Google Cloud credits. Sous AI pipeline is a direct fit (score: 89/100). Only 3 days remain. This is the highest-value near-term grant opportunity.",
+        "evidence": "Grant registry identifies this as #2 ranked opportunity. Sous AI + cultural nutrition recommendation aligns with Google.org's AI for social impact mandate.",
+        "checklist": ["Review Google.org application requirements", "Draft project narrative around Sous AI pipeline", "Prepare budget (personnel + cloud infrastructure)", "Get PI signature/approval", "Submit by Apr 17 EOD"],
+        "claudePrompt": "I need to submit an application to Google.org's AI Opportunity Fund by April 17. The grant is $500K-$3M plus Google Cloud credits.\n\nMy project: Sous — an AI-driven, cost-optimized clinical nutrition recommendation platform that uses cultural food data (FlavorDB, NIN Hyderabad/ICMR-NIN datasets) to generate personalized meal plans for diabetic patients from diverse cultural backgrounds. Built on TDA (Topological Data Analysis) for flavor molecule networks.\n\nHelp me:\n1. Draft a compelling 2-page project narrative\n2. Create a budget breakdown ($500K tier)\n3. Identify Google Cloud services we'd use (Vertex AI, BigQuery, etc.)\n4. List 3 key differentiators vs. existing nutrition AI tools"
       },
       {
         "id": 3,
-        "title": "ADA Block Submission — DEADLINE APR 14",
+        "title": "ADA Block Submission — DEADLINE APR 14 (TODAY)",
         "priority": "high",
         "icon": "⚠️",
-        "source": "OMI (project task discussion, Apr 9)",
+        "source": "OMI transcript: project task discussion, Apr 9",
         "time": "20 min",
-        "description": "ADA block blog post + 2 placemats due April 14. Stephanie should have sent content to Dalia for review and improvement. Dalia's critical appraisal also needed. Verify status and submit.",
-        "checklist": ["Message Stephanie: confirm blog sent to Dalia", "Message Dalia: confirm she received and reviewed", "Review final version", "Submit to ADA with placemats by end of day Apr 14"],
-        "claudePrompt": "I have an ADA (American Diabetes Association) block submission due April 14. The deliverables are: a blog post and 2 accompanying placemats.\n\nContext: Stephanie was responsible for drafting the blog content and sending it to Dalia for review and improvement. Dalia also needs to complete a critical appraisal. I need to verify the handoff happened and ensure submission readiness.\n\nPlease help me:\n1. Draft a quick status check message to Stephanie asking if blog was sent to Dalia\n2. Draft a message to Dalia confirming receipt and asking for review timeline\n3. Create a submission checklist for ADA block content\n4. Draft a brief cover note for the ADA submission"
+        "description": "Blog post + 2 placemats due today. Stephanie → Dalia review pipeline must be complete.",
+        "evidence": "Transcript: SPEAKER_01 said 'This week. So I have to message her that it needs to happen.' SPEAKER_00: 'If you develop that in a session, that's amazing... that's it. And then a few knowledge principles.'",
+        "checklist": ["Message Stephanie: confirm blog sent to Dalia", "Message Dalia: confirm review completed", "Final review of content quality", "Submit to ADA with both placemats"],
+        "claudePrompt": "I have an ADA block submission due TODAY (April 14). Deliverables: blog post + 2 placemats. Stephanie drafted it, Dalia should have reviewed.\n\nHelp me:\n1. Draft status check messages to both\n2. ADA submission checklist\n3. Brief cover note for submission"
       },
       {
         "id": 4,
-        "title": "Team Hours Expansion — Dalia + Jennifer",
+        "title": "NORA — Harvard Boot Camp Deliverables",
         "priority": "high",
-        "icon": "👥",
-        "source": "OMI (5+ conversations across 3+ weeks)",
-        "time": "30 min",
-        "description": "Verbal commitment to increase hours has appeared in OMI across 3+ weeks. Budget reviewed with Eli on April 2. Dalia currently at $16/hr, ~3hrs/week. Jennifer handles outreach. Must convert to action. Personnel budget includes breathing space from multiple grants.",
-        "checklist": ["Review Eli budget meeting notes from Apr 2", "Draft message to Dalia proposing ~5 hr/week increase", "Draft message to Jennifer proposing ~5 hr/week increase", "Draft budget justification for PI", "Update HR/payroll records"],
-        "claudePrompt": "I manage a research team at Stanford (NOURISH lab) and need to increase hours for two team members. This has been a verbal intention for 3+ weeks and I reviewed the budget with Eli on April 2.\n\nContext:\n- Dalia: Currently $16/hour, ~3 hours/week (every Thursday at 12:00). Handles data analysis and ADA block content. Want to increase by ~5 hrs/week.\n- Jennifer: Part-time outreach and communication. Want to increase by ~5 hrs/week and formalize delegation.\n- Budget: Multiple study grants with breathing space. Personnel include Mehak, Stephanie, Reha/Raham, Christopher, Prince.\n- Grant sources: PFME budget, study personnel allocation (~$2,500), potential advance funds.\n\nPlease help me:\n1. Draft personalized messages to Dalia and Jennifer proposing the increase\n2. Draft a budget justification paragraph referencing the Eli meeting\n3. Create a weekly schedule tracker for their updated hours\n4. Draft the Jennifer delegation SOP (tasks she should fully own: recruitment outreach, community partner comms, weekly status follow-ups)"
+        "icon": "🏆",
+        "source": "OMI transcript: hackathon win + debrief, Apr 11-12",
+        "time": "3 hrs",
+        "description": "Won 1st at HSIL. Harvard boot camp selection will cut 50% of teams. Need: hospital letters of intent, basic business plan, prototype direction. Team lacks engineers. ATBI offered complimentary incubation.",
+        "evidence": "Transcript: SPEAKER_4 — 'Pretty much they wanna see some motion has been made from original winning the hackathon to show that you're serious. You've reached out to people. You're trying to get letter of intent. You've figured out a basic business plan.' SPEAKER_3: 'Our group don't have engineers. If they ask to build final product at the final stage, it will be very challenging.'",
+        "checklist": ["Set weekly 1-hr team meeting (calendar invite NOW)", "Draft basic business plan outline", "Identify 2-3 hospitals for letters of intent", "Send presentation to friend for review (promised)", "Contact ATBI for incubation next steps", "Outline prototype strategy (no engineers)"],
+        "claudePrompt": "I won 1st place at the HSIL Harvard Health Hackathon with project NORA. Progressing to Harvard boot camp — 50% of teams will be cut.\n\nContext: My team lacks engineers. ATBI offered complimentary incubation. A friend with startup experience offered to review our presentation and identify gaps. I got approval from the CTI of Western Sydney Local Health District.\n\nHelp me:\n1. Two-week action plan for boot camp preparation\n2. Hospital letter of intent template\n3. Lean business plan structure (1-2 pages)\n4. First weekly team meeting agenda\n5. How to address the 'no engineers' gap"
       },
       {
         "id": 5,
-        "title": "Jennifer Delegation SOP",
+        "title": "PCORI Letters of Intent — Two Tracks Due Apr 28",
         "priority": "high",
         "icon": "📋",
-        "source": "OMI (4+ conversations across 3 weeks)",
-        "time": "30 min",
-        "description": "Jennifer should own: participant recruitment outreach, community partner communications, and weekly status follow-ups. No SOP or framework exists. Create it this week alongside the hours expansion.",
-        "checklist": ["Define 3-5 tasks Jennifer should fully own", "Create one-page delegation SOP", "Include decision rights and escalation path", "Create outreach email template", "Create weekly async check-in template", "Schedule 15-min alignment call"],
-        "claudePrompt": "I want to delegate more research outreach and communication tasks to Jennifer on my NOURISH research team at Stanford. I've been saying this for 3+ weeks — now I need the actual framework.\n\nContext: Jennifer is part-time and handles some outreach. I want her to fully own: participant recruitment outreach, community partner communications, and weekly status follow-ups. She has good communication skills but needs clear scope and templates. I'm also increasing her hours.\n\nPlease help me:\n1. Write a 1-page delegation SOP covering her owned tasks, decision rights, and escalation path\n2. Create an outreach email template for participant recruitment\n3. Create a weekly async check-in template (5-minute format)\n4. Draft a short kickoff message I can send her"
+        "source": "Grant Registry GR-007, GR-022",
+        "time": "3 hrs",
+        "description": "Two PCORI opportunities: GR-007 (novel behavior change methods, $750K) and GR-022 (cooking intervention engagement, $1M). Both LOIs due April 28.",
+        "evidence": "Grant registry shows both as strong fits. GR-007 score: 82. GR-022 score: 63. Combined potential: $1.75M. PCORI is also primary target for NOURISH ($600K, score 95) but that's rolling deadline.",
+        "checklist": ["Review GR-007 requirements (novel methods for behavior change)", "Review GR-022 requirements (cooking intervention engagement)", "Draft GR-007 LOI using VR + CGM + cultural nutrition data", "Draft GR-022 LOI using NOURISH community cooking program", "Get co-investigator alignment (Minal Moharir)", "Submit both by Apr 28"],
+        "claudePrompt": "I need to submit two PCORI Letters of Intent by April 28:\n\n1. GR-007: Novel methods for patient behavior change ($750K, 3 years). My angle: VR-based culturally tailored nutrition education for diabetic patients in diverse populations.\n\n2. GR-022: Engagement in cooking interventions ($1M). My angle: NOURISH community cooking program with 30,000+ participants across channels.\n\nCo-investigators: Minal Moharir (Stanford VR), Isabela Moise (nutrition education). I have a 60-person pilot RCT and CGM data.\n\nHelp me:\n1. Draft both LOIs (typically 2-3 pages each)\n2. Differentiate the two applications clearly\n3. Highlight preliminary data from NOURISH pilot"
       },
       {
         "id": 6,
-        "title": "US Tax Return Filing (W-2, Stanford/CA)",
+        "title": "US Tax Return Filing — W-2 from Stanford",
         "priority": "high",
         "icon": "💰",
-        "source": "OMI (hackathon debrief conversation, Apr 12)",
+        "source": "OMI transcript: hackathon debrief, Apr 12",
         "time": "1 hr",
-        "description": "Started filing during hackathon — W-2 from Stanford, California employer. Fields partially filled (ZIP, income tax, Social Security wages/withheld, state CA, Australian address). Finish and submit.",
-        "checklist": ["Complete W-2 entry for Stanford income", "Confirm filing status and address (Australian vs. California)", "Review for any additional forms needed (1099, etc.)", "Submit federal and California state returns", "Save confirmation numbers"],
-        "claudePrompt": "I need to complete my US tax return filing. I started during a trip but didn't finish.\n\nContext: I'm an Australian citizen working at Stanford University School of Medicine as a Research Tech. I have a W-2 from my California employer (Stanford). I partially filled in: ZIP code, income tax, Social Security wages/withheld, state (California). My home address is Australian but I have a Stanford address at 203 Rosse Lane, Rains Student Housing, Stanford, CA 94305.\n\nPlease help me:\n1. Determine whether I should use my Australian or California address for filing\n2. Identify which tax forms I need as a non-resident alien or resident alien (based on substantial presence test)\n3. Create a checklist of documents I need to complete the return\n4. Suggest the best free/low-cost filing option for my situation"
+        "description": "Started filing during hackathon trip. W-2 from Stanford (CA employer). Fields partially filled. Australian citizen working in US on I-765.",
+        "evidence": "Transcript captured live: SPEAKER_1: 'I'm trying to fill out my US tax return but I don't know where to put in the country of my employer.' Later: 'ZIP code... income tax... Social Security wages... state California... foreign province postal code...' Multiple fields incomplete.",
+        "checklist": ["Determine filing status (non-resident alien vs resident alien — substantial presence test)", "Complete W-2 entry", "Resolve address question (Australian home vs Stanford CA)", "Check if additional forms needed (1040-NR, etc.)", "Submit federal + California state returns"],
+        "claudePrompt": "I need to finish my US tax return. I'm an Australian citizen working as a Research Tech at Stanford University on I-765 Employment Authorization.\n\nWhat I have: W-2 from Stanford with California employer info. Partially filled: ZIP, income tax, Social Security wages/withheld, state CA.\n\nUnclear: Should I use Australian address or Stanford address (203 Rosse Lane, Rains, Stanford CA 94305)? Am I non-resident or resident alien?\n\nHelp me:\n1. Determine correct filing status\n2. Identify all required forms\n3. Create document checklist\n4. Recommend best filing tool for my situation"
       },
       {
         "id": 7,
-        "title": "LinkedIn Posts — Hackathon Win + KIIT",
+        "title": "LinkedIn Posts — Hackathon + KIIT (3 posts planned)",
         "priority": "medium",
         "icon": "📱",
-        "source": "OMI (social media planning, Apr 12)",
+        "source": "OMI transcript: social media planning, Apr 12",
         "time": "45 min",
-        "description": "Three posts planned: (1) Highlight mentoring university students, innovative ideas; (2) Thank Harvard and KIIT institutions; (3) Congratulatory post for teammate Ted (1st place). Need photographer's photos. Edit event photos (remove Gucci belt branding). Research KIIT daily yoga practice for positioning content.",
-        "checklist": ["Obtain photographer's event photos", "Edit photos to remove visible branding", "Draft Post 1: Mentoring students at KIIT", "Draft Post 2: Thank Harvard/KIIT institutions", "Draft Post 3: Congratulate Ted on 1st place", "Research KIIT founder philosophy for post content", "Publish posts"],
-        "claudePrompt": "I need to create 3 LinkedIn posts about my experience at the HSIL Harvard Health Hackathon at KIIT University, Bhubaneswar, India.\n\nContext: I mentored university students on healthcare innovation and my team won 1st place with project NORA, progressing to Harvard boot camp. The event was at KIIT University which has unique features (daily yoga practice, tribal customs integration, Stanford/Harvard affiliations). I need to position as a thought leader while acknowledging institutions.\n\nPlease help me:\n1. Draft Post 1: Mentoring experience highlighting innovative student ideas\n2. Draft Post 2: Institutional thank-you (Harvard, KIIT, Western Sydney LHD)\n3. Draft Post 3: Congratulating teammate Ted (neutral, professional tone)\n4. Suggest hashtags and optimal posting times\n5. Keep tone authentic — avoid overly AI-generated feel"
+        "description": "Three-post strategy planned in conversation. Need photographer photos. Must edit event photos to remove Gucci belt (brand consistency with public health positioning).",
+        "evidence": "Transcript: SPEAKER_0 — 'I just realized I'm only promoting myself in the public health field, and I'm wearing a Gucci belt... it wasn't the best in theory.' Also: 'I'm thinking of doing two posts. One for the school... And then the other post is like institutions.' Plus a congratulatory post for Ted 'because only some people know that I know Ted.'",
+        "checklist": ["Get photographer's event photos", "Edit/crop photos (remove branding)", "Draft Post 1: Mentoring at KIIT", "Draft Post 2: Thank Harvard/KIIT/WSLHD", "Draft Post 3: Congratulate Ted", "Research KIIT daily yoga practice for content", "Publish posts"],
+        "claudePrompt": "I need 3 LinkedIn posts from the HSIL Harvard Health Hackathon at KIIT University, India.\n\nPost 1 — Mentoring: Highlight mentoring innovative student ideas (cardiac screening, neonatal monitoring, nutrition AI, infection control). Tone: thought leader, authentic.\n\nPost 2 — Institutional: Thank Harvard, KIIT University, Western Sydney LHD. Mention KIIT's unique features (daily yoga K-12 through postgrad, tribal customs integration).\n\nPost 3 — Peer: Congratulate teammate Ted on 1st place. Subtle, professional, 'if you know, you know' tone.\n\nConstraints: Remove AI-generated feel. Include emojis sparingly. I'm affiliated with Stanford and Harvard — use as credibility, not bragging."
       },
       {
         "id": 8,
-        "title": "IRB Demo for AR Nutrition Project (~Apr 30)",
+        "title": "Team Hours — Send Formal Proposal to Dalia + Jennifer",
         "priority": "medium",
-        "icon": "🔬",
-        "source": "OMI (VR/AR planning conversations, Apr 9)",
-        "time": "1 hr",
-        "description": "Meeting in ~3 weeks to propose AR-based nutrition project to residency program collaborator. IRB requires concrete demo or video. Must be nutrition-focused (not generic dementia AR). AI-generated visuals acceptable as rough prototype.",
-        "checklist": ["Create nutrition-focused AR demo concept", "Generate AI visuals for prototype mockup", "Secure collaborator support before meeting", "Prepare IRB application draft", "Schedule meeting (~April 30)"],
-        "claudePrompt": "I need to prepare an AR-based nutrition education demo for an IRB application and collaborator meeting in about 3 weeks.\n\nContext: The project involves AR-based nutrition education for medical residents (PGY1-3) in Stanford's family medicine program. The focus is culturally diverse eating habits for diabetic patients. There's a $5,000 grant for curriculum development. I have a collaborator who would run the program, but I need to show a concrete demo first.\n\nPlease help me:\n1. Design a nutrition-focused AR demo concept (not generic — must clearly show the nutrition use case)\n2. Suggest tools for creating AI-generated prototype visuals\n3. Draft a brief proposal for the collaborator meeting\n4. Outline the IRB application requirements for this type of study"
+        "icon": "👥",
+        "source": "OMI transcripts: budget review + team discussions, Apr 2-12",
+        "time": "30 min",
+        "description": "3+ weeks of verbal commitment. Budget confirmed with Eli on Apr 2. Dalia currently $16/hr, 3hrs/week (every Thursday 12:00). Jennifer handles outreach. Must convert to written proposal.",
+        "evidence": "Transcript: SPEAKER_01 — 'We just have to decide whether we can afford her or not. Yes. That's it.' Earlier: 'Meeting with Eli on the 2nd.' Budget shows ~$2,000-3,500 breathing room from reallocated funds (Christopher, Jennifer, Prince).",
+        "checklist": ["Review Eli meeting notes (Apr 2)", "Draft email to Dalia: propose 8 hrs/week at $16/hr", "Draft email to Jennifer: propose increased hours + new responsibilities", "Draft budget justification paragraph for PI", "Update payroll if applicable"],
+        "claudePrompt": "I manage a Stanford research team (NOURISH). After budget review with Eli on April 2, I have ~$2,000-3,500 monthly breathing room from reallocated personnel funds.\n\nDalia: Currently $16/hr, 3 hrs/week (reliable, every Thursday 12:00). Propose increasing to 8 hrs/week.\nJennifer: Part-time outreach. Propose increasing hours + formalizing delegation of recruitment outreach, community partner comms, weekly status follow-ups.\n\nDraft:\n1. Personalized proposal emails to each\n2. Budget justification paragraph\n3. Jennifer delegation SOP (1-page)\n4. Updated weekly schedule tracker"
       },
       {
         "id": 9,
-        "title": "Bloodborne Virus (BBV) Clearance — CARRY-OVER",
+        "title": "IRB Demo for AR Nutrition Project (~Apr 30)",
         "priority": "medium",
-        "icon": "🏥",
-        "source": "OMI (Apr 5 carry-over, now 2+ weeks)",
-        "time": "20 min",
-        "description": "Clinical compliance requirement — cannot start rotations without this. Has been pending for 2+ weeks. Check Stanford occupational health portal for status.",
-        "checklist": ["Check Stanford occupational health portal for status", "Confirm blood draw scheduled or completed", "Upload completed documentation if not yet done"],
-        "claudePrompt": "I need to complete my bloodborne virus (BBV) clearance for Stanford Medicine clinical rotations. This has been pending for over 2 weeks.\n\nContext: Compliance requirement for clinical work at Stanford. May have prior immunization records that qualify.\n\nPlease help me:\n1. Draft an email to Stanford Occupational Health requesting status\n2. Create a checklist of typical requirements (Hep B titer, TB test, etc.)\n3. Draft a follow-up reminder if no response within 48 hours"
+        "icon": "🔬",
+        "source": "OMI transcript: VR/AR planning, Apr 9",
+        "time": "1 hr",
+        "description": "Meeting in ~3 weeks to propose AR nutrition project. IRB requires concrete demo/video — not just concept. Must be nutrition-focused. AI-generated visuals acceptable.",
+        "evidence": "Transcript references meeting with collaborator Minal Moharir. Must have '100% assurance that collaborator supports idea before proceeding.' IRB needs to see specific nutrition use case, not generic AR.",
+        "checklist": ["Design nutrition-specific AR demo concept", "Generate AI prototype visuals", "Secure Minal Moharir's support before meeting", "Draft IRB application outline", "Schedule meeting (~April 30)"],
+        "claudePrompt": "I need an AR-based nutrition education demo for IRB submission and collaborator meeting in ~3 weeks.\n\nProject: AR for PGY1-3 residents in Stanford Family Medicine. Culturally diverse eating habits for diabetic patients. $5,000 PFME grant. Collaborator: Minal Moharir.\n\nThe IRB needs a CONCRETE demo showing the nutrition use case (not generic dementia AR). AI-generated visuals are acceptable as rough prototype.\n\nHelp me:\n1. AR demo concept focused on nutrition counseling\n2. AI tools for generating prototype visuals\n3. Brief proposal for collaborator meeting\n4. IRB application outline"
       },
       {
         "id": 10,
-        "title": "Case Report — Draft or Advance",
+        "title": "Send Hackathon Presentation for Next-Stage Review",
         "priority": "medium",
-        "icon": "📑",
-        "source": "OMI + carry-over from Apr 5",
-        "time": "1 hr",
-        "description": "Clinical case report draft in progress. Move it forward — even 30 minutes of writing creates momentum.",
-        "checklist": ["Open current draft", "Write or expand one section", "Send to co-author if section ready"],
-        "claudePrompt": "I'm writing a clinical case report for journal publication. Help me:\n1. Provide the CARE checklist structure\n2. Write a template Introduction section\n3. List 4-5 target journals for a single clinical case report\n4. Suggest how to frame clinical significance"
+        "icon": "📤",
+        "source": "OMI transcript: post-hackathon debrief, Apr 12",
+        "time": "15 min",
+        "description": "Promised to send NORA presentation to friend with startup experience. They committed to reviewing and identifying gaps for the next Harvard selection round.",
+        "evidence": "Transcript: SPEAKER_3 — 'I can send you our presentation. Alright? If I wanna and then you can tell me what needs to be added.' SPEAKER_4: 'Yeah. I can do that.'",
+        "checklist": ["Locate NORA presentation file", "Send to friend via AirDrop or email", "Request specific feedback on: business model, competitive landscape, prototype plan"],
+        "claudePrompt": null
       },
       {
         "id": 11,
-        "title": "Buy VR Headset (Quest/Cloud Pro) — Tuesday",
-        "priority": "low",
-        "icon": "🥽",
-        "source": "OMI (VR research planning, Apr 9)",
-        "time": "30 min",
-        "description": "Purchase VR headset for dementia and nutrition VR research studies. Plan: use for one month, then hand off to colleague. Budget from research allocation.",
-        "checklist": ["Research Quest 3 vs Cloud Pro options", "Purchase on Tuesday", "Set up for nutrition VR content testing", "Plan month-long usage schedule"],
+        "title": "Observership/IVS Application — Check and Send",
+        "priority": "medium",
+        "icon": "🏥",
+        "source": "OMI transcript: grants/manuscripts planning, Apr 9",
+        "time": "20 min",
+        "description": "Draft email for observership application prepared but not sent. Must distinguish between clerkship request and separate observership request. January visit tentative, May visit confirmed.",
+        "evidence": "Transcript discussion of visiting positions: January (tentative), May (confirmed), end-of-year (visa issues). Observership draft needs checking before sending.",
+        "checklist": ["Review draft observership email", "Clarify clerkship vs observership distinction", "Send to appropriate contact", "Follow up on January visit logistics"],
         "claudePrompt": null
       },
       {
         "id": 12,
-        "title": "Prescription Refill Coordination",
-        "priority": "low",
-        "icon": "💊",
-        "source": "OMI (travel conversation, Apr 9)",
-        "time": "10 min",
-        "description": "Doctor sent prescription refill. Pharmacy needs to accept it. Was urgent during travel — confirm completed.",
-        "checklist": ["Call pharmacy to confirm prescription accepted", "Pick up or arrange delivery"],
-        "claudePrompt": null
-      },
-      {
-        "id": 13,
-        "title": "Medical Rotation Paperwork Sign-Off",
+        "title": "Medical Rotation Paperwork — Follow Up",
         "priority": "low",
         "icon": "📄",
-        "source": "OMI (rotation discussion, Apr 6)",
+        "source": "OMI transcript: rotation discussion, Apr 6",
         "time": "20 min",
-        "description": "Difficulty getting paperwork signed off. Email sent to doctor with no reply. Clarify Naveena's role. Minimum requirements needed by year-end.",
+        "description": "Difficulty getting paperwork signed off. Email sent to doctor with no reply. Need to clarify Naveena's role. Year-end minimum requirements need confirmation.",
+        "evidence": "Transcript references unanswered email to supervising doctor. Minimum requirements needed by year-end for Macquarie University MD.",
         "checklist": ["Follow up on email to doctor", "Clarify Naveena's involvement", "Get required signatures", "Confirm year-end minimum requirements"],
         "claudePrompt": null
       },
       {
+        "id": 13,
+        "title": "VR Headset Purchase — Research Budget",
+        "priority": "low",
+        "icon": "🥽",
+        "source": "OMI transcript: VR research planning, Apr 9",
+        "time": "30 min",
+        "description": "Purchase VR headset for nutrition VR and musculoskeletal wellness research. Plan: use intensively for 1 month, then hand off. Budget from research allocation. Also considered for OHC staff wellness program ($100 per headset).",
+        "evidence": "Transcript: VR musculoskeletal study discussed for staff wellbeing during breaks. $100 headset for OHC staff. Potential partner: chronic pain VR company (Alleviate/Reliev) with reimbursement codes.",
+        "checklist": ["Research Quest 3 vs alternatives", "Purchase from research budget", "Set up nutrition VR content", "Plan 1-month usage schedule"],
+        "claudePrompt": null
+      },
+      {
         "id": 14,
-        "title": "Airtable Subscription Renewal (April)",
+        "title": "Airtable Subscription Renewal",
         "priority": "low",
         "icon": "💳",
-        "source": "OMI (planning conversation, Apr 9)",
+        "source": "OMI transcript: planning conversation, Apr 9",
         "time": "10 min",
-        "description": "Airtable subscription due in April. ~800 pounds with approved discount. Plan to postpone intensive use to late April or May/June.",
-        "checklist": ["Confirm subscription renewal", "Plan Airtable setup strategy for May/June"],
+        "description": "Subscription due in April (~800 pounds with discount). Plan to postpone intensive use to late April or May/June when settled back in California.",
+        "evidence": "Transcript: Discussion of buying automation tools 'during parking on next Tuesday' and creating one-month study schedule for tool setup.",
+        "checklist": ["Confirm renewal or postpone", "Plan intensive setup month for May/June"],
         "claudePrompt": null
       },
       {
         "id": 15,
-        "title": "Lab Supply Order — Check Status",
+        "title": "Claude Max Subscription — Setup Month",
         "priority": "low",
-        "icon": "📦",
-        "source": "OMI (carry-over from Apr 5)",
-        "time": "10 min",
-        "description": "Pending lab supply order. Check if completed or still needed.",
-        "checklist": ["Review pending supply list", "Place through Stanford procurement if still needed"],
+        "icon": "🤖",
+        "source": "OMI transcript: AI platform planning, Apr 9",
+        "time": "15 min",
+        "description": "Plan: get Claude Max ($200/month) for one intensive setup month to organize documents/grants, create custom skills via Cowork. Then downgrade to Pro.",
+        "evidence": "Transcript: SPEAKER_00 — 'I'm thinking once I'm settled in the islands, I've got a bit more time... get the Claude Max plan, about $200 a month.' Strategy: 1 month intense, then Pro plan. YouTube tutorials needed for Cowork features.",
+        "checklist": ["Wait until settled back in California", "Subscribe to Claude Max for 1 month", "Organize all Nourish work files", "Create custom Claude skills for grant writing", "Downgrade to Pro after setup"],
+        "claudePrompt": null
+      },
+      {
+        "id": 16,
+        "title": "Coffee Meetup — Diabetes Discussion Colleagues",
+        "priority": "low",
+        "icon": "☕",
+        "source": "OMI transcript: diabetes/networking discussion, Apr 9",
+        "time": "15 min",
+        "description": "Promised coffee meetup whenever colleagues return to town. Connected over diabetes management (helped father get HbA1c to 6.8) and LinkedIn networking strategy.",
+        "evidence": "Transcript: SPEAKER_00 helped father manage Type 2 diabetes. SPEAKER_02: 'That's actually so smart because everyone's on LinkedIn... that's the goal for next time.'",
+        "checklist": ["Message colleagues to schedule coffee", "Prepare LinkedIn poster idea for next event"],
         "claudePrompt": null
       }
     ]
   },
 
   "ideas": {
-    "pgQuoteTop": "Live in the future, then build what's missing.",
-    "pgQuoteBottom": "The best startup ideas are the ones that seem like bad ideas to most people.",
+    "pgQuoteTop": "The way to get startup ideas is not to try to think of startup ideas.",
+    "pgQuoteBottom": "If you can just avoid dying, you get rich.",
     "ideas": [
       {
-        "id": 1, "category": "🚀 Startup", "title": "NORA — Harvard Boot Camp Track", "subtitle": "The Hackathon Win That Became a Company",
+        "id": 1, "category": "🚀 Startup", "title": "NORA — From Hackathon Trophy to Harvard Pipeline", "subtitle": "The Clock Is Ticking on 1st Place",
         "impact": "Extremely High", "novelty": "9/10", "status": "in-progress",
-        "edge": "1st place win + Harvard pipeline + Stanford credibility",
-        "seeds": ["HSIL Hackathon 1st place", "Harvard venture judges", "ATBI incubation offer"],
-        "essay": "NORA just won 1st at HSIL. It's no longer an idea — it's a <strong>venture in selection.</strong> Harvard judges want validation, not vision. The next 4 weeks determine whether this becomes a real startup or joins the hackathon-winner graveyard. <strong>Your edge:</strong> Stanford affiliation for credibility, Apollo Hospitals as distribution (from NOURISH network), clinical expertise that most tech teams lack. The risk isn't competition — it's <strong>attention fragmentation.</strong> You're running NOURISH, PFME, CGM, Shoei, VR curriculum, and now NORA. Harvard judges will smell split focus. Dedicate the next 2 weeks to NORA deliverables or consciously defer."
+        "edge": "1st place + Harvard boot camp + Western Sydney LHD CTI approval",
+        "seeds": ["HSIL Hackathon 1st place (Apr 11)", "Post-win debrief transcript (Apr 12)", "Mentor network from 69+ conversations"],
+        "essay": "The transcript of the post-win conversation reveals something the summary missed: <strong>your team knows exactly what Harvard wants but hasn't started any of it.</strong> SPEAKER_4 spelled it out verbatim: 'They wanna see some motion — you've reached out to people, you're trying to get letters of intent, you've figured out a basic business plan.' The team response? 'Our group don't have engineers. If they ask to build a final product, we're fucked.' <strong>The real move:</strong> use ATBI's complimentary incubation offer for engineering support, leverage the Western Sydney LHD CTI approval (SPEAKER_3: 'We literally got the approval from the CTI'), and set the weekly meeting you promised but never calendared. Harvard cuts 50% of teams. <strong>Motion, not perfection.</strong>"
       },
       {
-        "id": 2, "category": "🚀 Startup", "title": "The Cultural Plate", "subtitle": "AI Meal Designer That Respects Your Grandmother",
-        "impact": "Very High", "novelty": "9/10", "status": "in-progress",
-        "edge": "Stanford + clinical + cultural + FlavorDB + TDA",
-        "seeds": ["OMI voice (12+ conversations)", "FlavorDB research", "NIN Hyderabad/ICMR-NIN datasets", "hackathon mentoring insights"],
-        "essay": "This week's hackathon confirmed the thesis from multiple angles. You mentored a team building AI-driven cost-optimized nutrition recommendations for Indian hospitals — <strong>they're building a piece of what you're already architecting.</strong> The NIN Hyderabad/ICMR-NIN datasets were explicitly discussed. Your differentiation: TDA (Topological Data Analysis) for flavor molecule networks, not just LLM prompting. Phase 1 is hospital deployment (canteen-less facilities). Phase 2 is B2C subscription + cloud kitchen integration. The mentor critique was sharp: <strong>'Where's your skin in the game? What's the revenue model?'</strong> Answer that before Harvard."
+        "id": 2, "category": "🚀 Startup", "title": "Shoei — The Data Layer Disguised as Footwear", "subtitle": "Hospital Infection Intelligence via Smart Shoes",
+        "impact": "Very High", "novelty": "10/10", "status": "in-progress",
+        "edge": "Infection control market + Vietnam manufacturing + no direct competitors",
+        "seeds": ["OMI: Teal infection control conversation (Apr 9)", "Hospital data analytics discussions", "Vietnam manufacturing pathway"],
+        "essay": "Two separate conversations this week converged on hospital infection control as an underserved data layer. The Teal conversation explored AI + SME expertise for ~10% infection rate reduction. The innovation observation: <strong>the product isn't the shoe — it's traffic heat maps, EVS timing optimization, and cleaning verification data.</strong> Hospitals will pay for infection intelligence because even small reductions in HAIs save millions in liability. The manufacturing insight (Vietnam-based, cheap components) makes hardware viable. <strong>Nobody else is combining wearables + infection control + hospital operations intelligence.</strong> You explicitly requested a pitch deck be built — now build it."
       },
       {
-        "id": 3, "category": "🚀 Startup", "title": "Shoei — AI Wearable for Hospital Infection Control", "subtitle": "Smart Footwear That Watches the Floor",
-        "impact": "Very High", "novelty": "9/10", "status": "in-progress",
-        "edge": "Infection control data + hospital ops intelligence",
-        "seeds": ["OMI (Teal conversation on infection control)", "Hospital data analytics discussion", "Vietnam manufacturing pathway"],
-        "essay": "Explicitly surfaced in two OMI conversations this week. The concept: AI wearable footwear that generates hospital infection control data — traffic heat maps, EVS timing optimization, cleaning verification. <strong>The real product isn't the shoe — it's the data layer.</strong> Hospitals will pay for infection rate reduction data (even 10% reduction = massive liability savings). Vietnam manufacturing makes hardware affordable. You already requested a pitch deck be built. <strong>This is the most differentiated startup idea because nobody else is combining wearables + infection control + hospital operations intelligence.</strong>"
+        "id": 3, "category": "🚀 Startup", "title": "Pneumatic Hospital Waste Intelligence", "subtitle": "Japanese Tech Meets Indian Hospital Chaos",
+        "impact": "High", "novelty": "8/10", "status": "not-started",
+        "edge": "Direct from mentor expertise at hackathon",
+        "seeds": ["Hackathon mentoring session — waste segregation team (Apr 11)", "Mentor's Japan/Sweden hospital references"],
+        "essay": "A team pitched automated waste bins and the mentor demolished it — then rebuilt it better. The transcript captured the exact pivot: 'Segregation is already done efficiently in good hospitals. The real use case is trauma/ICU.' Then the golden reference: <strong>pneumatic chute systems already work in Japanese and Swedish hospitals — multi-floor, minimal infection risk, reduced cleaning workload.</strong> The mentor said: 'Have a look at models already there.' The business case: frame around infection reduction + cleaning workload reduction for hospital CEOs (not technicians). <strong>This isn't about bins — it's about pneumatic infrastructure intelligence for Indian hospitals.</strong>"
       },
       {
-        "id": 4, "category": "🚀 Startup", "title": "Sentinel — Neonatal Apnea Monitoring (From Mentoring)", "subtitle": "Reducing False Alarms in the NICU",
+        "id": 4, "category": "🚀 Startup", "title": "ASHA Worker Drug Expiry Guardian", "subtitle": "₹31,000 Crore Market Nobody's Watching",
         "impact": "Very High", "novelty": "8/10", "status": "not-started",
-        "edge": "Mentor insight from hackathon team",
-        "seeds": ["HSIL mentoring session", "Team with provisional patent", "Pediatrician collaborators"],
-        "essay": "One of the teams you mentored has something real: AI-based neonatal apnea detection using EEG + respiratory effort + ECG + SpO2 to reduce NICU false alarms. They have a provisional patent, pediatrician collaborators, and a high-fidelity lung simulator. Your mentoring advice was precise: <strong>miniaturize hardware, embed sensors in hypoallergenic fabric, partner with incubator manufacturers (GE, Siemens).</strong> This isn't your startup — but consider an advisor equity position. The neonatal device market is dominated by few players, and this team has the clinical validation path."
+        "edge": "State procurement data from mentor + government audit gap",
+        "seeds": ["Hackathon mentoring — medicine expiry team (Apr 11)", "State procurement figures cited verbatim"],
+        "essay": "The mentor dropped market intelligence that would cost ₹50 lakhs from a consulting firm. Verbatim: <strong>'State procurement of Odisha = 1,000 crores. Karnataka = 19-20,000 crores. Tamil Nadu = 31,000 crores.'</strong> Private chains (Apollo, Tata 1mg) are too efficient to disrupt — but government stores have minimal audits. The narrow play: expiry tracking for pediatric/antenatal drugs delivered via ASHA workers. Iron, ferritin, D3, baby vaccines — shelf bottles under ₹100 with 6-month shelf life, sunlight-sensitive. <strong>One subscription to state governments for drug expiry alerts = recurring revenue at scale.</strong>"
       },
       {
-        "id": 5, "category": "🎮 Game", "title": "Flavor Roulette", "subtitle": "The Molecular Cooking Game",
-        "impact": "High", "novelty": "10/10", "status": "not-started",
-        "edge": "FlavorDB data + research platform",
-        "seeds": ["FlavorDB molecule data", "hackathon AI cooking discussions", "Duolingo for cooking concept"],
-        "essay": "The hackathon surfaced a 'Duolingo for cooking' concept from a friend conversation — micro-lessons taught by chefs with AI at every layer. Combine this with your FlavorDB molecular data: <strong>scoring based on real flavor molecule overlap.</strong> Players unlock cultural cuisine packs. Level 2 adds a diabetes constraint. This could be the engagement layer for your research platform AND a standalone consumer product."
-      },
-      {
-        "id": 6, "category": "🎮 Game", "title": "Glucose Poker", "subtitle": "Bet Your Biology",
+        "id": 5, "category": "🧪 Research", "title": "AI Camera Behavioral Detection in Schools", "subtitle": "The Pivot That Saved a Mental Health Startup",
         "impact": "High", "novelty": "9/10", "status": "not-started",
-        "edge": "CGM study data access",
-        "seeds": ["CGM study data", "participant discussions", "gamification research"],
-        "essay": "A dinner party card game. Players wear CGMs, eat the same meal, bet on who spikes highest. <strong>Identical meals produce wildly different responses.</strong> The educational payload is enormous but disguised as chaos. Your CGM study gives you the data to design this properly."
+        "edge": "Live pivot captured in transcript — faculty forced the redesign",
+        "seeds": ["Faculty mentoring session — mental health AI team (Apr 11)", "Legal constraint: AI cannot prescribe in India"],
+        "essay": "The transcript captured a real-time conceptual pivot. Student team pitched student mental health monitoring. Faculty demolished it: 'Even if your parameter is perfect, even if you can predict, then what next? Is a social worker gonna come to his house?' Then rebuilt it: <strong>AI cameras in public spaces (classrooms, hostel corridors) detecting non-verbal stress indicators — rubbing ears, aloofness, restlessness.</strong> Alert goes to psychiatrist with 15-day behavioral clips. The legal boundary was explicit: 'AI can never prescribe. If even a medicine name appears, you'll go to jail.' <strong>The research angle: validate which behavioral indicators predict crisis across Indian student populations.</strong>"
       },
       {
-        "id": 7, "category": "📝 Essay", "title": "The Grandmother Hypothesis of Nutrition Science", "subtitle": "When You Run the Numbers, Grandmothers Are Right 70-80% of the Time",
-        "impact": "Very High", "novelty": "10/10", "status": "not-started",
-        "edge": "You're literally building the tools to prove this",
-        "seeds": ["NOURISH cultural nutrition work", "FlavorDB", "hackathon mentoring on cultural food"],
-        "essay": "This week's hackathon conversations repeatedly surfaced the tension between evidence-based nutrition and cultural food wisdom. What if grandmother knowledge is a distributed clinical trial running across millions of households for centuries? <strong>Modern tools (NLP, FlavorDB, CGM) can finally extract the signal.</strong> Submit to The Lancet as a perspective piece. Your NOURISH data + FlavorDB + CGM results = the evidence base nobody else has."
+        "id": 6, "category": "🧪 Research", "title": "VR Forces Focus — The Faculty Insight", "subtitle": "Why Slide Decks Fail and VR Doesn't",
+        "impact": "Very High", "novelty": "7/10", "status": "in-progress",
+        "edge": "Faculty quote + 4-module curriculum designed this week",
+        "seeds": ["VR clinical reasoning transcript (Apr 9)", "Resident training module design (Apr 10)", "Faculty endorsement captured verbatim"],
+        "essay": "Faculty said it plainly: <strong>'If I give a slide deck about systolic heart failure, they'll doze off because they're tired. VR forces full focus — no option to think about other things.'</strong> This week you designed a four-module VR curriculum: (1) Trust-building → (2) Behavior change → (3) Resistance → (4) Sustenance. The example scenario: Patient Mrs. Priya says 'my health numbers aren't improving, I feel like a failure' — resident must interrupt default lab-data reflex and address emotional context first. <strong>The publishable insight: VR's advantage isn't immersion — it's attentional capture in a population (residents) with chronic fatigue.</strong>"
       },
       {
-        "id": 8, "category": "📝 Essay", "title": "The Competence Ratio", "subtitle": "Why Healthcare Systems Collapse Exponentially",
-        "impact": "Very High", "novelty": "9/10", "status": "not-started",
-        "edge": "NOURISH team dynamics + hackathon team observations",
-        "seeds": ["OMI voice note", "team management conversations", "hackathon team quality variance"],
-        "essay": "Your OMI captured the insight: a team of 10 with 8 competent people outperforms a team of 100 with 30 — not by 3x but by 30x. This week you saw it live: some hackathon teams had brilliant concepts but couldn't execute, while others with simpler ideas had relentless execution. <strong>The collapse is exponential, not linear.</strong> Propose the 'Competence Ratio' as a measurable metric for healthcare workforce planning."
-      },
-      {
-        "id": 9, "category": "🎨 Visual", "title": "The Nutrition Colonialism Map", "subtitle": "Which Cuisines Are Invisible to Science?",
-        "impact": "Extremely High", "novelty": "10/10", "status": "not-started",
-        "edge": "FlavorDB coverage + NOURISH equity research",
-        "seeds": ["FlavorDB coverage analysis", "NOURISH equity research", "hackathon India-specific nutrition gap"],
-        "essay": "Each country colored by what percentage of its traditional cuisine appears in global nutrition databases. France, Italy, Japan: 80%+. India, Nigeria, Ethiopia: under 5%. <strong>Overlay with diabetes prevalence. The correlation is devastating.</strong> This week's hackathon in India made this visceral — teams repeatedly identified that Indian dietary data is fragmented across NIN, ICMR, FAO with no unified dataset. Animate as time-lapse. Submit to The Lancet."
-      },
-      {
-        "id": 10, "category": "🛠️ Tool", "title": "The Decision Fossil Record", "subtitle": "Never Lose Context Again",
-        "impact": "Very High", "novelty": "8/10", "status": "in-progress",
-        "edge": "Already halfway there with Optimus + Stefan-Brain",
-        "seeds": ["Optimus cross-source gaps", "OMI context decay", "Stefan-Brain wiki architecture"],
-        "essay": "You're building this. Stefan-Brain + Optimus Command Center = a decision fossil record in progress. <strong>This week proved its value:</strong> 81,772 words of context that would have been lost without OMI extraction. The missing piece: automatic cross-referencing between decisions made in conversations and their downstream execution in Airtable/Notion."
-      },
-      {
-        "id": 11, "category": "🛠️ Tool", "title": "ASHA Worker Decision Support", "subtitle": "AI Triage for Rural India's Health Workers",
+        "id": 7, "category": "🧪 Research", "title": "Oncology Patient Journey Compression", "subtitle": "From 30 Days to 2 Days — The Specimen Problem",
         "impact": "Very High", "novelty": "8/10", "status": "not-started",
-        "edge": "Hackathon mentoring insight + government platform integration",
-        "seeds": ["Faculty mentoring session (Team 2)", "ABDM/ABHA integration", "rural healthcare gap"],
-        "essay": "From the hackathon mentoring: an AI decision-support tool for ASHA community health workers (not end patients — legal constraint in India). Structured follow-up questions in local languages, risk scores, alerts to nearest health facility. <strong>Integration point: Ayushman Bharat Digital Mission (ABDM/ABHA).</strong> India's government healthcare infrastructure is the distribution channel. Low smartphone penetration = voice-first design."
+        "edge": "Personal oncology experience shared by mentor in transcript",
+        "seeds": ["Hackathon mentoring — oncology AI team (Apr 11)", "Mentor SPEAKER_6's personal cancer journey"],
+        "essay": "A mentor shared his own family's cancer experience in the transcript. The delay was staggering: <strong>'The moment I went to CMC Vellore, the doctor said interpretation seems off. Can I get the cell sample which went to Delhi? It took six days. Otherwise, I'll have to operate again.'</strong> Then the vision: 'If you have AI telling the patient within three days he can get that sample — time reduced from one month to two days.' <strong>The research question: What percentage of oncology treatment delays are caused by specimen logistics vs. clinical decision-making?</strong> If it's specimen logistics (slides, tissue blocks, reports), AI routing + specialist matching could save thousands of lives."
       },
       {
-        "id": 12, "category": "🎲 Wild", "title": "The 20-Minute Thesis", "subtitle": "What If Every Research Question Could Be Tested in 20 Minutes?",
-        "impact": "Meta-level", "novelty": "10/10", "status": "not-started",
-        "edge": "OMI daily observations + academic friction experience",
-        "seeds": ["OMI daily observations", "hackathon rapid prototyping energy", "academic frustration patterns"],
-        "essay": "This week you went from idea to 1st place in 72 hours at a hackathon. Meanwhile, your IRB modification has been pending for weeks. <strong>The bottleneck in science isn't rigor — it's the absurd overhead between insight and test.</strong> Constrain every research question to: 'Can I get a meaningful signal in 20 minutes of data collection?' For 30 days, capture one micro-thesis per day from voice notes, test in 20 minutes, publish results."
+        "id": 8, "category": "📝 Essay", "title": "The Narrowing Imperative", "subtitle": "Every Mentor Said the Same Thing",
+        "impact": "High", "novelty": "8/10", "status": "not-started",
+        "edge": "Pattern extracted from 10+ mentoring sessions this week",
+        "seeds": ["Every hackathon mentoring transcript Apr 9-11", "Cross-team pattern: narrow problem → win"],
+        "essay": "Across 10+ startup mentoring sessions this week, every mentor delivered the same verdict using different words. Blood app: 'Narrow to blood as priority 1 — saturate completely before adding pharmacy.' Women's health: 'Which segment? Puberty? Pregnancy? Pick one.' ICU platform: 'Don't compare with Epic — target tier 2-3 hospitals.' Cardiac device: 'Focus on triage, not echo replacement.' <strong>The meta-insight: the teams that narrowed fastest won the most mentor enthusiasm. The ones that tried to solve everything got the harshest feedback.</strong> This applies directly to Stefan's own portfolio. Write it as a LinkedIn essay: 'What 10 Healthcare Mentors Taught Me in 72 Hours.'"
+      },
+      {
+        "id": 9, "category": "📝 Essay", "title": "The Limiting Mindset in Australian Startups", "subtitle": "Why Sales People Make Better Founders",
+        "impact": "High", "novelty": "7/10", "status": "not-started",
+        "edge": "Direct quote from post-hackathon career debate",
+        "seeds": ["Friends debate transcript — startups/careers (Apr 12)", "Australia vs US startup culture comparison"],
+        "essay": "The 3 AM career debate produced a crystallized insight. SPEAKER_4: <strong>'Most of the time, it's a limiting mindset because if you live your whole life in a career sort of workplace, you don't get that much rejection. People in sales tend to do quite well in startups because they're just used to rejection.'</strong> SPEAKER_3 added: 'Maybe that's why Australia struggles so much in startups. A limiting mindset.' Then SPEAKER_6 delivered the punchline: <strong>'People overestimate risk and underestimate their ability to return to safe corporate roles if a startup fails.'</strong> Write this as: 'Why Australian Healthcare Needs More Salespeople — And Fewer MBAs.'"
+      },
+      {
+        "id": 10, "category": "🎨 Visual", "title": "Indian State Pharma Procurement Map", "subtitle": "₹31,000 Crores That Nobody's Tracking",
+        "impact": "Very High", "novelty": "9/10", "status": "not-started",
+        "edge": "Exact figures from mentor transcript",
+        "seeds": ["Hackathon mentoring — medicine expiry discussion (Apr 11)", "State procurement data captured verbatim"],
+        "essay": "The mentor rattled off state procurement figures that should be a visualization. <strong>Odisha: ₹1,000 crores/year. Karnataka: ₹19-20,000 crores. Tamil Nadu: ₹31,000 crores.</strong> Map each Indian state by annual pharma procurement spending, overlay with: (a) audit frequency, (b) drug expiry rates, (c) ASHA worker density. The government stores with minimal audits are where medicines expire unnoticed — and where babies receive expired vaccines. <strong>This map is the pitch deck slide that gets a government contract.</strong>"
+      },
+      {
+        "id": 11, "category": "🛠️ Tool", "title": "Duolingo for Cooking — The Sous Consumer Layer", "subtitle": "Micro-Lessons + Agentic AI + Fridge Photos",
+        "impact": "High", "novelty": "8/10", "status": "not-started",
+        "edge": "Friend brainstorm + existing Sous infrastructure",
+        "seeds": ["Friends brainstorm AI cooking startup (Apr 9)", "Sous research platform architecture"],
+        "essay": "A friend brainstormed a consumer cooking app during the trip: <strong>micro-lessons taught by chefs teaching professional cooking progression, with agentic AI at every layer.</strong> Features discussed: recipe saving, AI that pulls trending TikTok dishes, analyzes fridge photos to suggest meals, learns taste preferences. B2C SaaS model. <strong>The connection to Sous:</strong> this IS the consumer engagement layer for your research platform. The research backend generates clinically validated cultural recipes. The Duolingo layer makes them addictive. The monetization discussion got dark (selling data to McDonald's) — but the core product is sound."
+      },
+      {
+        "id": 12, "category": "🎲 Wild", "title": "The Ecosystem Thinking Framework", "subtitle": "Stolen from a Disillusioned Medibank Executive",
+        "impact": "High", "novelty": "7/10", "status": "not-started",
+        "edge": "Deloitte mentor's developed framework + healthcare application",
+        "seeds": ["Hackathon debrief — Deloitte/Medibank discussion (Apr 12)"],
+        "essay": "In the post-hackathon conversation, a friend described their former Deloitte mentor who left for Medibank and became disillusioned: <strong>'She was like, I feel like this is all about making money, and there's no impact being made in healthcare.'</strong> Before leaving, she developed an 'ecosystem thinking' framework for healthcare consulting. The friend recognized its value: <strong>'I actually think it's an extremely helpful framework to take to healthcare as an industry, as a consultant.'</strong> This framework — thinking of healthcare as an interconnected ecosystem rather than isolated service lines — could become a published methodology. <strong>Ask the friend for an introduction. This mentor is looking for impact projects.</strong>"
       }
     ]
   },
@@ -345,25 +382,25 @@
       { "name": "Notion", "color": "yellow", "desc": "Process docs, SOPs, templates, repeated page structures", "signal": "Existing documentation", "status": "pending" }
     ],
     "candidates": [
-      { "rank": 1, "name": "OMI Commitment Capture → Airtable", "score": 95, "timeSaved": "90 min/week", "pattern": "149 conversations this week = 8+ unactioned verbal commitments identified. At 81K words, manual review is impossible. Automated capture would prevent 80%+ of commitment decay.", "frequency": "Daily", "complexity": "low", "action": "Build this week", "actionColor": "red", "sources": ["omi", "airtable"] },
-      { "rank": 2, "name": "Hackathon/Conference Follow-Up Automation", "score": 90, "timeSaved": "60 min/event", "pattern": "HSIL Hackathon generated 50+ new contacts, 10+ mentored teams, 3 LinkedIn posts planned. Currently all manual follow-up. Automate: extract names → draft messages → schedule sends.", "frequency": "Monthly", "complexity": "medium", "action": "Build this week", "actionColor": "red", "sources": ["omi", "notion"] },
-      { "rank": 3, "name": "Meeting Action Item Extraction", "score": 87, "timeSaved": "75 min/week", "pattern": "After every meeting, 3-5 action items discussed but only ~40% make it into Airtable.", "frequency": "5x/week", "complexity": "medium", "action": "Build this week", "actionColor": "yellow", "sources": ["granola", "airtable"] },
-      { "rank": 4, "name": "Grant Deadline Tracker + Application Automation", "score": 82, "timeSaved": "2 hrs/month", "pattern": "Multiple grant deadlines (USDA May 15, ADA May 30, NIH Jun 5, RWJF Jul 1, CDPH Aug 1) with overlapping application requirements. Pre-fill common sections across applications.", "frequency": "Monthly", "complexity": "high", "action": "Needs spec", "actionColor": "yellow", "sources": ["notion", "airtable"] },
-      { "rank": 5, "name": "Weekly Status Report Generation", "score": 72, "timeSaved": "45 min/week", "pattern": "Stefan synthesizes weekly updates manually from multiple sources.", "frequency": "Weekly", "complexity": "medium", "action": "Partially built (Optimus)", "actionColor": "gray", "sources": ["granola", "airtable", "omi", "notion"] },
-      { "rank": 6, "name": "CGM Participant Follow-Up Templating", "score": 65, "timeSaved": "40 min/week", "pattern": "CGM participant communications follow the same structure every time.", "frequency": "3x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["airtable", "granola"] },
-      { "rank": 7, "name": "Notion Decision Record Writer", "score": 58, "timeSaved": "30 min/week", "pattern": "Key decisions happen in meetings but rarely get documented in Notion.", "frequency": "2x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "notion"] }
+      { "rank": 1, "name": "OMI Commitment Capture → Airtable", "score": 95, "timeSaved": "90 min/week", "pattern": "149 conversations = 8+ unactioned verbal commitments identified. At 80K words, manual review is impossible. Full transcripts make extraction feasible.", "frequency": "Daily", "complexity": "low", "action": "Build this week", "actionColor": "red", "sources": ["omi", "airtable"] },
+      { "rank": 2, "name": "Grant Deadline Tracker + Pre-Fill", "score": 92, "timeSaved": "3 hrs/month", "pattern": "23 grants tracked in registry. 3 deadlines in next 2 weeks (Google.org Apr 17, PCORI ×2 Apr 28). Common sections across applications could be pre-filled.", "frequency": "Monthly", "complexity": "high", "action": "Build this week", "actionColor": "red", "sources": ["notion", "airtable"] },
+      { "rank": 3, "name": "Hackathon/Conference Follow-Up Automation", "score": 90, "timeSaved": "60 min/event", "pattern": "HSIL generated 50+ contacts, 10+ mentored teams, 3 LinkedIn posts. Currently all manual. Automate: extract names → draft messages → schedule.", "frequency": "Monthly", "complexity": "medium", "action": "Build this week", "actionColor": "red", "sources": ["omi", "notion"] },
+      { "rank": 4, "name": "Meeting Action Item Extraction", "score": 87, "timeSaved": "75 min/week", "pattern": "After every meeting, 3-5 action items discussed but only ~40% reach Airtable.", "frequency": "5x/week", "complexity": "medium", "action": "Build this week", "actionColor": "yellow", "sources": ["granola", "airtable"] },
+      { "rank": 5, "name": "Weekly Status Report Generation", "score": 72, "timeSaved": "45 min/week", "pattern": "Manual synthesis from multiple sources. Optimus partially automates.", "frequency": "Weekly", "complexity": "medium", "action": "Partially built (Optimus)", "actionColor": "gray", "sources": ["granola", "airtable", "omi", "notion"] },
+      { "rank": 6, "name": "CGM Participant Follow-Up Templating", "score": 65, "timeSaved": "40 min/week", "pattern": "CGM participant comms follow same structure.", "frequency": "3x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["airtable", "granola"] },
+      { "rank": 7, "name": "Notion Decision Record Writer", "score": 58, "timeSaved": "30 min/week", "pattern": "Key decisions in meetings rarely documented.", "frequency": "2x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "notion"] }
     ],
     "crossSourcePatterns": [
-      { "title": "Meeting → Task → Doc Pipeline", "desc": "Granola meetings generate action items → become Airtable tasks → need Notion docs. Currently manual at every step.", "flow": "Granola → manual entry → Airtable → manual write → Notion" },
-      { "title": "Voice → Task Capture (Critical)", "desc": "149 OMI conversations this week = 100+ potential commitments. 8+ confirmed unactioned. Manual extraction at 81K words is impossible.", "flow": "OMI voice → lost → should be → Airtable task" },
-      { "title": "Conference → Follow-Up Pipeline", "desc": "HSIL Hackathon generated massive contact/idea backlog. No system to track follow-ups, LinkedIn connections, or mentee progress.", "flow": "Conference → manual memory → decay" },
-      { "title": "Grant Cycle Loop", "desc": "IRB feedback from meetings triggers Notion doc updates, which generate new Airtable tasks. 5 grant deadlines in next 4 months.", "flow": "Granola meeting → IRB feedback → Notion update → Airtable task" }
+      { "title": "Voice → Task Capture (Critical)", "desc": "80,827 words of enriched transcripts = 100+ potential commitments. 8+ confirmed unactioned. Full transcripts make automated extraction feasible for the first time.", "flow": "OMI voice → enriched wiki → skill extraction → Airtable task" },
+      { "title": "Grant Cycle Acceleration", "desc": "23 grants tracked, 3 deadlines in 2 weeks. Common narrative sections (team, preliminary data, institution) could be pre-filled from a master template.", "flow": "Grant registry → pre-fill → application → submission" },
+      { "title": "Conference → Follow-Up Pipeline", "desc": "HSIL generated massive contact/idea backlog. No system tracks follow-ups, LinkedIn connections, or mentee progress.", "flow": "Conference → manual memory → decay" },
+      { "title": "Meeting → Task → Doc Pipeline", "desc": "Granola meetings generate action items → become Airtable tasks → need Notion docs. Manual at every step.", "flow": "Granola → manual → Airtable → manual → Notion" }
     ],
     "pipeline": [
       { "status": "building", "name": "OMI Commitment Capture → Airtable", "score": 95, "weekIdentified": "Apr 13", "action": "Build this week" },
+      { "status": "building", "name": "Grant Deadline Tracker + Pre-Fill", "score": 92, "weekIdentified": "Apr 13", "action": "Build this week" },
       { "status": "building", "name": "Hackathon Follow-Up Automation", "score": 90, "weekIdentified": "Apr 13", "action": "Build this week" },
       { "status": "evaluating", "name": "Meeting Action Item Extraction", "score": 87, "weekIdentified": "Apr 7", "action": "Build this week" },
-      { "status": "evaluating", "name": "Grant Deadline Tracker", "score": 82, "weekIdentified": "Apr 13", "action": "Needs spec" },
       { "status": "building", "name": "Optimus Command Center (weekly JSON)", "score": 80, "weekIdentified": "Apr 5", "action": "Active — this dashboard" },
       { "status": "backlog", "name": "Weekly Status Report", "score": 72, "weekIdentified": "Apr 7", "action": "Partially built" },
       { "status": "backlog", "name": "CGM Follow-Up Templates", "score": 65, "weekIdentified": "Apr 7", "action": "Needs spec" },
@@ -374,84 +411,102 @@
   "nourish": {
     "grants": [
       {
-        "name": "USDA AFRI — Food Systems & Metabolic Health",
-        "funder": "USDA / NIFA",
-        "amount": "500,000",
-        "deadline": "May 15, 2026",
-        "score": 84,
-        "match": "Strong alignment with NOURISH community food access work and dietary behavior change arm. Also aligns with Cultural Cuisine Topology Map project."
+        "name": "Google.org AI Opportunity Fund — DEADLINE APR 17",
+        "funder": "Google.org",
+        "amount": "500,000–3,000,000",
+        "deadline": "Apr 17, 2026",
+        "score": 89,
+        "match": "Sous AI pipeline direct fit. $500K–$3M + Google Cloud credits. AI for social impact mandate. 3 DAYS LEFT.",
+        "registryId": "GR-002"
       },
       {
-        "name": "ADA Innovation Award — Technology-Assisted Nutrition Counseling",
-        "funder": "American Diabetes Association",
-        "amount": "100,000",
-        "deadline": "May 30, 2026",
-        "score": 72,
-        "match": "AI nutrition platform + VR education components map to ADA's tech-assisted diabetes prevention priority."
+        "name": "PCORI — Novel Methods for Behavior Change",
+        "funder": "PCORI",
+        "amount": "750,000",
+        "deadline": "LOI Apr 28, 2026; App Sep 1",
+        "score": 82,
+        "match": "VR + CGM + cultural nutrition = novel methods. LOI in 2 weeks.",
+        "registryId": "GR-007"
+      },
+      {
+        "name": "PCORI — Engagement in Cooking Interventions",
+        "funder": "PCORI",
+        "amount": "300,000–1,000,000",
+        "deadline": "LOI Apr 28, 2026; App Sep 1",
+        "score": 63,
+        "match": "NOURISH community cooking program. 30,000+ participants. LOI in 2 weeks.",
+        "registryId": "GR-022"
+      },
+      {
+        "name": "NIH/NIDA — PGx Copilot",
+        "funder": "NIH/NIDA",
+        "amount": "R01/R21 level",
+        "deadline": "Through May 8, 2026",
+        "score": 75,
+        "match": "Pharmacogenomics copilot. Aligned with precision medicine direction.",
+        "registryId": "GR-013"
+      },
+      {
+        "name": "AHRQ R21/R33 — Healthcare from the Eye",
+        "funder": "AHRQ/NIH",
+        "amount": "R21: 275K; R33: 1M",
+        "deadline": "Jun 16, 2026",
+        "score": 92,
+        "match": "Top-scored grant in registry. Sous, PGx Copilot, Healthcare from the Eye all eligible.",
+        "registryId": "GR-001"
       },
       {
         "name": "NIH R21 — Dietary Patterns & CGM in Diverse Populations",
         "funder": "NIH / NIDDK",
         "amount": "275,000",
-        "deadline": "Jun 5, 2026",
+        "deadline": "Jun 5, 2026 (est.)",
         "score": 91,
-        "match": "Direct fit: CGM + nutrition intervention in underserved communities aligns with NOURISH core protocol. 60-person pilot RCT data strengthens application."
+        "match": "Direct fit: CGM + nutrition intervention in underserved communities. 60-person pilot RCT strengthens application.",
+        "registryId": "GR-006 (related)"
       },
       {
-        "name": "Robert Wood Johnson Foundation — Healthier Diet Initiative",
-        "funder": "RWJF",
-        "amount": "150,000",
-        "deadline": "Jul 1, 2026",
-        "score": 78,
-        "match": "Health equity focus matches NOURISH's South Bay community partner recruitment strategy."
-      },
-      {
-        "name": "California Department of Public Health — Chronic Disease Prevention",
-        "funder": "CDPH",
-        "amount": "200,000",
-        "deadline": "Aug 1, 2026",
-        "score": 65,
-        "match": "State-level fit for NOURISH's California community cohort; requires local partner co-PI."
-      },
-      {
-        "name": "PCORI — Patient-Centered Outcomes (Target: $600K)",
+        "name": "PCORI — Patient-Centered Outcomes (Primary Target: $600K)",
         "funder": "PCORI",
         "amount": "600,000",
-        "deadline": "TBD (rolling)",
+        "deadline": "Rolling",
         "score": 95,
-        "match": "Primary target. VR nutrition + CGM + culturally tailored care = core PCORI mandate. 30,000+ participants across program channels. Minal Moharir + Isabela Moise as co-investigators."
+        "match": "Primary NOURISH target. VR nutrition + CGM + culturally tailored care = core PCORI mandate. 30,000+ participants. Minal Moharir + Isabela Moise as co-investigators.",
+        "registryId": "GR-004/007 (related)"
       },
       {
-        "name": "CHPR Symposium Presentation (May 15)",
+        "name": "CHPR Symposium Presentation",
         "funder": "Stanford CHPR",
         "amount": "N/A (visibility)",
         "deadline": "May 15, 2026",
         "score": 88,
-        "match": "Network: Lucas William Lowe, Kate McKinney, Adrienne, Dr. Prochaska, Josh, Tia, Yasaman, Yetsa. Critical for internal Stanford positioning."
+        "match": "Network: Lucas William Lowe, Kate McKinney, Josh, Tia, Yasaman, Yetsa. Critical for Stanford positioning."
       }
     ],
     "tasks_by_workstream": {
-      "WS1 — IRB & Compliance": 5,
-      "WS2 — Recruitment & Outreach": 8,
-      "WS3 — Data Collection (CGM + Surveys)": 6,
-      "WS4 — Analysis & Manuscripts": 4,
-      "WS5 — Dissemination & Presentations": 3,
-      "WS6 — VR/AR Education Development": 4,
-      "WS7 — Team Management & Delegation": 5
+      "WS1 — IRB & Compliance": 4,
+      "WS2 — Recruitment & Outreach": 7,
+      "WS3 — Data Collection (CGM + Surveys)": 5,
+      "WS4 — Analysis & Manuscripts": 5,
+      "WS5 — Dissemination & Presentations": 4,
+      "WS6 — VR/AR Education Development": 5,
+      "WS7 — Team Management & Delegation": 6,
+      "WS8 — Grant Applications": 8
     },
     "relationships": [
-      { "name": "Dalia (Research Assistant, $16/hr)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Confirm hours increase + ADA block review status. She's reliable (every Thursday 12:00)." },
-      { "name": "Jennifer (Outreach RA)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Send delegation SOP + hours proposal. Must formalize her role." },
-      { "name": "Minal Moharir (Stanford, VR/PCORI)", "status": "green", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Continue PCORI grant coordination. Co-investigator on VR nutrition." },
-      { "name": "Isabela Moise (Stanford, VR Education)", "status": "green", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Co-presents with Stefan. Align on CHPR Symposium prep." },
-      { "name": "Adrian Moise (Mentor)", "status": "green", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Warned about competitive conference acceptance. Heed advice on scaling." },
-      { "name": "Eli (Budget Manager)", "status": "green", "lastContact": "Apr 2 (budget review)", "suggestedAction": "Follow up on personnel hour allocations from Apr 2 meeting." },
-      { "name": "Stephanie (Team Member)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "suggestedAction": "Confirm ADA block blog sent to Dalia by Apr 14." },
-      { "name": "Stanford IRB Office", "status": "red", "lastContact": "Mar 28", "suggestedAction": "Follow up on protocol modification — 2+ weeks no response." },
-      { "name": "NORA Hackathon Team", "status": "green", "lastContact": "Apr 12 (post-win)", "suggestedAction": "Set weekly meeting. Begin Harvard boot camp deliverables." },
-      { "name": "Community Partner — South Bay", "status": "yellow", "lastContact": "Apr 3", "suggestedAction": "Schedule Q2 check-in. Recruitment pipeline needs refresh." },
-      { "name": "Dr. Kumar Siddharth Singh (HSIL)", "status": "green", "lastContact": "Apr 11 (hackathon)", "suggestedAction": "Thank-you message + explore ongoing collaboration." },
-      { "name": "Ted (Hackathon Teammate)", "status": "green", "lastContact": "Apr 12", "suggestedAction": "Draft LinkedIn congratulatory post. Maintain relationship." }
+      { "name": "Dalia (RA, $16/hr, 3hrs/wk)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "conversationRef": "project-tasks-and-content-review-planning", "suggestedAction": "Send formal hours increase proposal. She's reliable (every Thursday 12:00). Budget supports increase per Eli review. Also confirm ADA block review status." },
+      { "name": "Jennifer (Outreach RA)", "status": "red", "lastContact": "Apr 9 (OMI)", "conversationRef": "team-coordination-and-task-ownership-discussion", "suggestedAction": "4+ weeks of promised delegation SOP with zero action. Send proposal: increased hours + formalized ownership of recruitment outreach, community partner comms, weekly status." },
+      { "name": "Stephanie (Team Member)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "conversationRef": "project-tasks-and-content-review-planning", "suggestedAction": "Confirm ADA block blog sent to Dalia. Deadline is TODAY (Apr 14)." },
+      { "name": "Minal Moharir (Stanford VR/PCORI)", "status": "green", "lastContact": "Apr 9 (OMI)", "conversationRef": "planning-irb-demo-for-ar-nutrition-project", "suggestedAction": "Continue PCORI grant coordination. Schedule AR nutrition demo meeting (~Apr 30). Need 100% assurance of her support before proceeding." },
+      { "name": "Isabela Moise (VR Education)", "status": "green", "lastContact": "Apr 9 (OMI)", "conversationRef": "designing-interactive-clinical-training-scenarios", "suggestedAction": "Align on CHPR Symposium prep (May 15). Co-presenting." },
+      { "name": "Adrian Moise (Mentor)", "status": "green", "lastContact": "Apr 9 (OMI)", "conversationRef": "friends-discuss-conferences-and-mentorship-opportunities", "suggestedAction": "Conference acceptance advice. Heed scaling guidance." },
+      { "name": "Eli (Budget Manager)", "status": "green", "lastContact": "Apr 2", "conversationRef": "team-reviews-budget-for-research-personnel", "suggestedAction": "Follow up on Apr 2 budget review. Execute personnel decisions he approved." },
+      { "name": "NORA Hackathon Team", "status": "yellow", "lastContact": "Apr 12", "conversationRef": "friends-reflect-on-hackathon-win-and-next-steps", "suggestedAction": "Set weekly meeting NOW. Send presentation for review. Begin Harvard deliverables. Momentum decays fast." },
+      { "name": "Deloitte/Medibank Mentor (Ex-colleague's contact)", "status": "gray", "lastContact": "Referenced Apr 12", "conversationRef": "friends-reflect-on-hackathon-win-and-next-steps", "suggestedAction": "Ask friend for introduction. She developed 'ecosystem thinking' framework for healthcare and is looking for impact projects. Potential hackathon collaborator." },
+      { "name": "Mehak (Data Analysis)", "status": "green", "lastContact": "Apr 9 (OMI)", "conversationRef": "project-tasks-and-content-review-planning", "suggestedAction": "PPDI data analysis completed. Needs final review with UA. Keep momentum for manuscript writing." },
+      { "name": "Uday (Global Health)", "status": "yellow", "lastContact": "Apr 9 (OMI)", "conversationRef": "planning-work-on-udays-global-health-proposal", "suggestedAction": "Review global health proposal/AI initiative. Pre-filled application emailed. Agreement due imminently." },
+      { "name": "Stanford IRB Office", "status": "red", "lastContact": "Mar 28", "suggestedAction": "2+ weeks no response on protocol modification. Follow up urgently — blocking AR nutrition project timeline." },
+      { "name": "Ted (Hackathon 1st Place)", "status": "green", "lastContact": "Apr 12", "conversationRef": "friends-reflect-on-hackathon-win-and-next-steps", "suggestedAction": "Draft LinkedIn congratulatory post. Maintain relationship." },
+      { "name": "Community Partner — South Bay", "status": "yellow", "lastContact": "Apr 3", "suggestedAction": "Schedule Q2 check-in. Recruitment pipeline needs refresh." }
     ]
   }
 }

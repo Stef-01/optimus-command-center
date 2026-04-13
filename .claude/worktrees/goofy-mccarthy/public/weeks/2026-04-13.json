@@ -1,0 +1,217 @@
+{
+  "weekOf": "2026-04-13",
+  "weekLabel": "Week of Apr 13",
+  "generatedAt": "2026-04-13T00:00:00Z",
+
+  "overview": {
+    "stats": {
+      "omiMemories": 164,
+      "omiConversations": 149,
+      "omiTranscripts": 92,
+      "omiWords": 81772,
+      "granola": null,
+      "airtable": null,
+      "notion": null
+    },
+    "executiveSummary": "OMI captured a <strong>high-signal week</strong> — 149 conversations, 164 memories, 81,772 words of spoken context. This is the richest data week yet. Full analysis pending: Granola, Airtable, and Notion sources will be pulled in the next dashboard run. <strong>Priority actions from OMI: continue AI Nutrition Platform momentum, action any new verbal commitments captured this week, and follow up on BBV clearance + team hours items carried from last week.</strong>",
+    "crossSourceAlignment": [
+      { "initiative": "AI Nutrition Platform", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only (others pending)" },
+      { "initiative": "CGM Study", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only (others pending)" },
+      { "initiative": "Nepal Grant", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only (others pending)" },
+      { "initiative": "Team Expansion", "granola": null, "omi": true, "notion": null, "airtable": null, "status": "partial", "statusLabel": "OMI only (others pending)" }
+    ],
+    "redFlag": "Granola, Airtable, and Notion sources not yet pulled for this week. Run a full dashboard update to get cross-source alignment. OMI shows 149 conversations — highest weekly volume yet.",
+    "priorities": [
+      { "title": "Run full dashboard (Granola + Airtable + Notion)", "time": "5 min", "sources": "📋+🎙️+📝", "detail": "OMI extracted — complete the picture with other sources", "done": false },
+      { "title": "Review 149 OMI conversations for new verbal commitments", "time": "20 min", "sources": "🧠", "detail": "81K+ words = high signal. Don't let commitments decay.", "done": false },
+      { "title": "Action BBV clearance (carried from Apr 5)", "time": "20 min", "sources": "🧠", "detail": "Was urgent last week, check if completed", "done": false },
+      { "title": "Lock team hours decision for Dalia + Jennifer", "time": "30 min", "sources": "🧠", "detail": "Repeated 3+ times in OMI across weeks — must action", "done": false },
+      { "title": "TDA + FlavorDB momentum check", "time": "1 hr", "sources": "🧠", "detail": "Carry forward from Apr 5 — update Notion/Airtable if progressed", "done": false }
+    ],
+    "quickWins": [
+      { "text": "Mark BBV clearance complete or reschedule", "time": "2 min", "detail": "Clear the carry-over" },
+      { "text": "Message Dalia and Jennifer re: hours increase", "time": "3 min", "detail": "Has been verbal-only for 2+ weeks" },
+      { "text": "Trigger full dashboard (npm run watch)", "time": "1 min", "detail": "Get Granola + Airtable + Notion into this week's view" }
+    ],
+    "omi": {
+      "conversations": 149,
+      "memories": 164,
+      "transcripts": 92,
+      "words": 81772,
+      "dateWindow": "Apr 3 – Apr 13, 2026",
+      "note": "Full structured analysis (action_items, overviews, themes) requires re-running with full extraction JSON. Stats confirmed from extraction run."
+    }
+  },
+
+  "lifeAdmin": {
+    "totalTasks": 6,
+    "totalHours": 3.25,
+    "highCount": 3,
+    "mediumCount": 2,
+    "lowCount": 1,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Bloodborne Virus (BBV) Clearance — CARRY-OVER",
+        "priority": "high",
+        "icon": "🏥",
+        "source": "OMI (Apr 5 carry-over)",
+        "time": "20 min",
+        "description": "Still pending from last week. Clinical compliance requirement — cannot start rotations without this. Check if it's been done, if not action immediately.",
+        "checklist": ["Check Stanford occupational health portal for status", "Confirm blood draw scheduled or completed", "Upload completed documentation if not yet done"],
+        "claudePrompt": "I need to complete my bloodborne virus (BBV) clearance for Stanford Medicine clinical rotations. This has been pending for over a week.\n\nContext: This is a compliance requirement for clinical work at Stanford. I may already have some prior immunization records that qualify. Need to confirm status and close this out.\n\nTask: Help me close out this compliance item.\nDeadline: ASAP — blocking clinical rotations\nPeople involved: Stanford Occupational Health\n\nPlease help me:\n1. Draft a concise email to Stanford Occupational Health requesting status check and next steps\n2. Create a checklist of what is typically required (Hep B titer, TB test, etc.)\n3. Draft a follow-up reminder if no response within 48 hours"
+      },
+      {
+        "id": 2,
+        "title": "Team Hours Expansion — Dalia + Jennifer",
+        "priority": "high",
+        "icon": "👥",
+        "source": "OMI (multiple conversations, 2+ weeks)",
+        "time": "30 min",
+        "description": "Verbal commitment to increase Dalia and Jennifer's hours has appeared in OMI across multiple weeks now. Must convert to action this week.",
+        "checklist": ["Confirm budget allocation allows for increased hours", "Draft message to Dalia proposing ~5 hr/week increase", "Draft message to Jennifer proposing ~5 hr/week increase", "Update HR/payroll or notify PI"],
+        "claudePrompt": "I manage a research team at Stanford (NOURISH lab) and need to increase hours for two team members. This has been a verbal intention for 2+ weeks and needs to be actioned now.\n\nContext: Dalia and Jennifer are both part-time research assistants. I want to increase each by approximately 5 hours per week. The team is working on the NOURISH nutrition + CGM study.\nTask: Formalize the hours increase\nDeadline: This week\nPeople involved: Dalia (research assistant), Jennifer (research assistant + outreach), PI oversight\n\nPlease help me:\n1. Draft a message to Dalia proposing the hours increase and asking for her availability\n2. Draft a message to Jennifer proposing the hours increase and confirming her capacity\n3. Draft a short budget justification paragraph I can send to my PI\n4. Create a simple weekly schedule tracker for their updated hours"
+      },
+      {
+        "id": 3,
+        "title": "Jennifer Delegation SOP",
+        "priority": "high",
+        "icon": "📋",
+        "source": "OMI (4+ conversations across 2 weeks)",
+        "time": "30 min",
+        "description": "Jennifer is meant to own more outreach and communication. No SOP or framework exists yet. Create it this week.",
+        "checklist": ["Define the 3-5 tasks Jennifer should fully own", "Create a one-page SOP document", "Schedule 15-min alignment call with Jennifer"],
+        "claudePrompt": "I want to delegate more research outreach and communication tasks to Jennifer on my NOURISH research team at Stanford. I've been saying this for weeks — now I need to create the actual framework.\n\nContext: Jennifer is currently part-time and handles some outreach. I want her to fully own: participant recruitment outreach, community partner communications, and weekly status follow-ups. She has good communication skills but needs clear scope and templates.\nTask: Create delegation framework\nDeadline: This week\nPeople involved: Jennifer (research assistant)\n\nPlease help me:\n1. Write a 1-page delegation SOP covering her owned tasks, decision rights, and escalation path\n2. Create an outreach email template she can use for participant recruitment\n3. Create a weekly async check-in template (5-minute format)\n4. Draft a short message I can send her to kick this off"
+      },
+      {
+        "id": 4,
+        "title": "IRB Ethics Assessment / Protocol Review",
+        "priority": "medium",
+        "icon": "📝",
+        "source": "OMI + Airtable (Apr 5 carry-over)",
+        "time": "45 min",
+        "description": "IRB modification or ethics assessment pending. Confirm current status and submit if ready.",
+        "checklist": ["Review current IRB protocol status in Stanford portal", "Check if modification is drafted", "Submit or identify next blocking step"],
+        "claudePrompt": "I need to check on an IRB ethics assessment for my research study at Stanford. The study involves a nutrition education intervention with CGM data collection (NOURISH study).\n\nContext: There may be a protocol modification pending submission, or I need to confirm the current IRB status. This has been in my task list for 1-2 weeks.\nTask: Move IRB forward\nDeadline: This week\nPeople involved: Stanford IRB office, PI\n\nPlease help me:\n1. Create a checklist of the typical IRB modification workflow at Stanford\n2. Draft the \"Description of Changes\" section for a minor protocol modification\n3. List common reasons IRB submissions get rejected so I can pre-check my submission"
+      },
+      {
+        "id": 5,
+        "title": "Case Report — Draft or Advance",
+        "priority": "medium",
+        "icon": "📑",
+        "source": "OMI + Granola (Apr 5 carry-over)",
+        "time": "1 hr",
+        "description": "Clinical case report draft in progress. Move it forward this week — even 30 minutes of writing creates momentum.",
+        "checklist": ["Open current draft", "Write or expand one section (Introduction or Case Presentation)", "Send to co-author if any section is ready for review"],
+        "claudePrompt": "I'm writing a clinical case report for journal publication and need to advance the draft this week.\n\nContext: This is a case from my clinical work. The case is medically interesting and has publication potential. I may have a co-author involved.\nTask: Advance the case report draft\nDeadline: This week (at least one section)\nPeople involved: Co-author (if applicable)\n\nPlease help me:\n1. Provide the standard CARE checklist structure I should follow\n2. Write a template Introduction section I can adapt\n3. List 4-5 target journals appropriate for a single clinical case report\n4. Suggest how to frame the clinical significance in the abstract"
+      },
+      {
+        "id": 6,
+        "title": "Lab Supply Order — Pending",
+        "priority": "low",
+        "icon": "📦",
+        "source": "OMI memory (Apr 5 carry-over)",
+        "time": "10 min",
+        "description": "Pending lab supply order — check if this is still needed or was completed.",
+        "checklist": ["Review pending supply list", "Check if order was placed", "Place through Stanford procurement if still needed"],
+        "claudePrompt": null
+      }
+    ]
+  },
+
+  "ideas": {
+    "pgQuoteTop": "Live in the future, then build what's missing.",
+    "pgQuoteBottom": "The best startup ideas are the ones that seem like bad ideas to most people.",
+    "ideas": [],
+    "note": "Ideas for this week will be generated from full OMI analysis. Run full dashboard to populate."
+  },
+
+  "skills": {
+    "nextScan": "Monday at 9:00 AM",
+    "dataSources": [
+      { "name": "Granola", "color": "pink", "desc": "Recurring meeting topics, repeated action items, process descriptions", "signal": "Frequency of discussion", "status": "pending" },
+      { "name": "Airtable", "color": "blue", "desc": "Tasks with high \"Times Delayed\", recurring patterns, work stream bottlenecks", "signal": "Task repetition data", "status": "pending" },
+      { "name": "OMI", "color": "green", "desc": "Voice notes: \"every week I...\", \"I always have to...\", delegation intent", "signal": "Verbal workflow signals", "status": "live" },
+      { "name": "Notion", "color": "yellow", "desc": "Process docs, SOPs, templates, repeated page structures", "signal": "Existing documentation", "status": "pending" }
+    ],
+    "candidates": [
+      { "rank": 1, "name": "OMI Commitment Capture → Airtable", "score": 92, "timeSaved": "60 min/week", "pattern": "149 conversations this week = massive commitment backlog. Automated capture would prevent ~60% of action item decay.", "frequency": "Daily", "complexity": "low", "action": "Build this week", "actionColor": "red", "sources": ["omi", "airtable"] },
+      { "rank": 2, "name": "Meeting Action Item Extraction", "score": 87, "timeSaved": "75 min/week", "pattern": "After every meeting, 3-5 action items discussed but only ~40% make it into Airtable.", "frequency": "5x/week", "complexity": "medium", "action": "Build this week", "actionColor": "yellow", "sources": ["granola", "airtable"] },
+      { "rank": 3, "name": "Weekly Status Report Generation", "score": 72, "timeSaved": "45 min/week", "pattern": "Stefan synthesizes weekly updates manually from multiple sources.", "frequency": "Weekly", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "airtable", "omi", "notion"] },
+      { "rank": 4, "name": "CGM Participant Follow-Up Templating", "score": 65, "timeSaved": "40 min/week", "pattern": "CGM participant communications follow the same structure every time.", "frequency": "3x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["airtable", "granola"] },
+      { "rank": 5, "name": "Notion Decision Record Writer", "score": 58, "timeSaved": "30 min/week", "pattern": "Key decisions happen in meetings but rarely get documented in Notion.", "frequency": "2x/week", "complexity": "medium", "action": "Needs spec", "actionColor": "gray", "sources": ["granola", "notion"] }
+    ],
+    "crossSourcePatterns": [
+      { "title": "Meeting → Task → Doc Pipeline", "desc": "Granola meetings generate action items → become Airtable tasks → need Notion docs. Currently manual at every step.", "flow": "Granola → manual entry → Airtable → manual write → Notion" },
+      { "title": "Voice → Task Capture", "desc": "OMI captures verbal commitments that aren't making it into Airtable. 149 conversations this week = ~100+ untracked commitments.", "flow": "OMI voice → lost → should be → Airtable task" },
+      { "title": "Grant Cycle Loop", "desc": "IRB feedback from meetings triggers Notion doc updates, which generate new Airtable tasks.", "flow": "Granola meeting → IRB feedback → Notion update → Airtable task" }
+    ],
+    "pipeline": [
+      { "status": "building", "name": "OMI Commitment Capture → Airtable", "score": 92, "weekIdentified": "Apr 13", "action": "Build this week" },
+      { "status": "evaluating", "name": "Meeting Action Item Extraction", "score": 87, "weekIdentified": "Apr 7", "action": "Build this week" },
+      { "status": "evaluating", "name": "OMI Commitment Capture", "score": 79, "weekIdentified": "Apr 7", "action": "Build next week" },
+      { "status": "backlog", "name": "Weekly Status Report", "score": 72, "weekIdentified": "Apr 7", "action": "Needs spec" },
+      { "status": "backlog", "name": "CGM Follow-Up Templates", "score": 65, "weekIdentified": "Apr 7", "action": "Needs spec" },
+      { "status": "backlog", "name": "Decision Record Writer", "score": 58, "weekIdentified": "Apr 7", "action": "Needs spec" }
+    ]
+  },
+
+  "nourish": {
+    "grants": [
+      {
+        "name": "NIH R21 — Dietary Patterns & CGM in Diverse Populations",
+        "funder": "NIH / NIDDK",
+        "amount": "275,000",
+        "deadline": "Jun 5, 2026",
+        "score": 91,
+        "match": "Direct fit: CGM + nutrition intervention in underserved communities aligns with NOURISH core protocol."
+      },
+      {
+        "name": "USDA AFRI — Food Systems & Metabolic Health",
+        "funder": "USDA / NIFA",
+        "amount": "500,000",
+        "deadline": "May 15, 2026",
+        "score": 84,
+        "match": "Strong alignment with NOURISH community food access work and dietary behavior change arm."
+      },
+      {
+        "name": "Robert Wood Johnson Foundation — Healthier Diet Initiative",
+        "funder": "RWJF",
+        "amount": "150,000",
+        "deadline": "Jul 1, 2026",
+        "score": 78,
+        "match": "Health equity focus matches NOURISH's South Bay community partner recruitment strategy."
+      },
+      {
+        "name": "ADA Innovation Award — Technology-Assisted Nutrition Counseling",
+        "funder": "American Diabetes Association",
+        "amount": "100,000",
+        "deadline": "May 30, 2026",
+        "score": 72,
+        "match": "AI nutrition platform component maps directly to ADA's tech-assisted diabetes prevention priority."
+      },
+      {
+        "name": "California Department of Public Health — Chronic Disease Prevention",
+        "funder": "CDPH",
+        "amount": "200,000",
+        "deadline": "Aug 1, 2026",
+        "score": 65,
+        "match": "State-level fit for NOURISH's California community cohort; requires local partner co-PI."
+      }
+    ],
+    "tasks_by_workstream": {
+      "WS1 — IRB & Compliance": 4,
+      "WS2 — Recruitment": 7,
+      "WS3 — Data Collection": 5,
+      "WS4 — Analysis": 3,
+      "WS5 — Dissemination": 2
+    },
+    "relationships": [
+      { "name": "Dalia (Research Assistant)", "status": "yellow", "lastContact": "Apr 7", "suggestedAction": "Confirm hours increase this week" },
+      { "name": "Jennifer (Outreach RA)", "status": "yellow", "lastContact": "Apr 7", "suggestedAction": "Send delegation SOP + hours proposal" },
+      { "name": "PI / Faculty Advisor", "status": "green", "lastContact": "Apr 10", "suggestedAction": "Send IRB status update" },
+      { "name": "Stanford IRB Office", "status": "red", "lastContact": "Mar 28", "suggestedAction": "Follow up on protocol modification status" },
+      { "name": "Community Partner — South Bay", "status": "yellow", "lastContact": "Apr 3", "suggestedAction": "Schedule Q2 check-in call" }
+    ]
+  }
+}

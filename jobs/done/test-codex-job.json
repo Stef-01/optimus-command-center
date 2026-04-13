@@ -1,0 +1,25 @@
+{
+  "id": "job-001",
+  "title": "Add error boundary to Optimus dashboard",
+  "type": "implement",
+  "priority": "medium",
+  "project": "optimus-command-center",
+  "inputs": {
+    "description": "Add a try-catch error boundary to the Optimus class render methods so the dashboard does not white-screen on JSON parse errors",
+    "target_file": "public/index.html"
+  },
+  "expected_outputs": [
+    "public/index.html"
+  ],
+  "status": "done",
+  "created_at": "2026-04-09T13:56:17.403Z",
+  "route": 7,
+  "route_label": "Codex Direct",
+  "routed_at": "2026-04-09T13:56:25.891Z",
+  "completed_at": "2026-04-09T13:57:27.348Z",
+  "result": {
+    "worker": "codex",
+    "exit_code": 0,
+    "stdout": "I couldn’t write the file because this session is read-only. The change should go into [public/index.html](/C:/Users/stefa/optimus-command-center/public/index.html#L1096), replacing `render()` and inserting `renderErrorState()` before [public/index.html](/C:/Users/stefa/optimus-command-center/public/index.html#L1107).\n\n```diff\n@@\n-      render() {\n-        if (!this.currentWeek) return;\n-\n-        document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;\n-\n-        this.renderOverview();\n-        this.renderLifeAdmin();\n-        this.renderIdeas();\n-        this.renderSkills();\n-      }\n+      render() {\n+        if (!this.currentWeek) return;\n+\n+        try {\n+          document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;\n+\n+          this.renderOverview();\n+          this.renderLifeAdmin();\n+          this.renderIdeas();\n+          this.renderSkills();\n+        } catch (e) {\n+          console.error('Render failed:', e);\n+          this.renderErrorState(e);\n+        }\n+      }\n+\n+      renderErrorState(error) {\n+        const message = error instanceof Error ? error.message : String(error);\n+        document.getElementById('headerWeek').textContent = this.currentWeek?.weekLabel || 'Unavailable';\n+\n+        const errorHTML = `\n+          <div class=\"card hero orange\">\n+            <div style=\"font-size: 18px; font-weight: 700; margin-bottom: 8px;\">Dashboard data error</div>\n+            <div style=\"color: var(--text-secondary); margin-bottom: 12px;\">\n+              Rendering failed, likely due to malformed JSON data. The dashboard stayed online instead of crashing.\n+            </div>\n+            <div style=\"font-family: monospace; font-size: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px; color: var(--yellow);\">\n+              ${message}\n+            </div>\n+          </div>\n+        `;\n+\n+        ['overview', 'lifeAdmin', 'ideas', 'skills'].forEach(sectionId => {\n+          const section = document.getElementById(sectionId);\n+          if (section) section.innerHTML = errorHTML;\n+        });\n+      }\n```\n\nThis catches render-time failures, logs the real error, and swaps the white screen for a visible fallback across all dashboard sections. I wasn’t able to run verification or save the change in this environment.\n"
+  }
+}

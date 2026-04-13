@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Cached manifests (delta-parser uses these, not committed)
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db

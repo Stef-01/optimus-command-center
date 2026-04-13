@@ -1,0 +1,65 @@
+# Optimus Command Center — Cursor AI Rules
+# Read CLAUDE.md for full context before making any significant decision.
+
+## What is Optimus
+Stefan's personal operating system and relationship intelligence dashboard. Aggregates Granola (meetings), Omi AI (voice), Gmail, Airtable, and Notion into a weekly dashboard with proactive intelligence.
+
+## Architecture (non-negotiable)
+- **Frontend:** Pure static site — vanilla HTML/CSS/JS. No framework. No build step.
+- **Data:** JSON files per week in `public/weeks/YYYY-MM-DD.json`. Never overwrite — full history preserved.
+- **Pipeline:** Claude-powered ingestion → structured JSON → frontend renders it.
+- **Deploy:** Vercel. Must work on mobile (Stefan checks on phone).
+
+## Key Files
+```
+public/index.html           # The entire app (HTML + CSS + JS in one file)
+public/weeks/index.json     # Week manifest
+public/weeks/YYYY-MM-DD.json  # Weekly data (4 sections: overview, lifeAdmin, ideas, skills)
+vercel.json                 # Deployment config
+```
+
+## Job Queue Architecture
+```
+jobs/inbox/    → new delta files land here
+jobs/ready/    → approved to run
+jobs/running/  → in-flight
+jobs/review/   → completed, needs human review
+jobs/done/     → closed
+jobs/archive/  → long-term storage
+.cache/        → previous-manifest.json (not committed)
+```
+
+## Weekly JSON Schema
+Each `YYYY-MM-DD.json` has 4 sections:
+- `overview` — stats, executiveSummary, crossSourceAlignment, priorities, quickWins
+- `lifeAdmin` — personal tasks with `claudePrompt` field
+- `ideas` — startup/essay/tool concepts with impact/novelty scoring
+- `skills` — automation candidates with scores and pipeline tracking
+
+## Critical Rules
+1. No framework, no build step — keep it vanilla HTML/CSS/JS
+2. Data lives in JSON — pipeline generates it, frontend renders it
+3. Automation runs as Claude scheduled tasks, not backend services
+4. Every week gets its own JSON file — no overwriting history
+5. Dashboard must work on mobile
+6. Do not add dependencies without explicit approval
+
+## Token-Saving Rules
+- Never load multiple week files when the question is about one week
+- Use `public/weeks/index.json` to find the right file first
+- Read only the relevant section of a week JSON (not the whole file) when possible
+- Use QMD semantic search before manually reading files: `qmd search "query"`
+
+## Karpathy Coding Principles
+1. **Think Before Coding** — state assumptions, surface tradeoffs, ask when unclear
+2. **Simplicity First** — minimum code. If 200 lines could be 50, rewrite it.
+3. **Surgical Changes** — touch only what you must. Keep index.html as one file.
+4. **Goal-Driven Execution** — define success criteria before starting.
+
+## Commands
+```
+npx serve .        # local dev server
+npm run manifest   # regenerate public/optimus.json
+npm run delta      # compute changes, write to jobs/inbox/
+npm run watch      # manifest + delta in sequence
+```
