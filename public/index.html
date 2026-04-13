@@ -848,6 +848,100 @@
       background: rgba(139, 148, 158, 0.2);
       color: var(--text-secondary);
     }
+
+    /* NOURISH project cards */
+    .nourish-projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .project-card {
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: default;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    .project-card-emoji {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .project-card-name {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .project-card-desc {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .project-card-count {
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    /* Grant project pills */
+    .grant-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .grant-pill {
+      position: relative;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    /* Tooltip */
+    .grant-pill .pill-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1c2128;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-primary);
+      width: 220px;
+      z-index: 200;
+      line-height: 1.5;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      white-space: normal;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+
+    .grant-pill:hover .pill-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -963,9 +1057,9 @@
         <div style="color:var(--text-secondary)">Grant pipeline, work stream progress, and relationship health for the NOURISH research lab.</div>
       </div>
 
-      <!-- Sub-Projects -->
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Sub-Projects</div>
-      <div id="nourishProjects" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:32px"></div>
+      <!-- Projects -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Projects</div>
+      <div id="nourishProjects" class="nourish-projects"></div>
 
       <!-- Grant Opportunities -->
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities</div>
@@ -1324,39 +1418,93 @@
         const data = this.currentWeek.nourish;
         if (!data) return;
 
+        // Project definitions with colors, keywords, and alignment rationale
         const PROJECTS = [
-          { id: 'cgm',        label: 'CGM Trial',            color: '#1f6feb', keywords: ['cgm', 'dietary pattern', 'niddk', 'diverse population'] },
-          { id: 'pbdi',       label: 'PBDI Teaching Kitchen', color: '#2ea043', keywords: ['cooking', 'pbdi', 'teaching kitchen', 'community cooking'] },
-          { id: 'pfeme',      label: 'PFEME Resident Ed',     color: '#f0883e', keywords: ['pfeme', 'pgx', 'pharmacogenomics', 'nida', 'precision medicine'] },
-          { id: 'nepal',      label: 'Nepal Grant',           color: '#8957e5', keywords: ['nepal', 'global health'] },
-          { id: 'mealpairer', label: 'Meal Pairer AI',        color: '#39d2c0', keywords: ['sous', 'meal pairer', 'ai pipeline', 'social impact', 'ahrq'] },
-          { id: 'vr',         label: 'VR',                    color: '#8b949e', keywords: ['vr', 'ar nutrition', 'virtual reality', 'augmented reality', 'isabela moise'] }
+          {
+            id: 'cgm', name: 'CGM Trial', emoji: '📊',
+            color: '#1e6fcc', bg: 'rgba(30,111,204,0.15)',
+            desc: '60-person RCT: dietary patterns + continuous glucose monitoring',
+            keywords: ['cgm', 'dietary pattern', 'glycemic', 'blood glucose', 'niddk', 'pilot rct', 'diverse population', 'rct', 'glucose'],
+            rationale: 'Mentions CGM, dietary patterns, or glucose monitoring — core CGM Trial methods.'
+          },
+          {
+            id: 'pbdi', name: 'PBDI Teaching Kitchen', emoji: '🍳',
+            color: '#2D6A4F', bg: 'rgba(45,106,79,0.15)',
+            desc: 'Community cooking program with 30,000+ participants',
+            keywords: ['cooking', 'teaching kitchen', 'pbdi', 'community cooking', '30,000', 'culturally tailored', 'cultural nutrition', 'engagement in cooking', 'community program'],
+            rationale: 'Aligned with PBDI Teaching Kitchen community cooking and cultural nutrition mandate.'
+          },
+          {
+            id: 'pfeme', name: 'PFEME', emoji: '💊',
+            color: '#d97706', bg: 'rgba(217,119,6,0.15)',
+            desc: 'Pharmacogenomics-guided medication education',
+            keywords: ['pgx', 'pharmacogenomics', 'pfeme', 'precision medicine', 'nida', 'medication', 'copilot', 'drug'],
+            rationale: 'References pharmacogenomics or precision medicine — PFEME core domain.'
+          },
+          {
+            id: 'nepal', name: 'Nepal Grant', emoji: '🏔️',
+            color: '#7c3aed', bg: 'rgba(124,58,237,0.15)',
+            desc: 'Global health AI initiative',
+            keywords: ['nepal', 'global health', 'uday', 'global health proposal'],
+            rationale: 'Tied to Nepal/global health initiative with Uday.'
+          },
+          {
+            id: 'mealpairer', name: 'Meal Pairer AI', emoji: '🤖',
+            color: '#0891b2', bg: 'rgba(8,145,178,0.15)',
+            desc: 'AI-powered nutrition recommendations (Sous / NORA)',
+            keywords: ['sous', 'ai opportunity', 'google.org', 'social impact', 'nora', 'hackathon', 'healthcare from the eye', 'eye', 'meal pairer', 'ai pipeline'],
+            rationale: 'Aligned with Meal Pairer AI / Sous pipeline and AI-for-health mandate.'
+          },
+          {
+            id: 'vr', name: 'VR', emoji: '🥽',
+            color: '#6b7280', bg: 'rgba(107,114,128,0.15)',
+            desc: 'VR/AR nutrition education & clinical training',
+            keywords: ['vr', ' ar ', 'virtual reality', 'augmented reality', 'minal', 'isabela', 'chpr', 'ar nutrition', 'vr/ar', 'vr nutrition', 'novel method', 'behavior change'],
+            rationale: 'Involves VR/AR education or mentions key VR collaborators (Minal, Isabela, CHPR).'
+          }
         ];
 
-        const matchProjects = (g) => {
-          const text = ((g.name || '') + ' ' + (g.match || '')).toLowerCase();
-          return PROJECTS.filter(p => p.keywords.some(kw => text.includes(kw)));
-        };
+        // Match a grant to projects via keyword search in name + match fields
+        function matchProjects(grant) {
+          const haystack = (grant.name + ' ' + (grant.match || '')).toLowerCase();
+          return PROJECTS.filter(p => p.keywords.some(kw => haystack.includes(kw)));
+        }
 
-        // Sub-project cards
+        // Render project cards with aligned grant counts
         const projEl = document.getElementById('nourishProjects');
         if (projEl) {
-          const counts = Object.fromEntries(PROJECTS.map(p => [p.id, 0]));
-          if (data.grants) data.grants.forEach(g => matchProjects(g).forEach(p => counts[p.id]++));
+          const grantCounts = {};
+          PROJECTS.forEach(p => { grantCounts[p.id] = 0; });
+          if (data.grants) {
+            data.grants.forEach(g => {
+              matchProjects(g).forEach(p => { grantCounts[p.id]++; });
+            });
+          }
           projEl.innerHTML = PROJECTS.map(p => `
-            <div class="card" style="border-top:3px solid ${p.color};padding:12px 14px">
-              <div style="font-weight:700;font-size:13px;color:${p.color};margin-bottom:4px">${p.label}</div>
-              <div style="font-size:11px;color:var(--text-secondary)">${counts[p.id]} grant${counts[p.id] !== 1 ? 's' : ''} aligned</div>
+            <div class="project-card" style="border-top:3px solid ${p.color};background:${p.bg}">
+              <div class="project-card-emoji">${p.emoji}</div>
+              <div class="project-card-name" style="color:${p.color}">${p.name}</div>
+              <div class="project-card-desc">${p.desc}</div>
+              <div class="project-card-count" style="color:${p.color}">${grantCounts[p.id]} grant${grantCounts[p.id] !== 1 ? 's' : ''} aligned</div>
             </div>
           `).join('');
         }
 
-        // Grants
+        // Grants with project pills
         const grantsEl = document.getElementById('nourishGrants');
         if (grantsEl && data.grants) {
           grantsEl.innerHTML = data.grants.map(g => {
             const aligned = matchProjects(g);
-            const tags = aligned.map(p => `<span style="background:${p.color}22;color:${p.color};border:1px solid ${p.color}55;padding:2px 6px;border-radius:4px;font-size:11px;font-weight:600">${p.label}</span>`).join('');
+            const pillsHTML = aligned.length ? `
+              <div class="grant-pills">
+                ${aligned.map(p => `
+                  <span class="grant-pill" style="background:${p.bg};color:${p.color};border:1px solid ${p.color}40">
+                    ${p.emoji} ${p.name}
+                    <span class="pill-tooltip">${p.rationale}</span>
+                  </span>
+                `).join('')}
+              </div>
+            ` : '';
             return `
               <div class="card">
                 <div style="display:flex;justify-content:space-between;align-items:center">
@@ -1368,7 +1516,7 @@
                 </div>
                 <div style="margin-top:8px;color:var(--text-secondary)">Deadline: ${g.deadline}</div>
                 <div style="margin-top:4px">${g.match}</div>
-                ${aligned.length ? `<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">${tags}</div>` : ''}
+                ${pillsHTML}
               </div>
             `;
           }).join('');
