@@ -963,6 +963,10 @@
         <div style="color:var(--text-secondary)">Grant pipeline, work stream progress, and relationship health for the NOURISH research lab.</div>
       </div>
 
+      <!-- NOURISH Projects -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Projects</div>
+      <div id="nourishProjects" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:32px"></div>
+
       <!-- Grant Opportunities -->
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities</div>
       <div id="nourishGrants" style="display:grid;gap:12px;margin-bottom:32px"></div>
@@ -1320,10 +1324,59 @@
         const data = this.currentWeek.nourish;
         if (!data) return;
 
+        // Projects (static)
+        const projectsEl = document.getElementById('nourishProjects');
+        if (projectsEl) {
+          const projects = [
+            { id: 'CGM',          name: 'CGM Study',      icon: '📊', desc: 'Dietary Patterns & CGM in Diverse Populations — 60-person pilot RCT', status: 'active',      color: '#2D6A4F' },
+            { id: 'PBDI',         name: 'PBDI',           icon: '🥦', desc: 'Plant-Based Diet Intervention — community-based nutrition program',    status: 'active',      color: '#3fb950' },
+            { id: 'PFEME',        name: 'PFEME',          icon: '🔬', desc: 'Precision Food & Ethnicity-based Metabolic Evaluation',                status: 'active',      color: '#58a6ff' },
+            { id: 'Nepal',        name: 'Nepal Study',    icon: '🏔️', desc: 'Cross-cultural nutrition research partnership in Nepal',              status: 'active',      color: '#f0b429' },
+            { id: 'Meal Pairer',  name: 'Meal Pairer AI', icon: '🤖', desc: 'AI-powered culturally-tailored meal pairing tool',                    status: 'development', color: '#e879f9' },
+            { id: 'VR',           name: 'VR Education',   icon: '🥽', desc: 'VR-based nutrition education platform for clinical intervention',      status: 'active',      color: '#39d2c0' }
+          ];
+          const statusColor = { active: '#3fb950', development: '#f0b429', planning: '#58a6ff' };
+          projectsEl.innerHTML = projects.map(p => `
+            <div class="card" style="border-left:4px solid ${p.color}">
+              <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                <div style="font-size:22px">${p.icon}</div>
+                <span style="background:${statusColor[p.status]}22;color:${statusColor[p.status]};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase">${p.status}</span>
+              </div>
+              <div style="font-weight:700;margin-bottom:4px">${p.name}</div>
+              <div style="color:var(--text-secondary);font-size:12px">${p.desc}</div>
+            </div>
+          `).join('');
+        }
+
+        // Grant keyword tag extraction
+        const GRANT_KEYWORDS = [
+          { key: 'cgm',        label: 'CGM',           color: '#2D6A4F' },
+          { key: 'pbdi',       label: 'PBDI',          color: '#3fb950' },
+          { key: 'pfeme',      label: 'PFEME',         color: '#58a6ff' },
+          { key: 'nepal',      label: 'Nepal',         color: '#f0b429' },
+          { key: 'meal pair',  label: 'Meal Pairer',   color: '#e879f9' },
+          { key: 'vr',         label: 'VR',            color: '#39d2c0' },
+          { key: 'sous',       label: 'Sous AI',       color: '#bc8cff' },
+          { key: 'pgx',        label: 'PGx',           color: '#ffa726' },
+          { key: 'pharmacogen',label: 'PGx',           color: '#ffa726' },
+        ];
+        function grantTags(g) {
+          const text = (g.name + ' ' + (g.match || '')).toLowerCase();
+          const seen = new Set();
+          return GRANT_KEYWORDS.filter(k => {
+            if (seen.has(k.label)) return false;
+            if (text.includes(k.key)) { seen.add(k.label); return true; }
+            return false;
+          });
+        }
+
         // Grants
         const grantsEl = document.getElementById('nourishGrants');
         if (grantsEl && data.grants) {
-          grantsEl.innerHTML = data.grants.map(g => `
+          grantsEl.innerHTML = data.grants.map(g => {
+            const tags = grantTags(g);
+            const tagsHtml = tags.length ? `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">${tags.map(t => `<span style="background:${t.color}22;color:${t.color};padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">${t.label}</span>`).join('')}</div>` : '';
+            return `
             <div class="card">
               <div style="display:flex;justify-content:space-between;align-items:center">
                 <div>
@@ -1334,8 +1387,10 @@
               </div>
               <div style="margin-top:8px;color:var(--text-secondary)">Deadline: ${g.deadline}</div>
               <div style="margin-top:4px">${g.match}</div>
+              ${tagsHtml}
             </div>
-          `).join('');
+          `;
+          }).join('');
         }
 
         // Tasks by Work Stream
