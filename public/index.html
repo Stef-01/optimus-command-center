@@ -1338,6 +1338,69 @@
     .delta.up { color: var(--green); }
     .delta.down { color: var(--red); }
     .delta.flat { color: var(--text-secondary); }
+
+    /* ============================================
+       ON FIRE BANNER
+       ============================================ */
+    .on-fire-banner {
+      background: linear-gradient(135deg, rgba(248, 81, 73, 0.15) 0%, rgba(248, 81, 73, 0.05) 100%);
+      border-bottom: 2px solid rgba(248, 81, 73, 0.4);
+      padding: 12px 24px;
+    }
+    .on-fire-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .on-fire-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .on-fire-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.2px;
+      margin-bottom: 6px;
+    }
+    .on-fire-dismiss {
+      background: transparent;
+      border: 1px solid rgba(248, 81, 73, 0.4);
+      color: var(--text-secondary);
+      border-radius: 4px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: inherit;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-height: 28px;
+      margin-top: 2px;
+      transition: all 0.15s;
+    }
+    .on-fire-dismiss:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+    .on-fire-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .on-fire-list li {
+      font-size: 12px;
+      color: var(--text-primary);
+    }
+    @media (max-width: 640px) {
+      .on-fire-banner { padding: 10px 14px; }
+      .on-fire-title { font-size: 12px; }
+      .on-fire-list li { font-size: 11px; }
+    }
   </style>
 </head>
 <body>
@@ -1358,6 +1421,8 @@
     </div>
     <div class="weekly-tabs" id="weeklyTabs"></div>
   </div>
+
+  <div id="onFireBanner" class="on-fire-banner" style="display:none" role="alert" aria-live="polite"></div>
 
   <div class="container">
     <div style="margin: 24px 0;">
@@ -1559,6 +1624,26 @@
   </div>
 
   <script>
+    // Parse a deadline string like "Apr 17, 2026" or "LOI Apr 28, 2026; App Sep 1"
+    function parseDeadlineDate(str) {
+      if (!str) return null;
+      const m = str.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/i);
+      if (m) return new Date(`${m[1]} ${m[2]}, ${m[3]}`);
+      const d = new Date(str);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    // Dismiss the on-fire banner and persist dismissed item IDs to localStorage
+    function dismissOnFire(weekDate) {
+      const banner = document.getElementById('onFireBanner');
+      if (!banner) return;
+      const itemIds = JSON.parse(banner.dataset.itemIds || '[]');
+      const stored = JSON.parse(localStorage.getItem('optimus-onfire') || '{}');
+      stored[weekDate] = [...new Set([...(stored[weekDate] || []), ...itemIds])];
+      localStorage.setItem('optimus-onfire', JSON.stringify(stored));
+      banner.style.display = 'none';
+    }
+
     class Optimus {
       constructor() {
         this.weeks = {};
@@ -1820,12 +1905,93 @@
 
         document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel || '';
 
+        this.renderOnFireBanner();
         this.renderSourceHealthBadges(this.currentWeek);
         this.renderOverview();
         this.renderLifeAdmin();
         this.renderNourish();
         this.renderIdeas();
         this.renderSkills();
+      }
+
+      renderOnFireBanner() {
+        const week = this.currentWeek;
+        const banner = document.getElementById('onFireBanner');
+        if (!week || !banner) return;
+
+        const weekDate = week.weekOf;
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const items = [];
+
+        // Grants with deadlines within 14 days
+        (week.nourish?.grants || []).forEach(g => {
+          const dl = parseDeadlineDate(g.deadline);
+          if (!dl) return;
+          const daysUntil = Math.ceil((dl - today) / 86400000);
+          if (daysUntil >= 0 && daysUntil <= 14) {
+            items.push({
+              id: `grant:${g.name}`,
+              icon: '⏰',
+              text: `${g.name} — deadline in ${daysUntil} day${daysUntil !== 1 ? 's' : ''}`
+            });
+          }
+        });
+
+        // Life admin tasks — check urgency field, tags array, and title keywords
+        const FIRE_KEYWORDS = ['URGENT', 'TODAY', 'BLOCKER', 'CRITICAL', 'DEADLINE'];
+        (week.lifeAdmin?.tasks || []).forEach(t => {
+          const urgency = (t.urgency || '').toLowerCase();
+          const tags = (t.tags || []).map(x => x.toLowerCase());
+          const titleUp = (t.title || '').toUpperCase();
+          const isUrgent = urgency === 'urgent' || urgency === 'today'
+            || tags.some(tag => ['urgent', 'blocker', 'critical'].includes(tag))
+            || FIRE_KEYWORDS.some(kw => titleUp.includes(kw));
+          if (isUrgent) {
+            items.push({ id: `task:${t.title}`, icon: '🚨', text: t.title });
+          }
+        });
+
+        if (items.length === 0) { banner.style.display = 'none'; return; }
+
+        // Filter already-dismissed items
+        const stored = JSON.parse(localStorage.getItem('optimus-onfire') || '{}');
+        const dismissed = stored[weekDate] || [];
+        const newItems = items.filter(item => !dismissed.includes(item.id));
+
+        if (newItems.length === 0) { banner.style.display = 'none'; return; }
+
+        banner.dataset.itemIds = JSON.stringify(newItems.map(i => i.id));
+        banner.style.display = 'block';
+
+        const shown = newItems.slice(0, 6);
+        const extra = newItems.length - shown.length;
+
+        banner.innerHTML = `
+          <div class="on-fire-inner">
+            <div class="on-fire-body">
+              <div class="on-fire-title">🔥 ON FIRE — ${newItems.length} item${newItems.length !== 1 ? 's' : ''} need attention this week</div>
+              <ul class="on-fire-list">
+                ${shown.map(item => `<li>${item.icon} ${item.text}</li>`).join('')}
+                ${extra > 0 ? `<li style="color:var(--text-secondary)">…and ${extra} more</li>` : ''}
+              </ul>
+            </div>
+            <button class="on-fire-dismiss" onclick="dismissOnFire('${weekDate}')">✕ dismiss</button>
+          </div>
+        `;
+
+        // Wire FAB "What's on fire?" button to re-show banner if dismissed
+        const fabFire = document.getElementById('fabFire');
+        if (fabFire) {
+          fabFire.onclick = () => {
+            const stored2 = JSON.parse(localStorage.getItem('optimus-onfire') || '{}');
+            delete stored2[weekDate];
+            localStorage.setItem('optimus-onfire', JSON.stringify(stored2));
+            this.renderOnFireBanner();
+            document.getElementById('fabSheet')?.classList.remove('open');
+            document.getElementById('fabBtn')?.setAttribute('aria-expanded', 'false');
+          };
+        }
       }
 
       renderSourceHealthBadges(data) {
