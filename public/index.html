@@ -1057,12 +1057,12 @@
         <div style="color:var(--text-secondary)">Grant pipeline, work stream progress, and relationship health for the NOURISH research lab.</div>
       </div>
 
-      <!-- Projects -->
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Projects</div>
+      <!-- Sub-Projects -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">NOURISH Sub-Projects</div>
       <div id="nourishProjects" class="nourish-projects"></div>
 
-      <!-- Grant Opportunities -->
-      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities</div>
+      <!-- Grant Opportunities by Alignment -->
+      <div style="font-size:18px;font-weight:700;margin-bottom:16px">Grant Opportunities by Alignment</div>
       <div id="nourishGrants" style="display:grid;gap:12px;margin-bottom:32px"></div>
 
       <!-- Tasks by Work Stream -->
@@ -1071,7 +1071,12 @@
 
       <!-- Relationship Health -->
       <div style="font-size:18px;font-weight:700;margin-bottom:16px">Relationship Health</div>
-      <div id="nourishRelationships" style="display:grid;gap:8px"></div>
+      <div id="nourishRelationships" style="display:grid;gap:6px"></div>
+
+      <!-- Footer note -->
+      <div style="margin-top:32px;font-size:12px;font-style:italic;color:var(--text-secondary);text-align:center">
+        Project-level metrics and team activity will enrich automatically when Airtable connection is restored.
+      </div>
     </div>
 
     <!-- SKILLS SECTION -->
@@ -1124,7 +1129,57 @@
   </div>
 
   <script>
-    class Optimus {
+    const NOURISH_PROJECTS = [
+      {
+        id: 'cgm', name: 'CGM Trial', emoji: '📊',
+        color: '#3b82f6', bg: 'rgba(59,130,246,0.15)',
+        desc: '60-person RCT: dietary patterns + continuous glucose monitoring',
+        keywords: ['cgm', 'dietary pattern', 'glycemic', 'blood glucose', 'niddk', 'pilot rct', 'diverse population', 'rct', 'glucose'],
+        rationale: 'Mentions CGM, dietary patterns, or glucose monitoring — core CGM Trial methods.'
+      },
+      {
+        id: 'pbdi', name: 'PBDI Teaching Kitchen', emoji: '🍳',
+        color: '#22c55e', bg: 'rgba(34,197,94,0.15)',
+        desc: 'Community cooking program with 30,000+ participants',
+        keywords: ['cooking', 'teaching kitchen', 'pbdi', 'community cooking', '30,000', 'culturally tailored', 'cultural nutrition', 'engagement in cooking', 'community program'],
+        rationale: 'Aligned with PBDI Teaching Kitchen community cooking and cultural nutrition mandate.'
+      },
+      {
+        id: 'pfeme', name: 'PFEME Resident Ed', emoji: '💊',
+        color: '#f97316', bg: 'rgba(249,115,22,0.15)',
+        desc: 'Pharmacogenomics-guided medication education',
+        keywords: ['pgx', 'pharmacogenomics', 'pfeme', 'precision medicine', 'nida', 'medication', 'copilot', 'drug'],
+        rationale: 'References pharmacogenomics or precision medicine — PFEME core domain.'
+      },
+      {
+        id: 'nepal', name: 'Nepal Grant', emoji: '🏔️',
+        color: '#a855f7', bg: 'rgba(168,85,247,0.15)',
+        desc: 'Global health AI initiative',
+        keywords: ['nepal', 'global health', 'uday', 'global health proposal'],
+        rationale: 'Tied to Nepal/global health initiative with Uday.'
+      },
+      {
+        id: 'mealpairer', name: 'Meal Pairer AI', emoji: '🤖',
+        color: '#06b6d4', bg: 'rgba(6,182,212,0.15)',
+        desc: 'AI-powered nutrition recommendations (Sous / NORA)',
+        keywords: ['sous', 'ai opportunity', 'google.org', 'social impact', 'nora', 'hackathon', 'healthcare from the eye', 'eye', 'meal pairer', 'ai pipeline'],
+        rationale: 'Aligned with Meal Pairer AI / Sous pipeline and AI-for-health mandate.'
+      },
+      {
+        id: 'vr', name: 'VR Nutrition', emoji: '🥽',
+        color: '#64748b', bg: 'rgba(100,116,139,0.15)',
+        desc: 'VR/AR nutrition education & clinical training',
+        keywords: ['vr', ' ar ', 'virtual reality', 'augmented reality', 'minal', 'isabela', 'chpr', 'ar nutrition', 'vr/ar', 'vr nutrition', 'novel method', 'behavior change'],
+        rationale: 'Involves VR/AR education or mentions key VR collaborators (Minal, Isabela, CHPR).'
+      }
+    ];
+
+    function tagGrantWithProjects(grant) {
+      const haystack = (grant.name + ' ' + (grant.match || '')).toLowerCase();
+      return NOURISH_PROJECTS.filter(p => p.keywords.some(kw => haystack.includes(kw)));
+    }
+
+        class Optimus {
       constructor() {
         this.weeks = {};
         this.weekIndex = [];
@@ -1418,57 +1473,9 @@
         const data = this.currentWeek.nourish;
         if (!data) return;
 
-        // Project definitions with colors, keywords, and alignment rationale
-        const PROJECTS = [
-          {
-            id: 'cgm', name: 'CGM Trial', emoji: '📊',
-            color: '#3b82f6', bg: 'rgba(59,130,246,0.15)',
-            desc: '60-person RCT: dietary patterns + continuous glucose monitoring',
-            keywords: ['cgm', 'dietary pattern', 'glycemic', 'blood glucose', 'niddk', 'pilot rct', 'diverse population', 'rct', 'glucose'],
-            rationale: 'Mentions CGM, dietary patterns, or glucose monitoring — core CGM Trial methods.'
-          },
-          {
-            id: 'pbdi', name: 'PBDI Teaching Kitchen', emoji: '🍳',
-            color: '#22c55e', bg: 'rgba(34,197,94,0.15)',
-            desc: 'Community cooking program with 30,000+ participants',
-            keywords: ['cooking', 'teaching kitchen', 'pbdi', 'community cooking', '30,000', 'culturally tailored', 'cultural nutrition', 'engagement in cooking', 'community program'],
-            rationale: 'Aligned with PBDI Teaching Kitchen community cooking and cultural nutrition mandate.'
-          },
-          {
-            id: 'pfeme', name: 'PFEME Resident Ed', emoji: '💊',
-            color: '#f97316', bg: 'rgba(249,115,22,0.15)',
-            desc: 'Pharmacogenomics-guided medication education',
-            keywords: ['pgx', 'pharmacogenomics', 'pfeme', 'precision medicine', 'nida', 'medication', 'copilot', 'drug'],
-            rationale: 'References pharmacogenomics or precision medicine — PFEME core domain.'
-          },
-          {
-            id: 'nepal', name: 'Nepal Grant', emoji: '🏔️',
-            color: '#a855f7', bg: 'rgba(168,85,247,0.15)',
-            desc: 'Global health AI initiative',
-            keywords: ['nepal', 'global health', 'uday', 'global health proposal'],
-            rationale: 'Tied to Nepal/global health initiative with Uday.'
-          },
-          {
-            id: 'mealpairer', name: 'Meal Pairer AI', emoji: '🤖',
-            color: '#06b6d4', bg: 'rgba(6,182,212,0.15)',
-            desc: 'AI-powered nutrition recommendations (Sous / NORA)',
-            keywords: ['sous', 'ai opportunity', 'google.org', 'social impact', 'nora', 'hackathon', 'healthcare from the eye', 'eye', 'meal pairer', 'ai pipeline'],
-            rationale: 'Aligned with Meal Pairer AI / Sous pipeline and AI-for-health mandate.'
-          },
-          {
-            id: 'vr', name: 'VR Nutrition', emoji: '🥽',
-            color: '#64748b', bg: 'rgba(100,116,139,0.15)',
-            desc: 'VR/AR nutrition education & clinical training',
-            keywords: ['vr', ' ar ', 'virtual reality', 'augmented reality', 'minal', 'isabela', 'chpr', 'ar nutrition', 'vr/ar', 'vr nutrition', 'novel method', 'behavior change'],
-            rationale: 'Involves VR/AR education or mentions key VR collaborators (Minal, Isabela, CHPR).'
-          }
-        ];
-
-        // Match a grant to projects via keyword search in name + match fields
-        function matchProjects(grant) {
-          const haystack = (grant.name + ' ' + (grant.match || '')).toLowerCase();
-          return PROJECTS.filter(p => p.keywords.some(kw => haystack.includes(kw)));
-        }
+        // Use top-level NOURISH_PROJECTS constant
+        const PROJECTS = NOURISH_PROJECTS;
+        const matchProjects = tagGrantWithProjects;
 
         // Render project cards with aligned grant counts
         const projEl = document.getElementById('nourishProjects');
@@ -1486,6 +1493,7 @@
               <div class="project-card-name" style="color:${p.color}">${p.name}</div>
               <div class="project-card-desc">${p.desc}</div>
               <div class="project-card-count" style="color:${p.color}">${grantCounts[p.id]} grant${grantCounts[p.id] !== 1 ? 's' : ''} aligned</div>
+              <div style="font-size:10px;color:var(--text-secondary);font-style:italic;margin-top:4px">Details pending Airtable sync</div>
             </div>
           `).join('');
         }
@@ -1543,11 +1551,14 @@
         if (relEl && data.relationships) {
           const statusColor = { green: '#3fb950', yellow: '#f0b429', red: '#f85149' };
           relEl.innerHTML = data.relationships.map(r => `
-            <div class="card" style="display:flex;align-items:center;gap:16px">
-              <div style="width:10px;height:10px;border-radius:50%;background:${statusColor[r.status] || '#8b949e'};flex-shrink:0"></div>
-              <div style="flex:1;font-weight:600">${r.name}</div>
-              <div style="color:var(--text-secondary);font-size:12px;white-space:nowrap">${r.lastContact}</div>
-              <div style="color:var(--text-secondary);font-size:13px">${r.suggestedAction}</div>
+            <div class="card" style="display:flex;align-items:flex-start;gap:12px;padding:10px 14px">
+              <div style="width:8px;height:8px;border-radius:50%;background:${statusColor[r.status] || '#8b949e'};flex-shrink:0;margin-top:5px"></div>
+              <div style="flex:1;min-width:0">
+                <div style="font-weight:600;font-size:13px">${r.name}
+                  <span style="font-weight:400;color:var(--text-secondary);font-size:11px;margin-left:6px">${r.lastContact}</span>
+                </div>
+                <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">${r.suggestedAction}</div>
+              </div>
             </div>
           `).join('');
         }
