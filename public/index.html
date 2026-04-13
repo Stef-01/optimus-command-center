@@ -1193,6 +1193,7 @@
           { label: 'Notion', emoji: '📝', key: 'notion' }
         ].map(source => {
           const src = data[source.key];
+          if (!src) return `<div class="source-card"><div class="source-header">${source.emoji} ${source.label}</div><div style="color:var(--text-secondary);padding:8px 0;font-size:13px">No data this week</div></div>`;
           const stats = source.key === 'granola' ?
             `<div class="source-stat"><div class="source-stat-value">${src.meetingsReviewed}</div><div class="source-stat-label">Meetings</div></div><div class="source-stat"><div class="source-stat-value">${src.keyDecisions}</div><div class="source-stat-label">Decisions</div></div>` :
             source.key === 'airtable' ?
