@@ -93,6 +93,7 @@ Every significant Optimus decision, architecture change, or weekly summary shoul
 3. Automation pipeline runs as Claude scheduled tasks, not as backend services.
 4. Every week gets its own JSON file — no overwriting, full history preserved.
 5. The dashboard must work on mobile (Stefan checks it on his phone).
+6. Always commit to main — NEVER create worktree branches. Every commit goes directly to main and is pushed immediately.
 
 ## Karpathy Coding Principles
 
