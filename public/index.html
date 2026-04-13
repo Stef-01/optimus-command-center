@@ -942,6 +942,123 @@
       visibility: visible;
       opacity: 1;
     }
+
+    /* Week Navigation */
+    .week-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+    .week-nav-btn {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      transition: all 0.15s;
+    }
+    .week-nav-btn:hover:not(:disabled) {
+      border-color: var(--cyan-alt);
+      color: var(--text-primary);
+    }
+    .week-nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .week-nav-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      min-width: 170px;
+      text-align: center;
+    }
+    .week-nav-select {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .week-nav-select:hover {
+      border-color: var(--cyan-alt);
+    }
+
+    /* Source Health Badges */
+    .source-health-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--bg-el);
+      font-size: 11px;
+      font-weight: 500;
+      cursor: default;
+      position: relative;
+      white-space: nowrap;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .source-badge.ok .badge-dot { background: var(--green); }
+    .source-badge.null .badge-dot { background: var(--red); }
+    .source-badge.stale .badge-dot { background: var(--yellow); }
+    .source-badge.ok { border-color: rgba(63, 185, 80, 0.3); }
+    .source-badge.null { border-color: rgba(248, 81, 73, 0.2); }
+    .source-badge.stale { border-color: rgba(240, 180, 41, 0.3); }
+    .badge-status-icon { font-size: 10px; }
+    .badge-tooltip {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1c2128;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 11px;
+      color: var(--text-primary);
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s;
+      z-index: 50;
+      pointer-events: none;
+      line-height: 1.6;
+    }
+    .source-badge:hover .badge-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Delta indicators */
+    .delta {
+      font-size: 10px;
+      font-weight: 700;
+      margin-top: 3px;
+      display: block;
+      letter-spacing: 0.2px;
+    }
+    .delta.up { color: var(--green); }
+    .delta.down { color: var(--red); }
+    .delta.flat { color: var(--text-secondary); }
   </style>
 </head>
 <body>
@@ -955,7 +1072,14 @@
         </div>
       </div>
     </div>
-    <div class="weekly-tabs" id="weeklyTabs"></div>
+    <div class="week-nav" id="weekNav">
+      <button class="week-nav-btn" id="prevWeekBtn" disabled>◀</button>
+      <span class="week-nav-label" id="weekNavLabel">—</span>
+      <button class="week-nav-btn" id="nextWeekBtn" disabled>▶</button>
+      <select class="week-nav-select" id="weekJumpSelect">
+        <option value="">Jump to...</option>
+      </select>
+    </div>
   </div>
 
   <div class="container">
@@ -971,6 +1095,7 @@
 
     <!-- OVERVIEW SECTION -->
     <div id="overview" class="section-content active">
+      <div class="source-health-row" id="sourceBadges"></div>
       <div class="stats-strip" id="overviewStats"></div>
 
       <div class="card executive-summary">
@@ -1184,13 +1309,18 @@
         this.weeks = {};
         this.weekIndex = [];
         this.currentWeek = null;
+        this.prevWeek = null;
         this.init();
       }
 
       async init() {
         try {
           await this.loadWeekIndex();
-          await this.loadWeek(this.weekIndex[0]);
+          const urlWeek = new URLSearchParams(location.search).get('week');
+          const startWeek = (urlWeek && this.weekIndex.includes(urlWeek)) ? urlWeek : this.weekIndex[0];
+          await this.loadWeek(startWeek);
+          const prevDate = this.getPrevWeekDate(startWeek);
+          if (prevDate) await this.loadWeek(prevDate);
           this.setupEventListeners();
           this.render();
         } catch (e) {
@@ -1238,25 +1368,94 @@
           btn.addEventListener('click', (e) => this.switchSection(e.target.dataset.section));
         });
 
-        // Week tabs
-        this.renderWeekTabs();
+        // Week navigation buttons
+        document.getElementById('prevWeekBtn').addEventListener('click', () => {
+          const prev = this.getPrevWeekDate(this.currentWeek?.weekOf);
+          if (prev) this.switchToWeek(prev);
+        });
+        document.getElementById('nextWeekBtn').addEventListener('click', () => {
+          const next = this.getNextWeekDate(this.currentWeek?.weekOf);
+          if (next) this.switchToWeek(next);
+        });
+        document.getElementById('weekJumpSelect').addEventListener('change', (e) => {
+          if (e.target.value) { this.switchToWeek(e.target.value); e.target.value = ''; }
+        });
       }
 
-      renderWeekTabs() {
-        const container = document.getElementById('weeklyTabs');
-        container.innerHTML = this.weekIndex.map(week => {
-          const date = new Date(week);
-          const label = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-          return `<button class="week-pill ${week === this.currentWeek?.weekOf ? 'active' : ''}" data-week="${week}">${label}</button>`;
-        }).join('');
+      async switchToWeek(weekDate) {
+        await this.loadWeek(weekDate);
+        const prevDate = this.getPrevWeekDate(weekDate);
+        if (prevDate) await this.loadWeek(prevDate);
+        const url = new URL(location.href);
+        url.searchParams.set('week', weekDate);
+        history.pushState(null, '', url);
+        this.render();
+      }
 
-        container.querySelectorAll('.week-pill').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
-            await this.loadWeek(e.target.dataset.week);
-            this.renderWeekTabs();
-            this.render();
-          });
-        });
+      getPrevWeekDate(weekDate) {
+        const idx = this.weekIndex.indexOf(weekDate);
+        return (idx >= 0 && idx < this.weekIndex.length - 1) ? this.weekIndex[idx + 1] : null;
+      }
+
+      getNextWeekDate(weekDate) {
+        const idx = this.weekIndex.indexOf(weekDate);
+        return (idx > 0) ? this.weekIndex[idx - 1] : null;
+      }
+
+      getWeekRangeLabel(weekDateStr) {
+        const end = new Date(weekDateStr + 'T12:00:00');
+        const start = new Date(end);
+        start.setDate(start.getDate() - 6);
+        const mo = { month: 'short', day: 'numeric' };
+        const startStr = start.toLocaleDateString('en-US', mo);
+        const endStr = end.toLocaleDateString('en-US', { ...mo, year: 'numeric' });
+        return `Week of ${startStr}–${endStr}`;
+      }
+
+      renderWeekNav() {
+        const curr = this.currentWeek?.weekOf;
+        if (!curr) return;
+
+        // Label
+        document.getElementById('weekNavLabel').textContent = this.getWeekRangeLabel(curr);
+
+        // Prev/next buttons
+        document.getElementById('prevWeekBtn').disabled = !this.getPrevWeekDate(curr);
+        document.getElementById('nextWeekBtn').disabled = !this.getNextWeekDate(curr);
+
+        // Jump dropdown
+        const sel = document.getElementById('weekJumpSelect');
+        sel.innerHTML = '<option value="">Jump to...</option>' +
+          this.weekIndex.map(w => {
+            const label = this.getWeekRangeLabel(w);
+            return `<option value="${w}" ${w === curr ? 'disabled' : ''}>${label}</option>`;
+          }).join('');
+      }
+
+      getOverviewStats(weekData) {
+        const stats = weekData?.overview?.stats || {};
+        const omi = weekData?.overview?.omi || {};
+        const lifeAdmin = weekData?.lifeAdmin || {};
+        const nourish = weekData?.nourish || {};
+        const candidates = [
+          { key: 'meetings', label: 'Meetings', suffix: '' },
+          { key: 'decisions', label: 'Decisions', suffix: '' },
+          { key: 'unactionedCommitments', label: 'Unactioned', suffix: '' },
+          { key: 'cgmTasksDue', label: 'CGM Due', suffix: '' },
+          { key: 'priorityHours', label: 'Priority Hrs', suffix: 'h' },
+          { key: 'airtableOverduePercent', label: 'Overdue', suffix: '%' },
+          { key: 'omiMemories', label: 'Memories', suffix: '' },
+          { key: 'omiConversations', label: 'Conversations', suffix: '' },
+          { key: 'omiTranscripts', label: 'Transcripts', suffix: '' },
+          { key: 'omiWords', label: 'OMI Words', suffix: '' },
+          { key: 'wikiPages', label: 'Wiki Pages', suffix: '' },
+        ];
+        return candidates
+          .map(c => {
+            const val = stats[c.key] ?? omi[c.key.replace('omi', '').toLowerCase()] ?? null;
+            return { ...c, val };
+          })
+          .filter(c => c.val !== null && c.val !== undefined && typeof c.val === 'number');
       }
 
       switchSection(section) {
@@ -1270,7 +1469,12 @@
       render() {
         if (!this.currentWeek) return;
 
+        const currDate = this.currentWeek.weekOf;
+        const prevDate = this.getPrevWeekDate(currDate);
+        this.prevWeek = prevDate ? (this.weeks[prevDate] || null) : null;
+
         document.getElementById('headerWeek').textContent = this.currentWeek.weekLabel;
+        this.renderWeekNav();
 
         this.renderOverview();
         this.renderLifeAdmin();
@@ -1279,18 +1483,83 @@
         this.renderSkills();
       }
 
+      renderSourceBadges() {
+        const data = this.currentWeek.overview || {};
+        const sources = [
+          { key: 'granola', label: 'Granola', icon: '🎙️' },
+          { key: 'airtable', label: 'Airtable', icon: '📋' },
+          { key: 'notion', label: 'Notion', icon: '📝' },
+          { key: 'omi', label: 'OMI', icon: '🧠' },
+          { key: 'slack', label: 'Slack', icon: '💬' },
+        ];
+
+        const html = sources.map(s => {
+          // Check direct overview field, then stats sub-field
+          const val = data[s.key] ?? data.stats?.[s.key] ?? null;
+          let state, statusIcon, tooltip;
+
+          if (val === null || val === undefined) {
+            state = 'null';
+            statusIcon = '✗';
+            tooltip = 'No data pulled this week';
+          } else if (val.error || val.stale) {
+            state = 'stale';
+            statusIcon = '⚠';
+            tooltip = val.error || 'Data may be stale';
+          } else {
+            state = 'ok';
+            statusIcon = '✓';
+            // Build tooltip details
+            const parts = [];
+            if (val.meetingsReviewed) parts.push(`${val.meetingsReviewed} meetings`);
+            if (val.conversations)    parts.push(`${val.conversations} conversations`);
+            if (val.memories)         parts.push(`${val.memories} memories`);
+            if (val.words)            parts.push(`${val.words.toLocaleString()} words`);
+            if (val.wikiPages)        parts.push(`${val.wikiPages} wiki pages`);
+            if (val.totalTasks)       parts.push(`${val.totalTasks} tasks`);
+            if (val.overdue !== undefined) parts.push(`${val.overdue} overdue`);
+            if (val.dateRange || val.dateWindow) parts.push(val.dateRange || val.dateWindow);
+            tooltip = parts.length ? parts.join(' · ') : 'Connected';
+          }
+
+          return `<div class="source-badge ${state}">
+            <span class="badge-dot"></span>
+            <span>${s.icon} ${s.label}</span>
+            <span class="badge-status-icon">${statusIcon}</span>
+            <span class="badge-tooltip">${tooltip}</span>
+          </div>`;
+        }).join('');
+
+        document.getElementById('sourceBadges').innerHTML = html;
+      }
+
       renderOverview() {
         const data = this.currentWeek.overview;
 
-        // Stats
-        const statsHTML = `
-          <div class="stat"><div class="stat-value">${data.stats.meetings}</div><div class="stat-label">Meetings</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.decisions}</div><div class="stat-label">Decisions</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.unactionedCommitments}</div><div class="stat-label">Unactioned</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.cgmTasksDue}</div><div class="stat-label">CGM Due</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.priorityHours}h</div><div class="stat-label">Priority Hours</div></div>
-          <div class="stat"><div class="stat-value">${data.stats.airtableOverduePercent}%</div><div class="stat-label">Overdue</div></div>
-        `;
+        // Source health badges
+        this.renderSourceBadges();
+
+        // Stats — dynamic, works with any week schema
+        const currStats = this.getOverviewStats(this.currentWeek);
+        const prevStatsMap = this.prevWeek
+          ? Object.fromEntries(this.getOverviewStats(this.prevWeek).map(s => [s.key, s.val]))
+          : {};
+
+        const statsHTML = currStats.map(s => {
+          const displayVal = s.val >= 1000 ? s.val.toLocaleString() : s.val;
+          let deltaHTML = '';
+          if (prevStatsMap[s.key] !== undefined) {
+            const diff = s.val - prevStatsMap[s.key];
+            if (diff > 0)      deltaHTML = `<span class="delta up">↑ +${Math.abs(diff).toLocaleString()}</span>`;
+            else if (diff < 0) deltaHTML = `<span class="delta down">↓ −${Math.abs(diff).toLocaleString()}</span>`;
+            else               deltaHTML = `<span class="delta flat">= same</span>`;
+          }
+          return `<div class="stat">
+            <div class="stat-value">${displayVal}${s.suffix}</div>
+            <div class="stat-label">${s.label}</div>
+            ${deltaHTML}
+          </div>`;
+        }).join('');
         document.getElementById('overviewStats').innerHTML = statsHTML;
 
         // Executive Summary
