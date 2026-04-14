@@ -1432,6 +1432,7 @@
         <button class="section-tab" data-section="nourish" style="color:#2D6A4F">🌿 NOURISH</button>
         <button class="section-tab" data-section="ideas">🐝 Ideas</button>
         <button class="section-tab" data-section="skills">🔍 Skills</button>
+        <button class="section-tab" data-section="tinker" style="color:#F59E0B">🔧 Tinker</button>
       </div>
     </div>
 
@@ -1541,6 +1542,15 @@
       <div id="nourishRelationships" style="display:grid;gap:8px"></div>
     </div>
 
+    <!-- TINKER SECTION -->
+    <div id="tinker" class="section-content">
+      <div class="card hero" style="border-top-color:#F59E0B;margin-bottom:24px">
+        <div style="font-size:28px;font-weight:700;margin-bottom:8px;color:#F59E0B">🔧 Tinker</div>
+        <div style="color:var(--text-secondary)">Weekend-buildable creative projects. Stanford Septris energy — small scope, high fun, publishable twist.</div>
+      </div>
+      <div id="tinkerContainer"></div>
+    </div>
+
     <!-- SKILLS SECTION -->
     <div id="skills" class="section-content">
       <div style="background: linear-gradient(135deg, rgba(63, 185, 80, 0.2) 0%, rgba(57, 210, 192, 0.2) 100%); border: 1px solid var(--green); border-radius: 8px; padding: 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
@@ -1611,6 +1621,10 @@
     <button class="mobile-tab-item" data-section="skills" aria-label="Skills pipeline">
       <span class="mobile-tab-icon">🔍</span>
       <span>Skills</span>
+    </button>
+    <button class="mobile-tab-item" data-section="tinker" aria-label="Tinker projects">
+      <span class="mobile-tab-icon">🔧</span>
+      <span>Tinker</span>
     </button>
   </nav>
 
@@ -1772,7 +1786,7 @@
       }
 
       setupSwipe() {
-        const SECTIONS = ['overview', 'lifeAdmin', 'nourish', 'ideas', 'skills'];
+        const SECTIONS = ['overview', 'lifeAdmin', 'nourish', 'ideas', 'skills', 'tinker'];
         let touchStartX = 0;
         let touchStartY = 0;
         let touchStartTime = 0;
@@ -1912,6 +1926,7 @@
         this.renderNourish();
         this.renderIdeas();
         this.renderSkills();
+        this.renderTinker();
       }
 
       renderOnFireBanner() {
@@ -2475,6 +2490,86 @@
           </tr>
         `).join('');
         document.getElementById('pipelineTable').innerHTML = pipelineHTML;
+      }
+
+      renderTinker() {
+        const data = this.currentWeek?.tinker;
+        const el = document.getElementById('tinkerContainer');
+        if (!el) return;
+
+        if (!data?.ideas?.length) {
+          el.innerHTML = `
+            <div class="card" style="text-align:center;padding:32px;color:var(--text-secondary)">
+              <div style="font-size:36px;margin-bottom:12px">🔧</div>
+              <div style="font-weight:600;margin-bottom:8px;color:var(--text-primary)">No Tinker ideas this week</div>
+              <div style="font-size:13px">Ideas regenerate every Sunday with the weekly run.</div>
+            </div>`;
+          return;
+        }
+
+        const STAR_KEY = 'tinker-starred';
+        const getStarred = () => { try { return JSON.parse(localStorage.getItem(STAR_KEY) || '[]'); } catch(e) { return []; } };
+
+        // Expose copy + star handlers globally so inline onclick can reach them
+        window.__tinkerCopyPrompt = (idx) => {
+          const prompt = window.__tinkerIdeas?.[idx]?.claudePrompt;
+          if (!prompt) return;
+          const btn = document.querySelector(`[data-tinker-copy="${idx}"]`);
+          navigator.clipboard.writeText(prompt).then(() => {
+            if (btn) { btn.textContent = 'Copied ✓'; setTimeout(() => { btn.textContent = '📋 Copy Claude prompt'; }, 1500); }
+          }).catch(() => { if (btn) btn.textContent = 'Failed'; });
+        };
+        window.__tinkerToggleStar = (name) => {
+          const s = getStarred();
+          const i = s.indexOf(name);
+          if (i === -1) s.push(name); else s.splice(i, 1);
+          localStorage.setItem(STAR_KEY, JSON.stringify(s));
+          this.renderTinker();
+        };
+
+        const starred = getStarred();
+        const ideas = [...data.ideas].sort((a, b) =>
+          (starred.includes(b.name) ? 1 : 0) - (starred.includes(a.name) ? 1 : 0)
+        );
+        window.__tinkerIdeas = ideas;
+
+        const dots = (val) => Array.from({length: 5}, (_, i) =>
+          `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${i < val ? '#F59E0B' : 'var(--border)'}"></span>`
+        ).join('');
+
+        el.innerHTML = ideas.map((idea, idx) => {
+          const isStarred = starred.includes(idea.name);
+          const tags = (idea.tags || []).map(t =>
+            `<span style="display:inline-block;background:var(--bg-el);color:var(--text-secondary);padding:2px 8px;border-radius:4px;font-size:11px;margin:2px 4px 2px 0">${t}</span>`
+          ).join('');
+          const brainUrl = idea.brainLink
+            ? `obsidian://open?vault=Stefan-Brain&file=wiki/tinker/${encodeURIComponent(idea.brainLink)}`
+            : '';
+          return `
+            <div class="card" style="border-top:3px solid #F59E0B;margin-bottom:16px">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+                <div style="font-size:18px;font-weight:700">${idea.emoji || '🔧'} ${idea.name}</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap">
+                  <span style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600">Impact ${idea.impactRating} ${dots(idea.impactRating)}</span>
+                  <span style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600">Fun ${idea.funRating} ${dots(idea.funRating)}</span>
+                  <span style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600">Feas ${idea.feasibilityRating} ${dots(idea.feasibilityRating)}</span>
+                </div>
+              </div>
+              ${idea.tagline ? `<div style="color:var(--text-secondary);font-style:italic;margin-bottom:10px">${idea.tagline}</div>` : ''}
+              ${idea.mechanic ? `<div style="margin-bottom:10px"><span style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-secondary)">Mechanic</span><div style="margin-top:4px;font-size:14px">${idea.mechanic}</div></div>` : ''}
+              <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px;font-size:13px">
+                ${idea.stack ? `<div><span style="color:#F59E0B;font-weight:600">Stack:</span> ${idea.stack}</div>` : ''}
+                ${idea.buildEstimate ? `<div><span style="color:#F59E0B;font-weight:600">Build:</span> ${idea.buildEstimate}</div>` : ''}
+              </div>
+              ${idea.researchAngle ? `<div style="font-size:13px;margin-bottom:10px;padding:8px 12px;background:rgba(245,158,11,0.08);border-radius:6px;border-left:3px solid #F59E0B"><span style="font-weight:600">Research angle:</span> ${idea.researchAngle}</div>` : ''}
+              ${tags ? `<div style="margin-bottom:12px">${tags}</div>` : ''}
+              <div style="display:flex;gap:8px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--border)">
+                ${idea.claudePrompt ? `<button data-tinker-copy="${idx}" onclick="window.__tinkerCopyPrompt(${idx})" style="background:var(--bg-el);border:1px solid var(--border);color:var(--text-primary);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;min-height:36px">📋 Copy Claude prompt</button>` : ''}
+                <button onclick="window.__tinkerToggleStar(${JSON.stringify(idea.name)})" style="background:${isStarred ? 'rgba(245,158,11,0.2)' : 'var(--bg-el)'};border:1px solid ${isStarred ? '#F59E0B' : 'var(--border)'};color:${isStarred ? '#F59E0B' : 'var(--text-secondary)'};padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;min-height:36px">${isStarred ? '⭐ Starred' : '☆ Star'}</button>
+                ${brainUrl ? `<a href="${brainUrl}" target="_blank" style="display:inline-flex;align-items:center;background:var(--bg-el);border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;min-height:36px">→ View in Brain</a>` : ''}
+              </div>
+            </div>`;
+        }).join('');
       }
     }
 

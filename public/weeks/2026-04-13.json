@@ -508,5 +508,24 @@
       { "name": "Ted (Hackathon 1st Place)", "status": "green", "lastContact": "Apr 12", "conversationRef": "friends-reflect-on-hackathon-win-and-next-steps", "suggestedAction": "Draft LinkedIn congratulatory post. Maintain relationship." },
       { "name": "Community Partner — South Bay", "status": "yellow", "lastContact": "Apr 3", "suggestedAction": "Schedule Q2 check-in. Recruitment pipeline needs refresh." }
     ]
+  },
+  "tinker": {
+    "ideas": [
+      {
+        "name": "SpotDx",
+        "emoji": "🎮",
+        "tagline": "Operation the board game, but teaches medicine.",
+        "mechanic": "Click signs on a cartoon patient, classify normal/abnormal, progress through levels.",
+        "stack": "Next.js + Tailwind + SVG + PostHog",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Which clinical signs are systematically missed by med students? (publishable)",
+        "tags": ["medical-education", "games", "data-research"],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build a Next.js 15 app named 'spotdx'. Single screen: cartoon patient SVG with 5 clinical signs overlaid at anatomical positions. User clicks each sign, then a modal asks 'Normal or Abnormal?'. Track clicks in PostHog. Deploy to Vercel. MVP signs: jaundice, clubbing, spider nevi, oedema, pallor. Cartoony art style (like Operation board game). Mobile-first.",
+        "brainLink": "clinical-signs-game"
+      }
+    ]
   }
 }
