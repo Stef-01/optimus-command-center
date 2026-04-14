@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# Environment / secrets
+.env
+.env.local
+
 # Cached manifests (delta-parser uses these, not committed)
 .cache/
 
