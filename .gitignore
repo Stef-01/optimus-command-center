@@ -5,9 +5,17 @@ node_modules/
 .env
 .env.local
 
-# Cached manifests (delta-parser uses these, not committed)
-.cache/
+# Claude Code worktrees (nested git repos)
+.claude/worktrees/
 
-# OS
-.DS_Store
-Thumbs.db
+# Cached manifests (delta-parser)
+*.manifest.json
+
+# Temp inspection repos
+temp-portfolio-inspect/
+temp-final-portfolio-inspect/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
