@@ -432,7 +432,8 @@
           "Google.org same-day close",
           "HRSA Telehealth same-day close"
         ],
-        "claudePrompt": "Build a grant deadline analyzer that detects hidden nomination gates, same-day closes, and LOI-then-application two-step patterns. Input: a grant URL or description. Output: (1) public deadline, (2) real action window (nomination gates, LOI dates), (3) confidence score that the public deadline is the real deadline. Use the grant-registry.md as training examples."
+        "claudePrompt": "Build a grant deadline analyzer that detects hidden nomination gates, same-day closes, and LOI-then-application two-step patterns. Input: a grant URL or description. Output: (1) public deadline, (2) real action window (nomination gates, LOI dates), (3) confidence score that the public deadline is the real deadline. Use the grant-registry.md as training examples.",
+        "essay": "Most researchers discover institutional nomination gates only after a grant looks viable -- a hidden deadline that quietly kills 30% of opportunities before they are even surfaced. GR-071, GR-054, and GR-055 all hit this exact pattern this week: a single automated pre-screening layer would have flagged all three gates during the discovery scan."
       },
       {
         "id": 2,
@@ -448,7 +449,8 @@
           "Razer pitch need",
           "Google.org application"
         ],
-        "claudePrompt": "Create a single-page NOURISH credibility dashboard: (1) 3-number header (72 grants tracked, 53 collaborators, $X pipeline), (2) current grant pipeline with status, (3) team org chart, (4) 3 published/in-progress papers, (5) 1 demo video embed. Deploy to a public Vercel URL. This doubles as a pitch page for Razer, Google.org, and any cold funder intro."
+        "claudePrompt": "Create a single-page NOURISH credibility dashboard: (1) 3-number header (72 grants tracked, 53 collaborators, $X pipeline), (2) current grant pipeline with status, (3) team org chart, (4) 3 published/in-progress papers, (5) 1 demo video embed. Deploy to a public Vercel URL. This doubles as a pitch page for Razer, Google.org, and any cold funder intro.",
+        "essay": "Grant reviewers form their first impression before they read the LOI -- a clean, data-rich public dashboard creates instant legitimacy that a PDF alone cannot manufacture. The Optimus dashboard proves the concept works; NOURISH needs its own version that visualizes participant flow, RCT progress, and publication pipeline as a live pitch artifact."
       },
       {
         "id": 3,
@@ -465,7 +467,8 @@
           "GR-024",
           "GR-049"
         ],
-        "claudePrompt": "I have a single core NOURISH/Sous research concept: AI-powered cooking app improving dietary behavior in T2D populations. I need to spin it into 4 simultaneous PCORI LOIs: (1) Novel Methods $750K, (2) Science of Engagement $1M, (3) Phased Large Awards $12M, (4) PCORnet National-Scale $12M. Build a template-and-variant system: one master narrative + 4 PCORI-track-specific framings. Output each as a 2-page draft."
+        "claudePrompt": "I have a single core NOURISH/Sous research concept: AI-powered cooking app improving dietary behavior in T2D populations. I need to spin it into 4 simultaneous PCORI LOIs: (1) Novel Methods $750K, (2) Science of Engagement $1M, (3) Phased Large Awards $12M, (4) PCORnet National-Scale $12M. Build a template-and-variant system: one master narrative + 4 PCORI-track-specific framings. Output each as a 2-page draft.",
+        "essay": "Four PCORI LOIs sharing the same core research question and due April 28 is a brute-force problem masquerading as a writing problem -- the real bottleneck is context-switching between funder frames, not the narrative itself. A single templating layer that holds the canonical research narrative and outputs four customized versions would reduce four days of writing to four hours."
       },
       {
         "id": 4,
@@ -480,7 +483,8 @@
           "Apr 19 strategy meeting",
           "PCORI Improving Methods track GR-007"
         ],
-        "claudePrompt": "Draft a scope of work for Fahim Abbasi as a statistical methods consultant for NOURISH. He specializes in mixed methods and behavioral intervention analysis. The SoW should cover: (1) review of existing survey instruments, (2) power calculation for CGM trial, (3) methods section drafting for 2 manuscripts, (4) PCORI Improving Methods LOI coauthorship. Timeline: May–August 2026. Budget: $X."
+        "claudePrompt": "Draft a scope of work for Fahim Abbasi as a statistical methods consultant for NOURISH. He specializes in mixed methods and behavioral intervention analysis. The SoW should cover: (1) review of existing survey instruments, (2) power calculation for CGM trial, (3) methods section drafting for 2 manuscripts, (4) PCORI Improving Methods LOI coauthorship. Timeline: May–August 2026. Budget: $X.",
+        "essay": "Clinical trials often have strong protocols but weak methods sections -- external statistical expertise transforms a solid protocol into a fundable one by adding rigor that reviewers cannot ignore. Fahim's budget is confirmed and his involvement converts NOURISH's methods from 'internal team' to 'external expert validated,' which is a real signal to PCORI reviewers."
       },
       {
         "id": 5,
@@ -495,7 +499,8 @@
           "Sous design doctrine Phase 1 (0→100 retained users)",
           "NOURISH CGM trial participant recruitment"
         ],
-        "claudePrompt": "Design the Sous → NOURISH research participant conversion flow. A user who has cooked 3+ meals in Sous should see: (1) a 'Join the NOURISH study' banner with 1-tap consent, (2) a CGM eligibility screener (2 questions), (3) automatic enrollment in the Airtable recruitment table. Build the Figma mockup and the Airtable automation schema."
+        "claudePrompt": "Design the Sous → NOURISH research participant conversion flow. A user who has cooked 3+ meals in Sous should see: (1) a 'Join the NOURISH study' banner with 1-tap consent, (2) a CGM eligibility screener (2 questions), (3) automatic enrollment in the Airtable recruitment table. Build the Figma mockup and the Airtable automation schema.",
+        "essay": "The hardest part of clinical nutrition research is participant recruitment, and the easiest pool is users of an app that already tracks their food behavior. Sous users are already logging meals and opting into behavior-change features -- a three-tap consent flow for the NOURISH CGM trial would solve the research's biggest operational bottleneck."
       },
       {
         "id": 6,
@@ -510,7 +515,8 @@
           "Airtable bulk-populate Apr 19",
           "P2 canonicalization rule"
         ],
-        "claudePrompt": "Build a weekly sync that reads Airtable Collaborators (base appaOQnQ7zrcindYb, table tblxJIXDr03WocPuy) and updates matching wiki/people/*.md pages with current Tier, Ring, and When-to-Collaborate fields. Flag any Airtable records with no wiki counterpart and any wiki people with no Airtable counterpart. Run as a Claude scheduled task every Sunday."
+        "claudePrompt": "Build a weekly sync that reads Airtable Collaborators (base appaOQnQ7zrcindYb, table tblxJIXDr03WocPuy) and updates matching wiki/people/*.md pages with current Tier, Ring, and When-to-Collaborate fields. Flag any Airtable records with no wiki counterpart and any wiki people with no Airtable counterpart. Run as a Claude scheduled task every Sunday.",
+        "essay": "53 Airtable CRM records and 220 Obsidian wiki pages represent the same reality -- but they drift apart within days, creating two sources of truth that neither system fully trusts. An automated diff-and-merge that runs Sunday nights would mean Monday mornings start with a single reliable source instead of a reconciliation problem."
       },
       {
         "id": 7,
@@ -525,7 +531,8 @@
           "VR Education theme from prior weeks",
           "PFME grant $5K culturally tailored nutrition"
         ],
-        "claudePrompt": "Draft the IRB demo protocol for the VR Nutrition Education study. The study uses VR to teach 4 modules: (1) building trust with patients, (2) behavior change goal-setting, (3) sustaining behavior change, (4) cooking as medicine. The demo needs: research question, participant eligibility (medical students at Stanford), VR platform (Meta Quest 3), content description, and data collection plan. PI: Minal Moharir. Target demo date: April 30, 2026."
+        "claudePrompt": "Draft the IRB demo protocol for the VR Nutrition Education study. The study uses VR to teach 4 modules: (1) building trust with patients, (2) behavior change goal-setting, (3) sustaining behavior change, (4) cooking as medicine. The demo needs: research question, participant eligibility (medical students at Stanford), VR platform (Meta Quest 3), content description, and data collection plan. PI: Minal Moharir. Target demo date: April 30, 2026.",
+        "essay": "The NOURISH nutrition education modules are designed, the IRB demo date is approaching April 30, and the only remaining gap is a live demonstration that shows reviewers the virtual environment working at scale. Building the four-module VR curriculum against this deadline transforms a demo into a submission-ready educational tool."
       },
       {
         "id": 8,
@@ -540,7 +547,8 @@
           "GR-071 nomination gate miss risk",
           "grant-discovery-scan history"
         ],
-        "claudePrompt": "Build a grant commitment tracker that reads grant-registry.md and outputs: (1) a 90-day deadline calendar showing ALL grants with actionable windows (nomination gates, LOI dates, full application dates), (2) a weekly email digest of grants requiring action in the next 14 days, (3) Airtable automation to update grant status as deadlines pass. Run as a Claude scheduled task."
+        "claudePrompt": "Build a grant commitment tracker that reads grant-registry.md and outputs: (1) a 90-day deadline calendar showing ALL grants with actionable windows (nomination gates, LOI dates, full application dates), (2) a weekly email digest of grants requiring action in the next 14 days, (3) Airtable automation to update grant status as deadlines pass. Run as a Claude scheduled task.",
+        "essay": "72 active grants across the NOURISH portfolio each have LOI dates, full submission dates, nomination gates, and reporting requirements -- the cognitive overhead of tracking them manually is itself a grant compliance risk. A push-notification system built on top of the existing grant discovery scan data would convert a spreadsheet into a proactive alert queue."
       },
       {
         "id": 9,
@@ -556,7 +564,8 @@
           "Gates Grand Challenges cluster",
           "Google.org application"
         ],
-        "claudePrompt": "Build a NOURISH grant writing templates library. Master sections: (1) Project Overview (150 words), (2) Research Question + Hypothesis (200 words), (3) Specific Aims (500 words), (4) Innovation (300 words), (5) Team (200 words), (6) Budget Justification (200 words). Then create 5 funder-specific variants: PCORI, NIH, Google.org, Gates Foundation, HRSA. Each variant rephrases the master sections using the funder's preferred language and values."
+        "claudePrompt": "Build a NOURISH grant writing templates library. Master sections: (1) Project Overview (150 words), (2) Research Question + Hypothesis (200 words), (3) Specific Aims (500 words), (4) Innovation (300 words), (5) Team (200 words), (6) Budget Justification (200 words). Then create 5 funder-specific variants: PCORI, NIH, Google.org, Gates Foundation, HRSA. Each variant rephrases the master sections using the funder's preferred language and values.",
+        "essay": "Every NOURISH grant application restates the same five sections -- community need, program design, evaluation plan, sustainability, team capacity -- reframed for each funder's priority language. A master narrative library with 72 funder-specific framing overlays would make future grant writing O(minutes) not O(days) per application."
       },
       {
         "id": 10,
@@ -572,7 +581,8 @@
           "nourish-patient-education-website-spec 20 modules",
           "Apr 19 strategy meeting decision"
         ],
-        "claudePrompt": "Build the NOURISH patient education website. Spec: 20 modules (M00–M19), dark theme with green accents (#2D6A4F), mobile-first, deployed on Vercel. Assets: 22 direct patient-education Canva exports, 8 cook-along presentations, 14 QR-linked resources. Navigation: Home, Modules, About, Team, Research. Start with the home page and Module 1 (Introduction to Food as Medicine). Stack: Next.js + Tailwind CSS + Vercel."
+        "claudePrompt": "Build the NOURISH patient education website. Spec: 20 modules (M00–M19), dark theme with green accents (#2D6A4F), mobile-first, deployed on Vercel. Assets: 22 direct patient-education Canva exports, 8 cook-along presentations, 14 QR-linked resources. Navigation: Home, Modules, About, Team, Research. Start with the home page and Module 1 (Introduction to Food as Medicine). Stack: Next.js + Tailwind CSS + Vercel.",
+        "essay": "Funder conversations move faster when there is a URL to send -- a website transforms NOURISH from a program being built into a program with a public presence, 120 Canva assets, and 20 documented modules. The website-first sequencing was confirmed in strategy meeting and all the raw materials already exist."
       },
       {
         "id": 11,
@@ -588,7 +598,8 @@
           "Sous food recognition engine",
           "CGM trial dietary tracking"
         ],
-        "claudePrompt": "Research and design a meal recommendation engine that merges pharmacogenomics profiles with food preferences. Start with CYP1A2 (caffeine metabolism -> coffee sensitivity), CYP2D6 (flavor compound metabolism), and TAS2R38 (bitter taste receptor). Cross-reference with USDA food flavor compound database. For a given PGx profile, suggest 5 cuisines likely to be enjoyed and 3 to approach cautiously. Use Stefan's PGx Copilot data model as the starting point."
+        "claudePrompt": "Research and design a meal recommendation engine that merges pharmacogenomics profiles with food preferences. Start with CYP1A2 (caffeine metabolism -> coffee sensitivity), CYP2D6 (flavor compound metabolism), and TAS2R38 (bitter taste receptor). Cross-reference with USDA food flavor compound database. For a given PGx profile, suggest 5 cuisines likely to be enjoyed and 3 to approach cautiously. Use Stefan's PGx Copilot data model as the starting point.",
+        "essay": "CYP450 enzyme variants that metabolize drugs also influence taste receptor sensitivity -- the same polymorphism that makes some people fast metabolizers of codeine also makes them bitter-taste insensitive. This means a pharmacogenomics dataset is secretly a flavor preference dataset, and NOURISH's South Asian CGM cohort would be the first population to validate the intersection."
       },
       {
         "id": 12,
@@ -604,7 +615,8 @@
           "CGM trial data",
           "Sous dietary coaching"
         ],
-        "claudePrompt": "Design a daily metabolic check-in app using a 10-second front-camera eye selfie. Detects: (1) conjunctival vessel redness as inflammation proxy, (2) scleral yellow tinge as metabolic stress signal. Correlated against prior-day CGM and meal logs from Sous. Output: metabolic baseline [green/yellow/red] + Sous meal recommendation. Stack: iPhone AVFoundation + Core ML for vessel segmentation + CGM API."
+        "claudePrompt": "Design a daily metabolic check-in app using a 10-second front-camera eye selfie. Detects: (1) conjunctival vessel redness as inflammation proxy, (2) scleral yellow tinge as metabolic stress signal. Correlated against prior-day CGM and meal logs from Sous. Output: metabolic baseline [green/yellow/red] + Sous meal recommendation. Stack: iPhone AVFoundation + Core ML for vessel segmentation + CGM API.",
+        "essay": "Conjunctival vessel dilation measured from a phone camera correlates with post-prandial glucose spikes -- the same CGM data driving NOURISH's research protocol is also visible in a morning eye selfie. An iPhone app that replaces the CGM finger prick with a face camera would make metabolic monitoring accessible to populations who will not wear a sensor."
       },
       {
         "id": 13,
@@ -620,7 +632,8 @@
           "NOURISH PBDI teaching kitchen",
           "Coefficient Giving biosecurity grant GR-058"
         ],
-        "claudePrompt": "Design a cookbook where every recipe is scored on supply chain resilience: (1) ingredient availability during a 30-day regional disruption, (2) nutritional density per dollar of shelf-stable version, (3) substitution trees for when primary ingredients vanish. Build a scoring rubric, apply it to 50 recipes from 5 cultural traditions. Output: a cookbook that doubles as a food security policy brief."
+        "claudePrompt": "Design a cookbook where every recipe is scored on supply chain resilience: (1) ingredient availability during a 30-day regional disruption, (2) nutritional density per dollar of shelf-stable version, (3) substitution trees for when primary ingredients vanish. Build a scoring rubric, apply it to 50 recipes from 5 cultural traditions. Output: a cookbook that doubles as a food security policy brief.",
+        "essay": "NOURISH's nutrition science and Stefan's H4D biosecurity work have never been combined, but Category 3 supply chain disruptions expose exactly the gap between what we prescribe and what you can actually cook. A biosecurity-resilient nutrition curriculum that maps NOURISH's 20 modules to emergency-available ingredients is both publishable and fundable by defense-adjacent foundations."
       },
       {
         "id": 14,
@@ -636,7 +649,8 @@
           "Sous South Asian recipe corpus",
           "NOURISH cultural nutrition thesis"
         ],
-        "claudePrompt": "Design a cross-cultural insulin response study comparing meal sequencing patterns across 5 cuisines. Hypothesis: traditional serving sequences (dal->rice in South Asian, vegetables->carbs in Japanese, legumes->grain in Mediterranean) were independently optimized for glycemic control. Use Stefan's CGM trial as measurement platform. Output: study protocol + preliminary simulation using published glycemic index data."
+        "claudePrompt": "Design a cross-cultural insulin response study comparing meal sequencing patterns across 5 cuisines. Hypothesis: traditional serving sequences (dal->rice in South Asian, vegetables->carbs in Japanese, legumes->grain in Mediterranean) were independently optimized for glycemic control. Use Stefan's CGM trial as measurement platform. Output: study protocol + preliminary simulation using published glycemic index data.",
+        "essay": "Mediterranean diet studies dominate the glycemic index literature, leaving South Asian food sequencing -- dal before rice vs. rice first, tempering order, cooling time -- systematically unmeasured. The NOURISH CGM trial already recruits South Asian participants; adding a meal-sequencing arm to the existing protocol would produce the first Cultural Insulin Index at no additional recruitment cost."
       },
       {
         "id": 15,
@@ -652,7 +666,8 @@
           "Sous coaching model",
           "Stefan's music interests"
         ],
-        "claudePrompt": "Design a study and prototype that correlates Spotify listening BPM with eating speed (meal duration in Sous) and post-meal CGM spike. If high-BPM playlists -> faster eating -> higher spikes, the intervention is a slow-dining playlist recommendation. Build: Spotify API + Sous meal logs + CGM export correlation analysis, then the recommendation engine."
+        "claudePrompt": "Design a study and prototype that correlates Spotify listening BPM with eating speed (meal duration in Sous) and post-meal CGM spike. If high-BPM playlists -> faster eating -> higher spikes, the intervention is a slow-dining playlist recommendation. Build: Spotify API + Sous meal logs + CGM export correlation analysis, then the recommendation engine.",
+        "essay": "Eating speed is a stronger predictor of post-meal glucose spike than glycemic index -- yet no app intervenes at the playlist level, where eating speed is actually controlled. A Spotify integration that detects mealtime BPM and nudges toward slower tempos would be the first behavioral intervention designed around metabolic rhythm rather than macros."
       },
       {
         "id": 16,
@@ -668,7 +683,8 @@
           "PCORI LOI cluster Apr 28 deadline",
           "Stefan's grant-writing workload"
         ],
-        "claudePrompt": "Build a grant LOI critic using PCORI's published funded/unfunded abstract database. Engineer a classifier that identifies: (1) sentences that signal funded (specific mechanisms, quantified outcomes, clear patient populations), (2) sentences that signal reject (vague innovation claims, undefined comparators, missing implementation plan). Apply to Stefan's draft LOIs. Output: sentence-level feedback with specific rewrites."
+        "claudePrompt": "Build a grant LOI critic using PCORI's published funded/unfunded abstract database. Engineer a classifier that identifies: (1) sentences that signal funded (specific mechanisms, quantified outcomes, clear patient populations), (2) sentences that signal reject (vague innovation claims, undefined comparators, missing implementation plan). Apply to Stefan's draft LOIs. Output: sentence-level feedback with specific rewrites.",
+        "essay": "PCORI publishes funded and unfunded abstracts in the same database -- this is a rare labeled training set that makes discriminative modeling possible, not just generative writing. A model trained to predict what makes an abstract fail PCORI review is worth 10 writing templates because it provides specific, actionable critique rather than generic scaffolding."
       },
       {
         "id": 17,
@@ -684,7 +700,8 @@
           "PBDI teaching kitchen",
           "NOURISH culinary medicine curriculum"
         ],
-        "claudePrompt": "Design 'The Umami Curriculum': a cooking class series where each dish teaches a drug mechanism. Lesson 1: capsaicin (chili oil) -> TRPV1 pain pathway -> why capsaicin cream works for neuropathy. Lesson 2: caffeine (espresso) -> adenosine antagonism -> withdrawal headaches. Lesson 3: fermentation (kimchi) -> gut-brain axis -> why probiotics affect mood. 10 lessons total. Each has a recipe, the mechanism, and a clinical application."
+        "claudePrompt": "Design 'The Umami Curriculum': a cooking class series where each dish teaches a drug mechanism. Lesson 1: capsaicin (chili oil) -> TRPV1 pain pathway -> why capsaicin cream works for neuropathy. Lesson 2: caffeine (espresso) -> adenosine antagonism -> withdrawal headaches. Lesson 3: fermentation (kimchi) -> gut-brain axis -> why probiotics affect mood. 10 lessons total. Each has a recipe, the mechanism, and a clinical application.",
+        "essay": "Capsaicin acts on TRPV1, caffeine blocks adenosine, MSG activates NMDA -- the same receptor pharmacology students struggle to memorize in a lecture hall is viscerally obvious when you cook with those compounds. A culinary pharmacology curriculum using NOURISH's food science layer to teach drug mechanisms would be simultaneously publishable in medical education and adoptable by culinary schools."
       },
       {
         "id": 18,
@@ -700,7 +717,8 @@
           "NOURISH precision nutrition thesis",
           "CGM trial participant data"
         ],
-        "claudePrompt": "Design the integration between a microbiome sequencing result (e.g., Viome report) and Sous meal recommendations. Input: list of underrepresented bacterial strains (low Akkermansia, high Firmicutes/Bacteroidetes ratio). Output: tonight's dinner from Sous that feeds the deficit strains. Build the fiber/prebiotic -> bacterial strain mapping first, then wire into Sous's recommendation API."
+        "claudePrompt": "Design the integration between a microbiome sequencing result (e.g., Viome report) and Sous meal recommendations. Input: list of underrepresented bacterial strains (low Akkermansia, high Firmicutes/Bacteroidetes ratio). Output: tonight's dinner from Sous that feeds the deficit strains. Build the fiber/prebiotic -> bacterial strain mapping first, then wire into Sous's recommendation API.",
+        "essay": "Microbiome sequencing companies produce actionable bacterial profiles -- Firmicutes:Bacteroidetes ratio, short-chain fatty acid producers, inflammation markers -- but their meal recommendations are generic Mediterranean diet PDFs. A recommendation engine that takes a microbiome report and outputs a culturally-appropriate NOURISH-aligned weekly menu would make sequencing actually useful for the populations NOURISH serves."
       },
       {
         "id": 19,
@@ -716,7 +734,8 @@
           "Stefan's Stanford QUAD Fellowship",
           "PBDI cultural nutrition curriculum"
         ],
-        "claudePrompt": "Design a mixed-methods study: (1) survey of what Stanford students from 5 cultural backgrounds actually eat vs. dining hall availability, (2) nutritional gap analysis between cultural dietary needs and dining options, (3) interactive map showing food deserts within Stanford's campus for specific cultural communities. IRB-approvable as a dietary equity needs assessment. Output: study protocol + visualization mockup."
+        "claudePrompt": "Design a mixed-methods study: (1) survey of what Stanford students from 5 cultural backgrounds actually eat vs. dining hall availability, (2) nutritional gap analysis between cultural dietary needs and dining options, (3) interactive map showing food deserts within Stanford's campus for specific cultural communities. IRB-approvable as a dietary equity needs assessment. Output: study protocol + visualization mockup.",
+        "essay": "Stanford has 180+ nationalities and heavily tracked dining hall data -- but the published nutrition research uses this population as a convenience sample rather than studying what students actually eat versus what is nutritionally prescribed. A food sovereignty analysis that maps dining hall offerings against home cuisine against health outcomes would be a publishable health equity study from data that already exists."
       },
       {
         "id": 20,
@@ -732,7 +751,8 @@
           "Sous nutrition engine",
           "NOURISH precision nutrition infrastructure"
         ],
-        "claudePrompt": "Design a food recommendation layer for Sous that optimizes for dual metabolic and oral microbiome health. Key insight: green tea, cranberries, and cheese inhibit periodontal pathogens AND reduce post-meal glucose spikes. Build a scoring matrix: each Sous recipe gets a metabolic-oral dual score. Prototype: 50 Sous recipes, apply dual scoring, surface the top 10 'dentist + endocrinologist approved' meals."
+        "claudePrompt": "Design a food recommendation layer for Sous that optimizes for dual metabolic and oral microbiome health. Key insight: green tea, cranberries, and cheese inhibit periodontal pathogens AND reduce post-meal glucose spikes. Build a scoring matrix: each Sous recipe gets a metabolic-oral dual score. Prototype: 50 Sous recipes, apply dual scoring, surface the top 10 'dentist + endocrinologist approved' meals.",
+        "essay": "Periodontal disease and T2D share inflammatory pathways and bidirectionally worsen each other -- the dentist appointment is actually a metabolic screening opportunity that nobody has operationalized. A Sous feature that recommends anti-inflammatory foods shown to reduce both periodontal and glycemic markers simultaneously would convert a dental comorbidity into a preventive nutrition intervention."
       }
     ]
   },

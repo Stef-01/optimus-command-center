@@ -779,10 +779,10 @@
       /* Hide desktop section tabs — bottom bar takes over */
       #sectionTabs { display: none; }
 
-      /* Container — full bleed, bottom padding for tab bar */
+      /* Container — full bleed, bottom padding for tab bar + safe area + breathing room */
       .container {
         padding: 0 12px;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 20px);
         max-width: 100%;
       }
 
@@ -842,7 +842,7 @@
     html.mobile-test-mode #sectionTabs    { display: none !important; }
     html.mobile-test-mode .container {
       padding: 0 12px !important;
-      padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+      padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 20px) !important;
     }
     html.mobile-test-mode .grid-2,
     html.mobile-test-mode .grid-4,
@@ -865,13 +865,15 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 56px;
+        /* Height grows to absorb safe-area — never clip it with a fixed 56px */
+        height: calc(56px + env(safe-area-inset-bottom, 0px));
         background: var(--bg-card);
         border-top: 1px solid var(--border);
         z-index: 1000;
         padding-bottom: env(safe-area-inset-bottom, 0px);
         user-select: none;
         -webkit-user-select: none;
+        align-items: flex-start; /* items sit in top 56px; padding absorbs home indicator */
       }
     }
 
@@ -1545,7 +1547,10 @@
     <!-- TINKER SECTION -->
     <div id="tinker" class="section-content">
       <div class="card hero" style="border-top-color:#F59E0B;margin-bottom:24px">
-        <div style="font-size:28px;font-weight:700;margin-bottom:8px;color:#F59E0B">🔧 Tinker</div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap">
+          <div style="font-size:28px;font-weight:700;margin-bottom:8px;color:#F59E0B">🔧 Tinker</div>
+          <span id="tinkerCount" style="background:rgba(245,158,11,0.15);color:#F59E0B;padding:4px 10px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap;align-self:center"></span>
+        </div>
         <div style="color:var(--text-secondary)">Weekend-buildable creative projects. Stanford Septris energy — small scope, high fun, publishable twist.</div>
       </div>
       <div id="tinkerContainer"></div>
@@ -1647,13 +1652,15 @@
       return isNaN(d.getTime()) ? null : d;
     }
 
-    // Dismiss the on-fire banner and persist dismissed item IDs to localStorage
+    // Dismiss the on-fire banner; store ids + timestamp for 30-day snooze
     function dismissOnFire(weekDate) {
       const banner = document.getElementById('onFireBanner');
       if (!banner) return;
       const itemIds = JSON.parse(banner.dataset.itemIds || '[]');
       const stored = JSON.parse(localStorage.getItem('optimus-onfire') || '{}');
-      stored[weekDate] = [...new Set([...(stored[weekDate] || []), ...itemIds])];
+      const existing = stored[weekDate] || {};
+      const prevIds = Array.isArray(existing) ? existing : (existing.ids || []);
+      stored[weekDate] = { ids: [...new Set([...prevIds, ...itemIds])], dismissedAt: Date.now() };
       localStorage.setItem('optimus-onfire', JSON.stringify(stored));
       banner.style.display = 'none';
     }
@@ -1937,59 +1944,86 @@
         const weekDate = week.weekOf;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        const items = [];
+        const taskItems = [];
+        const grantItems = [];
 
-        // Grants with deadlines within 14 days
+        // Grants: route to SEPARATE subsection, never into the main urgent list.
+        // Only surface grants with deadline within 7 days (truly imminent).
         (week.nourish?.grants || []).forEach(g => {
           const dl = parseDeadlineDate(g.deadline);
           if (!dl) return;
           const daysUntil = Math.ceil((dl - today) / 86400000);
-          if (daysUntil >= 0 && daysUntil <= 14) {
-            items.push({
+          if (daysUntil >= 0 && daysUntil <= 7) {
+            grantItems.push({
               id: `grant:${g.name}`,
-              icon: '⏰',
-              text: `${g.name} — deadline in ${daysUntil} day${daysUntil !== 1 ? 's' : ''}`
+              icon: '📋',
+              text: `${g.name} — due in ${daysUntil} day${daysUntil !== 1 ? 's' : ''}`
             });
           }
         });
 
-        // Life admin tasks — check urgency field, tags array, and title keywords
+        // Life admin tasks: skip completed tasks; check priority AND urgency AND keywords.
         const FIRE_KEYWORDS = ['URGENT', 'TODAY', 'BLOCKER', 'CRITICAL', 'DEADLINE'];
+        const DONE_STATUSES = ['done', 'completed', 'closed', 'cancelled', 'complete'];
         (week.lifeAdmin?.tasks || []).forEach(t => {
+          // Skip completed tasks
+          const status = (t.status || t.completed || '').toString().toLowerCase();
+          if (DONE_STATUSES.some(s => status.includes(s)) || t.completed === true) return;
+
           const urgency = (t.urgency || '').toLowerCase();
+          const priority = (t.priority || '').toLowerCase();
           const tags = (t.tags || []).map(x => x.toLowerCase());
           const titleUp = (t.title || '').toUpperCase();
           const isUrgent = urgency === 'urgent' || urgency === 'today'
+            || priority === 'high'
             || tags.some(tag => ['urgent', 'blocker', 'critical'].includes(tag))
             || FIRE_KEYWORDS.some(kw => titleUp.includes(kw));
           if (isUrgent) {
-            items.push({ id: `task:${t.title}`, icon: '🚨', text: t.title });
+            taskItems.push({ id: `task:${t.title}`, icon: '🚨', text: t.title });
           }
         });
 
-        if (items.length === 0) { banner.style.display = 'none'; return; }
+        const allItems = [...taskItems, ...grantItems];
+        if (allItems.length === 0) { banner.style.display = 'none'; return; }
 
-        // Filter already-dismissed items
+        // Filter already-dismissed items; respect 30-day snooze.
         const stored = JSON.parse(localStorage.getItem('optimus-onfire') || '{}');
-        const dismissed = stored[weekDate] || [];
-        const newItems = items.filter(item => !dismissed.includes(item.id));
+        const thirtyDaysAgo = Date.now() - 30 * 86400000;
+        const entry = stored[weekDate] || { ids: [], dismissedAt: 0 };
+        // Handle legacy format (array) vs new format (object)
+        const dismissed = Array.isArray(entry) ? entry : (entry.ids || []);
+        const dismissedAt = Array.isArray(entry) ? 0 : (entry.dismissedAt || 0);
+        // Re-show after 30 days
+        const effectiveDismissed = dismissedAt > thirtyDaysAgo ? dismissed : [];
+        const newTaskItems = taskItems.filter(i => !effectiveDismissed.includes(i.id));
+        const newGrantItems = grantItems.filter(i => !effectiveDismissed.includes(i.id));
+        const newItems = [...newTaskItems, ...newGrantItems];
 
         if (newItems.length === 0) { banner.style.display = 'none'; return; }
 
         banner.dataset.itemIds = JSON.stringify(newItems.map(i => i.id));
         banner.style.display = 'block';
 
-        const shown = newItems.slice(0, 6);
-        const extra = newItems.length - shown.length;
+        const shownTasks = newTaskItems.slice(0, 5);
+        const extraTasks = newTaskItems.length - shownTasks.length;
+        const shownGrants = newGrantItems.slice(0, 3);
 
         banner.innerHTML = `
           <div class="on-fire-inner">
             <div class="on-fire-body">
-              <div class="on-fire-title">🔥 ON FIRE — ${newItems.length} item${newItems.length !== 1 ? 's' : ''} need attention this week</div>
-              <ul class="on-fire-list">
-                ${shown.map(item => `<li>${item.icon} ${item.text}</li>`).join('')}
-                ${extra > 0 ? `<li style="color:var(--text-secondary)">…and ${extra} more</li>` : ''}
-              </ul>
+              ${newTaskItems.length > 0 ? `
+                <div class="on-fire-title">🔥 ON FIRE — ${newTaskItems.length} task${newTaskItems.length !== 1 ? 's' : ''} need attention</div>
+                <ul class="on-fire-list">
+                  ${shownTasks.map(item => `<li>${item.icon} ${item.text}</li>`).join('')}
+                  ${extraTasks > 0 ? `<li style="color:var(--text-secondary)">…and ${extraTasks} more</li>` : ''}
+                </ul>
+              ` : ''}
+              ${newGrantItems.length > 0 ? `
+                <div class="on-fire-title" style="margin-top:${newTaskItems.length > 0 ? '10px' : '0'}">📋 Grant Deadlines — within 7 days</div>
+                <ul class="on-fire-list">
+                  ${shownGrants.map(item => `<li>${item.icon} ${item.text}</li>`).join('')}
+                </ul>
+              ` : ''}
             </div>
             <button class="on-fire-dismiss" onclick="dismissOnFire('${weekDate}')">✕ dismiss</button>
           </div>
@@ -2285,6 +2319,7 @@
               </div>
               <div class="idea-category">${idea.category}</div>
             </div>
+            ${idea.essay ? `<div style="font-size:14px;line-height:1.6;color:var(--text-primary);margin:10px 0 8px">${idea.essay}</div>` : ''}
             <div class="idea-meta">
               <span>Impact: <strong>${idea.impact}</strong></span>
               <span>Novelty: <strong>${idea.novelty}</strong></span>
@@ -2511,6 +2546,9 @@
         const data = this.currentWeek?.tinker;
         const el = document.getElementById('tinkerContainer');
         if (!el) return;
+
+        const countEl = document.getElementById('tinkerCount');
+        if (countEl) countEl.textContent = data?.ideas?.length ? `${data.ideas.length} ideas` : '';
 
         if (!data?.ideas?.length) {
           el.innerHTML = `
