@@ -2276,10 +2276,10 @@
               <span><strong>${idea.edge}</strong></span>
             </div>
             <div class="idea-essay">
-              <div style="margin-bottom: 12px;">${idea.essay}</div>
+              ${idea.claudePrompt ? `<div style="margin-bottom: 12px; font-size: 11px; color: var(--text-secondary); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px; font-family: monospace; white-space: pre-wrap; overflow-x: auto; cursor: text;" onclick="event.stopPropagation();navigator.clipboard?.writeText(${JSON.stringify(idea.claudePrompt)}).then(()=>{this.style.outline='1px solid var(--cyan)';setTimeout(()=>this.style.outline='',800)})" title="Click to copy Claude prompt">${idea.claudePrompt}</div>` : ''}
               <div class="idea-seeds">
                 <strong style="color: var(--text-primary);">Seeds:</strong><br>
-                ${idea.seeds.map(s => `<span class="seed-tag">${s}</span>`).join('')}
+                ${(idea.seeds || []).map(s => `<span class="seed-tag">${s}</span>`).join('')}
               </div>
             </div>
           </div>
