@@ -2016,9 +2016,13 @@
         const stats = ov.stats || {};
 
         // Detect presence + build tooltip text for each source
-        const granolaData = ov.granola || null;
+        // Granola: fall back to stats.granola count if overview.granola sub-object not populated
+        const granolaData = ov.granola || (stats.granola > 0 ? { meetingsReviewed: stats.granola, keyDecisions: null } : null);
         const airtableData = ov.airtable || null;
-        const omiPresent = ov.omi || (stats.omiWords != null && stats.omiWords > 0);
+        // OMI: only green when conversations count is actually > 0 (not just object-exists)
+        const omiConvCount = ov.omi?.conversations ?? stats.omiConversations ?? 0;
+        const omiWordCount = ov.omi?.words ?? stats.omiWords ?? 0;
+        const omiPresent = omiConvCount > 0 || omiWordCount > 0;
         const notionData = ov.notion || null;
 
         const sources = [
@@ -2026,7 +2030,9 @@
             name: 'Granola', emoji: '🎙️',
             ok: !!(granolaData),
             tip: granolaData
-              ? `${granolaData.meetingsReviewed ?? 0} meetings · ${granolaData.keyDecisions ?? 0} decisions`
+              ? granolaData.keyDecisions != null
+                ? `${granolaData.meetingsReviewed ?? 0} meetings · ${granolaData.keyDecisions} decisions`
+                : `${granolaData.meetingsReviewed ?? 0} meetings`
               : 'No Granola data this week'
           },
           {
@@ -2038,11 +2044,9 @@
           },
           {
             name: 'OMI', emoji: '🧠',
-            ok: !!(omiPresent),
-            tip: ov.omi
-              ? `${ov.omi.conversations ?? 0} convs · ${ov.omi.memories ?? 0} memories`
-              : stats.omiWords
-              ? `${stats.omiConversations ?? 0} convs · ${(stats.omiWords ?? 0).toLocaleString()} words`
+            ok: omiPresent,
+            tip: omiPresent
+              ? `${omiConvCount} convs · ${omiWordCount > 0 ? omiWordCount.toLocaleString() + ' words' : (ov.omi?.memories ?? 0) + ' memories'}`
               : 'No OMI data this week'
           },
           {
