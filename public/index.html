@@ -2247,6 +2247,17 @@
       renderIdeas() {
         const data = this.currentWeek.ideas;
 
+        // Store ideas globally for onclick index lookup (same pattern as Tinker)
+        window.__ideaItems = data.ideas;
+        window.__ideaCopyPrompt = (idx) => {
+          const prompt = window.__ideaItems?.[idx]?.claudePrompt;
+          if (!prompt) return;
+          navigator.clipboard?.writeText(prompt).then(() => {
+            const btn = document.querySelector(`[data-idea-copy="${idx}"]`);
+            if (btn) { const orig = btn.textContent; btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = orig, 1200); }
+          });
+        };
+
         // Index table
         const indexHTML = data.ideas.map((idea, i) => `
           <tr>
@@ -2261,7 +2272,7 @@
         document.getElementById('ideasIndex').innerHTML = indexHTML;
 
         // Idea cards
-        const ideasHTML = data.ideas.map(idea => `
+        const ideasHTML = data.ideas.map((idea, idx) => `
           <div class="idea-card" onclick="this.querySelector('.idea-essay')?.classList.toggle('expanded')">
             <div class="idea-header">
               <div>
@@ -2276,7 +2287,7 @@
               <span><strong>${idea.edge}</strong></span>
             </div>
             <div class="idea-essay">
-              ${idea.claudePrompt ? `<div style="margin-bottom: 12px; font-size: 11px; color: var(--text-secondary); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px; font-family: monospace; white-space: pre-wrap; overflow-x: auto; cursor: text;" onclick="event.stopPropagation();navigator.clipboard?.writeText(${JSON.stringify(idea.claudePrompt)}).then(()=>{this.style.outline='1px solid var(--cyan)';setTimeout(()=>this.style.outline='',800)})" title="Click to copy Claude prompt">${idea.claudePrompt}</div>` : ''}
+              ${idea.claudePrompt ? `<div style="margin-bottom: 12px; font-size: 11px; color: var(--text-secondary); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 8px; font-family: monospace; white-space: pre-wrap; overflow-x: auto;">${idea.claudePrompt}</div><button data-idea-copy="${idx}" onclick="event.stopPropagation();window.__ideaCopyPrompt(${idx})" style="margin-bottom:12px;background:var(--bg-el);border:1px solid var(--border);color:var(--text-primary);padding:4px 12px;border-radius:6px;font-size:11px;cursor:pointer">📋 Copy Claude prompt</button>` : ''}
               <div class="idea-seeds">
                 <strong style="color: var(--text-primary);">Seeds:</strong><br>
                 ${(idea.seeds || []).map(s => `<span class="seed-tag">${s}</span>`).join('')}
