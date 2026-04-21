@@ -1403,6 +1403,126 @@
       .on-fire-title { font-size: 12px; }
       .on-fire-list li { font-size: 11px; }
     }
+
+    /* ============================================
+       COMMITMENTS TAB
+       ============================================ */
+    .cmt-section-header {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin: 20px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cmt-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .cmt-card.overdue {
+      border-left: 3px solid var(--red);
+    }
+    .cmt-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .cmt-subject {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    .cmt-counterparty {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+    .cmt-verbatim {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin: 6px 0;
+      padding-left: 8px;
+      border-left: 2px solid var(--border);
+    }
+    .cmt-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin: 8px 0 10px;
+    }
+    .cmt-badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .cmt-badge-strong  { background: rgba(63,185,80,0.15);  color: var(--green); }
+    .cmt-badge-medium  { background: rgba(240,180,41,0.15); color: var(--yellow); }
+    .cmt-badge-weak    { background: rgba(139,148,158,0.15);color: var(--text-secondary); }
+    .cmt-badge-conf    { background: rgba(57,210,192,0.15); color: var(--cyan); }
+    .cmt-badge-inf     { background: rgba(192,132,252,0.15);color: var(--purple); }
+    .cmt-badge-overdue { background: rgba(248,81,73,0.15);  color: var(--red); }
+    .cmt-deadline {
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+    .cmt-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .cmt-btn {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: inherit;
+      min-height: 32px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .cmt-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+    .cmt-stats-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .cmt-stat { text-align: center; }
+    .cmt-stat-value { font-size: 22px; font-weight: 700; color: var(--text-primary); }
+    .cmt-stat-label { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; }
+    .cmt-view-all {
+      display: block;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 12px;
+      text-decoration: none;
+      padding: 12px;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    .cmt-view-all:hover { color: var(--cyan); border-color: var(--cyan); }
+    .cmt-empty {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 13px;
+      padding: 40px 20px;
+    }
   </style>
 </head>
 <body>
@@ -1435,6 +1555,8 @@
         <button class="section-tab" data-section="ideas">🐝 Ideas</button>
         <button class="section-tab" data-section="skills">🔍 Skills</button>
         <button class="section-tab" data-section="tinker" style="color:#F59E0B">🔧 Tinker</button>
+        <!-- TODO: coordinate with local_df668ea1 phone-UX task re: tab overflow if count exceeds mobile limits -->
+        <button class="section-tab" data-section="commitments" style="color:#e879f9">🤝 Commitments</button>
       </div>
     </div>
 
@@ -1603,6 +1725,15 @@
         </table>
       </div>
     </div>
+
+    <!-- COMMITMENTS SECTION -->
+    <div id="commitments" class="section-content">
+      <div class="card hero" style="border-top-color:#e879f9;margin-bottom:24px">
+        <div style="font-size:28px;font-weight:700;margin-bottom:8px;color:#e879f9">🤝 Commitments</div>
+        <div style="color:var(--text-secondary)">Verbal commitments extracted from OMI conversations. Two-lane extraction — confirmed (regex) and inferred (AI ≥80%). Update status to keep the list clean.</div>
+      </div>
+      <div id="commitmentsContainer"></div>
+    </div>
   </div>
 
   <!-- Mobile Bottom Tab Bar -->
@@ -1630,6 +1761,10 @@
     <button class="mobile-tab-item" data-section="tinker" aria-label="Tinker projects">
       <span class="mobile-tab-icon">🔧</span>
       <span>Tinker</span>
+    </button>
+    <button class="mobile-tab-item" data-section="commitments" aria-label="Commitments tracker">
+      <span class="mobile-tab-icon">🤝</span>
+      <span>Commits</span>
     </button>
   </nav>
 
@@ -1934,6 +2069,7 @@
         this.renderIdeas();
         this.renderSkills();
         this.renderTinker();
+        this.renderCommitments();
       }
 
       renderOnFireBanner() {
@@ -1944,8 +2080,19 @@
         const weekDate = week.weekOf;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
+        const commitmentItems = [];
         const taskItems = [];
         const grantItems = [];
+
+        // Overdue commitments — prepended first (person commitments outrank grant deadlines)
+        (week.commitments?.overdue_items || []).forEach(c => {
+          const label = c.deadline_label || 'overdue';
+          commitmentItems.push({
+            id: `commitment:${c.id}`,
+            icon: '🤝',
+            text: `${c.counterparty} — ${c.subject} (${label})`
+          });
+        });
 
         // Grants: route to SEPARATE subsection, never into the main urgent list.
         // Only surface grants with deadline within 7 days (truly imminent).
@@ -1983,7 +2130,7 @@
           }
         });
 
-        const allItems = [...taskItems, ...grantItems];
+        const allItems = [...commitmentItems, ...taskItems, ...grantItems];
         if (allItems.length === 0) { banner.style.display = 'none'; return; }
 
         // Filter already-dismissed items; respect 30-day snooze.
@@ -1995,15 +2142,17 @@
         const dismissedAt = Array.isArray(entry) ? 0 : (entry.dismissedAt || 0);
         // Re-show after 30 days
         const effectiveDismissed = dismissedAt > thirtyDaysAgo ? dismissed : [];
+        const newCommitmentItems = commitmentItems.filter(i => !effectiveDismissed.includes(i.id));
         const newTaskItems = taskItems.filter(i => !effectiveDismissed.includes(i.id));
         const newGrantItems = grantItems.filter(i => !effectiveDismissed.includes(i.id));
-        const newItems = [...newTaskItems, ...newGrantItems];
+        const newItems = [...newCommitmentItems, ...newTaskItems, ...newGrantItems];
 
         if (newItems.length === 0) { banner.style.display = 'none'; return; }
 
         banner.dataset.itemIds = JSON.stringify(newItems.map(i => i.id));
         banner.style.display = 'block';
 
+        const shownCommitments = newCommitmentItems.slice(0, 3);
         const shownTasks = newTaskItems.slice(0, 5);
         const extraTasks = newTaskItems.length - shownTasks.length;
         const shownGrants = newGrantItems.slice(0, 3);
@@ -2011,6 +2160,12 @@
         banner.innerHTML = `
           <div class="on-fire-inner">
             <div class="on-fire-body">
+              ${newCommitmentItems.length > 0 ? `
+                <div class="on-fire-title">🤝 Overdue Commitments — ${newCommitmentItems.length} overdue</div>
+                <ul class="on-fire-list">
+                  ${shownCommitments.map(item => `<li>${item.icon} ${item.text}</li>`).join('')}
+                </ul>
+              ` : ''}
               ${newTaskItems.length > 0 ? `
                 <div class="on-fire-title">🔥 ON FIRE — ${newTaskItems.length} task${newTaskItems.length !== 1 ? 's' : ''} need attention</div>
                 <ul class="on-fire-list">
@@ -2136,6 +2291,8 @@
           { val: stats.wikiPages,              prev: prevStats.wikiPages,              label: 'Wiki Pages',     suffix: '',  invert: false },
           { val: la?.totalTasks,               prev: prevLA?.totalTasks,               label: 'Tasks',          suffix: '',  invert: false },
           { val: nourish?.grants?.length,      prev: prevNourish?.grants?.length,      label: 'Grants',         suffix: '',  invert: false },
+          { val: stats.commitmentsOpen,        prev: prevStats.commitmentsOpen,        label: 'Commitments',    suffix: '',  invert: false },
+          { val: stats.commitmentsOverdue,     prev: prevStats.commitmentsOverdue,     label: 'Overdue Cmts',   suffix: '',  invert: true  },
         ];
 
         const statsHTML = metricDefs
@@ -2623,6 +2780,109 @@
               </div>
             </div>`;
         }).join('');
+      }
+      renderCommitments() {
+        const el = document.getElementById('commitmentsContainer');
+        if (!el) return;
+        const data = this.currentWeek?.commitments;
+
+        if (!data) {
+          el.innerHTML = `<div class="cmt-empty">No commitments data for this week.<br><span style="font-size:11px">Run omi-commitment-capture to populate.</span></div>`;
+          return;
+        }
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const fmtDeadline = (iso) => {
+          if (!iso) return null;
+          const d = new Date(iso);
+          if (isNaN(d)) return iso;
+          const days = Math.ceil((d - today) / 86400000);
+          if (days < 0) return `<span style="color:var(--red)">${Math.abs(days)}d overdue</span>`;
+          if (days === 0) return `<span style="color:var(--yellow)">due today</span>`;
+          if (days === 1) return `<span style="color:var(--yellow)">due tomorrow</span>`;
+          return `due in ${days}d`;
+        };
+
+        const confidenceBadge = (c) => {
+          const cls = c === 'Strong' ? 'cmt-badge-strong' : c === 'Medium' ? 'cmt-badge-medium' : 'cmt-badge-weak';
+          return `<span class="cmt-badge ${cls}">${c || 'Unknown'}</span>`;
+        };
+
+        const laneBadge = (l) => {
+          const cls = l === 'confirmed' ? 'cmt-badge-conf' : 'cmt-badge-inf';
+          const label = l === 'confirmed' ? 'regex' : 'AI';
+          return `<span class="cmt-badge ${cls}">${label}</span>`;
+        };
+
+        // Clipboard-copy → Claude prompt to update commitment status via Obsidian MCP
+        window.__cmtUpdateStatus = (id, notePath, status) => {
+          const prompt = `Update the commitment note at "${notePath}" — set frontmatter field status to "${status}" and set closed_date to today's date if status is Delivered, Missed, or Cancelled. Use the obsidian-vault MCP update_frontmatter tool.`;
+          navigator.clipboard.writeText(prompt).then(() => {
+            const btn = document.querySelector(`[data-cmt-id="${id}"][data-cmt-status="${status}"]`);
+            if (btn) { btn.textContent = '✓ Copied'; setTimeout(() => { btn.textContent = status; }, 2000); }
+          }).catch(() => alert(prompt));
+        };
+
+        const renderCard = (c, isOverdue) => {
+          const dl = fmtDeadline(c.deadline);
+          const notePath = `wiki/nourish/_commitments/${(c.id || '').replace('cmt-', '').substring(0, 7)}/${c.id || 'unknown'}.md`;
+          return `
+            <div class="cmt-card${isOverdue ? ' overdue' : ''}">
+              <div class="cmt-card-header">
+                <div class="cmt-subject">${c.subject || 'Untitled commitment'}</div>
+                ${isOverdue ? '<span class="cmt-badge cmt-badge-overdue">OVERDUE</span>' : ''}
+              </div>
+              <div class="cmt-counterparty">→ ${c.counterparty || 'Unknown'}</div>
+              ${dl ? `<div class="cmt-deadline">⏰ ${dl}</div>` : ''}
+              <div class="cmt-badges">
+                ${confidenceBadge(c.confidence)}
+                ${laneBadge(c.lane)}
+              </div>
+              <div class="cmt-actions">
+                ${['Delivered','Missed','Extend','Cancelled'].map(s =>
+                  `<button class="cmt-btn" data-cmt-id="${c.id}" data-cmt-status="${s}"
+                    onclick="window.__cmtUpdateStatus('${c.id}','${notePath}','${s}')"
+                    title="Copy Claude prompt to update status to ${s}">${s}</button>`
+                ).join('')}
+              </div>
+            </div>`;
+        };
+
+        const overdueItems = data.overdue_items || [];
+        const recentOpen   = data.recent_open  || [];
+
+        let html = '';
+
+        // Stats row
+        html += `<div class="cmt-stats-row">
+          <div class="cmt-stat"><div class="cmt-stat-value">${data.open ?? 0}</div><div class="cmt-stat-label">Open</div></div>
+          <div class="cmt-stat"><div class="cmt-stat-value" style="color:${(data.overdue ?? 0) > 0 ? 'var(--red)' : 'var(--text-primary)'}">${data.overdue ?? 0}</div><div class="cmt-stat-label">Overdue</div></div>
+          <div class="cmt-stat"><div class="cmt-stat-value" style="color:var(--green)">${data.closed_this_week ?? 0}</div><div class="cmt-stat-label">Closed this week</div></div>
+          ${(data.counts?.strong ?? 0) + (data.counts?.medium ?? 0) + (data.counts?.weak ?? 0) > 0
+            ? `<div class="cmt-stat"><div class="cmt-stat-value" style="font-size:13px;padding-top:4px"><span style="color:var(--green)">${data.counts?.strong ?? 0}S</span> <span style="color:var(--yellow)">${data.counts?.medium ?? 0}M</span> <span style="color:var(--text-secondary)">${data.counts?.weak ?? 0}W</span></div><div class="cmt-stat-label">Confidence</div></div>`
+            : ''}
+        </div>`;
+
+        if (overdueItems.length > 0) {
+          html += `<div class="cmt-section-header">🔥 Overdue — action needed</div>`;
+          html += overdueItems.map(c => renderCard(c, true)).join('');
+        }
+
+        if (recentOpen.length > 0) {
+          html += `<div class="cmt-section-header">📋 Recent open commitments</div>`;
+          html += recentOpen.map(c => renderCard(c, false)).join('');
+        }
+
+        if (overdueItems.length === 0 && recentOpen.length === 0) {
+          html += `<div class="cmt-empty">No open commitments this week. 🎉<br><span style="font-size:11px">Pipeline runs every 2h — check back after your next OMI-recorded conversation.</span></div>`;
+        }
+
+        html += `<a class="cmt-view-all" href="obsidian://open?vault=Stefan-Brain&file=wiki/nourish/_commitments/index" target="_blank">→ View all commitments in Obsidian</a>`;
+        html += `<div style="margin-top:10px;font-size:11px;color:var(--text-secondary);text-align:center">Status buttons copy a Claude prompt to your clipboard → paste into Claude to update the Obsidian note.</div>`;
+
+        el.innerHTML = html;
       }
     }
 
