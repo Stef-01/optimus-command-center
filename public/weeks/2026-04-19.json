@@ -2,7 +2,6 @@
   "weekOf": "2026-04-19",
   "weekLabel": "Week of Apr 13",
   "generatedAt": "2026-04-20T08:45:00Z",
-
   "overview": {
     "stats": {
       "granola": 4,
@@ -15,70 +14,192 @@
     },
     "executiveSummary": "<strong>Strategic clarity week — 72 grants, 53 Airtable collaborators, and a 2-year runway math that actually pencils.</strong> The two Apr 19 strategy meetings crystallized NOURISH's operating model: 5-person core, 4–5 hrs/wk budget baseline, website-first sequencing (before the SoW), and Google.org as the top priority application. Malati Shreenya Batsami emerged as the Stanford AI-faculty anchor — a 20-year institutional relationship that becomes the credibility gate for the Google grant. The people-graph hit 220 pages this week (190 people + 30 project nodes), the Airtable Collaborators table is fully populated (53 records across Tier 0–3), and the Org Map v2 is live with a wired Reports-To hierarchy. <strong>Three hard deadlines in the next 9 days:</strong> (1) USCIS biometrics Apr 23 — flight not yet booked from Bhubaneswar; (2) PCORI LOI cluster Apr 28 — four simultaneous LOIs; (3) Gates Grand Challenges Apr 28 — three simultaneous nutrition RFPs. The ADA Pathway to Stop Diabetes (GR-071) has a May 19 public deadline but an institutional-nomination gate that likely closes within 1 week — Monday-morning action required.",
     "crossSourceAlignment": [
-      { "initiative": "NOURISH 2-Year Operational Runway", "granola": true, "omi": null, "notion": null, "airtable": true, "status": "critical", "statusLabel": "5-person core × 4.5 hrs/wk × 24 months = $260–390K — single large grant solves it" },
-      { "initiative": "Google.org AI for Science (GR-054, score 88)", "granola": true, "omi": null, "notion": null, "airtable": null, "status": "critical", "statusLabel": "Malati as Stanford AI-faculty anchor is the credibility gate — contact her ASAP" },
-      { "initiative": "PCORI LOI Cluster (GR-007, GR-022, GR-024, GR-049) — Apr 28", "granola": null, "omi": null, "notion": null, "airtable": null, "status": "critical", "statusLabel": "4 simultaneous LOIs due Apr 28 — up to $12M+ aggregate" },
-      { "initiative": "Gates Grand Challenges Cluster (GR-025, GR-026, GR-067) — Apr 28", "granola": null, "omi": null, "notion": null, "airtable": null, "status": "critical", "statusLabel": "3 nutrition RFPs same deadline — bundled LOI strategy recommended" },
-      { "initiative": "USCIS Biometrics — Apr 23", "granola": null, "omi": null, "notion": null, "airtable": null, "status": "critical", "statusLabel": "I-765 receipt IOE9361516198. Flight BBI→SFO not yet booked" },
-      { "initiative": "NOURISH Website (ws4)", "granola": true, "omi": null, "notion": null, "airtable": true, "status": "partial", "statusLabel": "Spec + Canva inventory complete (120 assets mapped); build pending" },
-      { "initiative": "ADA Pathway to Stop Diabetes (GR-071)", "granola": null, "omi": null, "notion": null, "airtable": null, "status": "critical", "statusLabel": "Institutional nomination gate closes ~1 week before May 19 public deadline — Monday action" },
-      { "initiative": "Razer Partnership", "granola": true, "omi": null, "notion": null, "airtable": null, "status": "partial", "statusLabel": "2-week window → pitch by May 3 (2026-05-03)" },
-      { "initiative": "Team Architecture — Dalia + Fahim + Jennifer", "granola": true, "omi": null, "notion": null, "airtable": true, "status": "partial", "statusLabel": "Dalia 4 hrs/wk coordinator-manager; Fahim as external stats consultant; Jennifer SOP pending" },
-      { "initiative": "Airtable Org Map v2", "granola": null, "omi": null, "notion": null, "airtable": true, "status": "shipped", "statusLabel": "33 nodes, Reports-To hierarchy wired — install extensions in Stefan's Airtable session" }
+      {
+        "initiative": "NOURISH 2-Year Operational Runway",
+        "granola": true,
+        "omi": null,
+        "notion": null,
+        "airtable": true,
+        "status": "critical",
+        "statusLabel": "5-person core × 4.5 hrs/wk × 24 months = $260–390K — single large grant solves it"
+      },
+      {
+        "initiative": "Google.org AI for Science (GR-054, score 88)",
+        "granola": true,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "Malati as Stanford AI-faculty anchor is the credibility gate — contact her ASAP"
+      },
+      {
+        "initiative": "PCORI LOI Cluster (GR-007, GR-022, GR-024, GR-049) — Apr 28",
+        "granola": null,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "4 simultaneous LOIs due Apr 28 — up to $12M+ aggregate"
+      },
+      {
+        "initiative": "Gates Grand Challenges Cluster (GR-025, GR-026, GR-067) — Apr 28",
+        "granola": null,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "3 nutrition RFPs same deadline — bundled LOI strategy recommended"
+      },
+      {
+        "initiative": "USCIS Biometrics — Apr 23",
+        "granola": null,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "I-765 receipt IOE9361516198. Flight BBI→SFO not yet booked"
+      },
+      {
+        "initiative": "NOURISH Website (ws4)",
+        "granola": true,
+        "omi": null,
+        "notion": null,
+        "airtable": true,
+        "status": "partial",
+        "statusLabel": "Spec + Canva inventory complete (120 assets mapped); build pending"
+      },
+      {
+        "initiative": "ADA Pathway to Stop Diabetes (GR-071)",
+        "granola": null,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "Institutional nomination gate closes ~1 week before May 19 public deadline — Monday action"
+      },
+      {
+        "initiative": "Razer Partnership",
+        "granola": true,
+        "omi": null,
+        "notion": null,
+        "airtable": null,
+        "status": "partial",
+        "statusLabel": "2-week window → pitch by May 3 (2026-05-03)"
+      },
+      {
+        "initiative": "Team Architecture — Dalia + Fahim + Jennifer",
+        "granola": true,
+        "omi": null,
+        "notion": null,
+        "airtable": true,
+        "status": "partial",
+        "statusLabel": "Dalia 4 hrs/wk coordinator-manager; Fahim as external stats consultant; Jennifer SOP pending"
+      },
+      {
+        "initiative": "Airtable Org Map v2",
+        "granola": null,
+        "omi": null,
+        "notion": null,
+        "airtable": true,
+        "status": "shipped",
+        "statusLabel": "33 nodes, Reports-To hierarchy wired — install extensions in Stefan's Airtable session"
+      }
     ],
     "redFlag": "The April 28 deadline cluster is a four-alarm fire: GR-007, GR-022, GR-024, GR-049 (PCORI LOIs) + GR-025, GR-026, GR-067 (Gates Grand Challenges) all expire on the same day. That's seven simultaneous submissions. Even if each LOI is 2-3 pages, this is 14-21 pages of coordinated output in 8 days. The ADA Pathway (GR-071) adds a hidden institutional-nomination gate that expires before its public May 19 deadline — Stanford Office of Research Development must be contacted Monday. And USCIS biometrics (Apr 23) requires Stefan to physically be in San Fernando, California — he is currently in Bhubaneswar, India.",
     "priorities": [
-      { "title": "Book return flight BBI → HYD → SFO (arrive by Apr 22)", "time": "30 min", "sources": "📅 USCIS", "detail": "Non-negotiable. Biometrics Apr 23, San Fernando CA. I-765 receipt IOE9361516198. Multi-leg via Hyderabad.", "done": false },
-      { "title": "PCORI LOI cluster — GR-007, GR-022, GR-024, GR-049 (due Apr 28)", "time": "8 hrs", "sources": "📋 Grant Registry", "detail": "4 simultaneous LOIs: Improving Methods $750K, Science of Engagement $1M, Phased Large Awards $12M, PCORnet National-Scale $12M. Total potential: ~$26M. LOI submission is 2-3 pages each.", "done": false },
-      { "title": "Gates Grand Challenges — GR-025, GR-026, GR-067 (due Apr 28 11:30am PT)", "time": "4 hrs", "sources": "📋 Grant Registry", "detail": "Physiological Barriers $250K + RUTF $1.5M + Maternal/Child Nutrients $1M. Bundled submission strategy recommended. Same deadline, same portal.", "done": false },
-      { "title": "ADA Pathway to Stop Diabetes — email Stanford Office of Research Development TODAY", "time": "20 min", "sources": "📋 GR-071", "detail": "May 19 public deadline but institutional nomination gate closes ~1 week earlier. $1.625M over 5 years. Direct fit for cgm-trial + pgx-copilot. Monday morning action — do not miss nomination window.", "done": false },
-      { "title": "Contact Malati re: Google.org AI for Science application", "time": "45 min", "sources": "Granola Apr 19", "detail": "Malati is the Stanford AI-faculty credibility anchor for GR-054 Google.org. 20-yr institutional relationship. She needs to be named or vouched before application submission.", "done": false },
-      { "title": "Razer partnership pitch — prepare by May 3", "time": "2 hrs", "sources": "Granola Apr 19", "detail": "2-week window confirmed. Razer interested in NOURISH as a showcase application. Pitch deck + SoW draft needed before May 3.", "done": false },
-      { "title": "NOURISH website launch — priority above SoW", "time": "6 hrs", "sources": "Granola Apr 19", "detail": "Website-first sequencing confirmed in strategy meeting. Canva inventory complete (120 assets). 20 modules spec'd. Vercel deploy ready. Website is the credibility object for funder conversations.", "done": false }
+      {
+        "title": "Book return flight BBI → HYD → SFO (arrive by Apr 22)",
+        "time": "30 min",
+        "sources": "📅 USCIS",
+        "detail": "Non-negotiable. Biometrics Apr 23, San Fernando CA. I-765 receipt IOE9361516198. Multi-leg via Hyderabad.",
+        "done": false
+      },
+      {
+        "title": "PCORI LOI cluster — GR-007, GR-022, GR-024, GR-049 (due Apr 28)",
+        "time": "8 hrs",
+        "sources": "📋 Grant Registry",
+        "detail": "4 simultaneous LOIs: Improving Methods $750K, Science of Engagement $1M, Phased Large Awards $12M, PCORnet National-Scale $12M. Total potential: ~$26M. LOI submission is 2-3 pages each.",
+        "done": false
+      },
+      {
+        "title": "Gates Grand Challenges — GR-025, GR-026, GR-067 (due Apr 28 11:30am PT)",
+        "time": "4 hrs",
+        "sources": "📋 Grant Registry",
+        "detail": "Physiological Barriers $250K + RUTF $1.5M + Maternal/Child Nutrients $1M. Bundled submission strategy recommended. Same deadline, same portal.",
+        "done": false
+      },
+      {
+        "title": "ADA Pathway to Stop Diabetes — email Stanford Office of Research Development TODAY",
+        "time": "20 min",
+        "sources": "📋 GR-071",
+        "detail": "May 19 public deadline but institutional nomination gate closes ~1 week earlier. $1.625M over 5 years. Direct fit for cgm-trial + pgx-copilot. Monday morning action — do not miss nomination window.",
+        "done": false
+      },
+      {
+        "title": "Contact Malati re: Google.org AI for Science application",
+        "time": "45 min",
+        "sources": "Granola Apr 19",
+        "detail": "Malati is the Stanford AI-faculty credibility anchor for GR-054 Google.org. 20-yr institutional relationship. She needs to be named or vouched before application submission.",
+        "done": false
+      },
+      {
+        "title": "Razer partnership pitch — prepare by May 3",
+        "time": "2 hrs",
+        "sources": "Granola Apr 19",
+        "detail": "2-week window confirmed. Razer interested in NOURISH as a showcase application. Pitch deck + SoW draft needed before May 3.",
+        "done": false
+      },
+      {
+        "title": "NOURISH website launch — priority above SoW",
+        "time": "6 hrs",
+        "sources": "Granola Apr 19",
+        "detail": "Website-first sequencing confirmed in strategy meeting. Canva inventory complete (120 assets). 20 modules spec'd. Vercel deploy ready. Website is the credibility object for funder conversations.",
+        "done": false
+      }
     ],
     "quickWins": [
-      { "text": "Email Stanford Office of Research Development: ADA Pathway nomination inquiry", "time": "5 min", "detail": "GR-071 real deadline is ~May 12 for nomination, not May 19 public deadline" },
-      { "text": "Book BBI→HYD→SFO flight (Apr 20-22 arrival window)", "time": "15 min", "detail": "USCIS biometrics Apr 23 — hard deadline" },
-      { "text": "Email Malati: Google.org application collaboration ask", "time": "10 min", "detail": "She is the Stanford AI anchor — first contact drives the app timeline" },
-      { "text": "Install Airtable Org Chart extension (3-click recipe from Apr 19 session)", "time": "3 min", "detail": "Data is wired. Just install in Stefan's browser session." },
-      { "text": "Push Stefan-Brain pending commits from Windows host", "time": "2 min", "detail": "git push origin master — sandbox credential gap; multiple sessions have local-only commits" }
+      {
+        "text": "Email Stanford Office of Research Development: ADA Pathway nomination inquiry",
+        "time": "5 min",
+        "detail": "GR-071 real deadline is ~May 12 for nomination, not May 19 public deadline"
+      },
+      {
+        "text": "Book BBI→HYD→SFO flight (Apr 20-22 arrival window)",
+        "time": "15 min",
+        "detail": "USCIS biometrics Apr 23 — hard deadline"
+      },
+      {
+        "text": "Email Malati: Google.org application collaboration ask",
+        "time": "10 min",
+        "detail": "She is the Stanford AI anchor — first contact drives the app timeline"
+      },
+      {
+        "text": "Install Airtable Org Chart extension (3-click recipe from Apr 19 session)",
+        "time": "3 min",
+        "detail": "Data is wired. Just install in Stefan's browser session."
+      },
+      {
+        "text": "Push Stefan-Brain pending commits from Windows host",
+        "time": "2 min",
+        "detail": "git push origin master — sandbox credential gap; multiple sessions have local-only commits"
+      }
     ],
-    "omi": {
-      "conversations": null,
-      "memories": null,
-      "transcripts": null,
-      "words": null,
-      "dateWindow": "Apr 13 – Apr 19, 2026",
-      "note": "Omi MCP not available in this run. Context derived from Granola transcripts (4 meetings), Stefan-Brain wiki logs, and prior week's OMI-enriched data. Full Omi extraction deferred to next Cowork run.",
-      "newInsightsFromTranscripts": [
-        "Apr 19 funding-strategy meeting crystallized 2-yr runway math: 5 people × 4.5 hrs/wk × 24 months ≈ 5,200 labor hours → $260–390K. One large grant solves it.",
-        "Website-first sequencing confirmed: NOURISH website must launch before the Scope of Work (SoW) document is finalized — website is the credibility object for funder conversations.",
-        "Malati Shreenya Batsami named as the Stanford AI-faculty anchor for Google.org — her name on the application is the credibility gate.",
-        "Razer expressed interest in NOURISH as showcase application — 2-week window to formalize, pitch by May 3.",
-        "OTL contact change: Putia out — new handoff required for IP/licensing conversations.",
-        "care-Fellowship → care-Scholars identified as pro-bono student resourcing channel (free labor for non-research NOURISH tasks).",
-        "Rich Wittman as coordinator-broker role confirmed — he routes communications between workstream leads.",
-        "Friday check-ins planned as lightweight team pulse mechanism.",
-        "Dalia promoted to coordinator-manager at 4 hrs/wk — above prior 3 hrs/wk baseline.",
-        "Fahim confirmed as external statistics consultant (breaks internal-only norm — justified by his specialized methods expertise)."
-      ],
-      "unactionedCommitments": [
-        { "text": "Contact Malati for Google.org anchor role", "mentions": "2", "detail": "Named in both Apr 19 meetings as the critical Stanford AI-faculty gate.", "quote": "Malati is the person who makes Google.org believe this is a Stanford project." },
-        { "text": "Prepare Razer pitch by May 3", "mentions": "1", "detail": "2-week window confirmed verbally.", "quote": "Two weeks — after that the window closes." },
-        { "text": "Finalize SoW by mid-May", "mentions": "2", "detail": "After website launch. Sequencing confirmed.", "quote": "Website first, then SoW." },
-        { "text": "NOURISH website launch sprint", "mentions": "3", "detail": "120 Canva assets mapped. 20 modules spec'd. Waiting for build.", "quote": "This is the credibility object." },
-        { "text": "OTL new contact handoff", "mentions": "1", "detail": "Putia is out as OTL contact — need new name.", "quote": "There's been a change at OTL." }
-      ],
-      "themes": [
-        { "title": "2-Year Runway Math", "detail": "For the first time, NOURISH has a precise operational budget: 5 core people × 4.5 hrs/wk × 24 months = 5,200 labor hours. At $50-75/hr blended, that's $260–390K in labor + overhead. A single PCORI BPS or HRSA ENS award covers it." },
-        { "title": "Google.org as Top Priority Application", "detail": "The AI for Science track (GR-054, score 88, $500K–$3M) was singled out as the top priority. The Malati anchor is not optional — her Stanford affiliation is what moves it from 'good idea' to 'credible Stanford AI research.' She must be contacted before any submission." },
-        { "title": "Website-First Sequencing Decision", "detail": "Confirmed in strategy meeting: launch NOURISH website before finalizing the Scope of Work. The website is a credibility object for funders, partners, and team-level recruitment. It takes a website sprint, not a committee." },
-        { "title": "Airtable as Organizational Nervous System", "detail": "53 Collaborators, Org Map v2 wired, NOURISH Grant Scout table active. The Airtable base is becoming the single source of truth for who, what, and when in NOURISH. Dataview queries in Obsidian are downstream consumers." },
-        { "title": "ADA Nomination Gate — Hidden Deadline Pattern", "detail": "GR-071 surfaces a recurring failure mode: public deadline (May 19) masks a 1-week-earlier institutional nomination gate. Same pattern as Google.org same-day close (GR-054) and HRSA Telehealth same-day close (GR-055). The grant-discovery agent should flag these by default." }
+    "omi": null,
+    "granola": {
+      "meetingsReviewed": 4,
+      "keyDecisions": 8,
+      "topDecisions": [
+        "Website-first sequencing before SoW -- website is the credibility object for funder conversations",
+        "5-person core x 4.5 hrs/wk x 24 months = $260-390K operational runway",
+        "Google.org AI for Science as top priority application -- Malati Shreenya Batsami as Stanford AI anchor",
+        "Malati contact mandatory before any Google.org submission -- her affiliation is the credibility gate",
+        "Razer partnership 2-week window -- pitch deadline May 3",
+        "Dalia promoted to coordinator-manager at 4 hrs/wk",
+        "Fahim Abbasi confirmed as external statistics consultant",
+        "Rich Wittman as coordinator-broker routing comms between workstream leads"
       ]
     }
   },
-
   "lifeAdmin": {
     "totalTasks": 12,
     "totalHours": 9.5,
@@ -95,7 +216,13 @@
         "time": "30 min",
         "description": "USCIS biometrics appointment April 23, San Fernando, California. Must arrive by April 22. I-765 Employment Auth receipt: IOE9361516198. Multi-leg from Bhubaneswar via Hyderabad.",
         "evidence": "Prior week: flight not booked despite Apr 23 deadline.",
-        "checklist": ["Search flights BBI→HYD→SFO Apr 20-22 window", "Book with buffer day before Apr 23", "Confirm San Fernando appointment address", "Prepare documents: passport, I-797, photos", "Update address if needed"],
+        "checklist": [
+          "Search flights BBI→HYD→SFO Apr 20-22 window",
+          "Book with buffer day before Apr 23",
+          "Confirm San Fernando appointment address",
+          "Prepare documents: passport, I-797, photos",
+          "Update address if needed"
+        ],
         "claudePrompt": "I need to book an urgent return flight from Bhubaneswar (BBI), India to San Francisco (SFO) via Hyderabad (HYD). Must arrive by April 22, 2026 — USCIS biometrics on April 23 in San Fernando, CA. I-765 receipt IOE9361516198. Help me: (1) optimal routing + dates, (2) USCIS biometrics document checklist, (3) address update draft if needed. My current address: 203 Rosse Lane, Rains Student Housing, Stanford, CA 94305."
       },
       {
@@ -107,7 +234,14 @@
         "time": "8 hrs",
         "description": "Four simultaneous PCORI LOIs due April 28 at 5pm ET. GR-007: Improving Methods $750K. GR-022: Science of Engagement $1M. GR-024: Phased Large Awards $12M. GR-049: PCORnet National-Scale $12M. LOIs are 2-3 pages each.",
         "evidence": "All four have same portal, same deadline, same LOI format.",
-        "checklist": ["Draft GR-007 LOI (novel cooking confidence methods)", "Draft GR-022 LOI (engagement in cooking interventions)", "Draft GR-024 LOI (Sous vs. traditional nutrition RCT)", "Draft GR-049 LOI (PCORnet national-scale Sous trial)", "Identify PCORnet network partner for GR-049", "Submit all 4 via PCORI portal before 5pm ET Apr 28"],
+        "checklist": [
+          "Draft GR-007 LOI (novel cooking confidence methods)",
+          "Draft GR-022 LOI (engagement in cooking interventions)",
+          "Draft GR-024 LOI (Sous vs. traditional nutrition RCT)",
+          "Draft GR-049 LOI (PCORnet national-scale Sous trial)",
+          "Identify PCORnet network partner for GR-049",
+          "Submit all 4 via PCORI portal before 5pm ET Apr 28"
+        ],
         "claudePrompt": "I need to draft 4 PCORI LOIs all due April 28, 2026 at 5pm ET. My project is NOURISH / Sous — an AI-powered cooking app that uses food recognition + personalized nutrition coaching to improve dietary behavior. Projects: (1) GR-007 Novel methods for cooking confidence measurement $750K; (2) GR-022 Engagement in cooking-based interventions $300K-$1M; (3) GR-024 Phased large comparative effectiveness Sous vs. standard nutrition $12M; (4) GR-049 PCORnet national-scale pragmatic trial $12M. Help me draft all four, starting with the highest-value (GR-024/GR-049). Each LOI is 2-3 pages. My PI would be a Stanford faculty collaborator."
       },
       {
@@ -119,7 +253,13 @@
         "time": "20 min",
         "description": "$1.625M over 5 years. Direct fit for cgm-trial + pgx-copilot. Public deadline May 19 but institutional nomination gate closes ~1 week earlier. Email Stanford Office of Research Development + Dept of Medicine research-admin today.",
         "evidence": "GR-071 note: 'real action window is ~1 week for Stanford nomination slot'",
-        "checklist": ["Email Stanford Office of Research Development", "Email Dept of Medicine research-admin", "Ask about internal nomination calendar", "Identify PI (must be early-career physician-scientist / junior faculty)", "Draft 1-page concept for Stefan's cgm-trial + pgx-copilot"],
+        "checklist": [
+          "Email Stanford Office of Research Development",
+          "Email Dept of Medicine research-admin",
+          "Ask about internal nomination calendar",
+          "Identify PI (must be early-career physician-scientist / junior faculty)",
+          "Draft 1-page concept for Stefan's cgm-trial + pgx-copilot"
+        ],
         "claudePrompt": "I need to email Stanford Office of Research Development about the ADA Pathway to Stop Diabetes award (GR-071). Public deadline May 19, 2026 but institutional nomination gate likely closes ~1 week earlier. Award: $1.625M total ($325K/yr × 5 years). My project: AI-powered personalized nutrition + pharmacogenomics platform for diabetes prevention. I need: (1) a draft inquiry email to Stanford ORD, (2) a 1-page concept note explaining the project for the nomination package, (3) a list of potential Stanford junior faculty PIs who might qualify."
       },
       {
@@ -131,7 +271,12 @@
         "time": "45 min",
         "description": "Malati Shreenya Batsami is the Stanford AI-faculty anchor for GR-054 Google.org AI for Science ($500K–$3M). 20-year institutional relationship. Her name on the application is the credibility gate. First contact drives the entire application timeline.",
         "evidence": "Confirmed in both Apr 19 strategy meetings.",
-        "checklist": ["Draft email to Malati", "Attach 1-page NOURISH summary", "Ask for faculty co-PI or letter of support", "Set meeting for next week to review application draft"],
+        "checklist": [
+          "Draft email to Malati",
+          "Attach 1-page NOURISH summary",
+          "Ask for faculty co-PI or letter of support",
+          "Set meeting for next week to review application draft"
+        ],
         "claudePrompt": "Draft an email to Dr. Malati Shreenya Batsami, Stanford faculty with a 20-year institutional relationship with NOURISH. I need to ask her to be a faculty co-PI or provide a letter of support for the Google.org AI for Science grant ($500K–$3M + cloud credits + 6-month accelerator). My project is NOURISH: AI-powered nutrition education + personalized coaching platform targeting food-insecure and culturally-diverse populations. The application positions Sous (our AI cooking app) as the main AI intervention. Draft the email as warm, collegial, and specific about her role."
       },
       {
@@ -143,7 +288,12 @@
         "time": "2 hrs",
         "description": "Razer expressed interest in NOURISH as a showcase application. 2-week window to formalize. Pitch deck + SoW draft needed before 2026-05-03.",
         "evidence": "Confirmed: 'Two weeks — after that the window closes.'",
-        "checklist": ["Create 5-slide Razer pitch deck", "Frame NOURISH as health + gaming intersection", "Draft preliminary SoW with Razer as technology partner", "Identify Razer contact (OTL coordination)"],
+        "checklist": [
+          "Create 5-slide Razer pitch deck",
+          "Frame NOURISH as health + gaming intersection",
+          "Draft preliminary SoW with Razer as technology partner",
+          "Identify Razer contact (OTL coordination)"
+        ],
         "claudePrompt": "Create a 5-slide pitch deck for NOURISH targeted at Razer (gaming hardware company). Razer is interested in NOURISH as a showcase application — the angle is health + gaming + AI. Key beats: (1) What NOURISH is and who benefits, (2) How Razer hardware amplifies the experience (haptics, peripherals, health wearables), (3) The research/data angle (Razer gets de-identified behavioral data), (4) Co-branding opportunity, (5) Proposed SoW and timeline. Keep it founder-level punchy. We have 2 weeks."
       },
       {
@@ -155,7 +305,12 @@
         "time": "5 min",
         "description": "Multiple sessions have local-only commits (d9c9f92, 0cdf90b, and others) blocked by sandbox git credential gap. Run git push origin master from Windows host.",
         "evidence": "Recurring note across 5+ sessions: 'push from Windows host'",
-        "checklist": ["Open Windows terminal", "cd C:\\Users\\stefa\\Stefan-Brain", "git push origin master", "Verify GitHub shows latest commits"],
+        "checklist": [
+          "Open Windows terminal",
+          "cd C:\\Users\\stefa\\Stefan-Brain",
+          "git push origin master",
+          "Verify GitHub shows latest commits"
+        ],
         "claudePrompt": "Run git push origin master in C:\\Users\\stefa\\Stefan-Brain to push local commits to GitHub. Then verify the latest commits are visible on the GitHub repo page."
       },
       {
@@ -167,7 +322,13 @@
         "time": "3 min",
         "description": "Data is wired (33 nodes, Reports-To hierarchy). Install the Org Chart + Flowchart extensions in Stefan's Airtable browser session — 3 clicks each.",
         "evidence": "Extension install requires Stefan's authenticated session. Chrome MCP Mac-only; computer-use read-only on browsers.",
-        "checklist": ["Open Airtable base appaOQnQ7zrcindYb", "Top-right → Extensions → + Add → search 'Org chart'", "Config: Table=Collaborators, Parent=Reports To, Filter: On Org Map=true", "Screenshot result", "Repeat for Flowchart extension"],
+        "checklist": [
+          "Open Airtable base appaOQnQ7zrcindYb",
+          "Top-right → Extensions → + Add → search 'Org chart'",
+          "Config: Table=Collaborators, Parent=Reports To, Filter: On Org Map=true",
+          "Screenshot result",
+          "Repeat for Flowchart extension"
+        ],
         "claudePrompt": "I need to install the Org Chart extension in Airtable. Base: appaOQnQ7zrcindYb, Table: Collaborators (tblxJIXDr03WocPuy). The 'Reports To' field (fldt97AbyIowwtUrV) is already populated for 33 records. Config: Parent record field = Reports To, Filter: On Org Map = true. Walk me through the install and ideal display config for a 33-node team org chart."
       },
       {
@@ -179,7 +340,12 @@
         "time": "5 min",
         "description": "QMD binary only runs on Windows host. Stefan-Brain has 13+ commits and Sous has 7+ commits since last index. Run qmd update stefan-brain && qmd update sous.",
         "evidence": "qmd-daily-refresh blocked every run: 'qmd binary not in sandbox'",
-        "checklist": ["Open Windows terminal", "qmd update stefan-brain", "qmd update sous", "qmd update optimus"],
+        "checklist": [
+          "Open Windows terminal",
+          "qmd update stefan-brain",
+          "qmd update sous",
+          "qmd update optimus"
+        ],
         "claudePrompt": "Run the following QMD refresh commands in Windows terminal: (1) qmd update stefan-brain, (2) qmd update sous, (3) qmd update optimus. Verify each completes without errors and report the number of documents indexed."
       },
       {
@@ -191,7 +357,11 @@
         "time": "10 min",
         "description": "wiki/people has daniel.md (Chef, recipe development) and daniel-perliman.md (researcher/co-investigator). Both are NOURISH teaching-kitchen related. Are these the same person?",
         "evidence": "Flagged as borderline in 02:16 dedup session. No merge performed.",
-        "checklist": ["Check Granola transcripts for Chef Daniel full name", "Check if Daniel Perliman is the chef in any meeting notes", "Either confirm as separate or merge into single canonical page"],
+        "checklist": [
+          "Check Granola transcripts for Chef Daniel full name",
+          "Check if Daniel Perliman is the chef in any meeting notes",
+          "Either confirm as separate or merge into single canonical page"
+        ],
         "claudePrompt": "I have two NOURISH people pages: (1) daniel.md — 'Chef Daniel,' recipe development, teaching-kitchen collaborator, tagged as chef; (2) daniel-perliman.md — 'Daniel Perliman,' Stanford/NOURISH researcher and Teaching Kitchen Study co-investigator. Are these the same person? Check Granola meetings and any written NOURISH documents for 'Chef Daniel' and 'Daniel Perliman' and tell me if they're the same."
       },
       {
@@ -203,7 +373,11 @@
         "time": "5 min",
         "description": "4 HSIL records prefixed [REMOVE] in Airtable Collaborators: Kumar Siddharth Singh, Che Reddy, Professor Atun, Zach Ward. Delete or archive them.",
         "evidence": "09:25 session Apr 19: 4 records tagged [REMOVE], not yet deleted.",
-        "checklist": ["Open Airtable Collaborators table", "Filter for records with [REMOVE] prefix", "Delete or archive the 4 records"],
+        "checklist": [
+          "Open Airtable Collaborators table",
+          "Filter for records with [REMOVE] prefix",
+          "Delete or archive the 4 records"
+        ],
         "claudePrompt": "In Airtable base appaOQnQ7zrcindYb, Collaborators table tblxJIXDr03WocPuy, delete or archive 4 HSIL records that were prefixed [REMOVE]: Kumar Siddharth Singh, Che Reddy, Professor Atun, Zach Ward. These are from the HSIL hackathon and should not be in the NOURISH collaborators list."
       },
       {
@@ -215,7 +389,11 @@
         "time": "5 min",
         "description": "Friday check-ins planned as lightweight team pulse mechanism. Set up recurring Friday 30-min calendar invite for core team.",
         "evidence": "Confirmed in Apr 19 team-leadership meeting.",
-        "checklist": ["Create Google Calendar recurring event: Fridays 4pm PT", "Add Dalia, Razer, Rich Wittman", "Add agenda template in description"],
+        "checklist": [
+          "Create Google Calendar recurring event: Fridays 4pm PT",
+          "Add Dalia, Razer, Rich Wittman",
+          "Add agenda template in description"
+        ],
         "claudePrompt": "Create a recurring Google Calendar event: NOURISH Friday Check-in, every Friday at 4pm PT starting April 25, 2026. Invite: dalia.perelman@stanford.edu, rich.wittman@stanford.edu. Agenda template in description: (1) Weekly progress (5 min each), (2) Blockers, (3) Priorities for next week. Duration: 30 minutes."
       },
       {
@@ -227,12 +405,15 @@
         "time": "15 min",
         "description": "care-Fellowship → care-Scholars identified as a pro-bono student resourcing channel. Stanford students in care-Scholars can contribute non-research NOURISH tasks for free.",
         "evidence": "Mentioned in Apr 19 funding-strategy meeting.",
-        "checklist": ["Research care-Scholars program structure", "Identify NOURISH tasks suitable for student contributors", "Draft outreach to care-Scholars coordinator"],
+        "checklist": [
+          "Research care-Scholars program structure",
+          "Identify NOURISH tasks suitable for student contributors",
+          "Draft outreach to care-Scholars coordinator"
+        ],
         "claudePrompt": "Research the Stanford care-Scholars program (related to care-Fellowship). I want to use it as a pro-bono student resourcing channel for NOURISH — students could contribute to non-research tasks like website updates, social media, patient education materials, and outreach. Draft an inquiry email to the program coordinator asking how NOURISH can become a student placement site."
       }
     ]
   },
-
   "ideas": {
     "pgQuoteTop": "The marginal cost of completeness is near zero with AI.",
     "pgQuoteBottom": "Ship the whole thing. Not the plan to ship it — the thing.",
@@ -246,7 +427,11 @@
         "novelty": "8/10",
         "status": "concept",
         "edge": "GR-071 + GR-054 + GR-055 all revealed the same pattern this week",
-        "seeds": ["ADA Pathway nomination gate", "Google.org same-day close", "HRSA Telehealth same-day close"],
+        "seeds": [
+          "ADA Pathway nomination gate",
+          "Google.org same-day close",
+          "HRSA Telehealth same-day close"
+        ],
         "claudePrompt": "Build a grant deadline analyzer that detects hidden nomination gates, same-day closes, and LOI-then-application two-step patterns. Input: a grant URL or description. Output: (1) public deadline, (2) real action window (nomination gates, LOI dates), (3) confidence score that the public deadline is the real deadline. Use the grant-registry.md as training examples."
       },
       {
@@ -258,7 +443,11 @@
         "novelty": "7/10",
         "status": "concept",
         "edge": "Optimus dashboard already does this — extend to NOURISH-specific version",
-        "seeds": ["Optimus dashboard 21:48 Apr 19", "Razer pitch need", "Google.org application"],
+        "seeds": [
+          "Optimus dashboard 21:48 Apr 19",
+          "Razer pitch need",
+          "Google.org application"
+        ],
         "claudePrompt": "Create a single-page NOURISH credibility dashboard: (1) 3-number header (72 grants tracked, 53 collaborators, $X pipeline), (2) current grant pipeline with status, (3) team org chart, (4) 3 published/in-progress papers, (5) 1 demo video embed. Deploy to a public Vercel URL. This doubles as a pitch page for Razer, Google.org, and any cold funder intro."
       },
       {
@@ -270,7 +459,12 @@
         "novelty": "6/10",
         "status": "build-now",
         "edge": "4 LOIs due Apr 28 — this is an immediate build opportunity",
-        "seeds": ["GR-007", "GR-022", "GR-024", "GR-049"],
+        "seeds": [
+          "GR-007",
+          "GR-022",
+          "GR-024",
+          "GR-049"
+        ],
         "claudePrompt": "I have a single core NOURISH/Sous research concept: AI-powered cooking app improving dietary behavior in T2D populations. I need to spin it into 4 simultaneous PCORI LOIs: (1) Novel Methods $750K, (2) Science of Engagement $1M, (3) Phased Large Awards $12M, (4) PCORnet National-Scale $12M. Build a template-and-variant system: one master narrative + 4 PCORI-track-specific framings. Output each as a 2-page draft."
       },
       {
@@ -282,7 +476,10 @@
         "novelty": "6/10",
         "status": "concept",
         "edge": "Budget confirmed; external expert breaks 'internal-only' norm productively",
-        "seeds": ["Apr 19 strategy meeting", "PCORI Improving Methods track GR-007"],
+        "seeds": [
+          "Apr 19 strategy meeting",
+          "PCORI Improving Methods track GR-007"
+        ],
         "claudePrompt": "Draft a scope of work for Fahim Abbasi as a statistical methods consultant for NOURISH. He specializes in mixed methods and behavioral intervention analysis. The SoW should cover: (1) review of existing survey instruments, (2) power calculation for CGM trial, (3) methods section drafting for 2 manuscripts, (4) PCORI Improving Methods LOI coauthorship. Timeline: May–August 2026. Budget: $X."
       },
       {
@@ -294,7 +491,10 @@
         "novelty": "8/10",
         "status": "concept",
         "edge": "NOURISH research needs participants; Sous has users — plug them together",
-        "seeds": ["Sous design doctrine Phase 1 (0→100 retained users)", "NOURISH CGM trial participant recruitment"],
+        "seeds": [
+          "Sous design doctrine Phase 1 (0→100 retained users)",
+          "NOURISH CGM trial participant recruitment"
+        ],
         "claudePrompt": "Design the Sous → NOURISH research participant conversion flow. A user who has cooked 3+ meals in Sous should see: (1) a 'Join the NOURISH study' banner with 1-tap consent, (2) a CGM eligibility screener (2 questions), (3) automatic enrollment in the Airtable recruitment table. Build the Figma mockup and the Airtable automation schema."
       },
       {
@@ -306,7 +506,10 @@
         "novelty": "5/10",
         "status": "concept",
         "edge": "53 Airtable records vs 220 wiki pages — they drift apart within days",
-        "seeds": ["Airtable bulk-populate Apr 19", "P2 canonicalization rule"],
+        "seeds": [
+          "Airtable bulk-populate Apr 19",
+          "P2 canonicalization rule"
+        ],
         "claudePrompt": "Build a weekly sync that reads Airtable Collaborators (base appaOQnQ7zrcindYb, table tblxJIXDr03WocPuy) and updates matching wiki/people/*.md pages with current Tier, Ring, and When-to-Collaborate fields. Flag any Airtable records with no wiki counterpart and any wiki people with no Airtable counterpart. Run as a Claude scheduled task every Sunday."
       },
       {
@@ -318,7 +521,10 @@
         "novelty": "7/10",
         "status": "blocked",
         "edge": "4-module curriculum designed; IRB demo needed ~Apr 30; Isabela Moise + Minal Moharir",
-        "seeds": ["VR Education theme from prior weeks", "PFME grant $5K culturally tailored nutrition"],
+        "seeds": [
+          "VR Education theme from prior weeks",
+          "PFME grant $5K culturally tailored nutrition"
+        ],
         "claudePrompt": "Draft the IRB demo protocol for the VR Nutrition Education study. The study uses VR to teach 4 modules: (1) building trust with patients, (2) behavior change goal-setting, (3) sustaining behavior change, (4) cooking as medicine. The demo needs: research question, participant eligibility (medical students at Stanford), VR platform (Meta Quest 3), content description, and data collection plan. PI: Minal Moharir. Target demo date: April 30, 2026."
       },
       {
@@ -330,7 +536,10 @@
         "novelty": "7/10",
         "status": "concept",
         "edge": "72 grants × multiple deadline types × nomination gates = unmanageable manually",
-        "seeds": ["GR-071 nomination gate miss risk", "grant-discovery-scan history"],
+        "seeds": [
+          "GR-071 nomination gate miss risk",
+          "grant-discovery-scan history"
+        ],
         "claudePrompt": "Build a grant commitment tracker that reads grant-registry.md and outputs: (1) a 90-day deadline calendar showing ALL grants with actionable windows (nomination gates, LOI dates, full application dates), (2) a weekly email digest of grants requiring action in the next 14 days, (3) Airtable automation to update grant status as deadlines pass. Run as a Claude scheduled task."
       },
       {
@@ -342,7 +551,11 @@
         "novelty": "5/10",
         "status": "concept",
         "edge": "72 grants all need the same 5 sections reframed for each funder",
-        "seeds": ["PCORI LOI cluster", "Gates Grand Challenges cluster", "Google.org application"],
+        "seeds": [
+          "PCORI LOI cluster",
+          "Gates Grand Challenges cluster",
+          "Google.org application"
+        ],
         "claudePrompt": "Build a NOURISH grant writing templates library. Master sections: (1) Project Overview (150 words), (2) Research Question + Hypothesis (200 words), (3) Specific Aims (500 words), (4) Innovation (300 words), (5) Team (200 words), (6) Budget Justification (200 words). Then create 5 funder-specific variants: PCORI, NIH, Google.org, Gates Foundation, HRSA. Each variant rephrases the master sections using the funder's preferred language and values."
       },
       {
@@ -354,15 +567,183 @@
         "novelty": "4/10",
         "status": "build-now",
         "edge": "Website-first sequencing confirmed in strategy meeting. 120 Canva assets ready. 20 modules spec'd.",
-        "seeds": ["Canva asset index 120 records", "nourish-patient-education-website-spec 20 modules", "Apr 19 strategy meeting decision"],
+        "seeds": [
+          "Canva asset index 120 records",
+          "nourish-patient-education-website-spec 20 modules",
+          "Apr 19 strategy meeting decision"
+        ],
         "claudePrompt": "Build the NOURISH patient education website. Spec: 20 modules (M00–M19), dark theme with green accents (#2D6A4F), mobile-first, deployed on Vercel. Assets: 22 direct patient-education Canva exports, 8 cook-along presentations, 14 QR-linked resources. Navigation: Home, Modules, About, Team, Research. Start with the home page and Module 1 (Introduction to Food as Medicine). Stack: Next.js + Tailwind CSS + Vercel."
+      },
+      {
+        "id": 11,
+        "category": "Research",
+        "title": "PGx x Flavor Map",
+        "subtitle": "Your drug metabolism predicts your cuisine",
+        "impact": "High",
+        "novelty": "9/10",
+        "status": "concept",
+        "edge": "CYP450 variants that affect drug metabolism also influence taste receptor sensitivity -- same enzymatic pathways",
+        "seeds": [
+          "PGx Copilot pharmacogenomics data",
+          "Sous food recognition engine",
+          "CGM trial dietary tracking"
+        ],
+        "claudePrompt": "Research and design a meal recommendation engine that merges pharmacogenomics profiles with food preferences. Start with CYP1A2 (caffeine metabolism -> coffee sensitivity), CYP2D6 (flavor compound metabolism), and TAS2R38 (bitter taste receptor). Cross-reference with USDA food flavor compound database. For a given PGx profile, suggest 5 cuisines likely to be enjoyed and 3 to approach cautiously. Use Stefan's PGx Copilot data model as the starting point."
+      },
+      {
+        "id": 12,
+        "category": "Startup",
+        "title": "Oculomics Habit Loop",
+        "subtitle": "Your morning eye selfie as a metabolic check-in",
+        "impact": "High",
+        "novelty": "9/10",
+        "status": "concept",
+        "edge": "CGM spike patterns correlate with conjunctival vessel changes detectable on iPhone -- oculomics + CGM is Stefan's most natural next thesis",
+        "seeds": [
+          "Healthcare from the Eye project",
+          "CGM trial data",
+          "Sous dietary coaching"
+        ],
+        "claudePrompt": "Design a daily metabolic check-in app using a 10-second front-camera eye selfie. Detects: (1) conjunctival vessel redness as inflammation proxy, (2) scleral yellow tinge as metabolic stress signal. Correlated against prior-day CGM and meal logs from Sous. Output: metabolic baseline [green/yellow/red] + Sous meal recommendation. Stack: iPhone AVFoundation + Core ML for vessel segmentation + CGM API."
+      },
+      {
+        "id": 13,
+        "category": "Research",
+        "title": "Biosecurity Cookbook",
+        "subtitle": "Pandemic-resilient nutrition -- cook through a Category 3 supply chain disruption",
+        "impact": "Medium",
+        "novelty": "9/10",
+        "status": "concept",
+        "edge": "Stefan's H4D biosecurity work meets NOURISH nutrition work -- the intersection nobody has explored",
+        "seeds": [
+          "H4D biosecurity coursework",
+          "NOURISH PBDI teaching kitchen",
+          "Coefficient Giving biosecurity grant GR-058"
+        ],
+        "claudePrompt": "Design a cookbook where every recipe is scored on supply chain resilience: (1) ingredient availability during a 30-day regional disruption, (2) nutritional density per dollar of shelf-stable version, (3) substitution trees for when primary ingredients vanish. Build a scoring rubric, apply it to 50 recipes from 5 cultural traditions. Output: a cookbook that doubles as a food security policy brief."
+      },
+      {
+        "id": 14,
+        "category": "Research",
+        "title": "Cultural Insulin Index",
+        "subtitle": "Dal before rice vs. rice first -- quantify the sequencing effect across cuisines",
+        "impact": "High",
+        "novelty": "8/10",
+        "status": "concept",
+        "edge": "CGM trial measures exactly this; South Asian food sequencing is systematically understudied vs. Mediterranean research",
+        "seeds": [
+          "CGM trial data",
+          "Sous South Asian recipe corpus",
+          "NOURISH cultural nutrition thesis"
+        ],
+        "claudePrompt": "Design a cross-cultural insulin response study comparing meal sequencing patterns across 5 cuisines. Hypothesis: traditional serving sequences (dal->rice in South Asian, vegetables->carbs in Japanese, legumes->grain in Mediterranean) were independently optimized for glycemic control. Use Stefan's CGM trial as measurement platform. Output: study protocol + preliminary simulation using published glycemic index data."
+      },
+      {
+        "id": 15,
+        "category": "Research",
+        "title": "Rhythm-Based Eating Coach",
+        "subtitle": "Your Spotify BPM predicts your eating speed -- intervene at the playlist",
+        "impact": "Medium",
+        "novelty": "9/10",
+        "status": "concept",
+        "edge": "BPM during meals correlates with eating speed which correlates with post-meal glucose spike -- a Spotify + CGM correlation nobody has published",
+        "seeds": [
+          "CGM trial data",
+          "Sous coaching model",
+          "Stefan's music interests"
+        ],
+        "claudePrompt": "Design a study and prototype that correlates Spotify listening BPM with eating speed (meal duration in Sous) and post-meal CGM spike. If high-BPM playlists -> faster eating -> higher spikes, the intervention is a slow-dining playlist recommendation. Build: Spotify API + Sous meal logs + CGM export correlation analysis, then the recommendation engine."
+      },
+      {
+        "id": 16,
+        "category": "Tool",
+        "title": "Grant Wisdom Engine",
+        "subtitle": "Discriminative model trained on winning vs. rejected NIH abstracts -- not a template, a critic",
+        "impact": "Extremely High",
+        "novelty": "8/10",
+        "status": "concept",
+        "edge": "PCORI publishes funded and unfunded abstracts -- training signal exists; this would be 10x more useful than any grant template",
+        "seeds": [
+          "72 grants in registry",
+          "PCORI LOI cluster Apr 28 deadline",
+          "Stefan's grant-writing workload"
+        ],
+        "claudePrompt": "Build a grant LOI critic using PCORI's published funded/unfunded abstract database. Engineer a classifier that identifies: (1) sentences that signal funded (specific mechanisms, quantified outcomes, clear patient populations), (2) sentences that signal reject (vague innovation claims, undefined comparators, missing implementation plan). Apply to Stefan's draft LOIs. Output: sentence-level feedback with specific rewrites."
+      },
+      {
+        "id": 17,
+        "category": "Product",
+        "title": "The Umami Curriculum",
+        "subtitle": "Teach pharmacology through flavor compounds -- cook your way to drug mechanisms",
+        "impact": "High",
+        "novelty": "9/10",
+        "status": "concept",
+        "edge": "Capsaicin=TRPV1, caffeine=adenosine antagonism, MSG=NMDA -- cooking teaches pharmacology better than flashcards because the mechanism is embodied",
+        "seeds": [
+          "PGx Copilot drug mechanism knowledge base",
+          "PBDI teaching kitchen",
+          "NOURISH culinary medicine curriculum"
+        ],
+        "claudePrompt": "Design 'The Umami Curriculum': a cooking class series where each dish teaches a drug mechanism. Lesson 1: capsaicin (chili oil) -> TRPV1 pain pathway -> why capsaicin cream works for neuropathy. Lesson 2: caffeine (espresso) -> adenosine antagonism -> withdrawal headaches. Lesson 3: fermentation (kimchi) -> gut-brain axis -> why probiotics affect mood. 10 lessons total. Each has a recipe, the mechanism, and a clinical application."
+      },
+      {
+        "id": 18,
+        "category": "Startup",
+        "title": "Microbiome Menu",
+        "subtitle": "Your gut bacteria place tonight's dinner order",
+        "impact": "High",
+        "novelty": "8/10",
+        "status": "concept",
+        "edge": "Microbiome sequencing companies produce actionable bacterial profiles but terrible meal recommendations -- Sous could be the execution layer",
+        "seeds": [
+          "Sous food recommendation engine",
+          "NOURISH precision nutrition thesis",
+          "CGM trial participant data"
+        ],
+        "claudePrompt": "Design the integration between a microbiome sequencing result (e.g., Viome report) and Sous meal recommendations. Input: list of underrepresented bacterial strains (low Akkermansia, high Firmicutes/Bacteroidetes ratio). Output: tonight's dinner from Sous that feeds the deficit strains. Build the fiber/prebiotic -> bacterial strain mapping first, then wire into Sous's recommendation API."
+      },
+      {
+        "id": 19,
+        "category": "Research",
+        "title": "Stanford Food Sovereignty Map",
+        "subtitle": "What students actually eat vs. what's prescribed -- the political economy of a university cafeteria",
+        "impact": "Medium",
+        "novelty": "8/10",
+        "status": "concept",
+        "edge": "Stanford has 180+ nationalities and heavily tracked dining data -- a publishable health equity study hiding in plain sight",
+        "seeds": [
+          "NOURISH health equity thesis",
+          "Stefan's Stanford QUAD Fellowship",
+          "PBDI cultural nutrition curriculum"
+        ],
+        "claudePrompt": "Design a mixed-methods study: (1) survey of what Stanford students from 5 cultural backgrounds actually eat vs. dining hall availability, (2) nutritional gap analysis between cultural dietary needs and dining options, (3) interactive map showing food deserts within Stanford's campus for specific cultural communities. IRB-approvable as a dietary equity needs assessment. Output: study protocol + visualization mockup."
+      },
+      {
+        "id": 20,
+        "category": "Research",
+        "title": "AI Oral Health Sentinel",
+        "subtitle": "Periodontal disease as a T2D early-warning signal -- Sous recommends foods that protect both",
+        "impact": "High",
+        "novelty": "8/10",
+        "status": "concept",
+        "edge": "Periodontal disease and T2D share inflammatory pathways and bidirectionally worsen each other -- nobody has built the preventive dietary recommendation engine at this intersection",
+        "seeds": [
+          "CGM trial T2D cohort",
+          "Sous nutrition engine",
+          "NOURISH precision nutrition infrastructure"
+        ],
+        "claudePrompt": "Design a food recommendation layer for Sous that optimizes for dual metabolic and oral microbiome health. Key insight: green tea, cranberries, and cheese inhibit periodontal pathogens AND reduce post-meal glucose spikes. Build a scoring matrix: each Sous recipe gets a metabolic-oral dual score. Prototype: 50 Sous recipes, apply dual scoring, surface the top 10 'dentist + endocrinologist approved' meals."
       }
     ]
   },
-
   "skills": {
     "nextScan": "2026-04-26",
-    "dataSources": ["Granola MCP (4 meetings)", "Airtable (184 tasks)", "Notion (Optimus pages)", "Stefan-Brain wiki logs"],
+    "dataSources": [
+      "Granola MCP (4 meetings)",
+      "Airtable (184 tasks)",
+      "Notion (Optimus pages)",
+      "Stefan-Brain wiki logs"
+    ],
     "candidates": [
       {
         "rank": 1,
@@ -374,7 +755,10 @@
         "complexity": "medium",
         "action": "Build this sprint",
         "actionColor": "red",
-        "sources": ["Airtable Task Registry", "Granola team meetings"]
+        "sources": [
+          "Airtable Task Registry",
+          "Granola team meetings"
+        ]
       },
       {
         "rank": 2,
@@ -386,7 +770,10 @@
         "complexity": "low",
         "action": "Build this week",
         "actionColor": "red",
-        "sources": ["Granola Apr 19 strategy meeting", "Airtable"]
+        "sources": [
+          "Granola Apr 19 strategy meeting",
+          "Airtable"
+        ]
       },
       {
         "rank": 3,
@@ -398,7 +785,10 @@
         "complexity": "medium",
         "action": "Build next sprint",
         "actionColor": "orange",
-        "sources": ["Grant Registry", "Airtable Task Registry"]
+        "sources": [
+          "Grant Registry",
+          "Airtable Task Registry"
+        ]
       },
       {
         "rank": 4,
@@ -410,7 +800,10 @@
         "complexity": "low",
         "action": "Build this sprint",
         "actionColor": "red",
-        "sources": ["Granola MCP", "Airtable Task Registry"]
+        "sources": [
+          "Granola MCP",
+          "Airtable Task Registry"
+        ]
       },
       {
         "rank": 5,
@@ -422,7 +815,9 @@
         "complexity": "medium",
         "action": "Build now (Apr 28 deadline)",
         "actionColor": "red",
-        "sources": ["Grant Registry"]
+        "sources": [
+          "Grant Registry"
+        ]
       },
       {
         "rank": 6,
@@ -434,7 +829,10 @@
         "complexity": "medium",
         "action": "Blocked (Canva auth issue)",
         "actionColor": "gray",
-        "sources": ["canva-asset-index", "nourish-patient-education-website-spec"]
+        "sources": [
+          "canva-asset-index",
+          "nourish-patient-education-website-spec"
+        ]
       },
       {
         "rank": 7,
@@ -446,7 +844,117 @@
         "complexity": "low",
         "action": "Build next sprint",
         "actionColor": "orange",
-        "sources": ["Grant Registry"]
+        "sources": [
+          "Grant Registry"
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "Grant LOI Assembly Line",
+        "score": 88,
+        "timeSaved": "3 hrs/LOI",
+        "pattern": "72 grants in registry with match rationale already extracted. LOI template + grant-specific reframing = 80% of the writing done automatically. PCORI Apr 28 cluster proves urgency.",
+        "frequency": "Per deadline cluster",
+        "complexity": "medium",
+        "action": "Build now (Apr 28 deadline)",
+        "actionColor": "red",
+        "sources": [
+          "Grant Registry",
+          "grant-writing skill"
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "Airtable to Obsidian People Sync",
+        "score": 82,
+        "timeSaved": "45 min/week",
+        "pattern": "53 Airtable Collaborator records vs 220 wiki pages -- they drift apart within days. Any update in one requires manual update in the other.",
+        "frequency": "Weekly",
+        "complexity": "low",
+        "action": "Build this sprint",
+        "actionColor": "orange",
+        "sources": [
+          "Airtable Collaborators table",
+          "wiki/people/"
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "OMI to Airtable Commitment Extractor",
+        "score": 80,
+        "timeSaved": "60 min/week",
+        "pattern": "OMI conversations contain verbal action items that never make it to Airtable. Stefan voices commitments during walks/drives that get lost. Full transcript extraction -> task creation is fully automatable.",
+        "frequency": "Daily",
+        "complexity": "low",
+        "action": "Build this sprint",
+        "actionColor": "orange",
+        "sources": [
+          "OMI MCP",
+          "Airtable Task Registry"
+        ]
+      },
+      {
+        "rank": 11,
+        "name": "Wiki Broken-Link Fixer",
+        "score": 76,
+        "timeSaved": "30 min/week",
+        "pattern": "220 wiki pages growing 15-20/week. Obsidian link rot is inevitable. A weekly scan + auto-fix pass prevents the wiki from becoming unnavigable.",
+        "frequency": "Weekly",
+        "complexity": "low",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": [
+          "Stefan-Brain wiki",
+          "wiki-lint skill"
+        ]
+      },
+      {
+        "rank": 12,
+        "name": "Morning Brief Compiler",
+        "score": 75,
+        "timeSaved": "20 min/day",
+        "pattern": "Stefan checks OMI, Granola, Airtable, and email separately each morning. One consolidated pull of overnight conversations + today's due items + grant deadlines eliminates 4 context-switches.",
+        "frequency": "Daily",
+        "complexity": "low",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": [
+          "OMI MCP",
+          "Airtable Task Registry",
+          "Grant Registry",
+          "Granola MCP"
+        ]
+      },
+      {
+        "rank": 13,
+        "name": "Grant Real-Deadline Push Notifier",
+        "score": 74,
+        "timeSaved": "Prevents $1M+ deadline misses",
+        "pattern": "Hidden nomination gates (GR-071, GR-054, GR-055) are a systematic failure mode. Push notifications 14/7/2 days before the REAL action window would have caught all three this week.",
+        "frequency": "Per grant",
+        "complexity": "low",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": [
+          "Grant Registry",
+          "grant-discovery-scan output"
+        ]
+      },
+      {
+        "rank": 14,
+        "name": "Sous Recipe Semantic Search",
+        "score": 70,
+        "timeSaved": "2 hrs/batch",
+        "pattern": "Sous recipe library is growing but search is keyword-only. Embedding recipes with USDA nutrition tags, cultural origin, and CGM-study eligibility flags enables semantic queries.",
+        "frequency": "Per recipe update",
+        "complexity": "medium",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": [
+          "Sous recipe database",
+          "USDA FoodData Central API",
+          "CGM trial eligibility criteria"
+        ]
       }
     ],
     "crossSourcePatterns": [
@@ -456,86 +964,817 @@
       "4 simultaneous Apr 28 deadlines suggest grant calendar management is a systematic gap, not a one-off miss"
     ],
     "pipeline": [
-      { "name": "CGM Study Ops Automator", "status": "prioritized", "eta": "2026-04-27" },
-      { "name": "Meeting → Airtable Pipeline", "status": "prioritized", "eta": "2026-04-27" },
-      { "name": "PCORI LOI Factory", "status": "build-now", "eta": "2026-04-25" }
+      {
+        "name": "CGM Study Ops Automator",
+        "status": "prioritized",
+        "eta": "2026-04-27"
+      },
+      {
+        "name": "Meeting → Airtable Pipeline",
+        "status": "prioritized",
+        "eta": "2026-04-27"
+      },
+      {
+        "name": "PCORI LOI Factory",
+        "status": "build-now",
+        "eta": "2026-04-25"
+      }
     ]
   },
-
   "nourish": {
     "grants": [
-      { "name": "AHRQ R21/R33 Digital Healthcare Solutions", "funder": "AHRQ/NIH", "amount": "R21: $275K; R33: $1M", "deadline": "Jun 16, 2026", "score": 92, "status": "Found", "match": "Top-scored. Sous, PGx Copilot, Healthcare from the Eye all eligible. Multiple cycles (Oct 16, Feb 16).", "registryId": "GR-001", "urgent": false },
-      { "name": "AHRQ R21/R33 Digital Healthcare — Cycle update", "funder": "AHRQ/NIH", "amount": "R21: $275K; R33: $1M", "deadline": "Jun 16, 2026", "score": 92, "status": "Found", "match": "Updates GR-001. Three cycles: Jun 16, Oct 16, Feb 16. Sous as digital intervention at point of care.", "registryId": "GR-043", "urgent": false },
-      { "name": "PCORI BPS Category 3 — PCORnet National-Scale", "funder": "PCORI", "amount": "Up to $12M direct (5 years)", "deadline": "LOI Apr 28, 2026", "score": 90, "status": "Found", "match": "National-scale Sous vs. standard nutrition counseling trial using PCORnet. Diabetes/Obesity emphasis. Requires PCORnet network partner.", "registryId": "GR-049", "urgent": true },
-      { "name": "Google.org AI for Science 2026", "funder": "Google.org", "amount": "$500K–$3M + Cloud credits + accelerator", "deadline": "Check for reopen", "score": 88, "status": "Found", "match": "Meal-pairer-ai + Sous food recognition + CGM-trial AI coaching. Health & Life Sciences track. Malati Shreenya Batsami as Stanford AI-faculty anchor.", "registryId": "GR-054", "urgent": false },
-      { "name": "NIH Dissemination & Implementation R01 (PAR-25-144)", "funder": "NIH (multi-IC)", "amount": "$250K–$500K/yr, up to 5 years", "deadline": "Feb 5 / Jun 5 / Oct 5 annually", "score": 88, "status": "Found", "match": "Implementation science for Sous + PGx Copilot at scale in diverse populations.", "registryId": "GR-028", "urgent": false },
-      { "name": "PCORI Phased Large Awards — Cycle 2 2026", "funder": "PCORI", "amount": "Up to $12M direct (5 years)", "deadline": "LOI Apr 28, 2026", "score": 88, "status": "Found", "match": "Large-scale Sous vs. traditional nutrition coaching pragmatic trial. Diabetes/Obesity Special Areas of Emphasis.", "registryId": "GR-024", "urgent": true },
-      { "name": "NSF/NIH Smart Health and Biomedical Research (SCH)", "funder": "NSF + NIH", "amount": "Up to $1.2M (4 years)", "deadline": "Next cycle TBD", "score": 87, "status": "Found", "match": "Sous AI + data science for nutrition/health. Direct fit.", "registryId": "GR-003", "urgent": false },
-      { "name": "HRSA Telehealth Nutrition Services Network", "funder": "HRSA Office for Telehealth", "amount": "Network grant", "deadline": "Apr 17, 2026 (CLOSED)", "score": 87, "status": "Found", "match": "PBDI teaching kitchen remote coaching, CGM trial patient interface, NOURISH telehealth thesis. Closed — monitor for next cycle.", "registryId": "GR-055", "urgent": false },
-      { "name": "PCORI Broad Pragmatic Studies — Cycle 2 (Category 1-2)", "funder": "PCORI", "amount": "Up to $5M–$12M", "deadline": "LOI mid-2026", "score": 86, "status": "Found", "match": "Comparative effectiveness of Sous vs. traditional nutrition coaching.", "registryId": "GR-004", "urgent": false },
-      { "name": "NIH NIDDK T2D Digital Health R01 — Oct 2026 cycle", "funder": "NIH/NIDDK", "amount": "$250K–$500K/yr, up to 5 years", "deadline": "Oct 6, 2026", "score": 85, "status": "Found", "match": "Sous nutrition coaching for T2D. Direct fit. LOI passed for current cycle; Oct cycle open.", "registryId": "GR-044", "urgent": false },
-      { "name": "Stanford HAI Hoffman-Yee Research Grant", "funder": "Stanford HAI", "amount": "$500K Year 1, up to $2M over 3 years", "deadline": "LOI ~Jan 2027", "score": 85, "status": "Found", "match": "Interdisciplinary AI + nutrition health. Next cycle January 2027.", "registryId": "GR-005", "urgent": false },
-      { "name": "HRSA FY2026 Expanding Nutrition Services $125M", "funder": "HRSA Bureau of Primary Health Care", "amount": "$125M across 350+ health centers", "deadline": "Jun 9, 2026", "score": 85, "status": "Found", "match": "Sous deployment in FQHCs, NOURISH as technical assistance layer. Launches April 21, 2026.", "registryId": "GR-056", "urgent": false },
-      { "name": "NIH IRINAH — Indigenous Health R34 (PAR-25-378)", "funder": "NIH Multi-IC + THRO", "amount": "Up to $450K direct (3 years)", "deadline": "Oct 21, 2026", "score": 84, "status": "Found", "match": "Sous/NOURISH adapted for American Indian/Alaska Native communities.", "registryId": "GR-029", "urgent": false },
-      { "name": "PCORI Improving Methods — Cycle 2 2026 (GR-007)", "funder": "PCORI", "amount": "Up to $750K, 3 years", "deadline": "LOI Apr 28, 2026", "score": 82, "status": "Found", "match": "Novel methods for measuring cooking confidence / dietary behavior change. Fahim as stats collaborator fit.", "registryId": "GR-007", "urgent": true },
-      { "name": "Stanford HAI Seed Research Grants 2026", "funder": "Stanford HAI", "amount": "Up to $75K, 12 months", "deadline": "Annual cycle (check HAI)", "score": 82, "status": "Found", "match": "AI + nutrition/health as interdisciplinary Stanford project. Stefan as QUAD Fellow eligible.", "registryId": "GR-031", "urgent": false },
-      { "name": "Google.org AI for Government Innovation", "funder": "Google.org", "amount": "$1M–$3M + Accelerator", "deadline": "Monitor for reopen", "score": 81, "status": "Found", "match": "Sous as public-sector AI health innovation. April 3 cycle likely closed — monitor.", "registryId": "GR-027", "urgent": false },
-      { "name": "NIDDK High Impact Interdisciplinary Science (RC2)", "funder": "NIH/NIDDK", "amount": "Up to $1M/yr direct", "deadline": "Jun 3, 2026", "score": 80, "status": "Found", "match": "CGM trial + meal-pairer-ai + PFEME — coupled sensor + Sous coach PGx-informed thesis.", "registryId": "GR-060", "urgent": false },
-      { "name": "HRSA Expanding Nutrition Services (HRSA-26-099)", "funder": "HRSA", "amount": "$125M total pool (350+ awards)", "deadline": "TBD (Apr 7 announcement)", "score": 80, "status": "Found", "match": "Sous deployment in primary care settings. Original announcement precursor to GR-056.", "registryId": "GR-046", "urgent": false },
-      { "name": "NINR/NIH Nutrition Across the Lifespan", "funder": "NIH/NINR", "amount": "R01-level (TBD)", "deadline": "Forecasted Apr 27, 2026", "score": 80, "status": "Found", "match": "Sous nutrition intervention + health equity. Examines SDOH across the lifespan. Contact: Bill Duval PhD.", "registryId": "GR-051", "urgent": true },
-      { "name": "Google.org Impact Challenge: AI for Science (original cycle)", "funder": "Google.org", "amount": "$500K–$3M + Cloud credits", "deadline": "Apr 17, 2026 (CLOSED — monitor for reopen)", "score": 89, "status": "Found", "match": "Sous AI pipeline (food recognition + recommendation engine). Health & Life Sciences track. Same-day close was caught as a failure pattern.", "registryId": "GR-002", "urgent": false },
-      { "name": "NIH Digital Health for T2D (RFA-DK-26-315) R01", "funder": "NIH/NIDDK", "amount": "R01-level ($250K–$500K/year)", "deadline": "Oct 6, 2026", "score": 83, "status": "Found", "match": "Sous nutrition coaching for T2D dietary management. Direct fit. Oct 2026 cycle open.", "registryId": "GR-006", "urgent": false },
-      { "name": "Stanford King Center Global Development", "funder": "Stanford King Center", "amount": "Seed ($10K–$50K)", "deadline": "Apr 2, 2026 (CLOSED)", "score": 78, "status": "Found", "match": "Indigenous health/global nutrition. Closed 2026 cycle — next April 2027.", "registryId": "GR-021", "urgent": false },
-      { "name": "Gates Foundation Grand Challenges — Physiological Barriers", "funder": "Gates Foundation", "amount": "Up to $250K (18 months)", "deadline": "Apr 28, 2026", "score": 78, "status": "Found", "match": "NOURISH dietary science + precision nutrition + global health. Bundle with GR-026, GR-067.", "registryId": "GR-025", "urgent": true },
-      { "name": "NIH NARCH — Native American Research Centers for Health", "funder": "NIH/IHS", "amount": "Up to $1.3M/year direct", "deadline": "Jul 8, 2026", "score": 78, "status": "Found", "match": "Indigenous health research infrastructure. Requires Tribal lead applicant (partnership structure).", "registryId": "GR-030", "urgent": false },
-      { "name": "Rockefeller Foundation — Food Is Medicine", "funder": "Rockefeller Foundation", "amount": ">$100M program (invited)", "deadline": "Rolling/invited", "score": 79, "status": "Found", "match": "Sous as Food Is Medicine digital intervention. Invited-only but worth relationship-building.", "registryId": "GR-035", "urgent": false },
-      { "name": "Danone Institute NA — Sustainable Food Systems", "funder": "Danone Institute NA", "amount": "$410K pool across 8 grants (~$50K avg)", "deadline": "Rolling (2025–2027)", "score": 80, "status": "Found", "match": "Direct NOURISH thesis: transdisciplinary community-based sustainable nutrition.", "registryId": "GR-034", "urgent": false },
-      { "name": "USDA AFRI Food Safety, Nutrition, and Health", "funder": "USDA NIFA", "amount": "$150K–$10M (varies)", "deadline": "Multiple cycles", "score": 77, "status": "Found", "match": "Nutrition education through cooking + AI. GR-036 provides cycle-specific details.", "registryId": "GR-016", "urgent": false },
-      { "name": "USDA AFRI FSNH 2026 — Specific Cycle", "funder": "USDA NIFA", "amount": "~$38M pool FY26 ($150K–$10M)", "deadline": "Check nifa.usda.gov", "score": 77, "status": "Found", "match": "Updates GR-016. Sous nutrition + behavior change + food-system innovation fits directly.", "registryId": "GR-036", "urgent": false },
-      { "name": "ADA Pathway to Stop Diabetes — Accelerator Award", "funder": "American Diabetes Association", "amount": "$1,625,000 total ($325K/yr × 5 years)", "deadline": "May 19, 2026 (nomination gate ~May 12)", "score": 78, "status": "Found", "match": "Direct fit: cgm-trial + pgx-copilot + NOURISH with T2D cohort. Institutional nomination required FIRST. Monday action.", "registryId": "GR-071", "urgent": true },
-      { "name": "Gates Foundation Grand Challenges — RUTF", "funder": "Gates Foundation", "amount": "Option A $500K/18mo; Option B $1.5M/36mo", "deadline": "Apr 28, 2026", "score": 72, "status": "Found", "match": "Food systems innovation. High $$. Bundle with GR-025, GR-067.", "registryId": "GR-026", "urgent": true },
-      { "name": "Gates Grand Challenges — Maternal/Child Nutrients", "funder": "Gates Foundation", "amount": "Variable ($100K–$1M typical)", "deadline": "Apr 28, 2026", "score": 75, "status": "Found", "match": "Third Gates nutrition RFP this cycle. Strong NOURISH precision-nutrition fit. Bundle with GR-025 + GR-026.", "registryId": "GR-067", "urgent": true },
-      { "name": "NIH Pharmacogenomics NOSI (NOT-DA-24-001)", "funder": "NIH/NIDA", "amount": "R01/R21 level", "deadline": "May 8, 2026", "score": 75, "status": "Found", "match": "PGx Copilot — pharmacogenomic treatment optimization. Direct fit.", "registryId": "GR-013", "urgent": true },
-      { "name": "NIDDK Small R01 for Clinical Trials (PAS-25-102)", "funder": "NIH/NIDDK", "amount": "~$250K direct/yr cap", "deadline": "May 7, 2026", "score": 75, "status": "Found", "match": "CGM trial + meal-pairer-ai as pilot clinical-trial vehicle. Faster, smaller pathway into NIDDK.", "registryId": "GR-059", "urgent": true },
-      { "name": "PCORI Science of Engagement — Cycle 2 2026", "funder": "PCORI", "amount": "$300K–$1M", "deadline": "LOI Apr 28, 2026", "score": 63, "status": "Found", "match": "Engagement methods in cooking-based health interventions. Bundle with other PCORI LOIs.", "registryId": "GR-022", "urgent": true },
-      { "name": "NSF SBIR/STTR Digital Health", "funder": "NSF", "amount": "Phase I: $305K; Phase II: $1M", "deadline": "Rolling (multiple cycles)", "score": 74, "status": "Found", "match": "Sous as digital health startup. Phase I feasibility path.", "registryId": "GR-014", "urgent": false },
-      { "name": "RWJF Healthy Eating Research", "funder": "RWJF", "amount": "Variable per RFP cycle", "deadline": "Rolling/periodic", "score": 74, "status": "Found", "match": "NOURISH nutrition policy + systems research at population level.", "registryId": "GR-050", "urgent": false },
-      { "name": "Gerber Foundation Research Grant — Fall 2026", "funder": "The Gerber Foundation", "amount": "Up to $350K (Major) or $30K (Novice)", "deadline": "Full Proposals Jul 15, 2026; Concept ~Feb 2027", "score": 72, "status": "Found", "match": "Pediatric nutrition 0–3 years. NOURISH + PBDI teaching kitchen pediatric arm. 50–70% concept-to-full-proposal rate.", "registryId": "GR-069", "urgent": false },
-      { "name": "HRSA ACL National Resource Center on Nutrition and Aging", "funder": "HRSA/ACL", "amount": "Cooperative agreement", "deadline": "Jun 23, 2026", "score": 72, "status": "Found", "match": "NOURISH older-adult nutrition network. Single awardee — monitor for subaward channels.", "registryId": "GR-057", "urgent": false },
-      { "name": "USDA AFRI Strengthening Agricultural Systems — AI K-12", "funder": "USDA NIFA (AFRI SAS)", "amount": "$1M–$2M, up to 60 months", "deadline": "Apr 23, 2026 (5 days — LOI missed)", "score": 70, "status": "Found", "match": "Taste Academy + PBDI youth food-literacy. LOI already passed — log as FY27 template.", "registryId": "GR-068", "urgent": false },
-      { "name": "Gates Foundation Grand Challenges — Nutrition", "funder": "Gates Foundation", "amount": "$100K–$1M", "deadline": "Periodic RFPs", "score": 70, "status": "Found", "match": "Global nutrition innovation. Parent RFP (GR-025, GR-026, GR-067 are specific sub-challenges).", "registryId": "GR-017", "urgent": false },
-      { "name": "Amazon Research Awards (AI/ML)", "funder": "Amazon", "amount": "$50K–$100K + AWS credits", "deadline": "Rolling/annual", "score": 70, "status": "Found", "match": "Sous AI pipeline (food recognition, recommendation engine) as industry-scale ML research.", "registryId": "GR-038", "urgent": false },
-      { "name": "NSF TechAccess: AI-Ready America (NSF 26-508)", "funder": "NSF + USDA NIFA", "amount": "Up to $1M/yr per hub (3 years)", "deadline": "LOI Jun 16, 2026; Full Jul 16, 2026", "score": 71, "status": "Found", "match": "Taste Academy + PBDI teaching kitchen in agricultural communities. Capacity building.", "registryId": "GR-048", "urgent": false },
-      { "name": "Stanford Bio-X / Wu Tsai / ChEM-H Fellowships 2026", "funder": "Stanford", "amount": "PhD/Postdoc fellowships", "deadline": "LOI ~Feb 2027", "score": 70, "status": "Found", "match": "Stefan as QUAD Fellow — trainee funding. Next cycle Feb 2027.", "registryId": "GR-032", "urgent": false },
-      { "name": "NSF AI-ENGAGE (Quad Nation Collaboration)", "funder": "NSF", "amount": "~$1M per award", "deadline": "TBD", "score": 62, "status": "Found", "match": "US-Australia AI for food systems. Stefan's dual Australian connection.", "registryId": "GR-023", "urgent": false },
-      { "name": "NIH Digital Health Biomarkers UG3/UH3 (PAR-25-170)", "funder": "NIH Multi-IC", "amount": "Up to 5 years (UG3 + UH3)", "deadline": "Jun 22, 2026", "score": 76, "status": "Found", "match": "Sous CGM/dietary monitoring as digital health technology biomarker. Requires 3+ disease areas.", "registryId": "GR-047", "urgent": false },
-      { "name": "Microsoft AI for Good Lab Open Call", "funder": "Microsoft", "amount": "Azure credits + collaboration", "deadline": "Rolling", "score": 76, "status": "Found", "match": "AI for public health / nutrition. Azure credits lower compute cost for Sous pipeline.", "registryId": "GR-012", "urgent": false },
-      { "name": "Stanford CDH 2026 Grants", "funder": "Stanford CDH", "amount": "$100K, 1 year", "deadline": "CLOSED; next ~early 2027", "score": 80, "status": "Found", "match": "AI for health equity, digital health tools. 2026 closed — plan for 2027.", "registryId": "GR-008", "urgent": false },
-      { "name": "RWJF Learning from Abroad — Health Knowledge Systems", "funder": "RWJF", "amount": "Up to $500K", "deadline": "Apr 13, 2026 (CLOSED)", "score": 78, "status": "Found", "match": "Global dietary wisdom → US health equity. Closed 2026.", "registryId": "GR-010", "urgent": false },
-      { "name": "NIH NIGMS Technology Development R21/R01", "funder": "NIH/NIGMS", "amount": "R21: $275K; R01: $500K/yr", "deadline": "Standard NIH cycles", "score": 68, "status": "Found", "match": "AI food recognition + nutrition recommendation technology development.", "registryId": "GR-019", "urgent": false },
-      { "name": "NCI Pathway to Independence K99/R00 (PAR-25-135)", "funder": "NIH/NCI", "amount": "K99: ~$130K/yr; R00: up to $249K/yr (3 yrs)", "deadline": "Feb 12 / Jun 12 / Oct 12", "score": 72, "status": "Found", "match": "Early-career independence award. Viable if Sous T2D emphasis qualifies under cancer prevention.", "registryId": "GR-033", "urgent": false },
-      { "name": "Coefficient Giving Biosecurity & Pandemic Preparedness", "funder": "Coefficient Giving", "amount": "$100M+ program (per-project variable)", "deadline": "May 11, 2026", "score": 67, "status": "Found", "match": "Peripheral to NOURISH core. Overlaps Stefan's H4D biosecurity work.", "registryId": "GR-058", "urgent": true },
-      { "name": "Stanford HAI × Hoover TPA Seed — AI and Geopolitics", "funder": "Stanford HAI + Hoover TPA", "amount": "Seed ($75K–$150K)", "deadline": "May 1, 2026", "score": 62, "status": "Found", "match": "Peripheral to NOURISH; overlaps Stefan's H4D/biosecurity interest.", "registryId": "GR-061", "urgent": true },
-      { "name": "Meta AI Glasses Impact Grants", "funder": "Meta", "amount": "Accelerator $25K–$50K; Catalyst $200K", "deadline": "Mar 9, 2026 (CLOSED; likely annual)", "score": 68, "status": "Found", "match": "Healthcare from the Eye + Sous with AI glasses integration.", "registryId": "GR-037", "urgent": false },
-      { "name": "Wellcome Trust Career Development Awards", "funder": "Wellcome Trust", "amount": "Up to 8 years funding", "deadline": "Check Wellcome deadlines", "score": 69, "status": "Found", "match": "Digital health + health equity research. Long-term career award.", "registryId": "GR-018", "urgent": false },
-      { "name": "PCORI Engagement Award: Capacity Building", "funder": "PCORI", "amount": "Up to $300K, 2 years", "deadline": "LOI Mar 30, 2026 (CLOSED)", "score": 73, "status": "Found", "match": "Building Sous user community as research participants. Closed 2026.", "registryId": "GR-015", "urgent": false },
-      { "name": "Stanford Global Health Seed Grants 2026", "funder": "Stanford CIGH", "amount": "$25K–$75K, 18 months", "deadline": "Mar 27, 2026 (CLOSED)", "score": 79, "status": "Found", "match": "Global nutrition / indigenous health. Closed 2026.", "registryId": "GR-009", "urgent": false },
-      { "name": "Stanford Impact Labs Stage 1: Seed Partnerships", "funder": "Stanford Impact Labs", "amount": "Up to $350K, 24 months", "deadline": "CLOSED; next ~Oct 2026", "score": 77, "status": "Found", "match": "Nutrition equity as social problem. Next cycle October 2026.", "registryId": "GR-011", "urgent": false },
-      { "name": "Future of Health Grant 2026", "funder": "Future of Health (Switzerland)", "amount": "~$100K equity-free", "deadline": "CLOSED; next TBD", "score": 67, "status": "Found", "match": "Digital health startup / AI wellness platform.", "registryId": "GR-020", "urgent": false },
-      { "name": "AWS Imagine Grant — Children's Health Innovation", "funder": "Amazon/AWS", "amount": "$150K–$300K + AWS credits", "deadline": "Annual (next ~mid-2026)", "score": 66, "status": "Found", "match": "Sous for pediatric nutrition. Requires nonprofit entity.", "registryId": "GR-039", "urgent": false },
-      { "name": "Feed the Future Innovation Labs", "funder": "USAID", "amount": "$5M–$15M each", "deadline": "Varies (check grants.gov)", "score": 64, "status": "Found", "match": "Global nutrition + food systems. Tangential to Sous US-centric strategy.", "registryId": "GR-040", "urgent": false },
-      { "name": "ARPA-H BioStabilization Systems (BoSS)", "funder": "ARPA-H", "amount": "$5M–$50M team awards", "deadline": "Rolling solicitations", "score": 62, "status": "Found", "match": "Biosecurity + medical device portfolio. Narrow direct match.", "registryId": "GR-041", "urgent": false },
-      { "name": "ARPA-H UPGRADE — Cybersecurity for Medical Devices", "funder": "ARPA-H", "amount": "Up to $7M per team", "deadline": "Rolling/periodic", "score": 61, "status": "Found", "match": "Shoei medical device + biosecurity angle. Partner required.", "registryId": "GR-042", "urgent": false },
-      { "name": "Jacques Pépin Foundation Partnership Circle Grant", "funder": "Jacques Pépin Foundation", "amount": "$50K total ($25K/year × 2 years)", "deadline": "Rolling/annual", "score": 64, "status": "Found", "match": "PBDI teaching kitchen + Taste Academy — community culinary training. Warm brand fit.", "registryId": "GR-063", "urgent": false },
-      { "name": "Ardmore Institute — Culinary Medicine Teaching Kitchen", "funder": "Ardmore Institute of Health", "amount": "~$35K reference award", "deadline": "Invitational/rolling", "score": 78, "status": "Found", "match": "PBDI teaching kitchen + Taste Academy — near-exact mission fit. ACLM curriculum alignment.", "registryId": "GR-064", "urgent": false },
-      { "name": "NSF CAREER 2026 (NSF 22-586)", "funder": "NSF", "amount": "$400K–$500K over 5 years", "deadline": "Jul 22, 2026", "score": 55, "status": "Found", "match": "Eligibility mismatch (requires untenured tenure-track). Reference for faculty collaborators who could PI.", "registryId": "GR-062", "urgent": false },
-      { "name": "NHMRC Ideas Grant 2026 (Australia)", "funder": "NHMRC (Australia)", "amount": "Up to AUD $1.5M (3–5 years)", "deadline": "April/May 2026", "score": 80, "status": "Found", "match": "DEPRIORITIZED (Australian grant below 85 threshold unless specific co-PI angle). Macquarie MD provides eligibility.", "registryId": "GR-045", "urgent": false },
-      { "name": "RWJF Rapid Response: Racial & Indigenous Health Equity", "funder": "RWJF/Evidence for Action", "amount": "$50K–$200K", "deadline": "Rolling (24-month max)", "score": 69, "status": "Found", "match": "NOURISH indigenous health portfolio. Solutions-oriented racial/Indigenous equity research.", "registryId": "GR-052", "urgent": false },
-      { "name": "NIFA AFRI Education & Workforce Development 2026", "funder": "USDA NIFA", "amount": "$10K–$650K ($39.7M total)", "deadline": "Dec 31, 2026", "score": 66, "status": "Found", "match": "Taste Academy food education + PBDI youth K-14 educator development.", "registryId": "GR-053", "urgent": false },
-      { "name": "HRSA FY2026 Rural Residency Planning & Development", "funder": "HRSA Bureau of Health Workforce", "amount": "Up to $750K × 15 grants", "deadline": "May 22, 2026", "score": 58, "status": "Found", "match": "PBDI teaching kitchen curricular add-on to a residency-sponsor prime. NOURISH unlikely as prime.", "registryId": "GR-066", "urgent": false },
-      { "name": "Helmsley Charitable Trust — CGM Access", "funder": "Helmsley Trust", "amount": "Reference: $4.2M to ACHP Foundation", "deadline": "Invitation-only", "score": 60, "status": "Found", "match": "CGM trial — relationship-driven target. Map Stanford–Helmsley introductions. Track, don't pursue yet.", "registryId": "GR-065", "urgent": false },
-      { "name": "NCCIH Natural Product Mid Phase Clinical Trial", "funder": "NIH/NCCIH", "amount": "R01-level mid-phase CT", "deadline": "Standard NIH cycles", "score": 45, "status": "Found", "match": "LOW FIT. Only viable if NOURISH pivots to studying a specific dietary regimen as natural product intervention.", "registryId": "GR-070", "urgent": false },
-      { "name": "ADA 2026 Health Equity Now Innovation Challenge", "funder": "American Diabetes Association", "amount": "Up to $100K", "deadline": "Mar 11, 2026 (CLOSED)", "score": 50, "status": "Found", "match": "CLOSED 2026. Archive for 2027 cycle. PBDI teaching kitchen + Sous community-diabetes framing.", "registryId": "GR-072", "urgent": false }
+      {
+        "name": "AHRQ R21/R33 Digital Healthcare Solutions",
+        "funder": "AHRQ/NIH",
+        "amount": "R21: $275K; R33: $1M",
+        "deadline": "Jun 16, 2026",
+        "score": 92,
+        "status": "Found",
+        "match": "Top-scored. Sous, PGx Copilot, Healthcare from the Eye all eligible. Multiple cycles (Oct 16, Feb 16).",
+        "registryId": "GR-001",
+        "urgent": false
+      },
+      {
+        "name": "AHRQ R21/R33 Digital Healthcare — Cycle update",
+        "funder": "AHRQ/NIH",
+        "amount": "R21: $275K; R33: $1M",
+        "deadline": "Jun 16, 2026",
+        "score": 92,
+        "status": "Found",
+        "match": "Updates GR-001. Three cycles: Jun 16, Oct 16, Feb 16. Sous as digital intervention at point of care.",
+        "registryId": "GR-043",
+        "urgent": false
+      },
+      {
+        "name": "PCORI BPS Category 3 — PCORnet National-Scale",
+        "funder": "PCORI",
+        "amount": "Up to $12M direct (5 years)",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 90,
+        "status": "Found",
+        "match": "National-scale Sous vs. standard nutrition counseling trial using PCORnet. Diabetes/Obesity emphasis. Requires PCORnet network partner.",
+        "registryId": "GR-049",
+        "urgent": true
+      },
+      {
+        "name": "Google.org AI for Science 2026",
+        "funder": "Google.org",
+        "amount": "$500K–$3M + Cloud credits + accelerator",
+        "deadline": "Check for reopen",
+        "score": 88,
+        "status": "Found",
+        "match": "Meal-pairer-ai + Sous food recognition + CGM-trial AI coaching. Health & Life Sciences track. Malati Shreenya Batsami as Stanford AI-faculty anchor.",
+        "registryId": "GR-054",
+        "urgent": false
+      },
+      {
+        "name": "NIH Dissemination & Implementation R01 (PAR-25-144)",
+        "funder": "NIH (multi-IC)",
+        "amount": "$250K–$500K/yr, up to 5 years",
+        "deadline": "Feb 5 / Jun 5 / Oct 5 annually",
+        "score": 88,
+        "status": "Found",
+        "match": "Implementation science for Sous + PGx Copilot at scale in diverse populations.",
+        "registryId": "GR-028",
+        "urgent": false
+      },
+      {
+        "name": "PCORI Phased Large Awards — Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "Up to $12M direct (5 years)",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 88,
+        "status": "Found",
+        "match": "Large-scale Sous vs. traditional nutrition coaching pragmatic trial. Diabetes/Obesity Special Areas of Emphasis.",
+        "registryId": "GR-024",
+        "urgent": true
+      },
+      {
+        "name": "NSF/NIH Smart Health and Biomedical Research (SCH)",
+        "funder": "NSF + NIH",
+        "amount": "Up to $1.2M (4 years)",
+        "deadline": "Next cycle TBD",
+        "score": 87,
+        "status": "Found",
+        "match": "Sous AI + data science for nutrition/health. Direct fit.",
+        "registryId": "GR-003",
+        "urgent": false
+      },
+      {
+        "name": "HRSA Telehealth Nutrition Services Network",
+        "funder": "HRSA Office for Telehealth",
+        "amount": "Network grant",
+        "deadline": "Apr 17, 2026 (CLOSED)",
+        "score": 87,
+        "status": "Found",
+        "match": "PBDI teaching kitchen remote coaching, CGM trial patient interface, NOURISH telehealth thesis. Closed — monitor for next cycle.",
+        "registryId": "GR-055",
+        "urgent": false
+      },
+      {
+        "name": "PCORI Broad Pragmatic Studies — Cycle 2 (Category 1-2)",
+        "funder": "PCORI",
+        "amount": "Up to $5M–$12M",
+        "deadline": "LOI mid-2026",
+        "score": 86,
+        "status": "Found",
+        "match": "Comparative effectiveness of Sous vs. traditional nutrition coaching.",
+        "registryId": "GR-004",
+        "urgent": false
+      },
+      {
+        "name": "NIH NIDDK T2D Digital Health R01 — Oct 2026 cycle",
+        "funder": "NIH/NIDDK",
+        "amount": "$250K–$500K/yr, up to 5 years",
+        "deadline": "Oct 6, 2026",
+        "score": 85,
+        "status": "Found",
+        "match": "Sous nutrition coaching for T2D. Direct fit. LOI passed for current cycle; Oct cycle open.",
+        "registryId": "GR-044",
+        "urgent": false
+      },
+      {
+        "name": "Stanford HAI Hoffman-Yee Research Grant",
+        "funder": "Stanford HAI",
+        "amount": "$500K Year 1, up to $2M over 3 years",
+        "deadline": "LOI ~Jan 2027",
+        "score": 85,
+        "status": "Found",
+        "match": "Interdisciplinary AI + nutrition health. Next cycle January 2027.",
+        "registryId": "GR-005",
+        "urgent": false
+      },
+      {
+        "name": "HRSA FY2026 Expanding Nutrition Services $125M",
+        "funder": "HRSA Bureau of Primary Health Care",
+        "amount": "$125M across 350+ health centers",
+        "deadline": "Jun 9, 2026",
+        "score": 85,
+        "status": "Found",
+        "match": "Sous deployment in FQHCs, NOURISH as technical assistance layer. Launches April 21, 2026.",
+        "registryId": "GR-056",
+        "urgent": false
+      },
+      {
+        "name": "NIH IRINAH — Indigenous Health R34 (PAR-25-378)",
+        "funder": "NIH Multi-IC + THRO",
+        "amount": "Up to $450K direct (3 years)",
+        "deadline": "Oct 21, 2026",
+        "score": 84,
+        "status": "Found",
+        "match": "Sous/NOURISH adapted for American Indian/Alaska Native communities.",
+        "registryId": "GR-029",
+        "urgent": false
+      },
+      {
+        "name": "PCORI Improving Methods — Cycle 2 2026 (GR-007)",
+        "funder": "PCORI",
+        "amount": "Up to $750K, 3 years",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 82,
+        "status": "Found",
+        "match": "Novel methods for measuring cooking confidence / dietary behavior change. Fahim as stats collaborator fit.",
+        "registryId": "GR-007",
+        "urgent": true
+      },
+      {
+        "name": "Stanford HAI Seed Research Grants 2026",
+        "funder": "Stanford HAI",
+        "amount": "Up to $75K, 12 months",
+        "deadline": "Annual cycle (check HAI)",
+        "score": 82,
+        "status": "Found",
+        "match": "AI + nutrition/health as interdisciplinary Stanford project. Stefan as QUAD Fellow eligible.",
+        "registryId": "GR-031",
+        "urgent": false
+      },
+      {
+        "name": "Google.org AI for Government Innovation",
+        "funder": "Google.org",
+        "amount": "$1M–$3M + Accelerator",
+        "deadline": "Monitor for reopen",
+        "score": 81,
+        "status": "Found",
+        "match": "Sous as public-sector AI health innovation. April 3 cycle likely closed — monitor.",
+        "registryId": "GR-027",
+        "urgent": false
+      },
+      {
+        "name": "NIDDK High Impact Interdisciplinary Science (RC2)",
+        "funder": "NIH/NIDDK",
+        "amount": "Up to $1M/yr direct",
+        "deadline": "Jun 3, 2026",
+        "score": 80,
+        "status": "Found",
+        "match": "CGM trial + meal-pairer-ai + PFEME — coupled sensor + Sous coach PGx-informed thesis.",
+        "registryId": "GR-060",
+        "urgent": false
+      },
+      {
+        "name": "HRSA Expanding Nutrition Services (HRSA-26-099)",
+        "funder": "HRSA",
+        "amount": "$125M total pool (350+ awards)",
+        "deadline": "TBD (Apr 7 announcement)",
+        "score": 80,
+        "status": "Found",
+        "match": "Sous deployment in primary care settings. Original announcement precursor to GR-056.",
+        "registryId": "GR-046",
+        "urgent": false
+      },
+      {
+        "name": "NINR/NIH Nutrition Across the Lifespan",
+        "funder": "NIH/NINR",
+        "amount": "R01-level (TBD)",
+        "deadline": "Forecasted Apr 27, 2026",
+        "score": 80,
+        "status": "Found",
+        "match": "Sous nutrition intervention + health equity. Examines SDOH across the lifespan. Contact: Bill Duval PhD.",
+        "registryId": "GR-051",
+        "urgent": true
+      },
+      {
+        "name": "Google.org Impact Challenge: AI for Science (original cycle)",
+        "funder": "Google.org",
+        "amount": "$500K–$3M + Cloud credits",
+        "deadline": "Apr 17, 2026 (CLOSED — monitor for reopen)",
+        "score": 89,
+        "status": "Found",
+        "match": "Sous AI pipeline (food recognition + recommendation engine). Health & Life Sciences track. Same-day close was caught as a failure pattern.",
+        "registryId": "GR-002",
+        "urgent": false
+      },
+      {
+        "name": "NIH Digital Health for T2D (RFA-DK-26-315) R01",
+        "funder": "NIH/NIDDK",
+        "amount": "R01-level ($250K–$500K/year)",
+        "deadline": "Oct 6, 2026",
+        "score": 83,
+        "status": "Found",
+        "match": "Sous nutrition coaching for T2D dietary management. Direct fit. Oct 2026 cycle open.",
+        "registryId": "GR-006",
+        "urgent": false
+      },
+      {
+        "name": "Stanford King Center Global Development",
+        "funder": "Stanford King Center",
+        "amount": "Seed ($10K–$50K)",
+        "deadline": "Apr 2, 2026 (CLOSED)",
+        "score": 78,
+        "status": "Found",
+        "match": "Indigenous health/global nutrition. Closed 2026 cycle — next April 2027.",
+        "registryId": "GR-021",
+        "urgent": false
+      },
+      {
+        "name": "Gates Foundation Grand Challenges — Physiological Barriers",
+        "funder": "Gates Foundation",
+        "amount": "Up to $250K (18 months)",
+        "deadline": "Apr 28, 2026",
+        "score": 78,
+        "status": "Found",
+        "match": "NOURISH dietary science + precision nutrition + global health. Bundle with GR-026, GR-067.",
+        "registryId": "GR-025",
+        "urgent": true
+      },
+      {
+        "name": "NIH NARCH — Native American Research Centers for Health",
+        "funder": "NIH/IHS",
+        "amount": "Up to $1.3M/year direct",
+        "deadline": "Jul 8, 2026",
+        "score": 78,
+        "status": "Found",
+        "match": "Indigenous health research infrastructure. Requires Tribal lead applicant (partnership structure).",
+        "registryId": "GR-030",
+        "urgent": false
+      },
+      {
+        "name": "Rockefeller Foundation — Food Is Medicine",
+        "funder": "Rockefeller Foundation",
+        "amount": ">$100M program (invited)",
+        "deadline": "Rolling/invited",
+        "score": 79,
+        "status": "Found",
+        "match": "Sous as Food Is Medicine digital intervention. Invited-only but worth relationship-building.",
+        "registryId": "GR-035",
+        "urgent": false
+      },
+      {
+        "name": "Danone Institute NA — Sustainable Food Systems",
+        "funder": "Danone Institute NA",
+        "amount": "$410K pool across 8 grants (~$50K avg)",
+        "deadline": "Rolling (2025–2027)",
+        "score": 80,
+        "status": "Found",
+        "match": "Direct NOURISH thesis: transdisciplinary community-based sustainable nutrition.",
+        "registryId": "GR-034",
+        "urgent": false
+      },
+      {
+        "name": "USDA AFRI Food Safety, Nutrition, and Health",
+        "funder": "USDA NIFA",
+        "amount": "$150K–$10M (varies)",
+        "deadline": "Multiple cycles",
+        "score": 77,
+        "status": "Found",
+        "match": "Nutrition education through cooking + AI. GR-036 provides cycle-specific details.",
+        "registryId": "GR-016",
+        "urgent": false
+      },
+      {
+        "name": "USDA AFRI FSNH 2026 — Specific Cycle",
+        "funder": "USDA NIFA",
+        "amount": "~$38M pool FY26 ($150K–$10M)",
+        "deadline": "Check nifa.usda.gov",
+        "score": 77,
+        "status": "Found",
+        "match": "Updates GR-016. Sous nutrition + behavior change + food-system innovation fits directly.",
+        "registryId": "GR-036",
+        "urgent": false
+      },
+      {
+        "name": "ADA Pathway to Stop Diabetes — Accelerator Award",
+        "funder": "American Diabetes Association",
+        "amount": "$1,625,000 total ($325K/yr × 5 years)",
+        "deadline": "May 19, 2026 (nomination gate ~May 12)",
+        "score": 78,
+        "status": "Found",
+        "match": "Direct fit: cgm-trial + pgx-copilot + NOURISH with T2D cohort. Institutional nomination required FIRST. Monday action.",
+        "registryId": "GR-071",
+        "urgent": true
+      },
+      {
+        "name": "Gates Foundation Grand Challenges — RUTF",
+        "funder": "Gates Foundation",
+        "amount": "Option A $500K/18mo; Option B $1.5M/36mo",
+        "deadline": "Apr 28, 2026",
+        "score": 72,
+        "status": "Found",
+        "match": "Food systems innovation. High $$. Bundle with GR-025, GR-067.",
+        "registryId": "GR-026",
+        "urgent": true
+      },
+      {
+        "name": "Gates Grand Challenges — Maternal/Child Nutrients",
+        "funder": "Gates Foundation",
+        "amount": "Variable ($100K–$1M typical)",
+        "deadline": "Apr 28, 2026",
+        "score": 75,
+        "status": "Found",
+        "match": "Third Gates nutrition RFP this cycle. Strong NOURISH precision-nutrition fit. Bundle with GR-025 + GR-026.",
+        "registryId": "GR-067",
+        "urgent": true
+      },
+      {
+        "name": "NIH Pharmacogenomics NOSI (NOT-DA-24-001)",
+        "funder": "NIH/NIDA",
+        "amount": "R01/R21 level",
+        "deadline": "May 8, 2026",
+        "score": 75,
+        "status": "Found",
+        "match": "PGx Copilot — pharmacogenomic treatment optimization. Direct fit.",
+        "registryId": "GR-013",
+        "urgent": true
+      },
+      {
+        "name": "NIDDK Small R01 for Clinical Trials (PAS-25-102)",
+        "funder": "NIH/NIDDK",
+        "amount": "~$250K direct/yr cap",
+        "deadline": "May 7, 2026",
+        "score": 75,
+        "status": "Found",
+        "match": "CGM trial + meal-pairer-ai as pilot clinical-trial vehicle. Faster, smaller pathway into NIDDK.",
+        "registryId": "GR-059",
+        "urgent": true
+      },
+      {
+        "name": "PCORI Science of Engagement — Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "$300K–$1M",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 63,
+        "status": "Found",
+        "match": "Engagement methods in cooking-based health interventions. Bundle with other PCORI LOIs.",
+        "registryId": "GR-022",
+        "urgent": true
+      },
+      {
+        "name": "NSF SBIR/STTR Digital Health",
+        "funder": "NSF",
+        "amount": "Phase I: $305K; Phase II: $1M",
+        "deadline": "Rolling (multiple cycles)",
+        "score": 74,
+        "status": "Found",
+        "match": "Sous as digital health startup. Phase I feasibility path.",
+        "registryId": "GR-014",
+        "urgent": false
+      },
+      {
+        "name": "RWJF Healthy Eating Research",
+        "funder": "RWJF",
+        "amount": "Variable per RFP cycle",
+        "deadline": "Rolling/periodic",
+        "score": 74,
+        "status": "Found",
+        "match": "NOURISH nutrition policy + systems research at population level.",
+        "registryId": "GR-050",
+        "urgent": false
+      },
+      {
+        "name": "Gerber Foundation Research Grant — Fall 2026",
+        "funder": "The Gerber Foundation",
+        "amount": "Up to $350K (Major) or $30K (Novice)",
+        "deadline": "Full Proposals Jul 15, 2026; Concept ~Feb 2027",
+        "score": 72,
+        "status": "Found",
+        "match": "Pediatric nutrition 0–3 years. NOURISH + PBDI teaching kitchen pediatric arm. 50–70% concept-to-full-proposal rate.",
+        "registryId": "GR-069",
+        "urgent": false
+      },
+      {
+        "name": "HRSA ACL National Resource Center on Nutrition and Aging",
+        "funder": "HRSA/ACL",
+        "amount": "Cooperative agreement",
+        "deadline": "Jun 23, 2026",
+        "score": 72,
+        "status": "Found",
+        "match": "NOURISH older-adult nutrition network. Single awardee — monitor for subaward channels.",
+        "registryId": "GR-057",
+        "urgent": false
+      },
+      {
+        "name": "USDA AFRI Strengthening Agricultural Systems — AI K-12",
+        "funder": "USDA NIFA (AFRI SAS)",
+        "amount": "$1M–$2M, up to 60 months",
+        "deadline": "Apr 23, 2026 (5 days — LOI missed)",
+        "score": 70,
+        "status": "Found",
+        "match": "Taste Academy + PBDI youth food-literacy. LOI already passed — log as FY27 template.",
+        "registryId": "GR-068",
+        "urgent": false
+      },
+      {
+        "name": "Gates Foundation Grand Challenges — Nutrition",
+        "funder": "Gates Foundation",
+        "amount": "$100K–$1M",
+        "deadline": "Periodic RFPs",
+        "score": 70,
+        "status": "Found",
+        "match": "Global nutrition innovation. Parent RFP (GR-025, GR-026, GR-067 are specific sub-challenges).",
+        "registryId": "GR-017",
+        "urgent": false
+      },
+      {
+        "name": "Amazon Research Awards (AI/ML)",
+        "funder": "Amazon",
+        "amount": "$50K–$100K + AWS credits",
+        "deadline": "Rolling/annual",
+        "score": 70,
+        "status": "Found",
+        "match": "Sous AI pipeline (food recognition, recommendation engine) as industry-scale ML research.",
+        "registryId": "GR-038",
+        "urgent": false
+      },
+      {
+        "name": "NSF TechAccess: AI-Ready America (NSF 26-508)",
+        "funder": "NSF + USDA NIFA",
+        "amount": "Up to $1M/yr per hub (3 years)",
+        "deadline": "LOI Jun 16, 2026; Full Jul 16, 2026",
+        "score": 71,
+        "status": "Found",
+        "match": "Taste Academy + PBDI teaching kitchen in agricultural communities. Capacity building.",
+        "registryId": "GR-048",
+        "urgent": false
+      },
+      {
+        "name": "Stanford Bio-X / Wu Tsai / ChEM-H Fellowships 2026",
+        "funder": "Stanford",
+        "amount": "PhD/Postdoc fellowships",
+        "deadline": "LOI ~Feb 2027",
+        "score": 70,
+        "status": "Found",
+        "match": "Stefan as QUAD Fellow — trainee funding. Next cycle Feb 2027.",
+        "registryId": "GR-032",
+        "urgent": false
+      },
+      {
+        "name": "NSF AI-ENGAGE (Quad Nation Collaboration)",
+        "funder": "NSF",
+        "amount": "~$1M per award",
+        "deadline": "TBD",
+        "score": 62,
+        "status": "Found",
+        "match": "US-Australia AI for food systems. Stefan's dual Australian connection.",
+        "registryId": "GR-023",
+        "urgent": false
+      },
+      {
+        "name": "NIH Digital Health Biomarkers UG3/UH3 (PAR-25-170)",
+        "funder": "NIH Multi-IC",
+        "amount": "Up to 5 years (UG3 + UH3)",
+        "deadline": "Jun 22, 2026",
+        "score": 76,
+        "status": "Found",
+        "match": "Sous CGM/dietary monitoring as digital health technology biomarker. Requires 3+ disease areas.",
+        "registryId": "GR-047",
+        "urgent": false
+      },
+      {
+        "name": "Microsoft AI for Good Lab Open Call",
+        "funder": "Microsoft",
+        "amount": "Azure credits + collaboration",
+        "deadline": "Rolling",
+        "score": 76,
+        "status": "Found",
+        "match": "AI for public health / nutrition. Azure credits lower compute cost for Sous pipeline.",
+        "registryId": "GR-012",
+        "urgent": false
+      },
+      {
+        "name": "Stanford CDH 2026 Grants",
+        "funder": "Stanford CDH",
+        "amount": "$100K, 1 year",
+        "deadline": "CLOSED; next ~early 2027",
+        "score": 80,
+        "status": "Found",
+        "match": "AI for health equity, digital health tools. 2026 closed — plan for 2027.",
+        "registryId": "GR-008",
+        "urgent": false
+      },
+      {
+        "name": "RWJF Learning from Abroad — Health Knowledge Systems",
+        "funder": "RWJF",
+        "amount": "Up to $500K",
+        "deadline": "Apr 13, 2026 (CLOSED)",
+        "score": 78,
+        "status": "Found",
+        "match": "Global dietary wisdom → US health equity. Closed 2026.",
+        "registryId": "GR-010",
+        "urgent": false
+      },
+      {
+        "name": "NIH NIGMS Technology Development R21/R01",
+        "funder": "NIH/NIGMS",
+        "amount": "R21: $275K; R01: $500K/yr",
+        "deadline": "Standard NIH cycles",
+        "score": 68,
+        "status": "Found",
+        "match": "AI food recognition + nutrition recommendation technology development.",
+        "registryId": "GR-019",
+        "urgent": false
+      },
+      {
+        "name": "NCI Pathway to Independence K99/R00 (PAR-25-135)",
+        "funder": "NIH/NCI",
+        "amount": "K99: ~$130K/yr; R00: up to $249K/yr (3 yrs)",
+        "deadline": "Feb 12 / Jun 12 / Oct 12",
+        "score": 72,
+        "status": "Found",
+        "match": "Early-career independence award. Viable if Sous T2D emphasis qualifies under cancer prevention.",
+        "registryId": "GR-033",
+        "urgent": false
+      },
+      {
+        "name": "Coefficient Giving Biosecurity & Pandemic Preparedness",
+        "funder": "Coefficient Giving",
+        "amount": "$100M+ program (per-project variable)",
+        "deadline": "May 11, 2026",
+        "score": 67,
+        "status": "Found",
+        "match": "Peripheral to NOURISH core. Overlaps Stefan's H4D biosecurity work.",
+        "registryId": "GR-058",
+        "urgent": true
+      },
+      {
+        "name": "Stanford HAI × Hoover TPA Seed — AI and Geopolitics",
+        "funder": "Stanford HAI + Hoover TPA",
+        "amount": "Seed ($75K–$150K)",
+        "deadline": "May 1, 2026",
+        "score": 62,
+        "status": "Found",
+        "match": "Peripheral to NOURISH; overlaps Stefan's H4D/biosecurity interest.",
+        "registryId": "GR-061",
+        "urgent": true
+      },
+      {
+        "name": "Meta AI Glasses Impact Grants",
+        "funder": "Meta",
+        "amount": "Accelerator $25K–$50K; Catalyst $200K",
+        "deadline": "Mar 9, 2026 (CLOSED; likely annual)",
+        "score": 68,
+        "status": "Found",
+        "match": "Healthcare from the Eye + Sous with AI glasses integration.",
+        "registryId": "GR-037",
+        "urgent": false
+      },
+      {
+        "name": "Wellcome Trust Career Development Awards",
+        "funder": "Wellcome Trust",
+        "amount": "Up to 8 years funding",
+        "deadline": "Check Wellcome deadlines",
+        "score": 69,
+        "status": "Found",
+        "match": "Digital health + health equity research. Long-term career award.",
+        "registryId": "GR-018",
+        "urgent": false
+      },
+      {
+        "name": "PCORI Engagement Award: Capacity Building",
+        "funder": "PCORI",
+        "amount": "Up to $300K, 2 years",
+        "deadline": "LOI Mar 30, 2026 (CLOSED)",
+        "score": 73,
+        "status": "Found",
+        "match": "Building Sous user community as research participants. Closed 2026.",
+        "registryId": "GR-015",
+        "urgent": false
+      },
+      {
+        "name": "Stanford Global Health Seed Grants 2026",
+        "funder": "Stanford CIGH",
+        "amount": "$25K–$75K, 18 months",
+        "deadline": "Mar 27, 2026 (CLOSED)",
+        "score": 79,
+        "status": "Found",
+        "match": "Global nutrition / indigenous health. Closed 2026.",
+        "registryId": "GR-009",
+        "urgent": false
+      },
+      {
+        "name": "Stanford Impact Labs Stage 1: Seed Partnerships",
+        "funder": "Stanford Impact Labs",
+        "amount": "Up to $350K, 24 months",
+        "deadline": "CLOSED; next ~Oct 2026",
+        "score": 77,
+        "status": "Found",
+        "match": "Nutrition equity as social problem. Next cycle October 2026.",
+        "registryId": "GR-011",
+        "urgent": false
+      },
+      {
+        "name": "Future of Health Grant 2026",
+        "funder": "Future of Health (Switzerland)",
+        "amount": "~$100K equity-free",
+        "deadline": "CLOSED; next TBD",
+        "score": 67,
+        "status": "Found",
+        "match": "Digital health startup / AI wellness platform.",
+        "registryId": "GR-020",
+        "urgent": false
+      },
+      {
+        "name": "AWS Imagine Grant — Children's Health Innovation",
+        "funder": "Amazon/AWS",
+        "amount": "$150K–$300K + AWS credits",
+        "deadline": "Annual (next ~mid-2026)",
+        "score": 66,
+        "status": "Found",
+        "match": "Sous for pediatric nutrition. Requires nonprofit entity.",
+        "registryId": "GR-039",
+        "urgent": false
+      },
+      {
+        "name": "Feed the Future Innovation Labs",
+        "funder": "USAID",
+        "amount": "$5M–$15M each",
+        "deadline": "Varies (check grants.gov)",
+        "score": 64,
+        "status": "Found",
+        "match": "Global nutrition + food systems. Tangential to Sous US-centric strategy.",
+        "registryId": "GR-040",
+        "urgent": false
+      },
+      {
+        "name": "ARPA-H BioStabilization Systems (BoSS)",
+        "funder": "ARPA-H",
+        "amount": "$5M–$50M team awards",
+        "deadline": "Rolling solicitations",
+        "score": 62,
+        "status": "Found",
+        "match": "Biosecurity + medical device portfolio. Narrow direct match.",
+        "registryId": "GR-041",
+        "urgent": false
+      },
+      {
+        "name": "ARPA-H UPGRADE — Cybersecurity for Medical Devices",
+        "funder": "ARPA-H",
+        "amount": "Up to $7M per team",
+        "deadline": "Rolling/periodic",
+        "score": 61,
+        "status": "Found",
+        "match": "Shoei medical device + biosecurity angle. Partner required.",
+        "registryId": "GR-042",
+        "urgent": false
+      },
+      {
+        "name": "Jacques Pépin Foundation Partnership Circle Grant",
+        "funder": "Jacques Pépin Foundation",
+        "amount": "$50K total ($25K/year × 2 years)",
+        "deadline": "Rolling/annual",
+        "score": 64,
+        "status": "Found",
+        "match": "PBDI teaching kitchen + Taste Academy — community culinary training. Warm brand fit.",
+        "registryId": "GR-063",
+        "urgent": false
+      },
+      {
+        "name": "Ardmore Institute — Culinary Medicine Teaching Kitchen",
+        "funder": "Ardmore Institute of Health",
+        "amount": "~$35K reference award",
+        "deadline": "Invitational/rolling",
+        "score": 78,
+        "status": "Found",
+        "match": "PBDI teaching kitchen + Taste Academy — near-exact mission fit. ACLM curriculum alignment.",
+        "registryId": "GR-064",
+        "urgent": false
+      },
+      {
+        "name": "NSF CAREER 2026 (NSF 22-586)",
+        "funder": "NSF",
+        "amount": "$400K–$500K over 5 years",
+        "deadline": "Jul 22, 2026",
+        "score": 55,
+        "status": "Found",
+        "match": "Eligibility mismatch (requires untenured tenure-track). Reference for faculty collaborators who could PI.",
+        "registryId": "GR-062",
+        "urgent": false
+      },
+      {
+        "name": "NHMRC Ideas Grant 2026 (Australia)",
+        "funder": "NHMRC (Australia)",
+        "amount": "Up to AUD $1.5M (3–5 years)",
+        "deadline": "April/May 2026",
+        "score": 80,
+        "status": "Found",
+        "match": "DEPRIORITIZED (Australian grant below 85 threshold unless specific co-PI angle). Macquarie MD provides eligibility.",
+        "registryId": "GR-045",
+        "urgent": false
+      },
+      {
+        "name": "RWJF Rapid Response: Racial & Indigenous Health Equity",
+        "funder": "RWJF/Evidence for Action",
+        "amount": "$50K–$200K",
+        "deadline": "Rolling (24-month max)",
+        "score": 69,
+        "status": "Found",
+        "match": "NOURISH indigenous health portfolio. Solutions-oriented racial/Indigenous equity research.",
+        "registryId": "GR-052",
+        "urgent": false
+      },
+      {
+        "name": "NIFA AFRI Education & Workforce Development 2026",
+        "funder": "USDA NIFA",
+        "amount": "$10K–$650K ($39.7M total)",
+        "deadline": "Dec 31, 2026",
+        "score": 66,
+        "status": "Found",
+        "match": "Taste Academy food education + PBDI youth K-14 educator development.",
+        "registryId": "GR-053",
+        "urgent": false
+      },
+      {
+        "name": "HRSA FY2026 Rural Residency Planning & Development",
+        "funder": "HRSA Bureau of Health Workforce",
+        "amount": "Up to $750K × 15 grants",
+        "deadline": "May 22, 2026",
+        "score": 58,
+        "status": "Found",
+        "match": "PBDI teaching kitchen curricular add-on to a residency-sponsor prime. NOURISH unlikely as prime.",
+        "registryId": "GR-066",
+        "urgent": false
+      },
+      {
+        "name": "Helmsley Charitable Trust — CGM Access",
+        "funder": "Helmsley Trust",
+        "amount": "Reference: $4.2M to ACHP Foundation",
+        "deadline": "Invitation-only",
+        "score": 60,
+        "status": "Found",
+        "match": "CGM trial — relationship-driven target. Map Stanford–Helmsley introductions. Track, don't pursue yet.",
+        "registryId": "GR-065",
+        "urgent": false
+      },
+      {
+        "name": "NCCIH Natural Product Mid Phase Clinical Trial",
+        "funder": "NIH/NCCIH",
+        "amount": "R01-level mid-phase CT",
+        "deadline": "Standard NIH cycles",
+        "score": 45,
+        "status": "Found",
+        "match": "LOW FIT. Only viable if NOURISH pivots to studying a specific dietary regimen as natural product intervention.",
+        "registryId": "GR-070",
+        "urgent": false
+      },
+      {
+        "name": "ADA 2026 Health Equity Now Innovation Challenge",
+        "funder": "American Diabetes Association",
+        "amount": "Up to $100K",
+        "deadline": "Mar 11, 2026 (CLOSED)",
+        "score": 50,
+        "status": "Found",
+        "match": "CLOSED 2026. Archive for 2027 cycle. PBDI teaching kitchen + Sous community-diabetes framing.",
+        "registryId": "GR-072",
+        "urgent": false
+      }
     ],
     "tasks_by_workstream": {
       "WS1 — IRB & Compliance": 4,
@@ -548,17 +1787,64 @@
       "WS8 — Grant Applications": 12
     },
     "relationships": [
-      { "name": "Malati Shreenya Batsami", "status": "yellow", "lastContact": "Apr 19 (Granola)", "conversationRef": "2026-04-19-funding-strategy-research-coordinator", "suggestedAction": "Email immediately re: Google.org faculty anchor role. Her name is the credibility gate for the application." },
-      { "name": "Dalia Perelman (RA → Coordinator-Manager)", "status": "green", "lastContact": "Apr 19 (Granola)", "conversationRef": "2026-04-19-team-leadership-ai-google-grant", "suggestedAction": "Confirm 4 hrs/wk in writing + new coordinator-manager title. Set Friday check-in invite." },
-      { "name": "Rich Wittman (Coordinator-Broker)", "status": "green", "lastContact": "Apr 19 (Granola)", "conversationRef": "2026-04-19-team-leadership-ai-google-grant", "suggestedAction": "Brief on new coordination structure. He routes comms between workstream leads." },
-      { "name": "Razer (Industry Partner)", "status": "yellow", "lastContact": "Apr 19 (Granola)", "conversationRef": "2026-04-19-funding-strategy-research-coordinator", "suggestedAction": "Prepare pitch deck + preliminary SoW by May 3. 2-week window." },
-      { "name": "Fahim Abbasi (External Stats Consultant)", "status": "yellow", "lastContact": "Apr 19 (Airtable — REMOVE prefixed)", "conversationRef": "airtable-hsil-exclusion-list", "suggestedAction": "Resolve HSIL tag confusion — Fahim is being re-engaged as external consultant. Remove [REMOVE] prefix. Draft SoW." },
-      { "name": "Jennifer Robinson (Delegation SOP)", "status": "red", "lastContact": "Apr 14 (Granola)", "conversationRef": "prior-week", "suggestedAction": "Jennifer delegation SOP still outstanding. 4+ verbal commitments, zero framework. Set 30-min weekly sync." },
-      { "name": "Putia (OTL — outgoing contact)", "status": "red", "lastContact": "Apr 19 (Granola)", "conversationRef": "2026-04-19-team-leadership-ai-google-grant", "suggestedAction": "Get new OTL contact — Putia is out. IP/licensing conversations need a new handoff name." },
-      { "name": "Minal Moharir (PI / Coordination Ring)", "status": "green", "lastContact": "Apr 19 (Granola via Malati discussion)", "conversationRef": "2026-04-19-funding-strategy-research-coordinator", "suggestedAction": "Loop in on Google.org application strategy. She is in the Coordination ring per Org Map v2." }
+      {
+        "name": "Malati Shreenya Batsami",
+        "status": "yellow",
+        "lastContact": "Apr 19 (Granola)",
+        "conversationRef": "2026-04-19-funding-strategy-research-coordinator",
+        "suggestedAction": "Email immediately re: Google.org faculty anchor role. Her name is the credibility gate for the application."
+      },
+      {
+        "name": "Dalia Perelman (RA → Coordinator-Manager)",
+        "status": "green",
+        "lastContact": "Apr 19 (Granola)",
+        "conversationRef": "2026-04-19-team-leadership-ai-google-grant",
+        "suggestedAction": "Confirm 4 hrs/wk in writing + new coordinator-manager title. Set Friday check-in invite."
+      },
+      {
+        "name": "Rich Wittman (Coordinator-Broker)",
+        "status": "green",
+        "lastContact": "Apr 19 (Granola)",
+        "conversationRef": "2026-04-19-team-leadership-ai-google-grant",
+        "suggestedAction": "Brief on new coordination structure. He routes comms between workstream leads."
+      },
+      {
+        "name": "Razer (Industry Partner)",
+        "status": "yellow",
+        "lastContact": "Apr 19 (Granola)",
+        "conversationRef": "2026-04-19-funding-strategy-research-coordinator",
+        "suggestedAction": "Prepare pitch deck + preliminary SoW by May 3. 2-week window."
+      },
+      {
+        "name": "Fahim Abbasi (External Stats Consultant)",
+        "status": "yellow",
+        "lastContact": "Apr 19 (Airtable — REMOVE prefixed)",
+        "conversationRef": "airtable-hsil-exclusion-list",
+        "suggestedAction": "Resolve HSIL tag confusion — Fahim is being re-engaged as external consultant. Remove [REMOVE] prefix. Draft SoW."
+      },
+      {
+        "name": "Jennifer Robinson (Delegation SOP)",
+        "status": "red",
+        "lastContact": "Apr 14 (Granola)",
+        "conversationRef": "prior-week",
+        "suggestedAction": "Jennifer delegation SOP still outstanding. 4+ verbal commitments, zero framework. Set 30-min weekly sync."
+      },
+      {
+        "name": "Putia (OTL — outgoing contact)",
+        "status": "red",
+        "lastContact": "Apr 19 (Granola)",
+        "conversationRef": "2026-04-19-team-leadership-ai-google-grant",
+        "suggestedAction": "Get new OTL contact — Putia is out. IP/licensing conversations need a new handoff name."
+      },
+      {
+        "name": "Minal Moharir (PI / Coordination Ring)",
+        "status": "green",
+        "lastContact": "Apr 19 (Granola via Malati discussion)",
+        "conversationRef": "2026-04-19-funding-strategy-research-coordinator",
+        "suggestedAction": "Loop in on Google.org application strategy. She is in the Coordination ring per Org Map v2."
+      }
     ]
   },
-
   "tinker": {
     "ideas": [
       {
@@ -569,7 +1855,11 @@
         "stack": "Next.js + Tailwind + SVG body atlas + PostHog",
         "buildEstimate": "2 weekends",
         "researchAngle": "Which clinical signs are systematically missed by med students? Diagnostic frequency data publishable in medical education journal.",
-        "tags": ["medical-education", "games", "data-research"],
+        "tags": [
+          "medical-education",
+          "games",
+          "data-research"
+        ],
         "impactRating": 5,
         "funRating": 5,
         "feasibilityRating": 4,
@@ -583,7 +1873,11 @@
         "stack": "Next.js + Canvas API + P5.js for ECG rendering",
         "buildEstimate": "2 weekends",
         "researchAngle": "Time-pressure ECG interpretation — does urgency improve or degrade diagnostic accuracy? Publishable cardiology education data.",
-        "tags": ["medical-education", "cardiology", "games"],
+        "tags": [
+          "medical-education",
+          "cardiology",
+          "games"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 3,
@@ -597,7 +1891,11 @@
         "stack": "Next.js + Framer Motion swipe cards + simple state machine",
         "buildEstimate": "1 weekend",
         "researchAngle": "Which triage patterns match real ED triage decisions? Generates labeled training data for AI triage models.",
-        "tags": ["medical-education", "emergency-medicine", "games"],
+        "tags": [
+          "medical-education",
+          "emergency-medicine",
+          "games"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -611,7 +1909,11 @@
         "stack": "Next.js + CSS animations + simple game loop",
         "buildEstimate": "1 weekend",
         "researchAngle": "Which drug-condition pairs are most commonly confused? Error patterns publishable as pharmacology education data.",
-        "tags": ["medical-education", "pharmacology", "games"],
+        "tags": [
+          "medical-education",
+          "pharmacology",
+          "games"
+        ],
         "impactRating": 3,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -625,7 +1927,11 @@
         "stack": "Next.js + React DnD + Lottie for animations",
         "buildEstimate": "2 weekends",
         "researchAngle": "Pediatric pharmacology engagement — does character-based learning improve drug recall in nursing students? Publishable.",
-        "tags": ["medical-education", "pharmacology", "pediatric"],
+        "tags": [
+          "medical-education",
+          "pharmacology",
+          "pediatric"
+        ],
         "impactRating": 3,
         "funRating": 5,
         "feasibilityRating": 4,
@@ -639,7 +1945,11 @@
         "stack": "Next.js + Claude API (Haiku) for dynamic patient responses",
         "buildEstimate": "2 weekends",
         "researchAngle": "Which SPIKES steps are most commonly skipped in simulated bad-news conversations? Communication education data.",
-        "tags": ["medical-education", "communication", "ai"],
+        "tags": [
+          "medical-education",
+          "communication",
+          "ai"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 3,
@@ -653,7 +1963,12 @@
         "stack": "Next.js + static meal photo set (100 photos) + Tailwind swipe UI",
         "buildEstimate": "1 weekend",
         "researchAngle": "Which meal categories are most systematically mis-estimated for carbs? Data useful for CGM study patient education.",
-        "tags": ["nutrition", "food", "games", "sous-adjacent"],
+        "tags": [
+          "nutrition",
+          "food",
+          "games",
+          "sous-adjacent"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 5,
@@ -667,7 +1982,11 @@
         "stack": "Next.js + Unicode font rendering + simple game loop",
         "buildEstimate": "1 weekend",
         "researchAngle": "Cross-cultural food literacy gaps in medical students — publishable as cultural competency education research.",
-        "tags": ["food", "cultural-competency", "language-learning"],
+        "tags": [
+          "food",
+          "cultural-competency",
+          "language-learning"
+        ],
         "impactRating": 3,
         "funRating": 4,
         "feasibilityRating": 5,
@@ -681,7 +2000,11 @@
         "stack": "Next.js + DermNet photo library + checkbox UX",
         "buildEstimate": "2 weekends",
         "researchAngle": "Which ABCDE criteria are most commonly missed by medical students? Dermatology education data publishable.",
-        "tags": ["medical-education", "dermatology", "visual-diagnosis"],
+        "tags": [
+          "medical-education",
+          "dermatology",
+          "visual-diagnosis"
+        ],
         "impactRating": 4,
         "funRating": 3,
         "feasibilityRating": 4,
@@ -695,7 +2018,11 @@
         "stack": "Next.js + Web Audio API + pre-recorded heart sound clips",
         "buildEstimate": "2 weekends",
         "researchAngle": "Which murmur types are most commonly misclassified by students? Auscultation education data publishable.",
-        "tags": ["medical-education", "cardiology", "audio"],
+        "tags": [
+          "medical-education",
+          "cardiology",
+          "audio"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 3,
@@ -709,7 +2036,12 @@
         "stack": "Next.js + React DnD + USDA FoodData Central API",
         "buildEstimate": "2 weekends",
         "researchAngle": "Which ingredient combinations do users choose to hit macro targets? Behavioral data for Sous recipe recommendations.",
-        "tags": ["nutrition", "food", "sous-adjacent", "interactive"],
+        "tags": [
+          "nutrition",
+          "food",
+          "sous-adjacent",
+          "interactive"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 4,
@@ -723,11 +2055,161 @@
         "stack": "Next.js + simple game state machine + consent checklist",
         "buildEstimate": "1 weekend",
         "researchAngle": "Which consent elements are most commonly omitted under time pressure? Publishable medical ethics education data.",
-        "tags": ["medical-education", "ethics", "communication"],
+        "tags": [
+          "medical-education",
+          "ethics",
+          "communication"
+        ],
         "impactRating": 4,
         "funRating": 3,
         "feasibilityRating": 5,
         "claudePrompt": "Build a Next.js app named 'consentconductor'. A patient asks consent-related questions in sequence. Four response options per question (ranging from best-practice to harmful). Progress bar tracks required consent elements: diagnosis, risks, benefits, alternatives, right-to-refuse. Timer counts down. Score at the end: consent completeness % + empathy score. 3 clinical scenarios."
+      },
+      {
+        "name": "GlucoseGlitch",
+        "emoji": "📈",
+        "tagline": "Your CGM data as a Tamagotchi -- keep your glucose pet happy or it dies.",
+        "mechanic": "A pixel-art creature's mood reflects real CGM data. Log a healthy meal to restore HP. Eat a spike-causing food and watch it panic.",
+        "stack": "Next.js + Dexcom CGM API or manual entry + pixel art sprites + PostHog",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does gamified glucose feedback change dietary choices? Behavioral data publishable in digital health journal.",
+        "tags": [
+          "nutrition",
+          "health-data",
+          "games",
+          "sous-adjacent"
+        ],
+        "impactRating": 5,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'glucoseglitch': a pixel-art Tamagotchi whose mood mirrors CGM glucose levels. User inputs meals manually or connects Dexcom API. Stable glucose (70-140) = happy creature. Spike >180 = creature panics. Crash <70 = creature faints. Track 7-day time-in-range streak. Pixel art aesthetic, dark background, 5 creature states. PostHog analytics on every meal log. Deploy to Vercel."
+      },
+      {
+        "name": "SpiceMap",
+        "emoji": "🌶️",
+        "tagline": "A globe where every country lights up with its signature spice -- tap to learn the pharmacology.",
+        "mechanic": "Interactive SVG world map. Tap a country to reveal its signature spice with a 30-second animation showing which receptor it hits.",
+        "stack": "Next.js + D3.js + SVG world map + Framer Motion",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Cross-cultural spice literacy -- publishable as culinary medicine education data.",
+        "tags": [
+          "food",
+          "cultural-competency",
+          "pharmacogenomics"
+        ],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'spicemap': interactive D3.js world map. Tap any country to reveal its signature spice, flavor receptor, and traditional medicinal use. Capsaicin -> TRPV1 -> India/Mexico. Wasabi -> TRPA1 -> Japan. Saffron -> 5-HT -> Iran. Turmeric -> NF-kB -> South Asia. 30 countries, 30 spices, 30 mechanisms. Dark theme, glowing hotspot animation on tap. Mobile-first. 1-weekend build."
+      },
+      {
+        "name": "BiomeSong",
+        "emoji": "🎶",
+        "tagline": "Your gut microbiome as a generative ambient track -- healthy bacteria play harmonics, dysbiosis plays dissonance.",
+        "mechanic": "User inputs microbiome diversity score. Each bacterial family becomes an instrument. High diversity = rich chord. Low diversity = one sad note.",
+        "stack": "Next.js + Tone.js generative audio + slider UI",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Sonification of health data -- does hearing your gut make people care more about diet? Novel bio-data interface research.",
+        "tags": [
+          "music",
+          "health-data",
+          "microbiome"
+        ],
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'biomesong': generative audio where microbiome diversity becomes music using Tone.js. Map 8 bacterial families to instruments: Bacteroidetes=cello, Firmicutes=bass, Akkermansia=flute, Bifidobacterium=piano, Lactobacillus=violin, Prevotella=guitar, Fusobacterium=discord, Proteobacteria=drone. Healthy ratios = consonant chord. Dysbiosis = dissonant tension. Sliders adjust each family's abundance. Real-time audio response. Dark ambient aesthetic."
+      },
+      {
+        "name": "CultureCook",
+        "emoji": "🌍",
+        "tagline": "Daily Wordle but you guess the dish's cultural origin from the ingredient list alone.",
+        "mechanic": "Ingredient list appears. Guess the cuisine of origin in 6 tries. Each wrong guess reveals one more ingredient clue.",
+        "stack": "Next.js + static recipe dataset + game state",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Cross-cultural ingredient literacy gaps -- publishable as cultural competency education data.",
+        "tags": [
+          "food",
+          "cultural-competency",
+          "games"
+        ],
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'culturecook': daily Wordle-style game where players guess a dish's cultural origin from ingredients alone. Show 3 ingredients initially. Each wrong guess reveals 1 more. 6 guesses max. 200 dishes across 30 cultures. Share button with 'I got it in 4 tries!' format. Daily puzzle with seed-based randomization. Minimal dark aesthetic. Mobile-first. 1-weekend build."
+      },
+      {
+        "name": "BodyClock",
+        "emoji": "🕐",
+        "tagline": "Your circadian rhythm as a 24-hour menu -- what to eat at 7am vs 2pm vs 11pm.",
+        "mechanic": "Rotating clock face. Each hour segment shows which hormones are active. Tap any hour for a meal suggestion that works with your biology.",
+        "stack": "Next.js + SVG clock + CSS animation + static circadian research data",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does visualizing circadian biology change meal timing? Behavioral data for chronobiology + nutrition research.",
+        "tags": [
+          "nutrition",
+          "health-data",
+          "circadian"
+        ],
+        "impactRating": 4,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'bodyclock': SVG 24-hour clock where each segment is colored by the dominant hormone active at that time. 6-9am: cortisol peak -> protein-heavy breakfast. 12pm: insulin sensitivity high -> complex carbs. 3pm: cognitive peak -> caffeine window. 10pm: melatonin rising -> no sugar. Tap any segment for meal recommendations. Animated clock hands. Dark theme. Mobile-first. 1-weekend build."
+      },
+      {
+        "name": "PharmaFarm",
+        "emoji": "🌱",
+        "tagline": "Grow a virtual herb garden where each plant teaches you the drug it inspired.",
+        "mechanic": "Tap a plant to grow it. At full growth it reveals the drug derived from it and the mechanism. Willow bark -> aspirin -> COX inhibition.",
+        "stack": "Next.js + CSS growth animations + Lottie plant sprites",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Ethnopharmacology literacy -- does plant-to-drug origin teaching improve mechanism recall?",
+        "tags": [
+          "pharmacogenomics",
+          "games",
+          "med-ed-adjacent"
+        ],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'pharmafarm': virtual herb garden where 20 plants grow to reveal pharmaceutical derivatives. Animation: seed sprouts -> stem grows -> flower blooms -> drug molecule appears. Each card shows: plant name, drug name, mechanism, one clinical use. Plants include: willow bark (aspirin), foxglove (digoxin), poppy (morphine), cinchona (quinine), periwinkle (vincristine), yew (paclitaxel) + 14 more. CSS keyframe growth animation. Collect all 20 for a certificate."
+      },
+      {
+        "name": "NutraScan",
+        "emoji": "📷",
+        "tagline": "Point your phone at your meal and see how your gut bacteria will vote on it.",
+        "mechanic": "Photograph a meal. Claude Vision identifies ingredients. App shows a microbiome ballot: which bacterial families will thrive, which will suffer.",
+        "stack": "Next.js + Claude Vision API + USDA FoodData Central + Sous integration",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does framing nutrition as feeding your microbiome (not eating healthy) change food choices?",
+        "tags": [
+          "nutrition",
+          "ai",
+          "sous-adjacent",
+          "microbiome"
+        ],
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 3,
+        "claudePrompt": "Build 'nutrascan': photo -> microbiome impact analysis. User photographs a meal. Claude Vision API identifies ingredients. Map ingredients to prebiotic fiber -> bacterial strain beneficiaries. Display: 'Akkermansia: checkmark (inulin from the onions)' 'Firmicutes: warning (refined carbs)'. One-tap to log to Sous. Dark theme, voting booth UI for the microbiome ballot. Mobile camera-first interface."
+      },
+      {
+        "name": "SoundBite",
+        "emoji": "🔊",
+        "tagline": "A meal that plays a different ambient soundtrack for each course -- eating as a sensory composition.",
+        "mechanic": "Tap the meal type. App generates a 3-act ambient soundtrack: arrival, main, resolution. Music shifts in real time as you progress through the meal.",
+        "stack": "Next.js + Tone.js generative audio + course timer",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does ambient audio designed for eating change meal duration, satiety, and enjoyment? Cross-sensory neuroscience publishable data.",
+        "tags": [
+          "music",
+          "food",
+          "sensory-design"
+        ],
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'soundbite': a meal soundtrack generator. User selects meal type (quick lunch, dinner party, solo breakfast). App generates a 3-act generative ambient track using Tone.js: Act 1 (energizing 130bpm) -> Act 2 (focused 70bpm) -> Act 3 (resolving 50bpm). Each act is 8-15 minutes. Course timer shows which act is playing. 5 meal archetypes with distinct sound palettes. Background play, minimal UI. Research angle: does slower Act 2 reduce eating speed and post-meal glucose spike?"
       }
     ]
   }
