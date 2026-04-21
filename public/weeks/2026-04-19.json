@@ -6,6 +6,8 @@
     "stats": {
       "granola": 4,
       "airtable": 184,
+      "commitmentsOpen": 0,
+      "commitmentsOverdue": 0,
       "grants": 72,
       "collaborators": 53,
       "wikiPages": 220,
@@ -2212,5 +2214,13 @@
         "claudePrompt": "Build 'soundbite': a meal soundtrack generator. User selects meal type (quick lunch, dinner party, solo breakfast). App generates a 3-act generative ambient track using Tone.js: Act 1 (energizing 130bpm) -> Act 2 (focused 70bpm) -> Act 3 (resolving 50bpm). Each act is 8-15 minutes. Course timer shows which act is playing. 5 meal archetypes with distinct sound palettes. Background play, minimal UI. Research angle: does slower Act 2 reduce eating speed and post-meal glucose spike?"
       }
     ]
+  },
+  "commitments": {
+    "open": 0,
+    "overdue": 0,
+    "closed_this_week": 0,
+    "counts": { "strong": 0, "medium": 0, "weak": 0 },
+    "overdue_items": [],
+    "recent_open": []
   }
 }
