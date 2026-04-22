@@ -1555,6 +1555,7 @@
         <button class="section-tab" data-section="skills">🔍 Skills</button>
         <button class="section-tab" data-section="tinker" style="color:#F59E0B">🔧 Tinker</button>
         <button class="section-tab" data-section="commitments" style="color:#e879f9">🤝 Commitments</button>
+        <button class="section-tab" data-section="forDecision" style="color:#f85149">⚡ For Decision</button>
       </div>
     </div>
 
@@ -1724,6 +1725,16 @@
       </div>
     </div>
 
+    <!-- FOR DECISION SECTION -->
+    <div id="forDecision" class="section-content">
+      <div class="card hero" style="border-top-color:#f85149;margin-bottom:24px">
+        <div style="font-size:28px;font-weight:700;margin-bottom:8px;color:#f85149">&#9889; For Decision</div>
+        <div style="color:var(--text-secondary)">Consolidated pending decisions from all appraisal and audit docs. Updated daily at 7:15 AM. Status buttons copy a Claude prompt to update the source doc — paste into Claude to close the loop.</div>
+      </div>
+      <div id="forDecisionStats" style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px"></div>
+      <div id="forDecisionContainer"></div>
+    </div>
+
     <!-- COMMITMENTS SECTION -->
     <div id="commitments" class="section-content">
       <div class="card hero" style="border-top-color:#e879f9;margin-bottom:24px">
@@ -1763,6 +1774,10 @@
     <button class="mobile-tab-item" data-section="commitments" aria-label="Commitments tracker">
       <span class="mobile-tab-icon">🤝</span>
       <span>Commits</span>
+    </button>
+    <button class="mobile-tab-item" data-section="forDecision" aria-label="For Decision">
+      <span class="mobile-tab-icon">⚡</span>
+      <span>Decide</span>
     </button>
   </nav>
 
@@ -1808,6 +1823,7 @@
         this.currentWeek = null;
         this.currentWeekDate = null;
         this.prevWeek = null;
+        this.decisions = null;
         this.init();
       }
 
@@ -1828,9 +1844,18 @@
           this.currentSection = 'overview';
           this.setupEventListeners();
           this.render();
+          // Load decisions async — re-render when ready
+          this.loadDecisions().then(() => this.renderForDecision());
         } catch (e) {
           console.error("Failed to initialize:", e);
         }
+      }
+
+      async loadDecisions() {
+        try {
+          const r = await fetch('./decisions.json');
+          if (r.ok) this.decisions = await r.json();
+        } catch(e) { console.warn('decisions.json not found — For Decision tab will show empty state'); }
       }
 
       async loadWeekIndex() {
@@ -1929,7 +1954,7 @@
       }
 
       setupSwipe() {
-        const SECTIONS = ['overview', 'lifeAdmin', 'nourish', 'ideas', 'skills', 'tinker'];
+        const SECTIONS = ['overview', 'lifeAdmin', 'nourish', 'ideas', 'skills', 'tinker', 'commitments', 'forDecision'];
         let touchStartX = 0;
         let touchStartY = 0;
         let touchStartTime = 0;
@@ -2071,6 +2096,7 @@
         this.renderSkills();
         this.renderTinker();
         this.renderCommitments();
+        this.renderForDecision();
       }
 
       renderOnFireBanner() {
@@ -2883,6 +2909,101 @@
 
         html += `<a class="cmt-view-all" href="obsidian://open?vault=Stefan-Brain&file=wiki/nourish/_commitments/index" target="_blank">→ View all commitments in Obsidian</a>`;
         html += `<div style="margin-top:10px;font-size:11px;color:var(--text-secondary);text-align:center">Status buttons copy a Claude prompt to your clipboard → paste into Claude to update the Obsidian note.</div>`;
+
+        el.innerHTML = html;
+      }
+      renderForDecision() {
+        const statsEl = document.getElementById('forDecisionStats');
+        const el = document.getElementById('forDecisionContainer');
+        if (!el) return;
+
+        const d = this.decisions;
+        if (!d || !d.items || d.items.length === 0) {
+          if (statsEl) statsEl.innerHTML = '';
+          el.innerHTML = `
+            <div class="card" style="text-align:center;padding:32px;color:var(--text-secondary)">
+              <div style="font-size:36px;margin-bottom:12px">&#9889;</div>
+              <div style="font-weight:600;margin-bottom:8px;color:var(--text-primary)">No pending decisions</div>
+              <div style="font-size:13px">The decisions-aggregator runs at 7:15 AM daily.<br>Add <code>requires-decision: true</code> to any wiki page to surface items here.</div>
+            </div>`;
+          return;
+        }
+
+        const counts = d.counts || {};
+        if (statsEl) {
+          const statCard = (val, label, color) =>
+            `<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 20px;text-align:center;min-width:80px">
+               <div style="font-size:22px;font-weight:700;color:${color}">${val}</div>
+               <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px">${label}</div>
+             </div>`;
+          statsEl.innerHTML =
+            statCard(counts.total ?? d.items.length, 'Total', 'var(--text-primary)') +
+            statCard(counts.pending ?? 0, 'Pending', 'var(--yellow)') +
+            statCard((counts.in_progress ?? 0), 'In Progress', 'var(--cyan)') +
+            statCard(counts.new_since_last_run ?? 0, 'New Today', 'var(--red)') +
+            (d.generated_at ? `<div style="display:flex;align-items:center;font-size:11px;color:var(--text-secondary);margin-left:auto">Updated<br>${new Date(d.generated_at).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}</div>` : '');
+        }
+
+        const urgencyColor = { high: 'var(--red)', medium: 'var(--yellow)', low: 'var(--text-secondary)', cosmetic: 'var(--border)', deferred_resurfaced: 'var(--purple)' };
+        const urgencyLabel = { high: 'HIGH', medium: 'MEDIUM', low: 'LOW', cosmetic: 'COSMETIC', deferred_resurfaced: 'RE-SURFACED' };
+
+        // Clipboard-copy → Claude prompt to update decision status in source doc
+        window.__decUpdateStatus = (id, sourceFile, status) => {
+          const prompt = `Update the decision with id "${id}" in the source file "${sourceFile}" — set its \`status\` to "${status}"${status === 'resolved' ? ' and set \`resolved-on\` to today\'s date and fill in \`resolution\`' : ''}${status === 'deferred' ? ' and set \`deferred-until\` to a date 1 week from today' : ''}. Use the obsidian-vault MCP \`patch_note\` or \`update_frontmatter\` tool. Then run the decisions-aggregator to refresh the pending list.`;
+          navigator.clipboard.writeText(prompt).then(() => {
+            const btn = document.querySelector(`[data-dec-id="${CSS.escape(id)}"][data-dec-status="${CSS.escape(status)}"]`);
+            if (btn) { btn.textContent = '✓ Copied'; setTimeout(() => { btn.textContent = status; }, 2000); }
+          }).catch(() => console.warn('Clipboard write failed'));
+        };
+
+        const groups = { high: [], medium: [], low: [], cosmetic: [], deferred_resurfaced: [] };
+        d.items.forEach(item => {
+          const g = groups[item.urgency] || groups.low;
+          g.push(item);
+        });
+
+        const renderCard = (item) => {
+          const uc = urgencyColor[item.urgency] || 'var(--text-secondary)';
+          const ul = urgencyLabel[item.urgency] || item.urgency.toUpperCase();
+          const isNew = item.new ? `<span style="background:rgba(248,81,73,0.15);color:var(--red);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;margin-left:8px">NEW</span>` : '';
+          const opts = (item.suggested_options || []).map(o => `<li style="margin-bottom:4px">${esc(o)}</li>`).join('');
+          const optsHtml = opts ? `<ul style="margin:8px 0 0 16px;font-size:13px;color:var(--text-secondary)">${opts}</ul>` : '';
+          const obsidianUrl = item.source_file
+            ? `obsidian://open?vault=Stefan-Brain&file=${encodeURIComponent(item.source_file.replace(/\.md$/, ''))}`
+            : '';
+          return `
+            <div class="card" style="border-left:3px solid ${uc};margin-bottom:14px;padding:16px">
+              <div style="display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+                <span style="background:${uc}22;color:${uc};padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap">${ul}</span>
+                ${isNew}
+                <div style="font-size:14px;font-weight:600;flex:1">${esc(item.question)}</div>
+              </div>
+              ${item.context ? `<div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">${esc(item.context)}</div>` : ''}
+              ${optsHtml}
+              <div style="display:flex;gap:6px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--border);margin-top:10px;align-items:center">
+                ${['Resolved','Deferred','Delegated','Not Going To'].map(s =>
+                  `<button class="cmt-btn cmt-action-btn"
+                    data-dec-id="${esc(item.id)}" data-dec-status="${s}"
+                    onclick="window.__decUpdateStatus(this.dataset.decId,'${esc(item.source_file || '')}','${s.toLowerCase()}')"
+                    title="Copy Claude prompt to mark as ${s}" style="font-size:11px;padding:4px 10px">${s}</button>`
+                ).join('')}
+                ${obsidianUrl ? `<a href="${obsidianUrl}" target="_blank" style="margin-left:auto;font-size:11px;color:var(--text-secondary);text-decoration:none">→ Source</a>` : ''}
+              </div>
+              <div style="font-size:10px;color:var(--border);margin-top:6px">${esc(item.id)} · surfaced ${esc(item.surfaced_on)} from ${esc(item.surfaced_by)}</div>
+            </div>`;
+        };
+
+        let html = '';
+        const orderedGroups = [['high','&#128308; High urgency'], ['medium','&#128993; Medium urgency'], ['low','&#9898; Low'], ['cosmetic','&#128309; Cosmetic'], ['deferred_resurfaced','&#128994; Re-surfaced']];
+        orderedGroups.forEach(([key, label]) => {
+          if (groups[key] && groups[key].length > 0) {
+            html += `<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:${urgencyColor[key]};margin:20px 0 10px">${label} (${groups[key].length})</div>`;
+            html += groups[key].map(renderCard).join('');
+          }
+        });
+
+        html += `<div style="margin-top:16px;font-size:11px;color:var(--text-secondary);text-align:center">Status buttons copy a Claude prompt → paste into Claude to update the source doc in Obsidian.<br>Source: <code>wiki/_decisions/_pending/_aggregated.json</code> · runs daily 07:15 AM</div>`;
+        html += `<a style="display:block;margin-top:12px;text-align:center;font-size:12px;color:var(--cyan);text-decoration:none" href="obsidian://open?vault=Stefan-Brain&file=wiki/_decisions/_pending/_index" target="_blank">→ View full decision index in Obsidian</a>`;
 
         el.innerHTML = html;
       }

@@ -1,0 +1,565 @@
+{
+    "generated_at":  "2026-04-22T09:45:27Z",
+    "generated_by":  "decisions-aggregator",
+    "counts":  {
+                   "pending":  30,
+                   "in_progress":  0,
+                   "deferred_resurfaced":  0,
+                   "total":  30,
+                   "new_since_last_run":  17
+               },
+    "items":  [
+                  {
+                      "id":  "pcori-loi-apr28-status",
+                      "question":  "Was GR-024 PCORI Phased LOI actually submitted before Apr 28 5pm ET?",
+                      "context":  "Draft folder exists but no LOI content confirmed. Deadline is 7 days away.",
+                      "surfaced_by":  "nourish-hierarchy-backlinks-appraisal-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Text Minal today - did we submit GR-024 PCORI LOI?",
+                                                "Check grants.gov for submission record"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-hierarchy-backlinks-appraisal-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "maha-elevate-foa-verification",
+                      "question":  "Verify MAHA Elevate FOA grant amount, AI-permitted components, eligibility, and confirmed deadline?",
+                      "context":  "FOA terms not confirmed from official CMS-2W2-27-001 source. Deadline and AI component restrictions may affect application strategy.",
+                      "surfaced_by":  "maha-elevate-ai-ideas-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Check simpler.grants.gov/opportunity/fffa480e for FOA details today",
+                                                "Ask Minal if she has already reviewed the FOA"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/nourish/grants/maha-elevate-ai-ideas-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "gr-001-ahrq-r21-r33",
+                      "question":  "Commit to GR-001/GR-043 AHRQ R21/R33 Digital Healthcare (score 92, due June 16) — who leads?",
+                      "context":  "Highest-scored upcoming grant overall — no draft started. 56 days to deadline.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Commit now — Minal PI, Stefan co-PI",
+                                                "Wait until May 1 (resolve Apr 28 cluster first)",
+                                                "Send program officer pre-application inquiry"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "gr-068-usda-afri-apr23",
+                      "question":  "Apply or skip GR-068 USDA AFRI AI for K-12 (deadline April 23 — 2 days)?",
+                      "context":  "Score 70, 2-day deadline. Stretch fit for NOURISH. Bandwidth may be better on Apr 28 cluster.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Skip — focus on Apr 28 cluster",
+                                                "Attempt a focused 2-page LOI today",
+                                                "Request extension from USDA program officer"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "gr-049-pcori-loi-apr28",
+                      "question":  "Should we start the PCORI BPS Cat 3 LOI (score 90, due April 28)?",
+                      "context":  "Highest-scored upcoming grant with imminent deadline — zero draft work, 7 days left.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Start LOI draft now — submit by Apr 28",
+                                                "Skip this cycle — wait for next PCORI window",
+                                                "Delegate LOI draft to Minal"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "razer-collaboration-response",
+                      "question":  "Should NOURISH pursue the Razer collaboration proposal? Window closes ~May 3.",
+                      "context":  "Active 14-day response window from ~Apr 19. No email sent. Partnership details unclear.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Ask Minal for context then reply",
+                                                "Reply with expression of interest immediately",
+                                                "Skip — doesn\u0027t fit NOURISH strategy"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "stanford-ai-faculty-google-grant",
+                      "question":  "Which 2-3 Stanford AI faculty should be named on Google.org grant (GR-002/GR-054, score 89)?",
+                      "context":  "#1 blocking gap for the Google.org grant. Named AI faculty is a hard requirement.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Email Malati Shreenya Batsami this week",
+                                                "Approach Palaniappan as fallback",
+                                                "Ask Minal to broker introductions"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "nourish-outcomes-data",
+                      "question":  "Populate nourish-outcomes.md with CGM/PFEME/PGDR pilot numbers (blocks NIH/PCORI preliminary data)?",
+                      "context":  "Every score-80+ grant needs real numbers in Preliminary Data section. Page has placeholders only.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Stefan fills from memory (30 min)",
+                                                "Ask Minal to pull from REDCap/IRB data",
+                                                "Draft estimated ranges from published benchmarks"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "nora-hackathon-business-plan",
+                      "question":  "Build NORA business plan + clear top 5 Harvard Hackathon follow-ups (stalled 8 days)?",
+                      "context":  "28 open items from Apr 13 hackathon. Western Sydney LHD CTO awaiting follow-up on pilot LOI.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "LinkedIn post + LHD email + team meeting this week; delegate biz plan",
+                                                "Defer until after Apr 28 grant cluster",
+                                                "Ask Ted to own business plan first draft"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "optimus-weekly-run-stub-sync",
+                      "question":  "Sync full 253-line Cowork optimus-weekly-run SKILL.md into MCP path (current MCP version is a 104-line stub missing Phase 3.5, Tinker FATAL, and freshness guidance).",
+                      "context":  "Two-scheduler drift: Cowork path has full content; MCP active path is stub. This means Jaccard freshness, Tinker count assertions, and Phase 3.5 cross-source alignment all silently don\u0027t run.",
+                      "surfaced_by":  "meta-appraisal-2026-04-21",
+                      "surfaced_on":  "2026-04-22",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Sync Cowork SKILL.md → MCP path now (10-min task)",
+                                                "Adopt single-path policy: deprecate Cowork path, only maintain MCP path going forward"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/meta-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "daily-ingest-not-running",
+                      "question":  "Why hasn\u0027t daily-ingest fired since April 17 (5 days)? Fix so Granola data flows again.",
+                      "context":  "daily-ingest lastRunAt 2026-04-18T04:02:17Z. PC-sleep-at-9pm-PDT hypothesis from April 20 log never self-healed. Granola meetings April 18–22 missing from brain.",
+                      "surfaced_by":  "meta-appraisal-2026-04-21",
+                      "surfaced_on":  "2026-04-22",
+                      "urgency":  "high",
+                      "suggested_options":  [
+                                                "Check PC power settings — disable sleep on AC power",
+                                                "Change daily-ingest cron to earlier time (e.g. 8pm) when PC is reliably on",
+                                                "Manually run daily-ingest once to backfill Granola gap"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/meta-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "dexcom-research-outreach",
+                      "question":  "Email Dexcom External Research Program (clinicalresearch@dexcom.com) for CGM device access?",
+                      "context":  "CGM trial needs device access at scale. Dexcom has an external research program that may provide devices for free or discounted.",
+                      "surfaced_by":  "maha-elevate-ai-ideas-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Email today with CGM trial protocol and current N enrolled",
+                                                "Defer until after April 28 grant cluster"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/nourish/grants/maha-elevate-ai-ideas-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "maha-elevate-behavioral-theory",
+                      "question":  "Choose primary behavioral theory framework for MAHA Elevate grant narrative (SDT vs Fogg Behavior Model)?",
+                      "context":  "Grant narrative must name a behavioral theory. Self-Determination Theory (intrinsic motivation via personal data) or Fogg Behavior Model (motivation+ability+trigger) - or both.",
+                      "surfaced_by":  "maha-elevate-ai-ideas-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Self-Determination Theory - strongest fit for CGM personal data narrative",
+                                                "Fogg Behavior Model - simpler to operationalize in LOI",
+                                                "Both - more comprehensive but may dilute focus"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/nourish/grants/maha-elevate-ai-ideas-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "primed-ai-loi-decision",
+                      "question":  "Should NOURISH submit LOIs for GR-076 (PRIMED-AI Translating Models, score 82) and GR-077 (Framework Playbooks, score 68) before May 18?",
+                      "context":  "Two new NIH Common Fund PRIMED-AI opportunities discovered this scan. LOIs due May 18 (27 days). Score 82 for GR-076 is strong.",
+                      "surfaced_by":  "grant-scan-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Submit GR-076 LOI (score 82) - strong fit for NOURISH AI/clinical work",
+                                                "Submit both GR-076 and GR-077 LOIs",
+                                                "Skip both - focus on April 28 cluster first"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/research/outputs/grants/grant-scan-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "daily-ingest-gap-investigation",
+                      "question":  "Investigate why daily-ingest has not fired since April 18 (3-day gap)?",
+                      "context":  "daily-ingest shows lastRunAt 2026-04-18. Machine sleep or deleted CronCreate entry may be cause.",
+                      "surfaced_by":  "optimus-granola-audit-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Run CronList to verify scheduled task entry still exists",
+                                                "Check if machine was asleep during 9pm fire time",
+                                                "Re-register via schedule skill if entry was deleted"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/optimus-granola-audit-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "optimus-add-tests",
+                      "question":  "Add 4-5 high-leverage Optimus tests (schema validation, On Fire snapshot, parseDeadlineDate)?",
+                      "context":  "Zero tests currently. Code review found 3 past merge regressions that tests would have caught.",
+                      "surfaced_by":  "optimus-code-review-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Write tests this week - Claude task ~1 hour",
+                                                "Defer - personal tool, low regression risk"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/optimus-code-review-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "optimus-wire-granola-top-decisions",
+                      "question":  "Wire overview.granola.topDecisions into the Overview tab (data already in JSON)?",
+                      "context":  "8 key decisions are in the JSON weekly file but never rendered. Quick UI addition.",
+                      "surfaced_by":  "optimus-code-review-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Add Key Decisions section to renderOverview() - 30-min Claude task",
+                                                "Defer until next Optimus quality pass"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/optimus-code-review-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "aws-activate-sprint",
+                      "question":  "Clear AWS Activate application backlog (6 emails, ~1-hour sprint)?",
+                      "context":  "Decision made Apr 15, zero emails sent in 6 days. Credits worth $25K-$100K for Sous.",
+                      "surfaced_by":  "nourish-dropped-threads-2026-04-21",
+                      "surfaced_on":  "\u00272026-04-21\u0027",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "1-hour email sprint this week",
+                                                "Claude drafts all 4 emails now; Stefan sends in 15 min"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-dropped-threads-2026-04-21.md",
+                      "new":  false
+                  },
+                  {
+                      "id":  "dual-scheduler-sync-policy",
+                      "question":  "Adopt a single-path policy for SKILL.md management — the two-path drift is the #1 source of false \u0027shipped\u0027 claims.",
+                      "context":  "Cowork path (Documents/Claude/Scheduled/) and MCP path (~/.claude/scheduled-tasks/) receive fixes independently. Multiple shipped claims in April 20-21 applied to one path but missed the active one. Pattern repeated even after being identified.",
+                      "surfaced_by":  "meta-appraisal-2026-04-21",
+                      "surfaced_on":  "2026-04-22",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Deprecate Cowork path — make MCP path canonical, stop maintaining Cowork",
+                                                "Add sync step to every SKILL.md edit: always write to both paths atomically",
+                                                "Write a script: sync-skill-paths.sh that diffs and syncs both on demand"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/meta-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "jaccard-freshness-mechanical",
+                      "question":  "Add actual Jaccard score computation to optimus-weekly-run SKILL.md — text guidance alone doesn\u0027t prevent idea repetition.",
+                      "context":  "Freshness fix from April 21 added instructional text only, no real computation. Without a score gate, the LLM can and will repeat prior-week ideas. The Jaccard=0.00 diagnosis was real.",
+                      "surfaced_by":  "meta-appraisal-2026-04-21",
+                      "surfaced_on":  "2026-04-22",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Read prev-week JSON in SKILL.md, compute Jaccard on idea names, FAIL if score \u003e 0.3",
+                                                "Store idea names in a rolling 4-week blacklist JSON file instead"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/meta-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "tier0-map-mcp-registration",
+                      "question":  "Register tier0-collaborator-map in MCP scheduler so the monthly SVG regenerates on May 1.",
+                      "context":  "Task exists in Cowork path only. No MCP registration found in list_scheduled_tasks. SVG committed and live; pipeline NOT wired for monthly auto-regeneration.",
+                      "surfaced_by":  "meta-appraisal-2026-04-21",
+                      "surfaced_on":  "2026-04-22",
+                      "urgency":  "medium",
+                      "suggested_options":  [
+                                                "Register via mcp__scheduled-tasks__create_scheduled_task with cron 0 8 1 * * (8am first of month)",
+                                                "Keep as manual: add to monthly checklist instead"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/meta-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "nourish-publications-dois",
+                      "question":  "Should Minal populate nourish-publications.md with DOI links when papers are indexed?",
+                      "context":  "Scaffold exists but entries lack DOI links and PubMed IDs needed for grants.",
+                      "surfaced_by":  "nourish-hierarchy-backlinks-appraisal-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Assign to Minal via email this week",
+                                                "Defer until papers are actually indexed"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-hierarchy-backlinks-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "optimus-cowork-fallback-generator",
+                      "question":  "Build MCP-based fallback dashboard JSON generator so Optimus does not go stale if Cowork fails?",
+                      "context":  "Full dashboard JSON is only generated by Cowork. If Cowork fails dashboard is stale indefinitely.",
+                      "surfaced_by":  "optimus-granola-audit-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Build MCP-only weekly JSON generator as backup",
+                                                "Accept Cowork dependency - it has been reliable"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/optimus-granola-audit-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "varalakshmi-stub-enrichment",
+                      "question":  "Add role + affiliation to Varalakshmi Niranjan (Dr. Niranjan) stub page?",
+                      "context":  "Same situation as Vijaya. Alias confirmed. Org Map Clinical Lead.",
+                      "surfaced_by":  "nourish-hierarchy-backlinks-appraisal-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Stefan adds role from memory (2 min)",
+                                                "Defer - not blocking any grant or project"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-hierarchy-backlinks-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "obsidian-recommended-plugins",
+                      "question":  "Configure Obsidian Desktop with recommended plugins (Calendar, Thino, Excalidraw, Banners, Templater, Obsidian Git)?",
+                      "context":  "Verification pass flagged these as not-checked. Core vault functionality works fine without them.",
+                      "surfaced_by":  "claude-obsidian-verification-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Install via Obsidian community plugin browser",
+                                                "Defer - not blocking any workflow"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/claude-obsidian-verification-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "claude-canvas-companion-plugin",
+                      "question":  "Install the claude-canvas companion Obsidian plugin (AgriciDaniel/claude-canvas)?",
+                      "context":  "The /canvas skill works without it but companion unlocks deeper canvas integration.",
+                      "surfaced_by":  "claude-obsidian-verification-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Install manually via Obsidian community plugins",
+                                                "Skip - /canvas skill is functional without it"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/claude-obsidian-verification-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "isabela-moise-vr-scope",
+                      "question":  "Schedule conversation with Isabela Moise to confirm Aequilibrium VR module scope and deployment timeline?",
+                      "context":  "VR/NLP grant idea requires knowing if the VR module is complete or still in design. Must happen before any VR grant submission.",
+                      "surfaced_by":  "maha-elevate-ai-ideas-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Email Isabela this week for a 30-min scope call",
+                                                "Defer - VR grant is a later cycle anyway"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/nourish/grants/maha-elevate-ai-ideas-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "vijaya-stub-enrichment",
+                      "question":  "Add role + affiliation to Vijaya Parameswaran stub page?",
+                      "context":  "Tier 0 Clinical Lead in Org Map. Stub has zero role detail or project affiliation.",
+                      "surfaced_by":  "nourish-hierarchy-backlinks-appraisal-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "low",
+                      "suggested_options":  [
+                                                "Stefan adds role from memory (2 min)",
+                                                "Defer - not blocking any grant or project"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/nourish-hierarchy-backlinks-appraisal-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "hot-md-session-stop-automation",
+                      "question":  "Should hot.md updates be automated via session-stop.sh?",
+                      "context":  "hot.md is currently manually maintained. Automating keeps it current but adds hook complexity.",
+                      "surfaced_by":  "claude-obsidian-verification-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "cosmetic",
+                      "suggested_options":  [
+                                                "Add hot.md update step to session-stop.sh",
+                                                "Keep manual - Stefan updates when context changes"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/claude-obsidian-verification-2026-04-21.md",
+                      "new":  true
+                  },
+                  {
+                      "id":  "obsidian-bases-dashboard",
+                      "question":  "Create wiki/meta/dashboard.base (Obsidian Bases native dashboard) from upstream template?",
+                      "context":  "Obsidian Bases plugin installed. Would provide native query-based dashboard inside Obsidian.",
+                      "surfaced_by":  "claude-obsidian-verification-2026-04-21",
+                      "surfaced_on":  "\"2026-04-21\"",
+                      "urgency":  "cosmetic",
+                      "suggested_options":  [
+                                                "Create from upstream template (Claude task ~15 min)",
+                                                "Skip - Dataview dashboards already serve this need"
+                                            ],
+                      "status":  "pending",
+                      "deferred_until":  null,
+                      "resolved_on":  null,
+                      "resolution":  null,
+                      "source_file":  "wiki/sources/ops/claude-obsidian-verification-2026-04-21.md",
+                      "new":  true
+                  }
+              ]
+}
