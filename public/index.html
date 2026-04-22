@@ -145,11 +145,10 @@
     .section-tabs {
       display: flex;
       gap: 8px;
-      padding: 0;
+      padding: 4px;
       margin-bottom: 24px;
       background: var(--bg-el);
       border-radius: 12px;
-      padding: 4px;
       width: fit-content;
     }
 
@@ -1555,7 +1554,6 @@
         <button class="section-tab" data-section="ideas">🐝 Ideas</button>
         <button class="section-tab" data-section="skills">🔍 Skills</button>
         <button class="section-tab" data-section="tinker" style="color:#F59E0B">🔧 Tinker</button>
-        <!-- TODO: coordinate with local_df668ea1 phone-UX task re: tab overflow if count exceeds mobile limits -->
         <button class="section-tab" data-section="commitments" style="color:#e879f9">🤝 Commitments</button>
       </div>
     </div>
@@ -1778,6 +1776,9 @@
   </div>
 
   <script>
+    // HTML-escape helper — used wherever user-sourced strings go into innerHTML
+    const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+
     // Parse a deadline string like "Apr 17, 2026" or "LOI Apr 28, 2026; App Sep 1"
     function parseDeadlineDate(str) {
       if (!str) return null;
@@ -1866,7 +1867,7 @@
           try {
             const r = await fetch(`./weeks/${prevDate}.json`);
             if (r.ok) this.weeks[prevDate] = await r.json();
-          } catch(e) {}
+          } catch(e) { console.warn('Could not load previous week:', prevDate, e); }
         }
         this.prevWeek = prevDate ? (this.weeks[prevDate] || null) : null;
       }
@@ -2086,11 +2087,11 @@
 
         // Overdue commitments — prepended first (person commitments outrank grant deadlines)
         (week.commitments?.overdue_items || []).forEach(c => {
-          const label = c.deadline_label || 'overdue';
+          const label = esc(c.deadline_label || 'overdue');
           commitmentItems.push({
             id: `commitment:${c.id}`,
             icon: '🤝',
-            text: `${c.counterparty} — ${c.subject} (${label})`
+            text: `${esc(c.counterparty)} — ${esc(c.subject)} (${label})`
           });
         });
 
@@ -2104,7 +2105,7 @@
             grantItems.push({
               id: `grant:${g.name}`,
               icon: '📋',
-              text: `${g.name} — due in ${daysUntil} day${daysUntil !== 1 ? 's' : ''}`
+              text: `${esc(g.name)} — due in ${daysUntil} day${daysUntil !== 1 ? 's' : ''}`
             });
           }
         });
@@ -2126,7 +2127,7 @@
             || tags.some(tag => ['urgent', 'blocker', 'critical'].includes(tag))
             || FIRE_KEYWORDS.some(kw => titleUp.includes(kw));
           if (isUrgent) {
-            taskItems.push({ id: `task:${t.title}`, icon: '🚨', text: t.title });
+            taskItems.push({ id: `task:${t.title}`, icon: '🚨', text: esc(t.title) });
           }
         });
 
@@ -2822,7 +2823,7 @@
           navigator.clipboard.writeText(prompt).then(() => {
             const btn = document.querySelector(`[data-cmt-id="${id}"][data-cmt-status="${status}"]`);
             if (btn) { btn.textContent = '✓ Copied'; setTimeout(() => { btn.textContent = status; }, 2000); }
-          }).catch(() => alert(prompt));
+          }).catch(() => { console.warn('Clipboard write failed — prompt logged to console:', prompt); });
         };
 
         const renderCard = (c, isOverdue) => {
@@ -2831,10 +2832,10 @@
           return `
             <div class="cmt-card${isOverdue ? ' overdue' : ''}">
               <div class="cmt-card-header">
-                <div class="cmt-subject">${c.subject || 'Untitled commitment'}</div>
+                <div class="cmt-subject">${esc(c.subject || 'Untitled commitment')}</div>
                 ${isOverdue ? '<span class="cmt-badge cmt-badge-overdue">OVERDUE</span>' : ''}
               </div>
-              <div class="cmt-counterparty">→ ${c.counterparty || 'Unknown'}</div>
+              <div class="cmt-counterparty">→ ${esc(c.counterparty || 'Unknown')}</div>
               ${dl ? `<div class="cmt-deadline">⏰ ${dl}</div>` : ''}
               <div class="cmt-badges">
                 ${confidenceBadge(c.confidence)}
@@ -2842,8 +2843,9 @@
               </div>
               <div class="cmt-actions">
                 ${['Delivered','Missed','Extend','Cancelled'].map(s =>
-                  `<button class="cmt-btn" data-cmt-id="${c.id}" data-cmt-status="${s}"
-                    onclick="window.__cmtUpdateStatus('${c.id}','${notePath}','${s}')"
+                  `<button class="cmt-btn cmt-action-btn"
+                    data-cmt-id="${esc(c.id)}" data-cmt-path="${esc(notePath)}" data-cmt-status="${s}"
+                    onclick="window.__cmtUpdateStatus(this.dataset.cmtId,this.dataset.cmtPath,this.dataset.cmtStatus)"
                     title="Copy Claude prompt to update status to ${s}">${s}</button>`
                 ).join('')}
               </div>
