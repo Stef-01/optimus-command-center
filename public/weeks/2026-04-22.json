@@ -503,7 +503,9 @@
           "machine learning",
           "NOURISH",
           "personalised nutrition"
-        ]
+        ],
+        "subtitle": "South Asian populations are invisible in CGM AI — this fixes the dataset gap",
+        "claudePrompt": "Build a CGM South Asian Prediction Engine. Context: Existing glucose prediction models use predominantly Caucasian CGM datasets. Stefan has NOURISH CGM cohort data with South Asian participants and access to FlavorDB for spice-based glycemic crosswalk. Task: Build a TensorFlow LSTM prototype trained on NOURISH CGM CSV export, augmented with FlavorDB South Asian spice compound data, predicting postprandial glucose response to South Asian meal patterns. Start with 5 common dishes and their CGM response curves. Output: model architecture, data pipeline plan, and a validation metric framework."
       },
       {
         "id": "pfme-curriculum-ai-designer",
@@ -526,7 +528,9 @@
           "curriculum design",
           "CGM outcomes",
           "behavioral change"
-        ]
+        ],
+        "subtitle": "Turns 18-month curriculum committees into a single AI-accelerated sprint",
+        "claudePrompt": "Build a PFME Curriculum AI Designer proof-of-concept. Context: Stefan is involved in the PFME (Pharmacogenomics-Focused Medical Education) program. Medical curriculum design is slow and committee-driven. Task: Use Claude Sonnet to design a module outline for a pharmacogenomics curriculum unit, aligned to Bloom taxonomy levels, with behavioral outcome mapping. Input: PFME learning objectives. Output: a structured module outline with LO-to-assessment mappings, estimated contact hours, and flagged gaps. Format as a table + narrative for an accreditation committee."
       },
       {
         "id": "nepal-moh-nutrition-field-app",
@@ -549,7 +553,9 @@
           "community health workers",
           "offline-first",
           "MoH partnership"
-        ]
+        ],
+        "subtitle": "Nepal has evidence-based nutrition guidelines but zero field-ready digital tools",
+        "claudePrompt": "Build a Nepal MoH Nutrition Field App wireframe and data model. Context: Nepal Ministry of Health has FANTA-3 and WHO-aligned nutrition guidelines for Female Community Health Volunteers (FCHVs) with limited smartphone access. Task: Design an offline-first Progressive Web App for FCHVs without internet. Use Claude Haiku for lightweight on-device triage. Deliverables: (1) data model for 5 key nutrition assessment fields, (2) PWA service worker architecture for offline-first sync, (3) a 3-screen wireframe: assessment, recommendation, referral. Target under 50KB asset budget."
       },
       {
         "id": "grant-rejection-predictor",
@@ -572,7 +578,9 @@
           "AI tooling",
           "review process",
           "funding strategy"
-        ]
+        ],
+        "subtitle": "Reads your LOI like a reviewer and flags the patterns that get rejected",
+        "claudePrompt": "Build a Grant Rejection Risk Predictor prototype. Context: Stefan submits multiple grant LOIs per month. Rejection patterns are consistent — reviewers reject mismatched framing, weak aims, and unclear innovation claims. Task: Use Claude Sonnet to analyze an LOI draft against a rubric derived from NIH reviewer guidelines. Input: paste an LOI draft. Output: (1) risk score 0-100 per section (Significance, Innovation, Approach, Investigators, Environment), (2) sentences flagged as reviewer-risk phrases, (3) suggested rewrites for top 3 risky sentences. Format as an actionable audit report."
       },
       {
         "id": "indian-spice-glycemic-atlas",
@@ -596,7 +604,9 @@
           "FlavorDB",
           "CGM",
           "publication"
-        ]
+        ],
+        "subtitle": "The glycemic index database has under 80 Indian spice combinations — this fills the gap",
+        "claudePrompt": "Build an Indian Spice Glycemic Atlas data pipeline. Context: The standard GI database covers fewer than 80 Indian spice-food combinations. Stefan has access to FlavorDB API and the NOURISH CGM dataset. Task: (1) Pull the top 50 most common Indian spice compounds from FlavorDB, (2) cross-reference with existing GI literature via PubMed search, (3) flag gaps where no GI data exists, (4) propose 5 CGM study protocols to fill the highest-impact gaps. Output: a gap matrix and ranked list of spice combinations to study, formatted for the NOURISH research team."
       },
       {
         "id": "apollo-india-e-referral-pilot",
@@ -619,7 +629,9 @@
           "Dr. Mahari",
           "chronic disease",
           "clinical workflow"
-        ]
+        ],
+        "subtitle": "Apollo nutrition referrals happen verbally and disappear — this creates the paper trail",
+        "claudePrompt": "Design an Apollo India e-Referral Pilot system. Context: Stefan observed during his Apollo India rotation that nutrition referrals from treating physicians are verbal and frequently lost. Task: Design a lightweight HL7 FHIR-lite referral schema for nutrition cases at Apollo. Deliverables: (1) minimal FHIR referral resource schema with 5 required fields, (2) Claude Sonnet referral parser that extracts structured data from discharge summaries, (3) SMS follow-up template for patients in English and Telugu, (4) a 1-page pilot proposal for the Apollo nutrition department chief."
       },
       {
         "id": "osce-nutrition-simulation",
@@ -642,7 +654,9 @@
           "nutrition assessment",
           "clinical simulation",
           "HPI framework"
-        ]
+        ],
+        "subtitle": "Med schools test nutrition on paper — the real clinical skill is the patient interview",
+        "claudePrompt": "Build an OSCE Nutritional History Simulator. Context: Medical schools assess nutrition via MCQs but the clinical skill is taking a structured nutritional history. Stefan has OSCE marking rubrics and clinical nutrition interview frameworks. Task: Build a Claude Sonnet roleplay simulator where a medical student interviews a simulated patient with a nutrition complaint. The simulator should: (1) play the patient role with consistent history, (2) mark the student on HPI Nutrition Builder criteria, (3) give formative feedback after the interview. Deliver as a working Claude conversation template with a sample patient case."
       },
       {
         "id": "sous-flavor-bridge",
@@ -665,7 +679,9 @@
           "FlavorDB",
           "cooking app",
           "culinary AI"
-        ]
+        ],
+        "subtitle": "When a recipe fails mid-cook, Sous finds what to add from what you actually have",
+        "claudePrompt": "Build the Sous Flavor Bridge Engine feature. Context: The Sous app helps users cook. The highest-friction moment is mid-recipe substitution when an ingredient is missing or a flavor is off. Task: Build a Claude Sonnet-powered flavor reasoning module that takes: (1) the current dish state with ingredients used so far, (2) the target flavor profile, (3) available pantry items. The engine queries FlavorDB for molecular pairing compatibility and returns the top 3 substitution options ranked by flavor compatibility score with a 1-sentence explanation each. Integrate into Sous recipe flow as a substitution action."
       },
       {
         "id": "nutrition-ai-bias-audit",
@@ -688,7 +704,9 @@
           "nutrition research",
           "South Asian health",
           "PLOS"
-        ]
+        ],
+        "subtitle": "Every nutrition AI claims cultural inclusivity — the training data tells a different story",
+        "claudePrompt": "Write a Nutrition AI Bias Audit paper outline. Context: Nutrition AI tools use food databases dominated by US/European foods yet are marketed as culturally inclusive. Task: Design a systematic audit methodology using: (1) NHANES food frequency data as demographic baseline, (2) NOURISH cohort food logs as South Asian/diverse comparison, (3) Claude Sonnet systematic review of 10 major nutrition apps. Deliverables: (1) 400-word abstract in JMIR format, (2) audit rubric with 5 bias dimensions, (3) figure concept showing demographic coverage gaps. Target journal: JMIR mHealth and uHealth."
       },
       {
         "id": "clinical-commitment-tracker",
@@ -711,7 +729,9 @@
           "commitment tracking",
           "Airtable",
           "ward rounds"
-        ]
+        ],
+        "subtitle": "Verbal ward round commitments evaporate — OMI can catch them before they do",
+        "claudePrompt": "Build a Clinical Commitment Tracker prototype. Context: Stefan uses OMI to record clinical conversations. During ward rounds and MDT meetings, doctors make verbal commitments that are rarely tracked. Task: Build a pipeline that: (1) takes an OMI transcript, (2) uses Claude Sonnet to extract commitment patterns (I will X by Y for Z), (3) creates structured tasks in Airtable with deadline and person fields. Deliver: a Claude prompt template that processes a raw transcript and outputs commitment cards in Airtable-import CSV format. Test on a sample clinical transcript from Stefan OMI data."
       },
       {
         "id": "nourish-participant-report-generator",
@@ -734,7 +754,9 @@
           "participant engagement",
           "PDF generation",
           "research operations"
-        ]
+        ],
+        "subtitle": "Research participants give 6 months of data and get a thank-you email — this changes that",
+        "claudePrompt": "Build a NOURISH Participant Health Report generator. Context: The NOURISH study collects 6 months of CGM and food log data per participant with no personal feedback returned. Task: Build a PDF report generator that takes a participant CGM CSV export and: (1) computes 3 key glucose metrics: TIR, GMI, and peak response, (2) uses Claude Sonnet to generate plain-language explanations, (3) includes a chart of foods that spiked glucose, (4) formats as a 2-page participant-facing PDF using ReportLab. The tone should be warm and non-clinical. Deliver the Python script and a sample PDF for one anonymized participant."
       },
       {
         "id": "hackathon-loi-accelerator",
@@ -757,7 +779,9 @@
           "hospital partnerships",
           "grant writing",
           "Harvard win"
-        ]
+        ],
+        "subtitle": "Hackathons award trophies — the real ROI is the hospital letter of intent, ready in 2 hours",
+        "claudePrompt": "Build a Hackathon LOI Accelerator Kit. Context: Stefan team won the Harvard Clinical AI Hackathon. The next step is converting the win into signed hospital Letters of Intent from Western Sydney Local Health District and other interested parties. Task: Create a 5-template LOI library covering: research hospital, community clinic, MoH partnership, startup pilot, and academic collaboration. Each template should: (1) be under 1 page, (2) reference the hackathon context, (3) include a Claude Sonnet fill-in prompt that generates a customized LOI from 5 input fields. Deliver as a Word-compatible doc with embedded fill instructions."
       }
     ]
   },
