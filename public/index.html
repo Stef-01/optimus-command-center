@@ -2892,16 +2892,18 @@
 
         document.getElementById('nextScanTime').textContent = `Next scan: ${data.nextScan}`;
 
-        // Data Sources
-        const sourcesHTML = data.dataSources.map(src => `
-          <tr>
-            <td><strong>${src.name}</strong></td>
-            <td>${src.signal}</td>
-            <td style="font-size: 12px; color: var(--text-secondary);">${src.desc}</td>
-            <td><span class="badge badge-status">● ${src.status.toUpperCase()}</span></td>
-          </tr>
-        `).join('');
-        document.getElementById('dataSourcesTable').innerHTML = sourcesHTML;
+        // Data Sources (handles both string[] and object[] formats)
+        const sourcesHTML = (data.dataSources || []).map(src => typeof src === 'string'
+          ? `<tr><td colspan="4" style="color:var(--text-secondary);font-size:13px">${src}</td></tr>`
+          : `<tr>
+              <td><strong>${src.name || ''}</strong></td>
+              <td>${src.signal || ''}</td>
+              <td style="font-size: 12px; color: var(--text-secondary);">${src.desc || ''}</td>
+              <td><span class="badge badge-status">● ${(src.status || 'active').toUpperCase()}</span></td>
+            </tr>`
+        ).join('');
+        const dsTable = document.getElementById('dataSourcesTable');
+        if (dsTable) dsTable.innerHTML = sourcesHTML;
 
         // Candidates — with dismiss system
         const showDismSkills = this.showDismissed.skills;

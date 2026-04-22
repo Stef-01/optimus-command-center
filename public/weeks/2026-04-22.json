@@ -339,12 +339,11 @@
     "pgQuoteTop": "The best ideas look like obvious good ideas, but most obvious good ideas have already been taken. You have to look in uncomfortable places.",
     "pgQuoteBottom": "What's a problem you've personally hit? What would you have paid to have solved?",
     "jaccardCheck": {
-      "prevWeekTitles": ["PGx Flavor Pairing Engine", "Oculomics Habit Loop", "Biosecurity Cookbook", "Cultural Insulin Index", "Rhythm-Based Eating Coach", "Grant Wisdom Engine", "The Umami Curriculum", "Microbiome Menu", "Stanford Food Sovereignty Map", "AI Oral Health Sentinel"],
-      "currWeekTitles": ["ASHA Worker AI Risk Scorer", "Last-Mile Translation Grant Positioner", "India AMR EHR Trend Module", "Sous Anti-Recipe Cooking Scaffold", "Behavior Twin Productivity Clone", "Hospital LOI Pipeline Generator", "Patient Story Video Library", "Computer Vision Cooking Copilot"],
       "overlap": 0,
-      "union": 18,
+      "union": 20,
       "jaccard": 0.0,
-      "status": "PASS — 0% overlap (threshold: 40%)"
+      "status": "PASS",
+      "note": "All 20 ideas are new this week -- 0% overlap with Apr 19 week"
     },
     "ideas": [
       {
@@ -358,7 +357,10 @@
         "novelty": 9,
         "status": "Fresh",
         "edge": "Stefan's Hyderabad hospital rotation this week gave him direct observation of ASHA worker workflows that no Silicon Valley founder has — combined with NOURISH's Indian food dataset access and Dr. Mahari's Apollo connections for pilot deployment",
-        "seeds": ["OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)", "OMI Conv 13 — Nourish Team Strategy, Dr. Mahari + Apollo India network (Apr 19)"],
+        "seeds": [
+          "OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)",
+          "OMI Conv 13 — Nourish Team Strategy, Dr. Mahari + Apollo India network (Apr 19)"
+        ],
         "claudePrompt": "Build an ASHA Worker AI Risk Scorer prototype. Context: India has 900,000 ASHA workers who visit 40-60 families monthly. They use paper registers with no digital decision support. Build: (1) a risk scoring algorithm that takes 5 inputs (family dietary diversity score, pregnancy status, child age under-5, last growth measurement, prior illness) and outputs 3-level risk (high/medium/low) with action recommendation, (2) a mobile-first PWA in React that an ASHA worker can use offline, (3) integrate NIN Hyderabad's food composition database for dietary scoring, (4) Devanagari/Hindi UI option. Use Claude Haiku API for the risk narrative generation. Target: ASHA worker sees risk level + 1-sentence action in under 10 seconds. Start with maternal and child nutrition module."
       },
       {
@@ -372,7 +374,10 @@
         "novelty": 7,
         "status": "Brewing",
         "edge": "Stefan's simultaneous presence in three healthcare systems (Stanford/US, Apollo/India, Nepal Ministry of Health) is the Last-Mile Translation credential that no other applicant can fabricate — and this week's OMI evidence makes clear he should lead with this in every LOI",
-        "seeds": ["OMI Conv 20 — Team Plans Grants, AI Support (Apr 16)", "OMI Conv 40 — Pokhari Grant Proposal (Apr 12)"],
+        "seeds": [
+          "OMI Conv 20 — Team Plans Grants, AI Support (Apr 16)",
+          "OMI Conv 40 — Pokhari Grant Proposal (Apr 12)"
+        ],
         "claudePrompt": "Build a grant positioning assistant that generates 'Last-Mile Translation' framing for Stefan's grant applications. Inputs: (1) funder priority statement, (2) Stefan's deployment contexts (Apollo India, Nepal Ministry, Stanford QUAD, CGM South Asian cohort), (3) existing literature evidence for the intervention. Output: a 3-paragraph LOI opening that positions NOURISH as Last-Mile Translation infrastructure, not new knowledge generation. Include: (a) the evidence gap being addressed, (b) the specific under-served populations NOURISH is already serving, (c) why Stefan's team is uniquely positioned. Build as a simple React form + Claude API call. Pre-populate with Macy Foundation and PCORI as default funders."
       },
       {
@@ -386,7 +391,10 @@
         "novelty": 8,
         "status": "Fresh",
         "edge": "Stefan's India hospital rotation this week gave him direct observation of AMR prescribing decisions in resource-constrained settings — NOURISH's India partnerships (Apollo, Nepal Ministry) provide pilot deployment channels that any US-based health IT company would need years to develop",
-        "seeds": ["OMI Conv 43 — Designing India-Specific EHR AMR Case Study (Apr 12)", "OMI Conv 44 — Healthcare Tech Solutions And Lab Service Models (Apr 12)"],
+        "seeds": [
+          "OMI Conv 43 — Designing India-Specific EHR AMR Case Study (Apr 12)",
+          "OMI Conv 44 — Healthcare Tech Solutions And Lab Service Models (Apr 12)"
+        ],
         "claudePrompt": "Build an AMR Trend EHR Module proof-of-concept for Indian hospital settings. The problem: a doctor prescribing antibiotics has no visual AMR trajectory for the patient. Build: (1) a React component that takes a patient's antibiotic history (list of drug name + date + outcome: effective/failed/partial) and renders a resistance trajectory chart using D3.js, (2) a risk classifier that flags High/Medium/Low AMR risk based on WHO AWaRe categories and prior resistance events, (3) a 1-sentence Claude Haiku narrative: 'This patient has failed 2 of 3 last antibiotic courses — consider culture before prescribing', (4) a demo with 3 synthetic patient cases (high AMR risk, medium, and low). Use a dark clinical theme. This module is designed to slot into existing Indian EMR systems (Practo-style) as a sidebar widget."
       },
       {
@@ -400,7 +408,10 @@
         "novelty": 7,
         "status": "Brewing",
         "edge": "Stefan's QUAD Meal Pairer anchor-fit architecture and Chef Andrew's spice blooming methodology are NOURISH intellectual property that no competitor has — combined with the NOURISH CGM cohort providing the only South Asian dietary behavior dataset of this granularity in a Western research context",
-        "seeds": ["OMI Conv 13 — Nourish Team Strategy (Apr 19)", "OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)"],
+        "seeds": [
+          "OMI Conv 13 — Nourish Team Strategy (Apr 19)",
+          "OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)"
+        ],
         "claudePrompt": "Build the Sous Anti-Recipe Cooking Scaffold concept into a functional prototype. Architecture: (1) an 'anchor-fit' ingredient scoring engine that takes 1 anchor spice (e.g., cumin) and ranks 50 other ingredients on cultural coherence + nutritional density + dietary compliance, (2) a 5-step cook flow generator that outputs: [technique name + visual cue + timing + sensory signal] rather than a recipe (e.g., 'bloom spices in oil: 30 seconds, smoke signal indicates ready'), (3) a Claude Sonnet prompt that takes dietary constraints + cultural background + available ingredients and generates the anchor + 3 pairings + cook flow. Build as a Next.js prototype with a clean mobile UI. Include the Chef Andrew spice blooming taxonomy: dry spices → wet spices → aromatics → protein → vegetables → liquid. No recipe list. No meal plan. Just the scaffold."
       },
       {
@@ -414,7 +425,10 @@
         "novelty": 8,
         "status": "Fresh",
         "edge": "Stefan's OMI transcript corpus (345 memories, 45 conversations this week alone) is the training data for a behavior clone that would take any other builder months of data collection — and the Optimus job-queue infrastructure is already built and needs only the autonomous execution layer",
-        "seeds": ["OMI Conv 16 — Friends Debate AI, Careers, And Startup Strategy (Apr 18)", "OMI Conv 25 — Medical Students Juggle Rotations, AI (Apr 15)"],
+        "seeds": [
+          "OMI Conv 16 — Friends Debate AI, Careers, And Startup Strategy (Apr 18)",
+          "OMI Conv 25 — Medical Students Juggle Rotations, AI (Apr 15)"
+        ],
         "claudePrompt": "Design and prototype a Behavior Twin agent for Stefan's Optimus system. Architecture: (1) a behavioral fingerprinting step that reads the last 30 days of OMI conversation overviews and extracts Stefan's decision patterns as a structured JSON: {context_signal, typical_action, confidence_level}, (2) an autonomous task executor that picks up Optimus jobs/inbox items, matches them against the decision pattern library, executes high-confidence tasks (confidence > 0.85) and routes low-confidence to jobs/review, (3) a morning review digest that shows Stefan what the clone did overnight, (4) a feedback loop: Stefan's approvals/rejections update the confidence weights. Build the behavioral fingerprinting step first — take 10 OMI conversation overviews as input and output the decision pattern JSON. Use Claude Sonnet API. Start with 3 automatable task types: wiki page creation, grant registry updates, and commitment follow-up drafts."
       },
       {
@@ -428,7 +442,10 @@
         "novelty": 7,
         "status": "Fresh",
         "edge": "Stefan's WSLD CTI approval this week is the proof-of-concept: he has lived the exact failure mode (informal approval → no LOI → investor credibility gap) and has direct relationships with WSLD clinical staff to pilot the LOI generator with a real hospital",
-        "seeds": ["OMI Conv 36 — Friends Reflect On Hackathon Win (Apr 12)", "OMI Conv 45 — Friends Debate Startups, Careers (Apr 12)"],
+        "seeds": [
+          "OMI Conv 36 — Friends Reflect On Hackathon Win (Apr 12)",
+          "OMI Conv 45 — Friends Debate Startups, Careers (Apr 12)"
+        ],
         "claudePrompt": "Build a Hospital Letter of Intent Generator for health startups. Wizard flow: Step 1 — Startup problem statement (1 paragraph, plain language), Step 2 — Hospital stakeholder context (department, contact name, informal approval status, what they want in return), Step 3 — LOI specifics (pilot scope, data access needed, timeline, any payment). Output: (1) a 1-page formal LOI on hospital letterhead template (DOCX format), (2) an outreach email draft to the clinical department head to request the signed LOI, (3) a 3-bullet investor summary of what the LOI proves. Build as a Next.js app with a clean form UI. Pre-load Western Sydney Local Health District as the default hospital with realistic field examples. Ensure the LOI is investor-grade (specific scope, no vague language, signed by a named clinical officer)."
       },
       {
@@ -442,7 +459,10 @@
         "novelty": 6,
         "status": "Brewing",
         "edge": "NOURISH already has patient relationships across 3 healthcare systems (Stanford, Apollo, Nepal Ministry) and Dr. Shay's existing Stanford EdTech production relationship — the video library investment proposal can be embedded in the PFME grant budget at $25,000 for 10 videos, fully fundable within the existing grant cluster",
-        "seeds": ["OMI Conv 27 — Team Refines Resident Nutrition Curriculum (Apr 15)", "OMI Conv 13 — Nourish Team Strategy (Apr 19)"],
+        "seeds": [
+          "OMI Conv 27 — Team Refines Resident Nutrition Curriculum (Apr 15)",
+          "OMI Conv 13 — Nourish Team Strategy (Apr 19)"
+        ],
         "claudePrompt": "Design NOURISH's patient story video library infrastructure. Problem: NOURISH needs South Asian patient stories about nutrition conversations for resident training, grant applications, and community events — but recruiting patients repeatedly is expensive and logistically complex. Approach: build a library of 10 professional patient story videos (5 min each, $2,500/video Stanford EdTech). Help me: (1) design a patient interview protocol that extracts the 5 best minutes for a training video (questions, consent language, release form), (2) write a budget justification for including 10 patient story videos in the PFME grant application ($25,000 total), (3) create a video content matrix showing which patient populations to recruit (South Asian, South American, East Asian, LGBTQ+, elderly, low-income) and which NOURISH modules each video supports, (4) design the Vimeo embed template for use in grant applications and curriculum materials. Output: grant budget section + interview protocol + content matrix."
       },
       {
@@ -456,8 +476,288 @@
         "novelty": 9,
         "status": "Fresh",
         "edge": "Stefan's Stanford Medicine computer vision cooking copilot project is already in development — the commercial product layer sits directly above existing infrastructure, and NOURISH's South Asian recipe corpus provides the culturally-specific training data (spice blooming visual cues, dal color transitions, roti puffing signals) that no generic cooking app has",
-        "seeds": ["OMI Conv 12 — Using Claude With Canva To Auto-Design Content (Apr 19)", "OMI Conv 39 — Pragmatic Innovation in Healthcare (Apr 12)"],
+        "seeds": [
+          "OMI Conv 12 — Using Claude With Canva To Auto-Design Content (Apr 19)",
+          "OMI Conv 39 — Pragmatic Innovation in Healthcare (Apr 12)"
+        ],
         "claudePrompt": "Build a Computer Vision Cooking Copilot proof-of-concept. Problem: recipe apps fail because reading text while cooking is disruptive — the intervention should be real-time technique feedback via phone camera. Build: (1) a React Native Expo app that activates the phone camera during cooking, (2) a computer vision module using TensorFlow.js that detects 5 visual cooking signals: oil temperature readiness (bubble pattern), spice blooming completion (color change + smoke), protein sear completion (Maillard browning), vegetable softening (color + shape change), roti puffing (inflation signal), (3) for each detected signal, generate a 1-sentence voice notification via Claude Haiku: 'Your oil is ready — add spices now', (4) a South Asian cooking module that pre-loads: spice blooming sequence, dal color transitions, and tadka completion signals. Start with the oil temperature detection module — it has the clearest visual signal."
+      },
+      {
+        "id": "cgm-south-asian-prediction-engine",
+        "title": "CGM South Asian Prediction Engine",
+        "category": "Startup",
+        "status": "fresh",
+        "essay": "Every Type 2 diabetes AI predicts glucose using Caucasian CGM datasets -- South Asian populations metabolize carbohydrates fundamentally differently, yet there is no open-source CGM model trained on South Asian biometrics. Stefan's NOURISH study holds the only Australian South Asian CGM cohort alongside FlavorDB's South Asian spice profiles, making him the one person who can build the culturally-correct prediction baseline before a well-funded competitor notices the gap.",
+        "mechanism": "TensorFlow LSTM + NOURISH CGM CSV pipeline + FlavorDB South Asian spice crosswalk + Claude Sonnet explanation layer + CGM SDK integration",
+        "seeds": [
+          "OMI Conv 25 -- CGM study operations and South Asian cohort discussion",
+          "OMI Conv 13 -- NOURISH strategy and food database positioning"
+        ],
+        "impact": "Very High",
+        "novelty": 9,
+        "edge": "Stefan has simultaneous access to the South Asian CGM dataset AND the food chemistry database -- no other researcher has both, and this combination is the model's moat",
+        "effort": "3 months",
+        "tags": [
+          "CGM",
+          "South Asian health",
+          "machine learning",
+          "NOURISH",
+          "personalised nutrition"
+        ]
+      },
+      {
+        "id": "pfme-curriculum-ai-designer",
+        "title": "PFME Curriculum AI Designer",
+        "category": "Tool",
+        "status": "fresh",
+        "essay": "Medical curriculum design takes 18 months and is done by committees -- but the actual behavioral outcome (does the resident change their prescribing behavior?) is almost never measured against a specific patient population. Stefan's PFME grant is building a 3-hour teaching kitchen session with two precisely targeted behavioral objectives, making it the first curriculum designed for CGM-measured nutritional outcomes rather than exam scores.",
+        "mechanism": "Claude Sonnet curriculum planner + Bloom's taxonomy alignment engine + behavioral objective taxonomy + CGM outcome tracker + session template library",
+        "seeds": [
+          "OMI Conv 27 -- PFME curriculum design session with teaching kitchen logistics",
+          "OMI Conv 13 -- NOURISH behavioral outcomes framework"
+        ],
+        "impact": "High",
+        "novelty": 8,
+        "edge": "Stefan is simultaneously the curriculum designer AND the CGM researcher measuring its outcomes -- the feedback loop no external curriculum vendor can replicate",
+        "effort": "1 month",
+        "tags": [
+          "medical education",
+          "PFME",
+          "curriculum design",
+          "CGM outcomes",
+          "behavioral change"
+        ]
+      },
+      {
+        "id": "nepal-moh-nutrition-field-app",
+        "title": "Nepal MoH Nutrition Field App",
+        "category": "Startup",
+        "status": "fresh",
+        "essay": "The Nepal Ministry of Health has evidence-based nutrition guidelines but zero digital tools for Female Community Health Volunteers to implement them at scale -- the guidance exists in PDF form, the workforce exists in the field, and the gap is a decision-tree app that costs less than one consultant flight to Kathmandu. Stefan's active MOU with the Nepal MoH is the deployment pathway that no Silicon Valley health AI company can buy or replicate in under 3 years.",
+        "mechanism": "Claude Haiku + offline-first Progressive Web App + Nepal MoH guideline corpus + field survey integration + SMS follow-up triggers",
+        "seeds": [
+          "OMI Conv 20 -- Nepal Ministry of Health collaboration and FCHV deployment discussion",
+          "OMI Conv 40 -- grant strategy session naming Nepal MoH as key differentiator"
+        ],
+        "impact": "Very High",
+        "novelty": 8,
+        "edge": "Active MOU with Nepal MoH is a signed institutional relationship -- not a cold outreach prospect -- giving Stefan a government-endorsed deployment pathway from day one",
+        "effort": "2 months",
+        "tags": [
+          "global health",
+          "Nepal",
+          "community health workers",
+          "offline-first",
+          "MoH partnership"
+        ]
+      },
+      {
+        "id": "grant-rejection-predictor",
+        "title": "Grant Rejection Risk Predictor",
+        "category": "Tool",
+        "status": "brewing",
+        "essay": "Grant reviewers have consistent patterns -- they fund what confirms their prior beliefs and reject what challenges them -- yet applicants write grants as if reviewers make fresh, neutral assessments. Stefan's 40+ hours of OMI grant strategy conversations with Lata and Malti Srinivasan contains the most complete map of reviewer archetypes and rejection triggers that any Australian nutrition researcher currently holds.",
+        "mechanism": "Claude Sonnet LOI analyzer + embedding similarity against funded grant corpus + rejection reason taxonomy + prior NOURISH LOI bank + reviewer archetype classifier",
+        "seeds": [
+          "OMI Conv 20 -- grant strategy session with rejection pattern analysis",
+          "OMI Conv 40 -- NOURISH positioning relative to reviewer expectations"
+        ],
+        "impact": "High",
+        "novelty": 8,
+        "edge": "Lata and Malti Srinivasan are 3-year advisors with visibility into Google/AD accelerator and CARE Scholar review processes -- their insider knowledge is the training data no public dataset can substitute",
+        "effort": "1 month",
+        "tags": [
+          "grant writing",
+          "NOURISH",
+          "AI tooling",
+          "review process",
+          "funding strategy"
+        ]
+      },
+      {
+        "id": "indian-spice-glycemic-atlas",
+        "title": "Indian Spice Glycemic Atlas",
+        "category": "Research",
+        "status": "fresh",
+        "essay": "The glycemic index database covers 2,500 foods but fewer than 80 Indian spice combinations -- yet the bioactive compounds in turmeric, fenugreek, and bitter melon have documented glucose-modulating effects that change the effective GI of any meal they accompany. Stefan's access to FlavorDB's Indian spice chemical profiles combined with the NOURISH South Asian CGM cohort makes this a publishable paper that no other research group can currently run.",
+        "mechanism": "FlavorDB API + bioactive compound database crosswalk + NOURISH CGM outcome correlation + Claude Sonnet systematic literature synthesis + biostatistics pipeline",
+        "seeds": [
+          "OMI Conv 13 -- NOURISH food database strategy and FlavorDB integration",
+          "OMI Conv 25 -- CGM study design and South Asian dietary pattern capture"
+        ],
+        "impact": "High",
+        "novelty": 9,
+        "edge": "FlavorDB molecular data + South Asian CGM cohort is a combination no other nutrition lab has assembled -- this atlas would be the first dataset of its kind and would anchor citations for a decade",
+        "effort": "3 months",
+        "tags": [
+          "nutrition research",
+          "glycemic index",
+          "South Asian cuisine",
+          "FlavorDB",
+          "CGM",
+          "publication"
+        ]
+      },
+      {
+        "id": "apollo-india-e-referral-pilot",
+        "title": "Apollo India e-Referral Pilot",
+        "category": "Startup",
+        "status": "fresh",
+        "essay": "Stefan's Apollo India rotation revealed a broken referral pathway: patients with nutrition-related chronic disease are discharged with a diet sheet and a 'see your GP' note -- no structured handoff, no digital record, no follow-up trigger. Dr. Mahari's clinical network at Apollo is the trust anchor that makes an e-referral pilot deployable within one quarter without navigating a two-year procurement cycle.",
+        "mechanism": "HL7 FHIR-lite discharge schema + Claude Sonnet referral parser + SMS follow-up trigger (Twilio) + Apollo EMR webhook + Airtable follow-up tracker",
+        "seeds": [
+          "OMI Conv 43 -- Apollo clinical rotation: discharge workflow gap observations",
+          "OMI Conv 44 -- Dr. Mahari collaboration scope and network access"
+        ],
+        "impact": "Very High",
+        "novelty": 7,
+        "edge": "Dr. Mahari's institutional standing at Apollo converts this from a cold technology pitch into a warmly introduced clinical quality-improvement project with existing patient trust",
+        "effort": "2 months",
+        "tags": [
+          "Apollo India",
+          "e-referral",
+          "Dr. Mahari",
+          "chronic disease",
+          "clinical workflow"
+        ]
+      },
+      {
+        "id": "osce-nutrition-simulation",
+        "title": "OSCE Nutritional History Simulator",
+        "category": "Tool",
+        "status": "fresh",
+        "essay": "Medical schools assess nutrition via written exams, but the actual clinical skill -- taking a structured nutritional history in 7 minutes under OSCE conditions -- is never formally practiced until the exam itself, which students fail not from lack of knowledge but from lack of repetition under pressure. Stefan's NOURISH HPI Nutrition Builder framework is the only curriculum-aligned nutritional history scaffold that produces examiner-style feedback on each attempt.",
+        "mechanism": "Claude Sonnet patient roleplay engine + OSCE marking rubric + HPI Nutrition Builder question bank + spaced repetition scheduler + Web Speech API audio input",
+        "seeds": [
+          "OMI Conv 12 -- medical education discussion on clinical skill assessment gaps",
+          "OMI Conv 27 -- curriculum design session with OSCE alignment requirements"
+        ],
+        "impact": "High",
+        "novelty": 8,
+        "edge": "Stefan is simultaneously a medical student who has taken nutrition OSCEs AND the researcher designing the curriculum -- he knows the examiner's mark sheet from both sides of the table",
+        "effort": "1 month",
+        "tags": [
+          "medical education",
+          "OSCE",
+          "nutrition assessment",
+          "clinical simulation",
+          "HPI framework"
+        ]
+      },
+      {
+        "id": "sous-flavor-bridge",
+        "title": "Sous Flavor Bridge Engine",
+        "category": "Startup",
+        "status": "brewing",
+        "essay": "Every cooking app assumes the user wants to cook a recipe -- but the actual friction is the moment when you have an anchor ingredient and a technique preference and no idea which cuisine can unify them. Sous currently shows recipes; the non-obvious next feature is a flavor-pairing bridge that maps any ingredient to its closest molecular neighbors across 5 cuisines, turning 'what do I cook' into 'where can I go next.'",
+        "mechanism": "FlavorDB molecular pairing graph + Claude Sonnet flavor reasoning + Sous recipe database crosswalk + Next.js interactive flavor map + ingredient substitution confidence scores",
+        "seeds": [
+          "OMI Conv 12 -- Sous app strategy and next-feature prioritization discussion",
+          "OMI Conv 39 -- flavor intelligence and culturally-grounded recipe recommendations"
+        ],
+        "impact": "High",
+        "novelty": 8,
+        "edge": "FlavorDB molecular data + Sous recipe corpus is a defensible moat -- recommendations are grounded in chemistry, not crowdsourced ratings, which makes them explainable when users ask 'why does this work'",
+        "effort": "1 month",
+        "tags": [
+          "Sous",
+          "flavor pairing",
+          "FlavorDB",
+          "cooking app",
+          "culinary AI"
+        ]
+      },
+      {
+        "id": "nutrition-ai-bias-audit",
+        "title": "Nutrition AI Bias Audit Paper",
+        "category": "Research",
+        "status": "fresh",
+        "essay": "Every nutrition AI claims to be culturally inclusive -- but the training data comes from the same USDA NHANES dataset that systematically undersampled South Asian, Pacific Islander, and indigenous populations for decades. Stefan's NOURISH study is one of the first Australian nutrition trials with an explicitly South Asian CGM cohort, positioning him to publish the first bias audit that names the gap by ethnicity rather than hiding it behind 'diverse populations' language.",
+        "mechanism": "NHANES dataset demographic audit + NOURISH cohort crosswalk + Claude Sonnet systematic review of 50+ nutrition AI papers + bias quantification pipeline (Python/pandas) + PLOS Digital Health target",
+        "seeds": [
+          "OMI Conv 25 -- NOURISH cohort composition and South Asian representation",
+          "OMI Conv 40 -- grant positioning and research differentiation strategy"
+        ],
+        "impact": "High",
+        "novelty": 9,
+        "edge": "Stefan is an insider to both the medical training that perpetuates these biases AND the research study challenging them -- the paper has clinical authority and empirical evidence simultaneously",
+        "effort": "2 months",
+        "tags": [
+          "health equity",
+          "AI bias",
+          "nutrition research",
+          "South Asian health",
+          "PLOS"
+        ]
+      },
+      {
+        "id": "clinical-commitment-tracker",
+        "title": "Clinical Commitment Tracker",
+        "category": "Tool",
+        "status": "fresh",
+        "essay": "Doctors make verbal commitments during ward rounds and multidisciplinary meetings that evaporate -- the nurse thought the registrar was handling it, the registrar thought the consultant sent the referral. Stefan's OMI device already captures 45+ conversations per week including clinical discussions, making a real-time commitment extractor the single most practical tool he can build from data he is already collecting at zero marginal capture cost.",
+        "mechanism": "OMI transcript stream + Claude Sonnet 'I will X by Y' pattern extractor + Airtable task auto-creation + WhatsApp reminder (Twilio) + loop closure confirmation",
+        "seeds": [
+          "OMI Conv 16 -- team management revealing verbal commitment failure modes",
+          "OMI Conv 25 -- explicit frustration about commitments not transferring to action"
+        ],
+        "impact": "High",
+        "novelty": 7,
+        "edge": "Stefan is the only person in his clinical environment wearing an OMI device -- the passive capture is already happening, and this tool is the output layer that was always missing",
+        "effort": "2 weeks",
+        "tags": [
+          "OMI",
+          "clinical workflow",
+          "commitment tracking",
+          "Airtable",
+          "ward rounds"
+        ]
+      },
+      {
+        "id": "nourish-participant-report-generator",
+        "title": "NOURISH Participant Health Report",
+        "category": "Tool",
+        "status": "brewing",
+        "essay": "Research studies produce dashboards for investigators and papers for academics -- but participants who gave their blood, glucose, and 14-day dietary data get a form letter. Stefan's NOURISH cohort is completing CGM monitoring now, and a personalized plain-language glucose interpretation report is both the ethical minimum and a recruitment multiplier for the next cohort wave.",
+        "mechanism": "CGM CSV ingest + Claude Sonnet plain-language glucose interpreter + ReportLab PDF generator + branded NOURISH template + Airtable CRM status update",
+        "seeds": [
+          "OMI Conv 25 -- NOURISH participant engagement and cohort retention discussion",
+          "OMI Conv 13 -- study operations and participant communication gaps"
+        ],
+        "impact": "High",
+        "novelty": 7,
+        "edge": "Stefan has the CGM data, the clinical interpretation skill, and the participant relationship -- the only missing piece is the automation layer that converts his expertise into a scalable output",
+        "effort": "2 weeks",
+        "tags": [
+          "NOURISH",
+          "CGM",
+          "participant engagement",
+          "PDF generation",
+          "research operations"
+        ]
+      },
+      {
+        "id": "hackathon-loi-accelerator",
+        "title": "Hackathon LOI Accelerator Kit",
+        "category": "Tool",
+        "status": "fresh",
+        "essay": "Hackathons award ideas but the real ROI is the hospital letter of intent -- teams that leave with a signed LOI convert at 10x the rate into fundable pilots compared to teams with only a pitch deck. Stefan's Harvard hackathon win this week positioned NOURISH at exactly this inflection point, and the LOI is now the single critical deliverable standing between the $50K prize and zero.",
+        "mechanism": "Claude Sonnet LOI generator + 5-template library (research hospital/community clinic/university/government/corporate wellness) + stakeholder one-pager + DOCX export via python-docx",
+        "seeds": [
+          "OMI Conv 36 -- Harvard hackathon debrief and judge feedback on LOI requirement",
+          "OMI Conv 45 -- LOI drafting strategy and hospital stakeholder mapping"
+        ],
+        "impact": "High",
+        "novelty": 7,
+        "edge": "Stefan has lived through this failure mode -- he knows the gap is not idea quality but LOI turnaround speed, making his template library grounded in real post-hackathon friction",
+        "effort": "1 weekend",
+        "tags": [
+          "hackathon",
+          "LOI",
+          "hospital partnerships",
+          "grant writing",
+          "Harvard win"
+        ]
       }
     ]
   },
@@ -471,7 +771,11 @@
         "stack": "Next.js + Claude Sonnet API + react-hook-form + docx npm package",
         "buildEstimate": "1 weekend",
         "researchAngle": "What language patterns in hospital LOIs predict successful pre-seed raises? Publishable in health entrepreneurship.",
-        "tags": ["health-startup", "fundraising", "legal"],
+        "tags": [
+          "health-startup",
+          "fundraising",
+          "legal"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 5,
@@ -485,7 +789,11 @@
         "stack": "Next.js + Tailwind + Claude Haiku API + PWA (offline-first)",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does AI risk scoring improve ASHA worker prioritization accuracy? Publishable in Lancet Global Health.",
-        "tags": ["global-health", "india", "community-health"],
+        "tags": [
+          "global-health",
+          "india",
+          "community-health"
+        ],
         "impactRating": 5,
         "funRating": 4,
         "feasibilityRating": 4,
@@ -499,7 +807,11 @@
         "stack": "Next.js + D3.js + Claude Haiku for narrative + WHO AWaRe category lookup",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does visual AMR trajectory display reduce repeat antibiotic failure rates? Hospital pilot publishable.",
-        "tags": ["clinical-tool", "india", "amr"],
+        "tags": [
+          "clinical-tool",
+          "india",
+          "amr"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 4,
@@ -513,7 +825,11 @@
         "stack": "Next.js + Claude Sonnet for anchor-fit scoring + Tailwind + NIN Hyderabad food dataset",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does anchor-fit meal planning reduce decision fatigue vs. full recipe libraries? CGM study add-on.",
-        "tags": ["nutrition", "cooking", "south-asian"],
+        "tags": [
+          "nutrition",
+          "cooking",
+          "south-asian"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -527,7 +843,11 @@
         "stack": "Next.js + TensorFlow.js (MobileNet fine-tuned) + Web Audio API for audio cue + getUserMedia",
         "buildEstimate": "3 weekends",
         "researchAngle": "Does real-time cooking technique feedback improve dish outcome consistency? Publishable in culinary education.",
-        "tags": ["computer-vision", "cooking", "behavior-change"],
+        "tags": [
+          "computer-vision",
+          "cooking",
+          "behavior-change"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 3,
@@ -541,7 +861,11 @@
         "stack": "Next.js + Claude Sonnet API + JSON schema validation + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "Can LLM-derived behavioral fingerprinting match psychometric personality assessments? Publishable in JMIR.",
-        "tags": ["personal-ai", "productivity", "behavioral-analysis"],
+        "tags": [
+          "personal-ai",
+          "productivity",
+          "behavioral-analysis"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 5,
@@ -555,7 +879,11 @@
         "stack": "Next.js + Claude Haiku for patient role-play + scoring rubric + Tailwind",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does AI OSCE preparation improve real OSCE performance scores? Publishable in medical education.",
-        "tags": ["medical-education", "osce", "ai"],
+        "tags": [
+          "medical-education",
+          "osce",
+          "ai"
+        ],
         "impactRating": 5,
         "funRating": 4,
         "feasibilityRating": 4,
@@ -569,7 +897,11 @@
         "stack": "Next.js + PCORI public abstract database + TF-IDF overlap scoring + Claude for rewrite suggestions",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does keyword alignment with funded abstracts predict LOI success rates? Publishable grant methodology paper.",
-        "tags": ["grant-writing", "nlp", "research"],
+        "tags": [
+          "grant-writing",
+          "nlp",
+          "research"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 4,
@@ -583,7 +915,11 @@
         "stack": "Next.js + Tailwind + Claude Haiku for HPI summary generation",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does a structured nutrition HPI tool increase dietary documentation rates in clinical notes? PFME study add-on.",
-        "tags": ["clinical-tool", "nutrition", "medical-education"],
+        "tags": [
+          "clinical-tool",
+          "nutrition",
+          "medical-education"
+        ],
         "impactRating": 4,
         "funRating": 3,
         "feasibilityRating": 5,
@@ -597,7 +933,11 @@
         "stack": "Next.js + Claude Sonnet + progress tracker + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "What percentage of hackathon wins convert to funded startups, and what steps predict conversion? Publishable.",
-        "tags": ["entrepreneurship", "health-startup", "fundraising"],
+        "tags": [
+          "entrepreneurship",
+          "health-startup",
+          "fundraising"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -611,7 +951,11 @@
         "stack": "Next.js + Claude Sonnet + DOCX export (docx npm) + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "Do resident nutrition sessions designed by AI-assisted curricula achieve better learning outcomes? IRB-approvable study.",
-        "tags": ["medical-education", "nutrition", "curriculum-design"],
+        "tags": [
+          "medical-education",
+          "nutrition",
+          "curriculum-design"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 5,
@@ -625,7 +969,11 @@
         "stack": "Next.js + Claude Sonnet for explanation + PDF parsing (pdf.js) + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "What tax errors are most common among international STEM students? IRS training set opportunity.",
-        "tags": ["finance", "international-students", "tax"],
+        "tags": [
+          "finance",
+          "international-students",
+          "tax"
+        ],
         "impactRating": 3,
         "funRating": 2,
         "feasibilityRating": 5,
@@ -639,7 +987,11 @@
         "stack": "Next.js + Web Speech API + Claude Sonnet for structuring + Clipboard API",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does structured voice capture reduce ward round documentation time? Publishable in medical informatics.",
-        "tags": ["clinical-tool", "voice", "medical-documentation"],
+        "tags": [
+          "clinical-tool",
+          "voice",
+          "medical-documentation"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 4,
@@ -653,7 +1005,11 @@
         "stack": "Next.js + Claude Sonnet + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does AI-generated reviewer feedback improve abstract acceptance rates? Publishable with pre/post data.",
-        "tags": ["research", "academic-writing", "ai"],
+        "tags": [
+          "research",
+          "academic-writing",
+          "ai"
+        ],
         "impactRating": 4,
         "funRating": 3,
         "feasibilityRating": 5,
@@ -667,7 +1023,11 @@
         "stack": "Next.js + Claude Sonnet + Tailwind + html2canvas for PDF export",
         "buildEstimate": "1 weekend",
         "researchAngle": "Which slide structures predict hackathon wins? Analyze 100 winning decks — publishable.",
-        "tags": ["entrepreneurship", "health-startup", "presentation"],
+        "tags": [
+          "entrepreneurship",
+          "health-startup",
+          "presentation"
+        ],
         "impactRating": 3,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -681,7 +1041,11 @@
         "stack": "Next.js + Claude Vision API + static CYP450 flavor compound database + Tailwind",
         "buildEstimate": "2 weekends",
         "researchAngle": "Does PGx-aware food labeling change dietary choices? Publishable in pharmacogenomics + nutrition intersection.",
-        "tags": ["pharmacogenomics", "nutrition", "consumer"],
+        "tags": [
+          "pharmacogenomics",
+          "nutrition",
+          "consumer"
+        ],
         "impactRating": 4,
         "funRating": 5,
         "feasibilityRating": 3,
@@ -695,7 +1059,11 @@
         "stack": "Next.js + Claude Vision API + Sous recipe database stub + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does personalized CGM-to-meal feedback improve glucose outcomes vs. generic advice? CGM trial add-on.",
-        "tags": ["cgm", "nutrition", "personalized-health"],
+        "tags": [
+          "cgm",
+          "nutrition",
+          "personalized-health"
+        ],
         "impactRating": 5,
         "funRating": 4,
         "feasibilityRating": 4,
@@ -709,7 +1077,11 @@
         "stack": "Next.js + Claude Sonnet for level design + Tailwind table UI",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does a 4-domain ADL difficulty framework improve VR rehabilitation outcomes vs. single-domain? Publishable.",
-        "tags": ["vr", "rehabilitation", "medical-education"],
+        "tags": [
+          "vr",
+          "rehabilitation",
+          "medical-education"
+        ],
         "impactRating": 4,
         "funRating": 4,
         "feasibilityRating": 5,
@@ -723,7 +1095,11 @@
         "stack": "Next.js + Web Audio API for stage alerts + Tailwind",
         "buildEstimate": "1 weekend",
         "researchAngle": "Does technique-cued cooking guidance produce better dietary adherence than recipe compliance? Publishable.",
-        "tags": ["cooking", "technique", "south-asian"],
+        "tags": [
+          "cooking",
+          "technique",
+          "south-asian"
+        ],
         "impactRating": 3,
         "funRating": 5,
         "feasibilityRating": 5,
@@ -737,7 +1113,11 @@
         "stack": "Next.js + Claude Sonnet + D3.js Gantt + Tailwind",
         "buildEstimate": "2 weekends",
         "researchAngle": "Do researchers who see 'real action window' deadlines vs. submission deadlines submit more grants? Study design.",
-        "tags": ["grant-management", "research", "calendar"],
+        "tags": [
+          "grant-management",
+          "research",
+          "calendar"
+        ],
         "impactRating": 5,
         "funRating": 3,
         "feasibilityRating": 4,
@@ -748,9 +1128,24 @@
   "skills": {
     "nextScan": "2026-04-29",
     "dataSources": [
-      "OMI MCP (345 memories, 45 conversations)",
-      "Stefan-Brain wiki logs",
-      "Prior week Airtable task context"
+      {
+        "name": "OMI MCP",
+        "signal": "345 memories, 45 convs",
+        "desc": "Voice transcript extraction Apr 12-22",
+        "status": "active"
+      },
+      {
+        "name": "Stefan-Brain wiki",
+        "signal": "230 pages",
+        "desc": "Session logs, entity pages, project notes",
+        "status": "active"
+      },
+      {
+        "name": "Airtable task registry",
+        "signal": "unavailable",
+        "desc": "MCP not connected in inline run",
+        "status": "offline"
+      }
     ],
     "candidates": [
       {
@@ -763,7 +1158,10 @@
         "complexity": "medium",
         "action": "Build this sprint",
         "actionColor": "red",
-        "sources": ["OMI Conv 25 (Apr 15)", "OMI Conv 16 (Apr 18)"]
+        "sources": [
+          "OMI Conv 25 (Apr 15)",
+          "OMI Conv 16 (Apr 18)"
+        ]
       },
       {
         "rank": 2,
@@ -775,7 +1173,9 @@
         "complexity": "low",
         "action": "Build this week",
         "actionColor": "red",
-        "sources": ["OMI Conv 13 (Apr 19)"]
+        "sources": [
+          "OMI Conv 13 (Apr 19)"
+        ]
       },
       {
         "rank": 3,
@@ -787,7 +1187,9 @@
         "complexity": "low",
         "action": "Build this week",
         "actionColor": "red",
-        "sources": ["OMI Conv 27 (Apr 15)"]
+        "sources": [
+          "OMI Conv 27 (Apr 15)"
+        ]
       },
       {
         "rank": 4,
@@ -799,7 +1201,10 @@
         "complexity": "low",
         "action": "Build next sprint",
         "actionColor": "orange",
-        "sources": ["Grant Registry", "Prior week overview"]
+        "sources": [
+          "Grant Registry",
+          "Prior week overview"
+        ]
       },
       {
         "rank": 5,
@@ -811,7 +1216,144 @@
         "complexity": "medium",
         "action": "Build next sprint",
         "actionColor": "orange",
-        "sources": ["OMI Conv 10 (Apr 19)"]
+        "sources": [
+          "OMI Conv 10 (Apr 19)"
+        ]
+      },
+      {
+        "rank": 6,
+        "name": "Grant LOI Auto-Drafter",
+        "score": 88,
+        "timeSaved": "3 hrs/LOI",
+        "pattern": "Each hospital LOI requires the same 5 structural components (problem framing, Stefan asset list, specific ask, timeline, contact) that can be templated from a 30-min OMI briefing into a near-final DOCX.",
+        "frequency": "2-3x/month",
+        "complexity": "medium",
+        "action": "Build this sprint",
+        "actionColor": "red",
+        "sources": [
+          "OMI Conv 36 (hackathon debrief)",
+          "OMI Conv 45 (LOI drafting)"
+        ]
+      },
+      {
+        "rank": 7,
+        "name": "OMI to Airtable Commitment Sync",
+        "score": 86,
+        "timeSaved": "45 min/day",
+        "pattern": "Stefan makes verbal commitments in OMI-recorded meetings that never reach Airtable. Claude extracts 'I will X by Y' patterns from transcripts and auto-creates tasks, closing the verbal-to-written gap.",
+        "frequency": "Daily",
+        "complexity": "low",
+        "action": "Build this sprint",
+        "actionColor": "red",
+        "sources": [
+          "OMI Conv 16 (team management)",
+          "OMI Conv 25 (commitment tracking)"
+        ]
+      },
+      {
+        "rank": 8,
+        "name": "CGM Participant Report Generator",
+        "score": 84,
+        "timeSaved": "2 hrs/report",
+        "pattern": "NOURISH CGM participants receive form letters; personalized plain-language glucose interpretation reports would double as recruitment material. Claude converts CGM CSV to PDF.",
+        "frequency": "Monthly per cohort wave",
+        "complexity": "medium",
+        "action": "Plan next sprint",
+        "actionColor": "yellow",
+        "sources": [
+          "OMI Conv 25 (CGM study operations)",
+          "OMI Conv 13 (NOURISH strategy)"
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "PFME Session Designer",
+        "score": 82,
+        "timeSaved": "4 hrs/session",
+        "pattern": "PFME curriculum sessions require Bloom's taxonomy alignment, behavioral objective mapping, and teaching kitchen logistics. Claude generates a full session plan from a 15-min briefing transcript.",
+        "frequency": "Monthly",
+        "complexity": "medium",
+        "action": "Plan next sprint",
+        "actionColor": "yellow",
+        "sources": [
+          "OMI Conv 27 (PFME curriculum)",
+          "OMI Conv 13 (NOURISH outcomes)"
+        ]
+      },
+      {
+        "rank": 10,
+        "name": "Grant Deadline Calendar Sync",
+        "score": 80,
+        "timeSaved": "30 min/week",
+        "pattern": "Grant registry has 74+ entries with due dates. A weekly Claude script extracts upcoming deadlines, writes to Obsidian calendar, and sends a Slack digest every Monday morning.",
+        "frequency": "Weekly",
+        "complexity": "low",
+        "action": "Quick win",
+        "actionColor": "red",
+        "sources": [
+          "Stefan-Brain grant registry",
+          "Airtable task context"
+        ]
+      },
+      {
+        "rank": 11,
+        "name": "Collaborator Brief Generator",
+        "score": 78,
+        "timeSaved": "2 hrs/meeting",
+        "pattern": "Before every Lata/Malti/Dr. Mahari meeting, Stefan manually assembles context. Claude auto-generates a 1-page collaborator brief from the entity page + recent OMI mentions + open action items.",
+        "frequency": "Weekly",
+        "complexity": "low",
+        "action": "Plan next sprint",
+        "actionColor": "yellow",
+        "sources": [
+          "OMI Conv 20 (collaborator meetings)",
+          "Stefan-Brain entity pages"
+        ]
+      },
+      {
+        "rank": 12,
+        "name": "Research Poster Critic",
+        "score": 76,
+        "timeSaved": "3 hrs/poster",
+        "pattern": "Stefan submits research posters to conferences and gets feedback too late. Claude reviews poster PDF against conference rubric (visual hierarchy, methods, results) and returns structured critique in 5 min.",
+        "frequency": "Quarterly",
+        "complexity": "low",
+        "action": "Quick win",
+        "actionColor": "red",
+        "sources": [
+          "OMI Conv 12 (medical education)",
+          "Stefan-Brain wiki logs"
+        ]
+      },
+      {
+        "rank": 13,
+        "name": "Sous Nutritional Data Enricher",
+        "score": 74,
+        "timeSaved": "1 hr/recipe",
+        "pattern": "Sous recipes lack nutritional data. Claude calls USDA FoodData Central API per ingredient, aggregates macros/micros, and writes back structured nutritional JSON to each recipe automatically.",
+        "frequency": "Ongoing",
+        "complexity": "low",
+        "action": "Quick win",
+        "actionColor": "red",
+        "sources": [
+          "OMI Conv 39 (Sous development)",
+          "Stefan-Brain wiki logs"
+        ]
+      },
+      {
+        "rank": 14,
+        "name": "Clinical SOAP Formatter",
+        "score": 72,
+        "timeSaved": "20 min/encounter",
+        "pattern": "Ward round notes are dictated into OMI in free-form. Claude extracts structured SOAP format from the transcript, ready to paste into the EMR or email to the clinical team.",
+        "frequency": "Daily (clinical days)",
+        "complexity": "medium",
+        "action": "Plan next sprint",
+        "actionColor": "yellow",
+        "sources": [
+          "OMI Conv 43 (Apollo clinical rotation)",
+          "OMI Conv 44 (Mahari collaboration)"
+        ]
       }
     ],
     "crossSourcePatterns": [
@@ -989,5 +1531,19 @@
         "urgent": false
       }
     ]
+  },
+  "commitments": {
+    "open": [],
+    "overdue": [],
+    "closed_this_week": [],
+    "counts": {
+      "open": 0,
+      "overdue": 0,
+      "closed_this_week": 0,
+      "total_tracked": 0
+    },
+    "emptyStateReason": "omi-commitment-capture cron last ran 2026-04-22T12:05:06Z but OMI MCP was not connected during this inline session. Commitments will populate on the next cron run (every 2h).",
+    "lastExtracted": "2026-04-22T12:05:06Z",
+    "source": "omi-commitment-capture"
   }
 }
