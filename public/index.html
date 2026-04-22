@@ -3107,8 +3107,11 @@
           }).catch(() => console.warn('Clipboard write failed'));
         };
 
+        const _dec_showD = window.__optDismiss?.isShowingDismissed('decisions');
+        const _dec_dCount = window.__optDismiss?.getDismissedCount('decisions', d.items, i => i.id) || 0;
+        const _dec_visible = _dec_showD ? d.items : d.items.filter(item => !window.__optDismiss?.isDismissed('decisions', item.id));
         const groups = { high: [], medium: [], low: [], cosmetic: [], deferred_resurfaced: [] };
-        d.items.forEach(item => {
+        _dec_visible.forEach(item => {
           const g = groups[item.urgency] || groups.low;
           g.push(item);
         });
@@ -3116,6 +3119,7 @@
         const renderCard = (item) => {
           const uc = urgencyColor[item.urgency] || 'var(--text-secondary)';
           const ul = urgencyLabel[item.urgency] || item.urgency.toUpperCase();
+          const _decD = window.__optDismiss?.isDismissed('decisions', item.id);
           const isNew = item.new ? `<span style="background:rgba(248,81,73,0.15);color:var(--red);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;margin-left:8px">NEW</span>` : '';
           const opts = (item.suggested_options || []).map(o => `<li style="margin-bottom:4px">${esc(o)}</li>`).join('');
           const optsHtml = opts ? `<ul style="margin:8px 0 0 16px;font-size:13px;color:var(--text-secondary)">${opts}</ul>` : '';
@@ -3123,7 +3127,7 @@
             ? `obsidian://open?vault=Stefan-Brain&file=${encodeURIComponent(item.source_file.replace(/\.md$/, ''))}`
             : '';
           return `
-            <div class="card" style="border-left:3px solid ${uc};margin-bottom:14px;padding:16px">
+            <div class="card${_decD ? ' dismissed-item-wrap' : ''}" style="border-left:3px solid ${uc};margin-bottom:14px;padding:16px${_decD ? ';opacity:0.45' : ''}">
               <div style="display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:6px">
                 <span style="background:${uc}22;color:${uc};padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap">${ul}</span>
                 ${isNew}
@@ -3139,12 +3143,13 @@
                     title="Copy Claude prompt to mark as ${s}" style="font-size:11px;padding:4px 10px">${s}</button>`
                 ).join('')}
                 ${obsidianUrl ? `<a href="${obsidianUrl}" target="_blank" style="margin-left:auto;font-size:11px;color:var(--text-secondary);text-decoration:none">→ Source</a>` : ''}
+                ${_decD ? (window.__optDismiss?.undismissBtn('decisions', item.id) || '') : (window.__optDismiss?.dismissBtn('decisions', item.id, item.question) || '')}
               </div>
               <div style="font-size:10px;color:var(--border);margin-top:6px">${esc(item.id)} · surfaced ${esc(item.surfaced_on)} from ${esc(item.surfaced_by)}</div>
             </div>`;
         };
 
-        let html = '';
+        let html = (window.__optDismiss?.toggleBar('decisions', _dec_dCount) || '');
         const orderedGroups = [['high','&#128308; High urgency'], ['medium','&#128993; Medium urgency'], ['low','&#9898; Low'], ['cosmetic','&#128309; Cosmetic'], ['deferred_resurfaced','&#128994; Re-surfaced']];
         orderedGroups.forEach(([key, label]) => {
           if (groups[key] && groups[key].length > 0) {
