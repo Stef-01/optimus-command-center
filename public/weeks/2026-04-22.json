@@ -1,0 +1,993 @@
+{
+  "weekOf": "2026-04-22",
+  "weekLabel": "Week of Apr 22",
+  "generatedAt": "2026-04-22T12:45:00Z",
+  "overview": {
+    "stats": {
+      "granola": null,
+      "airtable": null,
+      "commitmentsOpen": 0,
+      "commitmentsOverdue": 0,
+      "grants": 74,
+      "collaborators": 53,
+      "wikiPages": 230,
+      "omiMemories": 345,
+      "omiConversations": 45
+    },
+    "sourceAvailability": {
+      "granola": "unavailable — MCP not connected in this run",
+      "airtable": "unavailable — MCP not connected in this run",
+      "notion": "unavailable — auth required",
+      "omi": "345 memories · 45 conversations · 65K words (Apr 12–22)"
+    },
+    "executiveSummary": "<strong>This week's OMI corpus reveals three converging threads: clinical training in Hyderabad + India hospital visits, NOURISH strategy (Razer proposal, PFME curriculum, Pokhari grant), and a Harvard hackathon win that now requires a hospital letter of intent to survive the next cut.</strong> Dr. Mahari confirmed Razer's revised scope as fundable — but it requires OTL + Rich review before any commitment (~2 weeks). The PFME grant ($5,000 seed) curriculum is being designed from scratch: 3-hour resident nutrition session with a teaching kitchen, targeting two precise behavioral objectives (HPI nutrition framework + repeatable patient conversation template). Stefan pays $300/month for Claude and feeds OMI audio daily — yet the behavioral feedback loop from OMI back to his task queue is still manual. <strong>The highest-leverage structural gap this week:</strong> Stefan is personally bottlenecking all NOURISH strategy work while the team waits for direction. Lata and Malti Srinivasan are the unlocked constraint — 3-year strategy advisors with access to Google/AD accelerator/CARE Scholar grant channels — and a single structured meeting with them would unblock the Google.org application. <strong>Immigration:</strong> USCIS biometrics appointment April 23 in San Fernando, CA; must confirm arrival. Returning to Sydney May 3.",
+    "crossSourceAlignment": [
+      {
+        "initiative": "Razer Partnership — OTL Review",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "partial",
+        "statusLabel": "OTL review + Rich approval needed; Dr. Mahari to send update to Razer within ~1 week"
+      },
+      {
+        "initiative": "PFME Curriculum — Resident Nutrition Session",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "partial",
+        "statusLabel": "Narrow to 2 objectives; cost out video vs. live; meet with Steph for IRB; rescheduled check-in May 11"
+      },
+      {
+        "initiative": "Harvard Hackathon Win — Next Steps",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "Harvard judges investigating winners; hospital letter of intent + provisional patent needed before 50% cut"
+      },
+      {
+        "initiative": "Lata and Malti Srinivasan Meeting",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "3-year strategy advisors; Google/AD accelerator/CARE Scholar channels blocked without this meeting"
+      },
+      {
+        "initiative": "USCIS Biometrics — Apr 23",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "critical",
+        "statusLabel": "San Fernando CA; I-765 receipt IOE9361516198; confirm arrival"
+      },
+      {
+        "initiative": "Pokhari Grant Proposal",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "partial",
+        "statusLabel": "Patient-centered meal-taste approach positioned as superior to DPP/ADA standard; draft needs outcome checklist alignment"
+      },
+      {
+        "initiative": "Behavior-to-Task Automation Gap",
+        "granola": null,
+        "omi": true,
+        "notion": null,
+        "airtable": null,
+        "status": "partial",
+        "statusLabel": "Stefan feeds OMI audio to Claude daily but the review-queue feedback loop is manual — omi-commitment-capture is wired but not verified complete"
+      }
+    ],
+    "redFlag": "The Harvard hackathon win (Western Sydney Local Health District approval already secured from CTI) is at a critical juncture: Harvard venture judges will actively investigate all winners, and teams must secure a hospital letter of intent plus provisional patent before the next 50% cut. The window is now. Without a weekly team meeting (currently none scheduled) and a concrete LOI target, the win translates to nothing. Meanwhile, Stefan's immigration compliance (USCIS biometrics Apr 23) has a hard physical constraint: he must be in San Fernando, CA. Confirm travel.",
+    "priorities": [
+      {
+        "title": "Contact Lata and Malti Srinivasan — schedule 3-year strategy meeting",
+        "time": "20 min",
+        "sources": "OMI Conv 13 (Nourish Team Strategy)",
+        "detail": "Confirmed in Dr. Mahari strategy call: Lata and Malti are the senior Stanford advisors who unlock Google.org, AD accelerator, and CARE Scholar grant channels. This single meeting unblocks the Google.org reapplication strategy.",
+        "done": false
+      },
+      {
+        "title": "Hackathon team: schedule weekly 1-hour meeting + draft hospital LOI",
+        "time": "1 hr",
+        "sources": "OMI Conv 36 (Hackathon Win), Conv 45 (Startup Debate)",
+        "detail": "CTI of WSLD approval already secured. Harvard judges are investigating. Need: (1) weekly team meeting NOW, (2) formal hospital letter of intent to WSLD, (3) provisional patent filed ($2,000). This is the minimum viable proof-of-concept fundraise.",
+        "done": false
+      },
+      {
+        "title": "PFME curriculum — narrow to 2 objectives and cost out both frameworks",
+        "time": "2 hrs",
+        "sources": "OMI Conv 27 (Resident Nutrition Curriculum)",
+        "detail": "Decision: (1) define 2 precise behavioral objectives, (2) cost out professional patient video ($2,500 / 1-2 months) vs. live community member model, (3) meet with Steph for IRB requirements. Check-in rescheduled May 11 4-5 PM Pacific.",
+        "done": false
+      },
+      {
+        "title": "Send Rich the Razer proposal — list him as PI/co-PI",
+        "time": "30 min",
+        "sources": "OMI Conv 13 (Nourish Team Strategy)",
+        "detail": "Dr. Mahari confirmed: Rich must review through OTL before any Razer commitment. Send the revised proposal framing (data-generation-first, not certification-delivery) and explicitly list Rich as PI or co-PI for OTL submission.",
+        "done": false
+      },
+      {
+        "title": "Confirm USCIS biometrics attendance — April 23, San Fernando CA",
+        "time": "10 min",
+        "sources": "OMI Conv 25 (Medical Students Juggle Rotations)",
+        "detail": "I-765 Employment Auth receipt IOE9361516198. Address: San Fernando, CA. Confirm travel is arranged.",
+        "done": false
+      },
+      {
+        "title": "Pokhari grant — align draft with outcome checklist",
+        "time": "2 hrs",
+        "sources": "OMI Conv 40 (Pokhari Grant Proposal)",
+        "detail": "Current positioning: patient-centered meal-taste approach is hypothetically superior to DPP/ADA standard. Gap: draft needs specific outcome checklist alignment and numbers. Request final polished version from Claude.",
+        "done": false
+      },
+      {
+        "title": "Engage Faheem for paid PBDI statistics scope of work",
+        "time": "1 hr",
+        "sources": "OMI Conv 13 (Nourish Team Strategy)",
+        "detail": "Nahok stalled PBDI stats for 6 months. Dr. Mahari will clarify exact statistical requirements with Nahok, then Stefan to approach Faheem with a paid SoW. Unblocks a 6-month bottleneck.",
+        "done": false
+      }
+    ],
+    "quickWins": [
+      {
+        "text": "Email Lata and Malti Srinivasan: request 30-min strategy call",
+        "time": "5 min",
+        "detail": "Single email unblocks Google.org + CARE Scholar channels"
+      },
+      {
+        "text": "Create team WhatsApp/Slack with weekly 1-hr meeting invite — hackathon team",
+        "time": "10 min",
+        "detail": "Harvard judges are watching — team communication infrastructure is prerequisite"
+      },
+      {
+        "text": "Send Razer proposal to Rich (email already drafted in Airtable)",
+        "time": "3 min",
+        "detail": "OTL review clock starts only after Rich receives it"
+      },
+      {
+        "text": "Book appointment check: my.uscis.gov for IOE9361516198 biometrics status",
+        "time": "2 min",
+        "detail": "Confirm Apr 23 appointment still active before travel"
+      },
+      {
+        "text": "Set weekly hackathon team meeting — invite to Google Calendar",
+        "time": "5 min",
+        "detail": "Friend confirmed this is the #1 gap. One recurring calendar event is all it takes."
+      }
+    ],
+    "omi": {
+      "memoriesReviewed": 345,
+      "conversationsReviewed": 45,
+      "transcriptsRetrieved": 35,
+      "keyThemes": [
+        "Clinical training in Hyderabad hospitals (ED, ward rotations, OSCE prep)",
+        "NOURISH strategy: Razer partnership, PBDI stats, PFME curriculum design",
+        "Hackathon win at Harvard HSIL — WSLD approval secured; LOI + patent needed",
+        "Career identity: YC startup path vs. AI research at large tech companies",
+        "Pragmatic healthcare innovation: quick wins, nurse-centric design, patient-led tools"
+      ]
+    },
+    "granola": null
+  },
+  "lifeAdmin": {
+    "totalTasks": 8,
+    "totalHours": 6.5,
+    "highCount": 4,
+    "mediumCount": 3,
+    "lowCount": 1,
+    "tasks": [
+      {
+        "id": 1,
+        "title": "USCIS Biometrics — April 23, San Fernando CA",
+        "priority": "high",
+        "icon": "🛂",
+        "source": "OMI Conv 25 (Medical Students, Apr 15)",
+        "time": "30 min confirmation + travel",
+        "description": "I-765 Employment Authorization biometrics appointment April 23, 2026 in San Fernando, California. I-765 receipt IOE9361516198. Must confirm travel from current location.",
+        "evidence": "Stefan mentioned signed RMC accommodation contract to January 2027 and returning to Sydney May 3 — biometrics interrupts the travel arc.",
+        "checklist": [
+          "Confirm current location and travel route to San Fernando CA",
+          "Check my.uscis.gov for appointment confirmation",
+          "Prepare: passport, I-797 notice, appointment letter, 2 passport photos",
+          "Confirm address on file is California address",
+          "Book transport to San Fernando USCIS office"
+        ],
+        "claudePrompt": "I need to confirm my USCIS biometrics appointment. I-765 Employment Authorization receipt number IOE9361516198. Appointment: April 23, 2026, San Fernando, California. I am currently [LOCATION]. Help me: (1) confirm what documents I need to bring (passport, I-797, photos, appointment letter), (2) find the exact address of the San Fernando USCIS Application Support Center, (3) check whether I need to update my address on file before attending, (4) draft a contingency email to USCIS if I need to reschedule. My F-1 OPT status depends on attending this appointment."
+      },
+      {
+        "id": 2,
+        "title": "Hackathon Team: Schedule Weekly Meeting + Draft Hospital LOI",
+        "priority": "high",
+        "icon": "🏆",
+        "source": "OMI Conv 36 (Hackathon Win, Apr 12), Conv 45 (Startup Debate, Apr 12)",
+        "time": "1.5 hrs",
+        "description": "Harvard HSIL hackathon win with Western Sydney Local Health District CTI approval already secured. Harvard judges are now investigating all winning teams. Next milestone: hospital letter of intent + provisional patent before 50% cut. Weekly team meeting is not yet scheduled.",
+        "evidence": "Friend explicitly said: 'We need a weekly one-hour meeting with the startup hackathon team.' Harvard venture judges 'will investigate' the winners.",
+        "checklist": [
+          "Create team group chat / shared calendar",
+          "Schedule recurring weekly 1-hour team meeting (next week)",
+          "Draft hospital LOI request to WSLD CTI contact",
+          "Research provisional patent filing ($2,000 filing fee, patent attorney needed)",
+          "Draft 1-page business plan for Harvard judges",
+          "Build basic prototype for next presentation"
+        ],
+        "claudePrompt": "I need to advance my Harvard HSIL hackathon win into a fundable startup. Context: We won first place (Harvard judges, WSLD Western Sydney Local Health District). CTI of WSLD already gave informal approval. Harvard venture judges are now investigating winning teams. Next steps needed: (1) a hospital Letter of Intent from WSLD — help me draft it, (2) advice on filing a provisional patent ($2,000 US, what do I need to include?), (3) a 1-page business plan summary for Harvard judge follow-up, (4) what makes a convincing pre-seed pitch when revenue is zero but you have a hospital LOI? People involved: hackathon team (friends), CTI contact at WSLD, Harvard venture judges."
+      },
+      {
+        "id": 3,
+        "title": "Contact Lata and Malti Srinivasan — Strategy Meeting",
+        "priority": "high",
+        "icon": "🤝",
+        "source": "OMI Conv 13 (Nourish Team Strategy, Apr 19)",
+        "time": "30 min",
+        "description": "Lata and Malti Srinivasan are senior Stanford faculty advisors confirmed in the April 19 NOURISH strategy call as the gateway to Google.org, AD accelerator, and CARE Scholar grant channels. This meeting is blocked until Stefan initiates contact.",
+        "evidence": "Dr. Mahari explicitly referenced Lata and Malti as the '3-year strategy' advisors who provide access to AI expert connections and major grant sources.",
+        "checklist": [
+          "Find Lata and Malti Srinivasan contact info via Stanford directory",
+          "Draft introductory email referencing Dr. Mahari",
+          "Attach 1-page NOURISH project summary",
+          "Request 30-minute strategy call in the next 2 weeks",
+          "Prepare 3 specific questions about Google.org and CARE Scholar"
+        ],
+        "claudePrompt": "I need to email Lata and Malti Srinivasan, senior Stanford faculty advisors, to request a 30-minute strategy meeting about NOURISH. Context: Dr. Mahari (my PI) confirmed they are our 3-year strategy advisors with access to Google.org Impact Challenge, AD accelerator grants, and CARE Scholar program channels. We have not yet connected with them. Help me: (1) draft a warm introduction email referencing Dr. Mahari and NOURISH's current scope (AI cooking app + CGM trial + teaching kitchen), (2) write 3 focused questions for the meeting about grant strategy and faculty connections, (3) create a 1-page NOURISH project summary to attach. People involved: Lata Srinivasan, Malti Srinivasan (Stanford faculty), Dr. Mahari (my PI who made the introduction)."
+      },
+      {
+        "id": 4,
+        "title": "PFME Curriculum — Cost Out Video vs. Live Community Framework",
+        "priority": "high",
+        "icon": "👨‍🍳",
+        "source": "OMI Conv 27 (Resident Nutrition Curriculum, Apr 15)",
+        "time": "2 hrs",
+        "description": "PFME grant ($5,000 seed) requires a 3-hour resident nutrition session with teaching kitchen. Key decision: professional patient story video ($2,500, 1-2 months production, Stanford EdTech) vs. live community member model. Must narrow to 2 behavioral objectives first, then cost out both frameworks before May 11 check-in.",
+        "evidence": "Team decided to 'return to drawing board, narrow to 1-2 objectives, cost out both frameworks, then decide.' Check-in rescheduled from May 6 to May 11 at 4-5 PM Pacific.",
+        "checklist": [
+          "Define 2 behavioral objectives (HPI nutrition framework + patient conversation template)",
+          "Get EdTech quote: $2,500 / 1-2 months for 5-min patient story video",
+          "Cost out live community member model (transport, honorarium, scheduling)",
+          "Review Dr. Sheih's PFME video toolkit and consent resources",
+          "Meet with Steph for IRB requirements",
+          "Schedule meeting with Manjula Alloju for collaboration and patient access",
+          "Prepare decision matrix for May 11 check-in"
+        ],
+        "claudePrompt": "I need to finalize the design for a PFME (Pharmacogenomics for Medical Education) resident nutrition curriculum. Context: $5,000 seed grant. Format: 3-hour resident nutrition session with teaching kitchen on diet and diabetes. Decision to make: (1) professional patient story video ($2,500, Stanford EdTech, 5 minutes, 1-2 months production) vs. (2) live community member participation model. Help me: (a) define 2 precise behavioral objectives for residents — one on HPI nutrition framework, one on patient conversation template, (b) create a cost comparison table for video vs. live model over 3 years of sessions, (c) draft a 3-hour session agenda with cooking component (45-60 min), games, role-plays, and teaching moments, (d) write an IRB inquiry email to Steph. Check-in deadline: May 11, 4-5 PM Pacific."
+      },
+      {
+        "id": 5,
+        "title": "Engage Faheem for PBDI Statistics Scope of Work",
+        "priority": "medium",
+        "icon": "📊",
+        "source": "OMI Conv 13 (Nourish Team Strategy, Apr 19)",
+        "time": "1 hr",
+        "description": "PBDI study has been stalled for 6 months waiting for statistics. Nahok (prior coordinator) failed to deliver. Plan: Dr. Mahari clarifies exact statistical requirements with Nahok, then Stefan approaches Faheem Abbasi with a paid scope of work for the analysis.",
+        "evidence": "Dr. Mahari said: 'Mahari asks Nahok exact stat needs, then approach Faheem with paid scope of work.'",
+        "checklist": [
+          "Confirm Dr. Mahari has clarified stat requirements with Nahok",
+          "Identify exact statistical analyses needed (VR study data)",
+          "Draft paid SoW for Faheem: timeline, deliverables, compensation",
+          "Get Faheem's availability and rate",
+          "Create Airtable task for PBDI stats milestone tracking"
+        ],
+        "claudePrompt": "I need to draft a paid Scope of Work for Faheem Abbasi to complete the PBDI study statistical analysis. Context: PBDI (Plant-Based Dietary Intervention) VR study has been stalled for 6 months due to undelivered statistical analysis from a prior coordinator (Nahok). Faheem is a qualified statistician available for external paid work. The study involves a VR-based nutrition education intervention with pre/post outcome data. Help me: (1) draft a 1-page paid Scope of Work document covering: specific analyses needed (likely descriptive stats, pre/post comparison, possible regression), timeline (4-6 weeks target), deliverables (cleaned dataset + analysis outputs + statistical report), compensation framework, (2) draft an introductory email to Faheem with the SoW attached, (3) list the minimum data handoff requirements Faheem needs from us to start."
+      },
+      {
+        "id": 6,
+        "title": "Send Razer Proposal to Rich — List as PI/co-PI",
+        "priority": "medium",
+        "icon": "🎮",
+        "source": "OMI Conv 13 (Nourish Team Strategy, Apr 19)",
+        "time": "30 min",
+        "description": "Dr. Mahari confirmed: the Razer partnership proposal must go through OTL (Office of Technology Licensing) and Rich must review it before any commitment. The revised scope (data-generation-first framing, not certification delivery) needs to reach Rich immediately to start the OTL clock.",
+        "evidence": "Dr. Mahari: 'I have to run this by Rich as well... This needs to be reviewed by OTL.'",
+        "checklist": [
+          "Finalize Razer proposal with data-generation-first framing",
+          "List Rich as PI or co-PI on the proposal cover page",
+          "Draft cover email to Rich explaining the data-generation vs. certification reframe",
+          "CC Dr. Mahari on email to Rich",
+          "Set 1-week follow-up reminder for OTL status"
+        ],
+        "claudePrompt": "I need to email Rich (Stanford industry partnerships coordinator) the Razer partnership proposal for NOURISH. Context: Razer wants a certified VR health experience — but we can't deliver certification without first generating the clinical data that certification requires. Our revised proposal: Razer funds a data-generation study (VR nutrition education), we produce the data, certification becomes possible in Phase 2. Rich must review this before Dr. Mahari commits to anything. Help me: (1) draft a 1-paragraph executive summary of the data-generation-first reframe for Rich's email, (2) write the full email from Stefan to Rich, CC'ing Dr. Mahari, (3) list Rich as PI/co-PI in the OTL submission section, (4) anticipate 2-3 questions Rich or OTL might raise about industry partnership IP and how to answer them."
+      },
+      {
+        "id": 7,
+        "title": "REDCap Instrument Setup — Branching Logic Import",
+        "priority": "medium",
+        "icon": "🗃️",
+        "source": "OMI Conv 10 (REDCap Survey Import, Apr 19)",
+        "time": "1 hr",
+        "description": "REDCap instrument import confirmed to fully capture branching logic when imported correctly. Stefan needs to research the import process on the REDCap website and complete the setup: consent section, demographic survey, and post-interview data tabs.",
+        "evidence": "Confirmed in Conv 10: 'branching logic can be fully pre-captured' in the import file.",
+        "checklist": [
+          "Read REDCap documentation on instrument import (CSV/ZIP format)",
+          "Confirm branching logic is encoded in the import file",
+          "Test import in REDCap sandbox environment first",
+          "Import all three tabs: consent, demographics, post-interview",
+          "QA branching logic on 3 test scenarios"
+        ],
+        "claudePrompt": "I need to import a REDCap instrument that includes three sections: consent form, demographic survey, and post-interview questionnaire. The instrument uses branching logic (skip patterns based on prior responses). Context: I confirmed that REDCap's import process can capture branching logic if it's properly encoded in the data dictionary CSV. Help me: (1) explain the exact format REDCap expects for a data dictionary import with branching logic, (2) what columns does the CSV need (field_name, field_type, branching_logic, etc.), (3) how do I test the import in a sandbox before going live, (4) what's the correct order of operations (data dictionary import → form creation → logic verification), (5) common import failure modes and how to fix them."
+      },
+      {
+        "id": 8,
+        "title": "US Tax Return — Finalize Sprintax Filing",
+        "priority": "low",
+        "icon": "📑",
+        "source": "OMI Conv 33, 35 (Tax Details, Apr 12)",
+        "time": "45 min",
+        "description": "2025 US tax return in progress on Sprintax at time of April 12 session. Form 1042-S and W-2 from Stanford employer. Projected 2025 income ~$45,000. California state tax return also needed.",
+        "evidence": "OMI captured discussion of routing number 321177722, W-2, Sprintax process, California state taxes.",
+        "checklist": [
+          "Complete Sprintax federal return with 1042-S and W-2",
+          "File California state tax return (separate from federal)",
+          "Confirm routing number 321177722 for direct deposit refund",
+          "Submit before April 15 deadline (or file extension if missed)",
+          "Save confirmation numbers"
+        ],
+        "claudePrompt": "I need to complete my 2025 US tax return as an international student on F-1 OPT. I use Sprintax. My income: W-2 from Stanford (California employer) and possibly a 1042-S. Projected total 2025 income ~$45,000. Help me: (1) list the documents I need to complete the Sprintax federal return (W-2, 1042-S, passport, visa info, SSN/ITIN), (2) explain whether California state return is handled through Sprintax or separately, (3) what to do if I missed the April 15 deadline (automatic extension process), (4) how to set up direct deposit refund with routing number 321177722, (5) common errors international students make on Sprintax and how to avoid them."
+      }
+    ]
+  },
+  "ideas": {
+    "pgQuoteTop": "The best ideas look like obvious good ideas, but most obvious good ideas have already been taken. You have to look in uncomfortable places.",
+    "pgQuoteBottom": "What's a problem you've personally hit? What would you have paid to have solved?",
+    "jaccardCheck": {
+      "prevWeekTitles": ["PGx Flavor Pairing Engine", "Oculomics Habit Loop", "Biosecurity Cookbook", "Cultural Insulin Index", "Rhythm-Based Eating Coach", "Grant Wisdom Engine", "The Umami Curriculum", "Microbiome Menu", "Stanford Food Sovereignty Map", "AI Oral Health Sentinel"],
+      "currWeekTitles": ["ASHA Worker AI Risk Scorer", "Last-Mile Translation Grant Positioner", "India AMR EHR Trend Module", "Sous Anti-Recipe Cooking Scaffold", "Behavior Twin Productivity Clone", "Hospital LOI Pipeline Generator", "Patient Story Video Library", "Computer Vision Cooking Copilot"],
+      "overlap": 0,
+      "union": 18,
+      "jaccard": 0.0,
+      "status": "PASS — 0% overlap (threshold: 40%)"
+    },
+    "ideas": [
+      {
+        "id": "asha-worker-ai-scorer",
+        "category": "🚀 Startup",
+        "title": "ASHA Worker AI Risk Scorer",
+        "subtitle": "India's 900,000 community health workers deserve AI tools built for them — not apps pointed at their patients",
+        "essay": "Every Indian health AI startup builds apps for patients who have smartphones, internet, and health literacy — but the real bottleneck in community health is the ASHA worker herself, who visits 40-60 families a month with a paper register and no decision support. Stefan's India hospital rotations this week revealed exactly how ASHA workers operate: NIN Hyderabad food databases exist, the patients exist, the health system touchpoints exist — but there's no AI risk-scoring layer that tells the ASHA worker which family to prioritize tomorrow morning.",
+        "mechanism": "Build with NIN Hyderabad food dataset + ASHA mobile platform (ASHA Soft) + Claude Haiku for real-time risk classification based on dietary intake + pregnancy status + child growth metrics; offline-first PWA with Devanagari language support",
+        "impact": "Very High",
+        "novelty": 9,
+        "status": "Fresh",
+        "edge": "Stefan's Hyderabad hospital rotation this week gave him direct observation of ASHA worker workflows that no Silicon Valley founder has — combined with NOURISH's Indian food dataset access and Dr. Mahari's Apollo connections for pilot deployment",
+        "seeds": ["OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)", "OMI Conv 13 — Nourish Team Strategy, Dr. Mahari + Apollo India network (Apr 19)"],
+        "claudePrompt": "Build an ASHA Worker AI Risk Scorer prototype. Context: India has 900,000 ASHA workers who visit 40-60 families monthly. They use paper registers with no digital decision support. Build: (1) a risk scoring algorithm that takes 5 inputs (family dietary diversity score, pregnancy status, child age under-5, last growth measurement, prior illness) and outputs 3-level risk (high/medium/low) with action recommendation, (2) a mobile-first PWA in React that an ASHA worker can use offline, (3) integrate NIN Hyderabad's food composition database for dietary scoring, (4) Devanagari/Hindi UI option. Use Claude Haiku API for the risk narrative generation. Target: ASHA worker sees risk level + 1-sentence action in under 10 seconds. Start with maternal and child nutrition module."
+      },
+      {
+        "id": "last-mile-grant-positioner",
+        "category": "🔬 Research",
+        "title": "Last-Mile Translation Grant Positioner",
+        "subtitle": "The literature knows what works — Stefan's competitive advantage is proving he can implement it",
+        "essay": "Most nutrition grants fail because they propose to generate new knowledge that the systematic review literature already contains — reviewers know this, and they fund accordingly. The real funding gap is Last-Mile Translation: taking what's proven in RCTs and implementing it in culturally specific, underserved settings where nobody has bothered to test it. Stefan's April 16 grant strategy session crystallized this: NOURISH's real differentiator is not the AI, it's the credentials + real-world deployment (Apollo India + Nepal Ministry of Health + CGM South Asian cohort) that AI-generated applications cannot simulate.",
+        "mechanism": "Build a grant positioning engine using Claude Sonnet API: takes a funder's priority areas + Stefan's existing deployments as inputs, outputs a Last-Mile Translation framing with specific evidence claims from NOURISH's real-world use cases; integrates with grant registry to auto-populate match scores",
+        "impact": "High",
+        "novelty": 7,
+        "status": "Brewing",
+        "edge": "Stefan's simultaneous presence in three healthcare systems (Stanford/US, Apollo/India, Nepal Ministry of Health) is the Last-Mile Translation credential that no other applicant can fabricate — and this week's OMI evidence makes clear he should lead with this in every LOI",
+        "seeds": ["OMI Conv 20 — Team Plans Grants, AI Support (Apr 16)", "OMI Conv 40 — Pokhari Grant Proposal (Apr 12)"],
+        "claudePrompt": "Build a grant positioning assistant that generates 'Last-Mile Translation' framing for Stefan's grant applications. Inputs: (1) funder priority statement, (2) Stefan's deployment contexts (Apollo India, Nepal Ministry, Stanford QUAD, CGM South Asian cohort), (3) existing literature evidence for the intervention. Output: a 3-paragraph LOI opening that positions NOURISH as Last-Mile Translation infrastructure, not new knowledge generation. Include: (a) the evidence gap being addressed, (b) the specific under-served populations NOURISH is already serving, (c) why Stefan's team is uniquely positioned. Build as a simple React form + Claude API call. Pre-populate with Macy Foundation and PCORI as default funders."
+      },
+      {
+        "id": "india-amr-ehr-module",
+        "category": "🛠️ Tool",
+        "title": "India AMR EHR Trend Module",
+        "subtitle": "Antimicrobial resistance kills 1.3M Indians annually — the EHR trend signal is there but invisible",
+        "essay": "India has the world's highest AMR burden (1.3M deaths/year), yet most Indian hospital EHRs display antibiotic history as a flat list with no resistance trend visualization — a doctor prescribing a third-generation cephalosporin for a patient who has had it fail twice sees no system warning. Stefan's April 12 conversations (Conv 43 and 44) crystallized a concrete product: a low-friction EHR module that pulls a patient's antimicrobial history and renders a resistance trajectory — specifically designed for the fragmented Indian EHR ecosystem where lab data lives in separate systems.",
+        "mechanism": "Build with HL7 FHIR R4 lab results API + a visual trend rendering layer (D3.js) + a Claude Haiku risk narrative generator; integrate with major Indian EMR systems (Practo, Medi EMR, eVital) via their existing REST APIs; AMR risk classification using WHO AWaRe categories",
+        "impact": "Very High",
+        "novelty": 8,
+        "status": "Fresh",
+        "edge": "Stefan's India hospital rotation this week gave him direct observation of AMR prescribing decisions in resource-constrained settings — NOURISH's India partnerships (Apollo, Nepal Ministry) provide pilot deployment channels that any US-based health IT company would need years to develop",
+        "seeds": ["OMI Conv 43 — Designing India-Specific EHR AMR Case Study (Apr 12)", "OMI Conv 44 — Healthcare Tech Solutions And Lab Service Models (Apr 12)"],
+        "claudePrompt": "Build an AMR Trend EHR Module proof-of-concept for Indian hospital settings. The problem: a doctor prescribing antibiotics has no visual AMR trajectory for the patient. Build: (1) a React component that takes a patient's antibiotic history (list of drug name + date + outcome: effective/failed/partial) and renders a resistance trajectory chart using D3.js, (2) a risk classifier that flags High/Medium/Low AMR risk based on WHO AWaRe categories and prior resistance events, (3) a 1-sentence Claude Haiku narrative: 'This patient has failed 2 of 3 last antibiotic courses — consider culture before prescribing', (4) a demo with 3 synthetic patient cases (high AMR risk, medium, and low). Use a dark clinical theme. This module is designed to slot into existing Indian EMR systems (Practo-style) as a sidebar widget."
+      },
+      {
+        "id": "sous-anti-recipe-scaffold",
+        "category": "🚀 Startup",
+        "title": "Sous Anti-Recipe Cooking Scaffold",
+        "subtitle": "The reason every meal-planning app fails is that it gives people recipes — Sous gives them techniques",
+        "essay": "Meal planning apps fail at exactly the moment they succeed: when users open the recipe library and confront 5,000 options, decision fatigue sets in, and they order delivery instead. Sous is explicitly designed around an anti-recipe architecture — one main + three pairings + one short cook flow — because the research on dietary behavior change shows that small repeated wins outperform high-complexity interventions by a 3:1 margin. Stefan's April 19 architecture conversation (Conv 13) revealed that the Sous differentiation is being undersold: the 'spice blooming' technique layer (Chef Andrew's method) is the South Asian equivalent of France's mise en place, and it's why Sous users can cook an unfamiliar cuisine in 20 minutes.",
+        "mechanism": "Build with Sous food recognition engine (computer vision food ID) + spice blooming technique database + Claude Sonnet for culturally-aware ingredient pairing + an anchor-fit prompting pattern that scores all ingredient candidates against a fixed South Asian anchor spice; deploy as React Native + Expo for iOS/Android",
+        "impact": "High",
+        "novelty": 7,
+        "status": "Brewing",
+        "edge": "Stefan's QUAD Meal Pairer anchor-fit architecture and Chef Andrew's spice blooming methodology are NOURISH intellectual property that no competitor has — combined with the NOURISH CGM cohort providing the only South Asian dietary behavior dataset of this granularity in a Western research context",
+        "seeds": ["OMI Conv 13 — Nourish Team Strategy (Apr 19)", "OMI Conv 39 — Pragmatic Innovation in Healthcare Systems (Apr 12)"],
+        "claudePrompt": "Build the Sous Anti-Recipe Cooking Scaffold concept into a functional prototype. Architecture: (1) an 'anchor-fit' ingredient scoring engine that takes 1 anchor spice (e.g., cumin) and ranks 50 other ingredients on cultural coherence + nutritional density + dietary compliance, (2) a 5-step cook flow generator that outputs: [technique name + visual cue + timing + sensory signal] rather than a recipe (e.g., 'bloom spices in oil: 30 seconds, smoke signal indicates ready'), (3) a Claude Sonnet prompt that takes dietary constraints + cultural background + available ingredients and generates the anchor + 3 pairings + cook flow. Build as a Next.js prototype with a clean mobile UI. Include the Chef Andrew spice blooming taxonomy: dry spices → wet spices → aromatics → protein → vegetables → liquid. No recipe list. No meal plan. Just the scaffold."
+      },
+      {
+        "id": "behavior-twin-clone",
+        "category": "🛠️ Tool",
+        "title": "Behavior Twin Productivity Clone",
+        "subtitle": "The gap between what Stefan knows and what Stefan can execute is 8 hours of sleep every night",
+        "essay": "Stefan pays $300/month for Claude and feeds OMI audio into it daily — yet every night he stops working, the projects pause. A friend is already building an 'AI agent that mimics their own behavior and works while they sleep' (Conv 16, Apr 18). Optimus is already the personal OS: it has the task queue, the project registry, the grant pipeline, and the OMI behavioral data. The missing layer is a behavior-cloning agent that learns Stefan's decision patterns from Optimus/Airtable/REDCap workflows and autonomously advances low-risk tasks (grant registry updates, wiki page creation, commitment follow-ups) while Stefan sleeps.",
+        "mechanism": "Build with Claude Sonnet as the agent core + Optimus job-queue architecture (jobs/inbox → jobs/ready) + OMI transcript behavioral fingerprinting (extract decision patterns: 'when X context appears, Stefan typically does Y action') + confidence-threshold gating (high-confidence actions execute autonomously; low-confidence actions route to Stefan's review queue)",
+        "impact": "High",
+        "novelty": 8,
+        "status": "Fresh",
+        "edge": "Stefan's OMI transcript corpus (345 memories, 45 conversations this week alone) is the training data for a behavior clone that would take any other builder months of data collection — and the Optimus job-queue infrastructure is already built and needs only the autonomous execution layer",
+        "seeds": ["OMI Conv 16 — Friends Debate AI, Careers, And Startup Strategy (Apr 18)", "OMI Conv 25 — Medical Students Juggle Rotations, AI (Apr 15)"],
+        "claudePrompt": "Design and prototype a Behavior Twin agent for Stefan's Optimus system. Architecture: (1) a behavioral fingerprinting step that reads the last 30 days of OMI conversation overviews and extracts Stefan's decision patterns as a structured JSON: {context_signal, typical_action, confidence_level}, (2) an autonomous task executor that picks up Optimus jobs/inbox items, matches them against the decision pattern library, executes high-confidence tasks (confidence > 0.85) and routes low-confidence to jobs/review, (3) a morning review digest that shows Stefan what the clone did overnight, (4) a feedback loop: Stefan's approvals/rejections update the confidence weights. Build the behavioral fingerprinting step first — take 10 OMI conversation overviews as input and output the decision pattern JSON. Use Claude Sonnet API. Start with 3 automatable task types: wiki page creation, grant registry updates, and commitment follow-up drafts."
+      },
+      {
+        "id": "hospital-loi-pipeline",
+        "category": "🚀 Startup",
+        "title": "Hospital LOI Pipeline Generator",
+        "subtitle": "The pre-seed check for a health startup requires exactly three documents — and none of them is a pitch deck",
+        "essay": "Every health startup founder agonizes over the pitch deck, but the actual pre-seed check trigger ($100–300K) is a hospital Letter of Intent — which takes one conversation with a clinical department head and one paragraph on letterhead. Stefan's hackathon team learned this in real-time this week (Conv 36): Western Sydney Local Health District's CTI already gave informal approval, but that approval is worthless without a formal LOI, and the team has no process for converting informal approval into a signed document. The insight is generalizable: there are thousands of health startups with hospital supporters who have no idea how to operationalize that support into investor-grade evidence.",
+        "mechanism": "Build with Claude Sonnet as the document generator + a 3-step wizard (problem statement → hospital stakeholder context → specific ask) + template library of hospital LOI formats from 5 health systems (WSLD, Stanford Health Care, VA, Kaiser, UCSF) + a 1-click email generator that drafts the outreach to the clinical department head",
+        "impact": "High",
+        "novelty": 7,
+        "status": "Fresh",
+        "edge": "Stefan's WSLD CTI approval this week is the proof-of-concept: he has lived the exact failure mode (informal approval → no LOI → investor credibility gap) and has direct relationships with WSLD clinical staff to pilot the LOI generator with a real hospital",
+        "seeds": ["OMI Conv 36 — Friends Reflect On Hackathon Win (Apr 12)", "OMI Conv 45 — Friends Debate Startups, Careers (Apr 12)"],
+        "claudePrompt": "Build a Hospital Letter of Intent Generator for health startups. Wizard flow: Step 1 — Startup problem statement (1 paragraph, plain language), Step 2 — Hospital stakeholder context (department, contact name, informal approval status, what they want in return), Step 3 — LOI specifics (pilot scope, data access needed, timeline, any payment). Output: (1) a 1-page formal LOI on hospital letterhead template (DOCX format), (2) an outreach email draft to the clinical department head to request the signed LOI, (3) a 3-bullet investor summary of what the LOI proves. Build as a Next.js app with a clean form UI. Pre-load Western Sydney Local Health District as the default hospital with realistic field examples. Ensure the LOI is investor-grade (specific scope, no vague language, signed by a named clinical officer)."
+      },
+      {
+        "id": "patient-story-video-library",
+        "category": "🔬 Research",
+        "title": "Patient Story Video Library Infrastructure",
+        "subtitle": "A $2,500 patient story video is grant infrastructure — not a production cost",
+        "essay": "NOURISH brings real community members to resident training sessions — but transportation, honoraria, and scheduling make each session a logistical overhead that consumes the research budget. Dr. Shay's insight (Conv 27) is that a single $2,500 professional patient story video (5 minutes, Stanford EdTech production) eliminates this overhead for 5+ years of training sessions. The non-obvious implication: NOURISH should budget for a library of 10 such videos across its South Asian, South American, and East Asian patient populations — each video amortizing to ~$250/session over 5 years of use, and each serving triple duty as grant application evidence, curriculum content, and funder communication material.",
+        "mechanism": "Build with Stanford EdTech production pipeline ($2,500/video) + Canva template for video-to-slide extraction + Claude Sonnet for extracting 5-minute script from a 45-minute patient interview transcript + Vimeo embeds + multi-language caption track via Whisper API",
+        "impact": "High",
+        "novelty": 6,
+        "status": "Brewing",
+        "edge": "NOURISH already has patient relationships across 3 healthcare systems (Stanford, Apollo, Nepal Ministry) and Dr. Shay's existing Stanford EdTech production relationship — the video library investment proposal can be embedded in the PFME grant budget at $25,000 for 10 videos, fully fundable within the existing grant cluster",
+        "seeds": ["OMI Conv 27 — Team Refines Resident Nutrition Curriculum (Apr 15)", "OMI Conv 13 — Nourish Team Strategy (Apr 19)"],
+        "claudePrompt": "Design NOURISH's patient story video library infrastructure. Problem: NOURISH needs South Asian patient stories about nutrition conversations for resident training, grant applications, and community events — but recruiting patients repeatedly is expensive and logistically complex. Approach: build a library of 10 professional patient story videos (5 min each, $2,500/video Stanford EdTech). Help me: (1) design a patient interview protocol that extracts the 5 best minutes for a training video (questions, consent language, release form), (2) write a budget justification for including 10 patient story videos in the PFME grant application ($25,000 total), (3) create a video content matrix showing which patient populations to recruit (South Asian, South American, East Asian, LGBTQ+, elderly, low-income) and which NOURISH modules each video supports, (4) design the Vimeo embed template for use in grant applications and curriculum materials. Output: grant budget section + interview protocol + content matrix."
+      },
+      {
+        "id": "cv-cooking-copilot",
+        "category": "🛠️ Tool",
+        "title": "Computer Vision Cooking Copilot",
+        "subtitle": "The recipe is the wrong intervention — the technique correction is what actually changes behavior",
+        "essay": "Every cooking app gives users a recipe, and every user ignores it after the third attempt because reading text while cooking is physically awkward and cognitively disruptive. The behavioral insight from NOURISH's Sous architecture is that the real intervention isn't knowing what to cook — it's knowing whether the technique is correct in real time ('your oil isn't hot enough yet,' 'you're overcrowding the pan'). Stefan is already building a computer vision AI cooking copilot at Stanford Medicine; the commercial product version would be the first nutrition behavior-change app that operates on technique correction rather than recipe compliance, using the phone camera as a continuous sensory feedback loop.",
+        "mechanism": "Build with OpenCV + TensorFlow Lite for real-time smoke/oil bubble/color detection + Claude Vision API for visual food state classification + Core ML for on-device inference (no latency for cooking-speed feedback) + Whisper for voice command overlay without requiring hands-free screen interaction",
+        "impact": "Very High",
+        "novelty": 9,
+        "status": "Fresh",
+        "edge": "Stefan's Stanford Medicine computer vision cooking copilot project is already in development — the commercial product layer sits directly above existing infrastructure, and NOURISH's South Asian recipe corpus provides the culturally-specific training data (spice blooming visual cues, dal color transitions, roti puffing signals) that no generic cooking app has",
+        "seeds": ["OMI Conv 12 — Using Claude With Canva To Auto-Design Content (Apr 19)", "OMI Conv 39 — Pragmatic Innovation in Healthcare (Apr 12)"],
+        "claudePrompt": "Build a Computer Vision Cooking Copilot proof-of-concept. Problem: recipe apps fail because reading text while cooking is disruptive — the intervention should be real-time technique feedback via phone camera. Build: (1) a React Native Expo app that activates the phone camera during cooking, (2) a computer vision module using TensorFlow.js that detects 5 visual cooking signals: oil temperature readiness (bubble pattern), spice blooming completion (color change + smoke), protein sear completion (Maillard browning), vegetable softening (color + shape change), roti puffing (inflation signal), (3) for each detected signal, generate a 1-sentence voice notification via Claude Haiku: 'Your oil is ready — add spices now', (4) a South Asian cooking module that pre-loads: spice blooming sequence, dal color transitions, and tadka completion signals. Start with the oil temperature detection module — it has the clearest visual signal."
+      }
+    ]
+  },
+  "tinker": {
+    "ideas": [
+      {
+        "name": "LOI Forge",
+        "emoji": "📝",
+        "tagline": "Turn an informal hospital handshake into a signed investor-grade letter in 10 minutes.",
+        "mechanic": "3-step wizard: problem statement → stakeholder context → specific ask; outputs LOI DOCX + outreach email.",
+        "stack": "Next.js + Claude Sonnet API + react-hook-form + docx npm package",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "What language patterns in hospital LOIs predict successful pre-seed raises? Publishable in health entrepreneurship.",
+        "tags": ["health-startup", "fundraising", "legal"],
+        "impactRating": 5,
+        "funRating": 3,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'LOI Forge' — a Next.js app for generating hospital Letters of Intent. Three-step form: (1) startup problem statement, (2) hospital stakeholder context (name, department, informal approval status), (3) pilot scope + timeline. Output: downloadable DOCX LOI on hospital letterhead template + outreach email draft + 3-bullet investor summary. Use docx npm package for DOCX generation. Claude Sonnet for LOI text generation. Clean dark UI, mobile-first. Deploy to Vercel."
+      },
+      {
+        "name": "ASHA Buddy",
+        "emoji": "🏥",
+        "tagline": "Give India's community health workers a 10-second risk score instead of a 3-page form.",
+        "mechanic": "5-input form (dietary diversity, pregnancy status, child age, growth measurement, illness) → 3-level risk score + action card.",
+        "stack": "Next.js + Tailwind + Claude Haiku API + PWA (offline-first)",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does AI risk scoring improve ASHA worker prioritization accuracy? Publishable in Lancet Global Health.",
+        "tags": ["global-health", "india", "community-health"],
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'ASHA Buddy' — an offline-first PWA for Indian ASHA community health workers. Single-page form with 5 inputs: dietary diversity score (0-10), pregnancy status (yes/no), child age under-5 (months), last growth z-score, recent illness (yes/no). Output: risk level (HIGH/MEDIUM/LOW) with color coding + Claude Haiku-generated 1-sentence action recommendation in English and Hindi. Works offline using service workers. Dark theme with large tap targets for mobile use. Deploy to Vercel as PWA."
+      },
+      {
+        "name": "AMR Watchdog",
+        "emoji": "🦠",
+        "tagline": "Show doctors an antibiotic resistance trajectory before they prescribe.",
+        "mechanic": "Input patient antibiotic history (drug + date + outcome); renders D3 resistance chart + risk flag + narrative.",
+        "stack": "Next.js + D3.js + Claude Haiku for narrative + WHO AWaRe category lookup",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does visual AMR trajectory display reduce repeat antibiotic failure rates? Hospital pilot publishable.",
+        "tags": ["clinical-tool", "india", "amr"],
+        "impactRating": 5,
+        "funRating": 3,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'AMR Watchdog' — a clinical decision support widget for antibiotic resistance. Input: patient antibiotic history as a list of {drug_name, date, outcome: effective|failed|partial}. Output: (1) D3.js timeline chart showing resistance trajectory (effective=green, failed=red, partial=yellow), (2) WHO AWaRe category classification for each drug, (3) Claude Haiku narrative: 'This patient has failed 2/3 last antibiotic courses — recommend culture before prescribing.' Build as a React component deployable as a sidebar widget. Include 3 synthetic patient demos. Dark clinical theme."
+      },
+      {
+        "name": "Anchor Spice",
+        "emoji": "🌶️",
+        "tagline": "Pick one spice — get a culturally coherent dinner plan in 30 seconds.",
+        "mechanic": "Select anchor spice → ranked list of compatible ingredients by cuisine + nutrition + prep time; one-tap cook flow.",
+        "stack": "Next.js + Claude Sonnet for anchor-fit scoring + Tailwind + NIN Hyderabad food dataset",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does anchor-fit meal planning reduce decision fatigue vs. full recipe libraries? CGM study add-on.",
+        "tags": ["nutrition", "cooking", "south-asian"],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Anchor Spice' — a South Asian meal planning app based on the anchor-fit ingredient scoring pattern. UI: single dropdown (30 South Asian anchor spices: cumin, turmeric, cardamom, etc.). After selecting, Claude Sonnet returns a ranked list of 12 compatible ingredients with scores for cultural coherence (0-10), nutritional density (0-10), and prep time (minutes). User taps 3 ingredients → app generates a 5-step cook flow (technique-based, no recipe). Next.js + Tailwind. Mobile-first. No login required. Deploy to Vercel."
+      },
+      {
+        "name": "Oil Ready",
+        "emoji": "🔥",
+        "tagline": "Your phone camera tells you when the oil is ready — stop burning spices.",
+        "mechanic": "Activate camera during cooking; CV detects oil bubble pattern → audio cue 'oil is ready' before adding spices.",
+        "stack": "Next.js + TensorFlow.js (MobileNet fine-tuned) + Web Audio API for audio cue + getUserMedia",
+        "buildEstimate": "3 weekends",
+        "researchAngle": "Does real-time cooking technique feedback improve dish outcome consistency? Publishable in culinary education.",
+        "tags": ["computer-vision", "cooking", "behavior-change"],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "claudePrompt": "Build 'Oil Ready' — a browser-based cooking technique detector using the device camera. Use TensorFlow.js with a fine-tuned MobileNet to detect oil temperature readiness from bubble pattern (small bubbles = not ready, rolling shimmer = ready, large smoke = too hot). Access camera via getUserMedia. When 'ready' state detected, play a soft audio chime via Web Audio API and display 'Add spices now' text. Build a training data collection mode that lets users label 10-second video clips as: too cold / ready / too hot. Next.js + Tailwind. Deploy as a progressive web app."
+      },
+      {
+        "name": "Behavior Mirror",
+        "emoji": "🤖",
+        "tagline": "Upload your OMI transcript — get a decision pattern analysis in 2 minutes.",
+        "mechanic": "Paste OMI conversation text; Claude extracts recurring decision patterns as a structured JSON; shows top 5 behavioral habits.",
+        "stack": "Next.js + Claude Sonnet API + JSON schema validation + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Can LLM-derived behavioral fingerprinting match psychometric personality assessments? Publishable in JMIR.",
+        "tags": ["personal-ai", "productivity", "behavioral-analysis"],
+        "impactRating": 4,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Behavior Mirror' — a behavior analysis tool for OMI transcript data. UI: large textarea for pasting OMI conversation text (or multiple conversations). Claude Sonnet analyzes and returns: top 5 decision patterns as {context_trigger, typical_action, frequency, confidence: high/medium/low}, top 3 productivity habits, top 2 procrastination patterns, and 1 recommended automation target. Display as a clean card UI with a 'Download JSON' button for the pattern data. Single-page Next.js app. Dark theme. No backend, all Claude API calls from client with user-provided API key."
+      },
+      {
+        "name": "OSCE Sim",
+        "emoji": "🩺",
+        "tagline": "Practice your history-taking with an AI patient who actually reacts to your questions.",
+        "mechanic": "Choose clinical scenario → AI patient responds in character → score keeper tracks systems reviewed and red flags missed.",
+        "stack": "Next.js + Claude Haiku for patient role-play + scoring rubric + Tailwind",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does AI OSCE preparation improve real OSCE performance scores? Publishable in medical education.",
+        "tags": ["medical-education", "osce", "ai"],
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'OSCE Sim' — a medical history-taking simulator. 5 clinical scenarios: (1) meningitis presentation, (2) hemianopia post-stroke, (3) UTI with atypical features, (4) T2D medication side effect, (5) pediatric growth concern. Claude Haiku plays the patient: responds to student questions with appropriate history, emotional affect, and deliberate omissions (testing whether student asks the right questions). After 10 minutes, scorer shows: systems covered, red flags caught, red flags missed, OSCE-style grade. Next.js + Tailwind. Dark clinical theme."
+      },
+      {
+        "name": "Grant Jaccard",
+        "emoji": "📊",
+        "tagline": "Check your LOI against last year's funded abstracts — before submission, not after rejection.",
+        "mechanic": "Paste draft LOI → compute keyword overlap with funded PCORI/NIH abstracts → score + suggestions for language gaps.",
+        "stack": "Next.js + PCORI public abstract database + TF-IDF overlap scoring + Claude for rewrite suggestions",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does keyword alignment with funded abstracts predict LOI success rates? Publishable grant methodology paper.",
+        "tags": ["grant-writing", "nlp", "research"],
+        "impactRating": 5,
+        "funRating": 3,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'Grant Jaccard' — an LOI reviewer that compares draft grant language against funded abstracts. Step 1: build a static database of 50 funded PCORI/NIH abstracts (scraped or manually entered) as a searchable corpus. Step 2: user pastes their draft LOI. Step 3: compute TF-IDF keyword overlap between the draft and the funded corpus — return a similarity score (0-100) and the top 10 missing high-weight terms. Step 4: Claude Sonnet suggests 3 specific sentence rewrites that incorporate the missing terms naturally. Next.js. Dark theme. Show side-by-side: original draft | rewrite suggestion."
+      },
+      {
+        "name": "Nutrition HPI Builder",
+        "emoji": "🥗",
+        "tagline": "Teach doctors to ask about food in 6 questions — structured like a medication history.",
+        "mechanic": "Patient fills out 6-item nutrition intake form; output is structured HPI nutrition addendum ready to paste into clinical notes.",
+        "stack": "Next.js + Tailwind + Claude Haiku for HPI summary generation",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does a structured nutrition HPI tool increase dietary documentation rates in clinical notes? PFME study add-on.",
+        "tags": ["clinical-tool", "nutrition", "medical-education"],
+        "impactRating": 4,
+        "funRating": 3,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Nutrition HPI Builder' — a 6-question nutrition assessment that generates a clinical-note-ready addendum. 6 questions: (1) main protein sources this week, (2) main carbohydrate sources, (3) estimated meals per day, (4) main cooking method (fried/grilled/boiled/raw), (5) estimated fruit/vegetable servings per day, (6) any recent diet changes or restrictions. Claude Haiku generates a 3-sentence HPI addendum: 'Patient reports a [X]-type diet with [frequency] meals per day. Main protein sources include [Y]. Recent changes: [Z].' Doctor can copy-paste into clinical note. Next.js form, Tailwind, clean mobile UI."
+      },
+      {
+        "name": "Hackathon LOI Playbook",
+        "emoji": "🏆",
+        "tagline": "Win the hackathon, keep the prize — a step-by-step playbook for turning a win into pre-seed.",
+        "mechanic": "Interactive checklist: hackathon win → 5 steps to fundable startup (LOI + patent + pilot + deck + investors); generates each document.",
+        "stack": "Next.js + Claude Sonnet + progress tracker + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "What percentage of hackathon wins convert to funded startups, and what steps predict conversion? Publishable.",
+        "tags": ["entrepreneurship", "health-startup", "fundraising"],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Hackathon LOI Playbook' — a post-hackathon startup conversion guide. 5 interactive steps: Step 1: Hospital LOI (generate template), Step 2: Provisional Patent (generate claims outline, explain $2,000 filing process), Step 3: Pilot MOU (hospital memorandum of understanding template), Step 4: 1-Page Pitch Summary for investors, Step 5: Pre-seed ask amount calculator (based on LOI count × $100K base). Each step has: description + why it matters + Claude-generated document draft + download button. Progress bar at top. Next.js + Tailwind. Include the WSLD Western Sydney Local Health District as a worked example."
+      },
+      {
+        "name": "PFME Session Designer",
+        "emoji": "👩‍🏫",
+        "tagline": "Design a 3-hour resident nutrition workshop — with kitchen time, games, and two measurable objectives.",
+        "mechanic": "Input: patient population + dietary focus + session length → output: full agenda + facilitator guide + kitchen activity plan.",
+        "stack": "Next.js + Claude Sonnet + DOCX export (docx npm) + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Do resident nutrition sessions designed by AI-assisted curricula achieve better learning outcomes? IRB-approvable study.",
+        "tags": ["medical-education", "nutrition", "curriculum-design"],
+        "impactRating": 4,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'PFME Session Designer' — a curriculum design tool for resident nutrition education. Inputs: patient population (South Asian / South American / general), dietary focus (T2D / weight loss / general wellness), session length (2 / 3 / 4 hours), has cooking facilities (yes/no). Output via Claude Sonnet: (1) 2 behavioral objectives written in observable terms, (2) full session agenda with time blocks (intro, cases, kitchen activity, role-play, debrief), (3) 3 kitchen activities with hands-on instructions, (4) facilitator guide with key teaching points, (5) post-session survey (5 questions). Download as DOCX. Next.js + Tailwind."
+      },
+      {
+        "name": "Sprintax Buddy",
+        "emoji": "🧾",
+        "tagline": "F-1 OPT student taxes are a nightmare — this explains every line in plain English.",
+        "mechanic": "Upload W-2 or 1042-S → extract key fields → explain each line in plain English → output a checklist of next steps.",
+        "stack": "Next.js + Claude Sonnet for explanation + PDF parsing (pdf.js) + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "What tax errors are most common among international STEM students? IRS training set opportunity.",
+        "tags": ["finance", "international-students", "tax"],
+        "impactRating": 3,
+        "funRating": 2,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Sprintax Buddy' — a tax explainer for F-1 OPT international students. Upload a W-2 or 1042-S (PDF or image). Use pdf.js to extract text, send to Claude Sonnet with the prompt: 'You are a tax advisor for F-1 OPT international students. Explain each field of this tax document in plain English. Identify any amounts that need to be entered in Sprintax. Flag any fields that are unusual for an international student.' Output: field-by-field explanation + Sprintax entry guide + 3-step checklist. No financial advice disclaimer included in UI. Next.js + Tailwind."
+      },
+      {
+        "name": "Ward Round Recorder",
+        "emoji": "📋",
+        "tagline": "Capture ward round decisions in real-time — sync to patient notes without typing.",
+        "mechanic": "Tap 'start round' → voice capture per patient → Claude extracts plan, medications, follow-up → paste to EMR.",
+        "stack": "Next.js + Web Speech API + Claude Sonnet for structuring + Clipboard API",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does structured voice capture reduce ward round documentation time? Publishable in medical informatics.",
+        "tags": ["clinical-tool", "voice", "medical-documentation"],
+        "impactRating": 5,
+        "funRating": 3,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'Ward Round Recorder' — a voice-to-clinical-note app. Flow: doctor taps 'New Patient' → dictates ward round findings for 30-60 seconds → Claude Sonnet structures the note into: (1) Impression (1 sentence), (2) Plan (bulleted), (3) Medications changed (if any), (4) Follow-up (date + responsible). Doctor taps 'Copy to EMR' → formatted note in clipboard. Build with Web Speech API for browser-based voice capture. Support 10 simultaneous patients in a session. Next.js. Clinical dark theme."
+      },
+      {
+        "name": "Research Poster Critic",
+        "emoji": "🖼️",
+        "tagline": "Paste your poster abstract — get the 5 questions a reviewer will ask, with specific rewrites.",
+        "mechanic": "Paste abstract + methods + results → Claude returns 5 critical reviewer questions + specific rewrite suggestions.",
+        "stack": "Next.js + Claude Sonnet + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does AI-generated reviewer feedback improve abstract acceptance rates? Publishable with pre/post data.",
+        "tags": ["research", "academic-writing", "ai"],
+        "impactRating": 4,
+        "funRating": 3,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Research Poster Critic' — an academic abstract reviewer. User pastes: title + abstract + methods + results + conclusion. Claude Sonnet returns: (1) 5 specific reviewer questions the poster will face, (2) for each question: the weakness in the current text that prompts it, (3) a specific rewrite (1-3 sentences) that addresses the weakness, (4) an overall rating: Accept / Minor Revision / Major Revision, (5) top 3 strengths to keep. Single-page Next.js app. Dark theme. Copy-to-clipboard for each rewrite suggestion."
+      },
+      {
+        "name": "Hackathon Deck Builder",
+        "emoji": "🎯",
+        "tagline": "Build a 5-slide hackathon pitch deck in 20 minutes — problem, solution, evidence, team, ask.",
+        "mechanic": "Fill 5 structured inputs → Claude generates slide content → export as presentation outline + talking points.",
+        "stack": "Next.js + Claude Sonnet + Tailwind + html2canvas for PDF export",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Which slide structures predict hackathon wins? Analyze 100 winning decks — publishable.",
+        "tags": ["entrepreneurship", "health-startup", "presentation"],
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Hackathon Deck Builder' — a 5-slide pitch deck generator. 5 inputs: (1) Problem: who suffers + how badly, (2) Solution: what you built + how it works in 1 sentence, (3) Evidence: what validation you have (LOI, pilot, usage), (4) Team: who you are and why you, (5) Ask: what you need (investment, partnership, users). Claude Sonnet generates: slide title + 3 bullet points + presenter talking points for each slide. Display as 5 styled cards. Export button generates a printable HTML version via html2canvas. Next.js + Tailwind. Include WSLD hackathon team as a worked example."
+      },
+      {
+        "name": "PGx Food Scanner",
+        "emoji": "🧬",
+        "tagline": "Scan a food label — see if the flavors match your pharmacogenomics profile.",
+        "mechanic": "Upload food label photo → Claude Vision extracts ingredients → cross-reference CYP450 flavor interactions → flag matches.",
+        "stack": "Next.js + Claude Vision API + static CYP450 flavor compound database + Tailwind",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Does PGx-aware food labeling change dietary choices? Publishable in pharmacogenomics + nutrition intersection.",
+        "tags": ["pharmacogenomics", "nutrition", "consumer"],
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "claudePrompt": "Build 'PGx Food Scanner' — a pharmacogenomics-aware food label analyzer. Step 1: user uploads food label photo. Claude Vision extracts ingredient list. Step 2: cross-reference each ingredient against a static CYP450 flavor compound database: CYP1A2 (caffeine, cruciferous vegetables), CYP2D6 (tyramine, capsaicin), TAS2R38 (bitter compounds). Step 3: output a PGx flag panel: Green = compatible with typical profile, Yellow = check your CYP variant, Red = strong interaction if you're a slow metabolizer. Include a demo mode with 3 pre-loaded food labels. Next.js + Tailwind + Claude Vision API."
+      },
+      {
+        "name": "Sous CGM Explainer",
+        "emoji": "📈",
+        "tagline": "Your CGM spike pattern explained in plain English — and what to cook tonight to fix it.",
+        "mechanic": "Upload CGM graph image → Claude Vision identifies spike pattern → suggests 3 Sous meal modifications.",
+        "stack": "Next.js + Claude Vision API + Sous recipe database stub + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does personalized CGM-to-meal feedback improve glucose outcomes vs. generic advice? CGM trial add-on.",
+        "tags": ["cgm", "nutrition", "personalized-health"],
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'Sous CGM Explainer' — a CGM graph interpreter for patients. Upload a CGM graph image. Claude Vision analyzes and returns: (1) spike pattern classification (post-meal spike / overnight drift / dawn phenomenon / flat control), (2) plain English explanation of what the pattern means (1 paragraph, zero jargon), (3) 3 specific Sous meal modifications to try this week to address the pattern (e.g., 'Try dal before rice for your next South Asian meal to flatten the post-lunch spike'), (4) 1 question to bring to your doctor. Single-page Next.js app. Warm dark theme. Mobile-optimized for patients to use at home."
+      },
+      {
+        "name": "VR ADL Score",
+        "emoji": "🥽",
+        "tagline": "Score activities of daily living across 4 domains — the ShopWell VR framework, generalized.",
+        "mechanic": "Select patient condition + ADL category → generate difficulty progression (16 levels) across cognitive/physical/visual/environmental.",
+        "stack": "Next.js + Claude Sonnet for level design + Tailwind table UI",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does a 4-domain ADL difficulty framework improve VR rehabilitation outcomes vs. single-domain? Publishable.",
+        "tags": ["vr", "rehabilitation", "medical-education"],
+        "impactRating": 4,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'VR ADL Score' — a VR rehabilitation level design tool based on the ShopWell hemianopia framework. Inputs: patient condition (hemianopia / post-stroke dominant hand / spatial neglect / processing speed deficit), ADL target (grocery shopping / cooking / navigation / workplace task). Output: a 16-level difficulty matrix across 4 domains: Cognitive (decision complexity), Physical (motor demand), Visual (field requirement), Environmental (scene complexity). Each cell: brief level description + measurable success criterion. Claude Sonnet generates the matrix. Display as a 16×4 table. Export as CSV. Next.js + Tailwind."
+      },
+      {
+        "name": "Spice Blooming Timer",
+        "emoji": "⏱️",
+        "tagline": "A cooking timer that teaches technique — not just counts down.",
+        "mechanic": "Select spice combination → get stage-by-stage visual cue guide + timers with sensory signals for each stage.",
+        "stack": "Next.js + Web Audio API for stage alerts + Tailwind",
+        "buildEstimate": "1 weekend",
+        "researchAngle": "Does technique-cued cooking guidance produce better dietary adherence than recipe compliance? Publishable.",
+        "tags": ["cooking", "technique", "south-asian"],
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "claudePrompt": "Build 'Spice Blooming Timer' — a stage-based cooking guide for South Asian spice techniques. UI: dropdown of 20 spice combinations (cumin + coriander / black mustard + curry leaf / cardamom + cinnamon / etc.). Each combination shows 4 stages with: stage name, duration (seconds), visual cue to watch for, sound/smell signal, audio alert when done. Stages: dry spice bloom → aroma release → wet spice integration → aromatics. Web Audio API chime between stages. Large clear text for kitchen use. PWA so it works without internet. Next.js + Tailwind."
+      },
+      {
+        "name": "Grant Deadline Calendar",
+        "emoji": "📅",
+        "tagline": "Import your grant registry — get a Gantt chart with real action deadlines, not just submission dates.",
+        "mechanic": "Paste grant CSV or JSON → Claude extracts real action windows → output a Gantt chart with 14/7/2-day warning bands.",
+        "stack": "Next.js + Claude Sonnet + D3.js Gantt + Tailwind",
+        "buildEstimate": "2 weekends",
+        "researchAngle": "Do researchers who see 'real action window' deadlines vs. submission deadlines submit more grants? Study design.",
+        "tags": ["grant-management", "research", "calendar"],
+        "impactRating": 5,
+        "funRating": 3,
+        "feasibilityRating": 4,
+        "claudePrompt": "Build 'Grant Deadline Calendar' — a Gantt chart generator for grant management. Input: paste grant data as JSON array [{name, funder, submission_deadline, loi_deadline, nomination_gate, amount, score}]. Claude Sonnet identifies the real action window for each grant (nomination gates, LOI deadlines, internal review time). D3.js renders a Gantt chart with: submission date (solid bar), LOI deadline (dashed bar), nomination gate (red dot if ≤ 14 days from today), 14/7/2-day warning bands in red/orange/yellow. Click a grant to expand details. Export as PDF. Next.js + Tailwind."
+      }
+    ]
+  },
+  "skills": {
+    "nextScan": "2026-04-29",
+    "dataSources": [
+      "OMI MCP (345 memories, 45 conversations)",
+      "Stefan-Brain wiki logs",
+      "Prior week Airtable task context"
+    ],
+    "candidates": [
+      {
+        "rank": 1,
+        "name": "OMI → Optimus Commitment Loop",
+        "score": 95,
+        "timeSaved": "60 min/day",
+        "pattern": "Stefan feeds OMI audio to Claude daily and pays $300/month — but the behavioral feedback loop from OMI back to his task queue is still manual. omi-commitment-capture skill exists but the review queue loop is incomplete.",
+        "frequency": "Daily",
+        "complexity": "medium",
+        "action": "Build this sprint",
+        "actionColor": "red",
+        "sources": ["OMI Conv 25 (Apr 15)", "OMI Conv 16 (Apr 18)"]
+      },
+      {
+        "rank": 2,
+        "name": "Razer Proposal OTL Tracker",
+        "score": 88,
+        "timeSaved": "2 hrs/occurrence",
+        "pattern": "The Razer partnership requires OTL review → Rich sign-off → Dr. Mahari commitment. Three sequential approvals with no tracking. An automated status tracker with email nudges at each stage would prevent the approval chain from stalling.",
+        "frequency": "Per partnership",
+        "complexity": "low",
+        "action": "Build this week",
+        "actionColor": "red",
+        "sources": ["OMI Conv 13 (Apr 19)"]
+      },
+      {
+        "rank": 3,
+        "name": "PFME Session Auto-Agenda",
+        "score": 82,
+        "timeSaved": "3 hrs/session design",
+        "pattern": "PFME curriculum requires a 3-hour session design every iteration. The 4-domain framework (objectives + activities + kitchen + debrief) is fully templatable. A Claude-powered form that generates the full agenda + facilitator guide in 5 minutes replaces hours of manual design.",
+        "frequency": "Monthly",
+        "complexity": "low",
+        "action": "Build this week",
+        "actionColor": "red",
+        "sources": ["OMI Conv 27 (Apr 15)"]
+      },
+      {
+        "rank": 4,
+        "name": "Grant Real-Deadline Alerter",
+        "score": 80,
+        "timeSaved": "Prevents $1M+ missed windows",
+        "pattern": "Hidden nomination gates (ADA GR-071 nominal gate ≈ 2 weeks before public deadline) are a systematic failure mode. Automated 14/7/2-day push alerts for the REAL action deadline (not submission date) would have caught 3 near-misses this week.",
+        "frequency": "Per grant",
+        "complexity": "low",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": ["Grant Registry", "Prior week overview"]
+      },
+      {
+        "rank": 5,
+        "name": "REDCap Instrument Builder",
+        "score": 78,
+        "timeSaved": "4 hrs/instrument",
+        "pattern": "REDCap instrument creation involves: branching logic design → CSV data dictionary → import → QA. This is fully automatable: provide natural language survey description → Claude generates the data dictionary CSV with correct branching_logic column → ready to import.",
+        "frequency": "Per study",
+        "complexity": "medium",
+        "action": "Build next sprint",
+        "actionColor": "orange",
+        "sources": ["OMI Conv 10 (Apr 19)"]
+      }
+    ],
+    "crossSourcePatterns": [
+      "Stefan's OMI corpus is the richest behavioral data source in his system — yet the OMI → action pipeline is still the weakest link (manual review, no automation)",
+      "Three pending grant actions require parallel stakeholder management (Razer/OTL/Rich, Lata+Malti, Pokhari) — none has an automated status tracker",
+      "The PFME curriculum decision (video vs. live) is blocked by cost analysis that should take 30 minutes but hasn't been done — a simple spreadsheet would unblock it",
+      "Hackathon team has hospital approval but no weekly meeting — the win converts to nothing without team infrastructure"
+    ]
+  },
+  "nourish": {
+    "grants": [
+      {
+        "name": "PCORI Improving Methods for CER — Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "Up to $750K (2 years)",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 90,
+        "status": "Found",
+        "match": "Sous food recognition + cooking confidence methodology = novel CER measurement for nutrition behavior. Stefan's CGM trial dataset is the validation cohort.",
+        "registryId": "GR-007",
+        "urgent": true
+      },
+      {
+        "name": "PCORI Phased Large Awards — Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "Up to $12M direct (5 years)",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 88,
+        "status": "Found",
+        "match": "Large-scale Sous vs. traditional nutrition coaching pragmatic trial. Diabetes/Obesity Special Areas of Emphasis. South Asian CGM cohort as Phase 1 pilot.",
+        "registryId": "GR-024",
+        "urgent": true
+      },
+      {
+        "name": "Google.org AI for Science Impact Challenge",
+        "funder": "Google.org",
+        "amount": "$500K–$3M + Cloud credits",
+        "deadline": "Reopen TBD (Apr 17 cycle closed)",
+        "score": 89,
+        "status": "Found",
+        "match": "Sous AI pipeline + Malati Srinivasan as Stanford AI-faculty anchor. Lata/Malti Srinivasan can advise on reapplication strategy. Monitor for next cycle.",
+        "registryId": "GR-054",
+        "urgent": false
+      },
+      {
+        "name": "Gates Grand Challenges — Physiological Barriers to Good Nutrition",
+        "funder": "Gates Foundation",
+        "amount": "Up to $250K (18 months)",
+        "deadline": "Apr 28, 2026",
+        "score": 78,
+        "status": "Found",
+        "match": "NOURISH precision nutrition + South Asian cohort + CGM methodology. Bundle with GR-026 and GR-067.",
+        "registryId": "GR-025",
+        "urgent": true
+      },
+      {
+        "name": "NIH Dissemination & Implementation R01 (PAR-25-144)",
+        "funder": "NIH (multi-IC)",
+        "amount": "$250K–$500K/yr, up to 5 years",
+        "deadline": "Jun 5 / Oct 5 annually",
+        "score": 88,
+        "status": "Found",
+        "match": "Implementation science for Sous + PGx Copilot in diverse South Asian, South American, and East Asian populations. Apollo India + Nepal Ministry deployments as pilot data.",
+        "registryId": "GR-028",
+        "urgent": false
+      },
+      {
+        "name": "HRSA FY2026 Expanding Nutrition Services $125M",
+        "funder": "HRSA Bureau of Primary Health Care",
+        "amount": "$125M across 350+ health centers",
+        "deadline": "Jun 9, 2026",
+        "score": 85,
+        "status": "Found",
+        "match": "Sous deployment in FQHCs with South Asian and South American patient populations. NOURISH as technical assistance layer.",
+        "registryId": "GR-056",
+        "urgent": false
+      },
+      {
+        "name": "NSF/NIH Smart Health and Biomedical Research (SCH)",
+        "funder": "NSF + NIH",
+        "amount": "Up to $1.2M (4 years)",
+        "deadline": "Next cycle TBD",
+        "score": 87,
+        "status": "Found",
+        "match": "Sous AI + CGM data science for precision nutrition. Cross-disciplinary AI + health engineering framing. Direct fit.",
+        "registryId": "GR-003",
+        "urgent": false
+      },
+      {
+        "name": "ADA Pathway to Stop Diabetes",
+        "funder": "American Diabetes Association",
+        "amount": "$1.625M (5 years)",
+        "deadline": "May 19, 2026 (nomination gate ~May 12)",
+        "score": 85,
+        "status": "Found",
+        "match": "CGM trial + PGx Copilot for diabetes prevention. Early-career physician-scientist track. Stanford ORD nomination required by ~May 12.",
+        "registryId": "GR-071",
+        "urgent": true
+      },
+      {
+        "name": "Stanford HAI Hoffman-Yee Research Grant",
+        "funder": "Stanford HAI",
+        "amount": "$500K Year 1, up to $2M over 3 years",
+        "deadline": "LOI ~Jan 2027",
+        "score": 85,
+        "status": "Found",
+        "match": "Interdisciplinary AI + nutrition health. Lata/Malti Srinivasan advisory connections unlock this pathway. Next cycle January 2027.",
+        "registryId": "GR-005",
+        "urgent": false
+      },
+      {
+        "name": "NIH NIDDK T2D Digital Health R01 — Oct 2026 cycle",
+        "funder": "NIH/NIDDK",
+        "amount": "$250K–$500K/yr, up to 5 years",
+        "deadline": "Oct 6, 2026",
+        "score": 85,
+        "status": "Found",
+        "match": "Sous nutrition coaching for T2D management with South Asian cohort. CGM trial provides pilot data for Oct cycle submission.",
+        "registryId": "GR-044",
+        "urgent": false
+      },
+      {
+        "name": "Macy Foundation — Medical Education",
+        "funder": "Josiah Macy Jr. Foundation",
+        "amount": "$100K–$500K",
+        "deadline": "Rolling",
+        "score": 82,
+        "status": "Found",
+        "match": "PFME resident nutrition curriculum: learner co-creation, cooking kitchen, culturally tailored patient stories. Macy criteria emphasize clinical environment embedding and interprofessional learning.",
+        "registryId": "GR-020",
+        "urgent": false
+      },
+      {
+        "name": "Wellcome Trust Digital Technology in Health",
+        "funder": "Wellcome Trust",
+        "amount": "$250K–$2M",
+        "deadline": "Rolling (2026 open)",
+        "score": 80,
+        "status": "Found",
+        "match": "Sous AI for low-resource culturally-specific nutrition. Global health framing with South Asian + Nepal Ministry deployments.",
+        "registryId": "GR-018",
+        "urgent": false
+      },
+      {
+        "name": "PCORI PCORnet National-Scale Study",
+        "funder": "PCORI",
+        "amount": "Up to $12M",
+        "deadline": "LOI Apr 28, 2026",
+        "score": 80,
+        "status": "Found",
+        "match": "National-scale Sous pragmatic trial via PCORnet. Requires network partner — identify PCORnet network before LOI submission.",
+        "registryId": "GR-049",
+        "urgent": true
+      },
+      {
+        "name": "NIH NINR Nutrition Across the Lifespan",
+        "funder": "NIH/NINR",
+        "amount": "R01-level",
+        "deadline": "Forecasted Apr 27, 2026",
+        "score": 80,
+        "status": "Found",
+        "match": "Sous nutrition intervention + health equity across lifespan. South Asian dietary transition (India → US) as focus population.",
+        "registryId": "GR-051",
+        "urgent": true
+      },
+      {
+        "name": "Rockefeller Foundation — Food Is Medicine",
+        "funder": "Rockefeller Foundation",
+        "amount": ">$100M program (invited)",
+        "deadline": "Rolling / invited",
+        "score": 79,
+        "status": "Found",
+        "match": "Sous as Food Is Medicine digital intervention. Lata/Malti Srinivasan and Google.org network may provide the warm introduction pathway.",
+        "registryId": "GR-062",
+        "urgent": false
+      }
+    ]
+  }
+}
