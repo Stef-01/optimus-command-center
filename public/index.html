@@ -2926,7 +2926,7 @@
             <div>
               <span class="skill-action ${c.actionColor === 'yellow' ? 'action-yellow' : 'action-gray'}">${c.action}</span>
               <div style="margin-top: 8px; display: flex; gap: 4px; flex-wrap: wrap;">
-                ${c.sources.map(s => `<span style="background: var(--bg); padding: 2px 6px; border-radius: 3px; font-size: 10px; color: var(--text-secondary);">${s}</span>`).join('')}
+                ${(c.sources || []).map(s => `<span style="background: var(--bg); padding: 2px 6px; border-radius: 3px; font-size: 10px; color: var(--text-secondary);">${s}</span>`).join('')}
               </div>
             </div>
           </div>
@@ -2934,26 +2934,30 @@
         document.getElementById('skillCandidates').innerHTML = candidatesHTML;
 
         // Cross-source patterns
-        const patternsHTML = data.crossSourcePatterns.map(p => `
-          <div class="card" style="margin-bottom: 12px;">
-            <div style="font-weight: 600; margin-bottom: 6px;">${p.title}</div>
-            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 6px;">${p.desc}</div>
-            <div style="font-family: monospace; font-size: 11px; color: var(--cyan); background: var(--bg); padding: 8px; border-radius: 4px;">${p.flow}</div>
-          </div>
-        `).join('');
-        document.getElementById('crossSourcePatterns').innerHTML = patternsHTML;
+        const crossPatternsEl = document.getElementById('crossSourcePatterns');
+        if (crossPatternsEl && data.crossSourcePatterns?.length) {
+          crossPatternsEl.innerHTML = data.crossSourcePatterns.map(p => `
+            <div class="card" style="margin-bottom: 12px;">
+              <div style="font-weight: 600; margin-bottom: 6px;">${p.title}</div>
+              <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 6px;">${p.desc}</div>
+              <div style="font-family: monospace; font-size: 11px; color: var(--cyan); background: var(--bg); padding: 8px; border-radius: 4px;">${p.flow}</div>
+            </div>
+          `).join('');
+        }
 
         // Pipeline
-        const pipelineHTML = data.pipeline.map(item => `
-          <tr>
-            <td><span class="badge ${item.status === 'evaluating' ? 'badge-pending' : 'badge-status'}">${item.status}</span></td>
-            <td><strong>${item.name}</strong></td>
-            <td>${item.score}</td>
-            <td>${item.weekIdentified}</td>
-            <td style="font-size: 11px;">${item.action}</td>
-          </tr>
-        `).join('');
-        document.getElementById('pipelineTable').innerHTML = pipelineHTML;
+        const pipelineEl = document.getElementById('pipelineTable');
+        if (pipelineEl && data.pipeline?.length) {
+          pipelineEl.innerHTML = data.pipeline.map(item => `
+            <tr>
+              <td><span class="badge ${item.status === 'evaluating' ? 'badge-pending' : 'badge-status'}">${item.status}</span></td>
+              <td><strong>${item.name}</strong></td>
+              <td>${item.score}</td>
+              <td>${item.weekIdentified}</td>
+              <td style="font-size: 11px;">${item.action}</td>
+            </tr>
+          `).join('');
+        }
       }
 
       renderTinker() {
