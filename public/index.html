@@ -1522,6 +1522,71 @@
       font-size: 13px;
       padding: 40px 20px;
     }
+
+    /* ============================================
+       DISMISS SYSTEM
+       ============================================ */
+    .card, .idea-card, .skill-card { position: relative; }
+
+    .dismiss-btn {
+      position: absolute; top: 8px; right: 8px;
+      background: transparent; border: 1px solid transparent;
+      color: var(--text-secondary); cursor: pointer;
+      font-size: 13px; padding: 3px 7px; line-height: 1;
+      border-radius: 4px; opacity: 0; z-index: 5;
+      transition: opacity 0.15s, background 0.15s, border-color 0.15s;
+      font-family: inherit;
+    }
+    .card:hover .dismiss-btn,
+    .idea-card:hover .dismiss-btn,
+    .skill-card:hover .dismiss-btn { opacity: 1; }
+    .dismiss-btn:hover { background: rgba(248,81,73,0.15); border-color: var(--red); color: var(--red); }
+    .dismiss-btn.undismiss:hover { background: rgba(88,166,255,0.15); border-color: var(--cyan-alt); color: var(--cyan-alt); }
+    @media (max-width: 640px) { .dismiss-btn { opacity: 0.35; } }
+
+    @keyframes dismiss-out {
+      from { opacity: 1; transform: scale(1); max-height: 600px; }
+      to   { opacity: 0; transform: scale(0.97); max-height: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0; border-width: 0; }
+    }
+    .dismissing { animation: dismiss-out 0.28s ease forwards; overflow: hidden; pointer-events: none; }
+
+    #dismissModal {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.72); z-index: 10001;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    #dismissModal.open { display: flex; }
+    .dismiss-modal-inner {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; max-width: 380px; width: 100%;
+    }
+    .dismiss-modal-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .dismiss-modal-subtitle { font-size: 12px; color: var(--text-secondary); margin-bottom: 14px; }
+    .dismiss-modal-input {
+      width: 100%; background: var(--bg-el); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 10px; color: var(--text-primary);
+      font-family: inherit; font-size: 13px; margin-bottom: 14px; outline: none; box-sizing: border-box;
+    }
+    .dismiss-modal-input:focus { border-color: var(--cyan-alt); }
+    .dismiss-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    .dismiss-modal-cancel {
+      background: transparent; border: 1px solid var(--border); color: var(--text-secondary);
+      padding: 7px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: inherit;
+    }
+    .dismiss-modal-confirm {
+      background: var(--red); border: none; color: #fff;
+      padding: 7px 16px; border-radius: 6px; cursor: pointer;
+      font-size: 13px; font-family: inherit; font-weight: 600;
+    }
+
+    .show-dismissed-btn {
+      font-size: 12px; color: var(--text-secondary); cursor: pointer;
+      padding: 5px 11px; border: 1px solid var(--border); border-radius: 6px;
+      background: transparent; font-family: inherit; transition: all 0.15s;
+    }
+    .show-dismissed-btn.active { color: var(--yellow); border-color: var(--yellow); }
+    .dismissed-item { opacity: 0.42; }
+
   </style>
 </head>
 <body>
@@ -1790,6 +1855,19 @@
     <button class="fab-action" id="fabSettings" role="menuitem">⚙️ Settings</button>
   </div>
 
+  <!-- Dismiss modal -->
+  <div id="dismissModal">
+    <div class="dismiss-modal-inner">
+      <div class="dismiss-modal-title" id="dismissModalTitle">Dismiss?</div>
+      <div class="dismiss-modal-subtitle">This item will be hidden. Use the "Show dismissed" toggle to restore it.</div>
+      <input class="dismiss-modal-input" id="dismissModalReason" placeholder="Optional reason…" type="text" maxlength="200">
+      <div class="dismiss-modal-actions">
+        <button class="dismiss-modal-cancel" id="dismissModalCancel">Cancel</button>
+        <button class="dismiss-modal-confirm" id="dismissModalConfirm">🗑️ Dismiss</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // HTML-escape helper — used wherever user-sourced strings go into innerHTML
     const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -1816,6 +1894,131 @@
       banner.style.display = 'none';
     }
 
+    // ====================================================
+    // DISMISS SYSTEM — localStorage-backed, clipboard write-back
+    // ====================================================
+    const DISMISS_KEY = 'optimus-dismissed';
+
+    function _getDismissed(cat) {
+      try { return (JSON.parse(localStorage.getItem(DISMISS_KEY) || '{}')[cat] || []); }
+      catch(e) { return []; }
+    }
+    function _saveDismissed(cat, list) {
+      try {
+        const all = JSON.parse(localStorage.getItem(DISMISS_KEY) || '{}');
+        all[cat] = list;
+        localStorage.setItem(DISMISS_KEY, JSON.stringify(all));
+      } catch(e) {}
+    }
+    function isDismissed(cat, id) {
+      return _getDismissed(cat).some(d => d.id === id);
+    }
+    function dismissedCount(cat) { return _getDismissed(cat).length; }
+    function dismissItem(cat, id, title, reason) {
+      const list = _getDismissed(cat).filter(d => d.id !== id);
+      list.push({ id, title, dismissedAt: new Date().toISOString().slice(0,10), reason: reason || '' });
+      _saveDismissed(cat, list);
+      navigator.clipboard?.writeText(_buildDismissPrompt(cat, id, title, reason || '')).catch(() => {});
+    }
+    function undismissItem(cat, id, title) {
+      _saveDismissed(cat, _getDismissed(cat).filter(d => d.id !== id));
+      navigator.clipboard?.writeText(_buildUndismissPrompt(cat, id, title)).catch(() => {});
+    }
+
+    function _hashId(str) {
+      let h = 0;
+      for (let i = 0; i < str.length; i++) { h = Math.imul(31, h) + str.charCodeAt(i) | 0; }
+      return 'id' + Math.abs(h).toString(36);
+    }
+
+    function _buildDismissPrompt(cat, id, title, reason) {
+      const now = new Date().toISOString().slice(0,10);
+      if (cat === 'grants') {
+        return `Update the grant in Stefan-Brain wiki/nourish/grants/ for grant titled "${title}".\nSet these frontmatter fields:\n  status: dismissed\n  dismissed-at: "${now}"\n  dismissed-reason: "${reason}"\n\nUse the obsidian-vault MCP update_frontmatter tool. Use search_notes("${title}") to find the file path first.`;
+      } else if (cat === 'decisions') {
+        return `Update the decision with id "${id}" in its source file's decisions: block — set status to "dismissed".\nUse the obsidian-vault MCP patch_note or update_frontmatter tool on the file that contains:\n  decisions:\n    - id: "${id}"\n\nThen re-run the decisions-aggregator to refresh the pending list.`;
+      } else {
+        return `Append this entry to the dismissed: array in wiki/_dismissed/${cat}.md frontmatter in Stefan-Brain:\n  - id: "${id}"\n    title: "${title}"\n    dismissed-at: "${now}"\n    reason: "${reason}"\n    expires-at: null\n\nUse the obsidian-vault MCP update_frontmatter tool on file: wiki/_dismissed/${cat}.md`;
+      }
+    }
+    function _buildUndismissPrompt(cat, id, title) {
+      if (cat === 'grants') {
+        return `Update the grant "${title}" in Stefan-Brain wiki/nourish/grants/ — set frontmatter status back to "active" and remove dismissed-at and dismissed-reason fields. Use the obsidian-vault MCP update_frontmatter tool.`;
+      } else if (cat === 'decisions') {
+        return `Update the decision with id "${id}" in its source file — set status back to "pending". Use the obsidian-vault MCP patch_note or update_frontmatter tool.`;
+      } else {
+        return `Remove the entry with id "${id}" from the dismissed: array in wiki/_dismissed/${cat}.md frontmatter. Use the obsidian-vault MCP update_frontmatter tool on file: wiki/_dismissed/${cat}.md`;
+      }
+    }
+
+    // Global dismiss card handler — called from inline onclick on dismiss buttons
+    window.__dismissCard = (cat, id, title, btnEl) => {
+      const cardEl = btnEl?.closest?.('.card, .idea-card, .skill-card');
+      const rerenderMap = {
+        grants:    () => window.__optimus?.renderNourish(),
+        bumblebee: () => window.__optimus?.renderIdeas(),
+        tinker:    () => window.__optimus?.renderTinker(),
+        skills:    () => window.__optimus?.renderSkills(),
+        decisions: () => window.__optimus?.renderForDecision(),
+      };
+      const rerender = rerenderMap[cat] || (() => {});
+      if (isDismissed(cat, id)) {
+        undismissItem(cat, id, title);
+        rerender();
+      } else {
+        _modal.open(cat, id, title, () => {
+          if (cardEl) { cardEl.classList.add('dismissing'); setTimeout(() => rerender(), 300); }
+          else rerender();
+        });
+      }
+    };
+
+    // Show-dismissed toggle helper — renders a small button string
+    function _dismissToggleHTML(cat, showDism) {
+      const cnt = dismissedCount(cat);
+      if (cnt === 0 && !showDism) return '';
+      const label = showDism ? `👁 Hiding dismissed (${cnt})` : `👁 Show dismissed (${cnt})`;
+      return `<div style="margin-bottom:12px"><button class="show-dismissed-btn ${showDism ? 'active' : ''}" onclick="window.__optimus.toggleShowDismissed('${cat}',()=>window.__optimus.render${cat==='grants'?'Nourish':cat==='bumblebee'?'Ideas':cat==='decisions'?'ForDecision':cat.charAt(0).toUpperCase()+cat.slice(1)}())">${label}</button></div>`;
+    }
+
+    // Modal controller
+    let _dismissPending = null;
+    const _modal = {
+      open(cat, id, title, cb) {
+        _dismissPending = { cat, id, title, cb };
+        const titleEl = document.getElementById('dismissModalTitle');
+        if (titleEl) titleEl.textContent = `Dismiss "${title.length > 55 ? title.slice(0,52)+'…' : title}"?`;
+        const inp = document.getElementById('dismissModalReason');
+        if (inp) inp.value = '';
+        document.getElementById('dismissModal')?.classList.add('open');
+        setTimeout(() => inp?.focus(), 60);
+      },
+      close() {
+        _dismissPending = null;
+        document.getElementById('dismissModal')?.classList.remove('open');
+      },
+      confirm() {
+        if (!_dismissPending) return;
+        const reason = document.getElementById('dismissModalReason')?.value.trim() || '';
+        const { cat, id, title, cb } = _dismissPending;
+        dismissItem(cat, id, title, reason);
+        _modal.close();
+        cb();
+      }
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('dismissModalCancel')?.addEventListener('click', () => _modal.close());
+      document.getElementById('dismissModalConfirm')?.addEventListener('click', () => _modal.confirm());
+      document.getElementById('dismissModal')?.addEventListener('click', e => {
+        if (e.target.id === 'dismissModal') _modal.close();
+      });
+      document.addEventListener('keydown', e => {
+        if (!document.getElementById('dismissModal')?.classList.contains('open')) return;
+        if (e.key === 'Escape') _modal.close();
+        if (e.key === 'Enter') _modal.confirm();
+      });
+    });
+
     class Optimus {
       constructor() {
         this.weeks = {};
@@ -1824,6 +2027,8 @@
         this.currentWeekDate = null;
         this.prevWeek = null;
         this.decisions = null;
+        this.showDismissed = {};
+        window.__optimus = this;
         this.init();
       }
 
@@ -2038,6 +2243,11 @@
         });
       }
 
+      toggleShowDismissed(cat, renderFn) {
+        this.showDismissed[cat] = !this.showDismissed[cat];
+        renderFn();
+      }
+
       renderWeekTabs() {
         // Week pills
         const container = document.getElementById('weeklyTabs');
@@ -2123,7 +2333,8 @@
 
         // Grants: route to SEPARATE subsection, never into the main urgent list.
         // Only surface grants with deadline within 7 days (truly imminent).
-        (week.nourish?.grants || []).forEach(g => {
+        // Skip dismissed grants.
+        (week.nourish?.grants || []).filter(g => !isDismissed('grants', _hashId(g.name))).forEach(g => {
           const dl = parseDeadlineDate(g.deadline);
           if (!dl) return;
           const daysUntil = Math.ceil((dl - today) / 86400000);
@@ -2493,9 +2704,15 @@
         `).join('');
         document.getElementById('ideasIndex').innerHTML = indexHTML;
 
-        // Idea cards
-        const ideasHTML = data.ideas.map((idea, idx) => `
-          <div class="idea-card" onclick="this.querySelector('.idea-essay')?.classList.toggle('expanded')">
+        // Idea cards — with dismiss system
+        const showDismBee = this.showDismissed.bumblebee;
+        const visibleIdeas = data.ideas.filter((idea, idx) => showDismBee || !isDismissed('bumblebee', _hashId(idea.title)));
+        const ideasHTML = _dismissToggleHTML('bumblebee', showDismBee) + visibleIdeas.map((idea, idx) => {
+          const iId = _hashId(idea.title);
+          const isDism = isDismissed('bumblebee', iId);
+          return `
+          <div class="idea-card ${isDism ? 'dismissed-item' : ''}" onclick="if(!event.target.closest('.dismiss-btn'))this.querySelector('.idea-essay')?.classList.toggle('expanded')">
+            <button class="dismiss-btn${isDism ? ' undismiss' : ''}" title="${isDism ? 'Undismiss' : 'Dismiss'}" onclick="event.stopPropagation();window.__dismissCard('bumblebee',${JSON.stringify(iId).replace(/"/g,'&quot;')},${JSON.stringify(idea.title).replace(/"/g,'&quot;')},this)">${isDism ? '↩' : '🗑️'}</button>
             <div class="idea-header">
               <div>
                 <div class="idea-title">${idea.title}</div>
@@ -2517,7 +2734,7 @@
               </div>
             </div>
           </div>
-        `).join('');
+        `}).join('');
         document.getElementById('ideasContainer').innerHTML = ideasHTML;
 
         document.getElementById('pgQuoteBottom').textContent = data.pgQuoteBottom;
@@ -2599,10 +2816,14 @@
           `).join('');
         }
 
-        // Grants with project pills
+        // Grants with project pills + dismiss system
         const grantsEl = document.getElementById('nourishGrants');
         if (grantsEl && data.grants) {
-          grantsEl.innerHTML = data.grants.map(g => {
+          const showDism = this.showDismissed.grants;
+          const visible = data.grants.filter(g => showDism || !isDismissed('grants', _hashId(g.name)));
+          grantsEl.innerHTML = _dismissToggleHTML('grants', showDism) + visible.map(g => {
+            const gId = _hashId(g.name);
+            const isDism = isDismissed('grants', gId);
             const aligned = matchProjects(g);
             const pillsHTML = aligned.length ? `
               <div class="grant-pills">
@@ -2615,7 +2836,8 @@
               </div>
             ` : '';
             return `
-              <div class="card mobile-collapsible" onclick="this.classList.toggle('expanded')">
+              <div class="card mobile-collapsible ${isDism ? 'dismissed-item' : ''}" onclick="if(!event.target.closest('.dismiss-btn'))this.classList.toggle('expanded')">
+                <button class="dismiss-btn${isDism ? ' undismiss' : ''}" title="${isDism ? 'Undismiss' : 'Dismiss'}" onclick="event.stopPropagation();window.__dismissCard('grants',${JSON.stringify(gId).replace(/"/g,'&quot;')},${JSON.stringify(g.name).replace(/"/g,'&quot;')},this)">${isDism ? '↩' : '🗑️'}</button>
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
                   <div style="flex:1;min-width:0">
                     <div style="font-weight:700">${g.name}<span class="mobile-collapse-arrow">⌄</span></div>
@@ -2681,9 +2903,15 @@
         `).join('');
         document.getElementById('dataSourcesTable').innerHTML = sourcesHTML;
 
-        // Candidates
-        const candidatesHTML = data.candidates.map(c => `
-          <div class="skill-card">
+        // Candidates — with dismiss system
+        const showDismSkills = this.showDismissed.skills;
+        const visibleCandidates = data.candidates.filter(c => showDismSkills || !isDismissed('skills', _hashId(c.name)));
+        const candidatesHTML = _dismissToggleHTML('skills', showDismSkills) + visibleCandidates.map(c => {
+          const cId = _hashId(c.name);
+          const isDism = isDismissed('skills', cId);
+          return `
+          <div class="skill-card ${isDism ? 'dismissed-item' : ''}">
+            <button class="dismiss-btn${isDism ? ' undismiss' : ''}" title="${isDism ? 'Undismiss' : 'Dismiss'}" onclick="event.stopPropagation();window.__dismissCard('skills',${JSON.stringify(cId).replace(/"/g,'&quot;')},${JSON.stringify(c.name).replace(/"/g,'&quot;')},this)">${isDism ? '↩' : '🗑️'}</button>
             <div class="skill-rank">#${c.rank}</div>
             <div class="skill-title">${c.name}</div>
             <div class="skill-meta">
@@ -2700,7 +2928,7 @@
               </div>
             </div>
           </div>
-        `).join('');
+        `}).join('');
         document.getElementById('skillCandidates').innerHTML = candidatesHTML;
 
         // Cross-source patterns
@@ -2774,7 +3002,12 @@
           `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${i < val ? '#F59E0B' : 'var(--border)'}"></span>`
         ).join('');
 
-        el.innerHTML = ideas.map((idea, idx) => {
+        const showDismTinker = this.showDismissed.tinker;
+        const visibleTinker = ideas.filter(idea => showDismTinker || !isDismissed('tinker', _hashId(idea.name)));
+
+        el.innerHTML = _dismissToggleHTML('tinker', showDismTinker) + visibleTinker.map((idea, idx) => {
+          const tId = _hashId(idea.name);
+          const isDism = isDismissed('tinker', tId);
           const isStarred = starred.includes(idea.name);
           const tags = (idea.tags || []).map(t =>
             `<span style="display:inline-block;background:var(--bg-el);color:var(--text-secondary);padding:2px 8px;border-radius:4px;font-size:11px;margin:2px 4px 2px 0">${t}</span>`
@@ -2783,7 +3016,8 @@
             ? `obsidian://open?vault=Stefan-Brain&file=wiki/tinker/${encodeURIComponent(idea.brainLink)}`
             : '';
           return `
-            <div class="card" style="border-top:3px solid #F59E0B;margin-bottom:16px">
+            <div class="card ${isDism ? 'dismissed-item' : ''}" style="border-top:3px solid #F59E0B;margin-bottom:16px">
+              <button class="dismiss-btn${isDism ? ' undismiss' : ''}" title="${isDism ? 'Undismiss' : 'Dismiss'}" onclick="event.stopPropagation();window.__dismissCard('tinker',${JSON.stringify(tId).replace(/"/g,'&quot;')},${JSON.stringify(idea.name).replace(/"/g,'&quot;')},this)">${isDism ? '↩' : '🗑️'}</button>
               <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:10px">
                 <div style="font-size:18px;font-weight:700">${idea.emoji || '🔧'} ${idea.name}</div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap">
@@ -2956,8 +3190,10 @@
           }).catch(() => console.warn('Clipboard write failed'));
         };
 
+        const showDismDec = this.showDismissed.decisions;
+        const filteredItems = d.items.filter(item => showDismDec || !isDismissed('decisions', item.id));
         const groups = { high: [], medium: [], low: [], cosmetic: [], deferred_resurfaced: [] };
-        d.items.forEach(item => {
+        filteredItems.forEach(item => {
           const g = groups[item.urgency] || groups.low;
           g.push(item);
         });
@@ -2965,6 +3201,7 @@
         const renderCard = (item) => {
           const uc = urgencyColor[item.urgency] || 'var(--text-secondary)';
           const ul = urgencyLabel[item.urgency] || item.urgency.toUpperCase();
+          const isDism = isDismissed('decisions', item.id);
           const isNew = item.new ? `<span style="background:rgba(248,81,73,0.15);color:var(--red);padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;margin-left:8px">NEW</span>` : '';
           const opts = (item.suggested_options || []).map(o => `<li style="margin-bottom:4px">${esc(o)}</li>`).join('');
           const optsHtml = opts ? `<ul style="margin:8px 0 0 16px;font-size:13px;color:var(--text-secondary)">${opts}</ul>` : '';
@@ -2972,7 +3209,8 @@
             ? `obsidian://open?vault=Stefan-Brain&file=${encodeURIComponent(item.source_file.replace(/\.md$/, ''))}`
             : '';
           return `
-            <div class="card" style="border-left:3px solid ${uc};margin-bottom:14px;padding:16px">
+            <div class="card ${isDism ? 'dismissed-item' : ''}" style="border-left:3px solid ${uc};margin-bottom:14px;padding:16px">
+              <button class="dismiss-btn${isDism ? ' undismiss' : ''}" title="${isDism ? 'Undismiss' : 'Dismiss'}" onclick="event.stopPropagation();window.__dismissCard('decisions',${JSON.stringify(item.id).replace(/"/g,'&quot;')},${JSON.stringify(item.question||item.id).replace(/"/g,'&quot;')},this)">${isDism ? '↩' : '🗑️'}</button>
               <div style="display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:6px">
                 <span style="background:${uc}22;color:${uc};padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap">${ul}</span>
                 ${isNew}
@@ -2993,7 +3231,7 @@
             </div>`;
         };
 
-        let html = '';
+        let html = _dismissToggleHTML('decisions', showDismDec);
         const orderedGroups = [['high','&#128308; High urgency'], ['medium','&#128993; Medium urgency'], ['low','&#9898; Low'], ['cosmetic','&#128309; Cosmetic'], ['deferred_resurfaced','&#128994; Re-surfaced']];
         orderedGroups.forEach(([key, label]) => {
           if (groups[key] && groups[key].length > 0) {
