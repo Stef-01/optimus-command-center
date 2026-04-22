@@ -97,6 +97,8 @@ Every significant Optimus decision, architecture change, or weekly summary shoul
 
 ## Karpathy Coding Principles
 
+> Source: https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
+
 Behavioral guidelines to reduce common LLM coding mistakes.
 
 ### 1. Think Before Coding
