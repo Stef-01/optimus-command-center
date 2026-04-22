@@ -1522,6 +1522,115 @@
       font-size: 13px;
       padding: 40px 20px;
     }
+
+    /* ============================================
+       DISMISS SYSTEM
+       ============================================ */
+    .dismiss-btn-inline {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: opacity 0.15s, color 0.15s;
+      padding: 4px 6px;
+      border-radius: 4px;
+      line-height: 1;
+      flex-shrink: 0;
+      min-height: 28px;
+      font-family: inherit;
+    }
+    .card:hover .dismiss-btn-inline,
+    .idea-card:hover .dismiss-btn-inline,
+    .skill-card:hover .dismiss-btn-inline { opacity: 0.7; }
+    .dismiss-btn-inline:hover { color: var(--red); opacity: 1 !important; }
+    @media (max-width: 640px) { .dismiss-btn-inline { opacity: 0.5; } }
+
+    .dismiss-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .dismiss-modal-overlay.open { display: flex; }
+    .dismiss-modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 420px;
+      width: 92%;
+      animation: sheetIn 0.15s ease;
+    }
+    .dismiss-modal h3 { font-size: 15px; margin-bottom: 6px; }
+    .dismiss-modal-item { color: var(--cyan); font-weight: 600; margin-bottom: 16px; font-size: 13px; word-break: break-word; }
+    .dismiss-modal textarea {
+      width: 100%;
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      padding: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      resize: vertical;
+      min-height: 56px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    .dismiss-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+    .btn-dismiss-confirm {
+      background: rgba(248,81,73,0.15);
+      border: 1px solid var(--red);
+      color: var(--red);
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-dismiss-cancel {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .dismiss-toggle-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+    .dismiss-toggle-btn {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .dismiss-toggle-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+    .dismissed-item-wrap { opacity: 0.35; filter: grayscale(0.5); }
+    .btn-undismiss {
+      background: var(--bg-el);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-undismiss:hover { border-color: var(--cyan); color: var(--cyan); }
   </style>
 </head>
 <body>
@@ -1541,6 +1650,19 @@
       </div>
     </div>
     <div class="weekly-tabs" id="weeklyTabs"></div>
+  </div>
+
+  <!-- DISMISS MODAL (shared across all tabs) -->
+  <div class="dismiss-modal-overlay" id="dismissModalOverlay" onclick="if(event.target===this)window.__optDismiss.closeModal()">
+    <div class="dismiss-modal">
+      <h3>🗑️ Dismiss this item?</h3>
+      <div class="dismiss-modal-item" id="dismissModalTitle"></div>
+      <textarea id="dismissModalReason" placeholder="Optional reason (helps future-you understand why)"></textarea>
+      <div class="dismiss-modal-actions">
+        <button class="btn-dismiss-cancel" onclick="window.__optDismiss.closeModal()">Cancel</button>
+        <button class="btn-dismiss-confirm" onclick="window.__optDismiss.confirmFromModal()">Dismiss + Copy Claude prompt</button>
+      </div>
+    </div>
   </div>
 
   <div id="onFireBanner" class="on-fire-banner" style="display:none" role="alert" aria-live="polite"></div>
@@ -2494,14 +2616,22 @@
         document.getElementById('ideasIndex').innerHTML = indexHTML;
 
         // Idea cards
-        const ideasHTML = data.ideas.map((idea, idx) => `
-          <div class="idea-card" onclick="this.querySelector('.idea-essay')?.classList.toggle('expanded')">
+        const _bb_showD = window.__optDismiss?.isShowingDismissed('bumblebee');
+        const _bb_dCount = window.__optDismiss?.getDismissedCount('bumblebee', data.ideas, i => i.title) || 0;
+        const _bb_visible = _bb_showD ? data.ideas : data.ideas.filter(idea => !window.__optDismiss?.isDismissed('bumblebee', idea.title));
+        const ideasHTML = (window.__optDismiss?.toggleBar('bumblebee', _bb_dCount) || '') + _bb_visible.map((idea, idx) => {
+          const _bbD = window.__optDismiss?.isDismissed('bumblebee', idea.title);
+          return `
+          <div class="idea-card${_bbD ? ' dismissed-item-wrap' : ''}" style="${_bbD ? 'opacity:0.45' : ''}" onclick="this.querySelector('.idea-essay')?.classList.toggle('expanded')">
             <div class="idea-header">
               <div>
                 <div class="idea-title">${idea.title}</div>
                 <div style="font-size: 12px; color: var(--text-secondary); margin-top: 3px;">${idea.subtitle}</div>
               </div>
-              <div class="idea-category">${idea.category}</div>
+              <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+                ${_bbD ? (window.__optDismiss?.undismissBtn('bumblebee', idea.title) || '') : (window.__optDismiss?.dismissBtn('bumblebee', idea.title, idea.title) || '')}
+                <div class="idea-category">${idea.category}</div>
+              </div>
             </div>
             ${idea.essay ? `<div style="font-size:14px;line-height:1.6;color:var(--text-primary);margin:10px 0 8px">${idea.essay}</div>` : ''}
             <div class="idea-meta">
@@ -2517,7 +2647,8 @@
               </div>
             </div>
           </div>
-        `).join('');
+          `;
+        }).join('');
         document.getElementById('ideasContainer').innerHTML = ideasHTML;
 
         document.getElementById('pgQuoteBottom').textContent = data.pgQuoteBottom;
@@ -2602,7 +2733,11 @@
         // Grants with project pills
         const grantsEl = document.getElementById('nourishGrants');
         if (grantsEl && data.grants) {
-          grantsEl.innerHTML = data.grants.map(g => {
+          const _gr_showD = window.__optDismiss?.isShowingDismissed('grants');
+          const _gr_dCount = window.__optDismiss?.getDismissedCount('grants', data.grants, g => g.name) || 0;
+          const _gr_visible = _gr_showD ? data.grants : data.grants.filter(g => !window.__optDismiss?.isDismissed('grants', g.name));
+          grantsEl.innerHTML = (window.__optDismiss?.toggleBar('grants', _gr_dCount) || '') + _gr_visible.map(g => {
+            const _grD = window.__optDismiss?.isDismissed('grants', g.name);
             const aligned = matchProjects(g);
             const pillsHTML = aligned.length ? `
               <div class="grant-pills">
@@ -2615,14 +2750,17 @@
               </div>
             ` : '';
             return `
-              <div class="card mobile-collapsible" onclick="this.classList.toggle('expanded')">
+              <div class="card mobile-collapsible${_grD ? ' dismissed-item-wrap' : ''}" style="${_grD ? 'opacity:0.45' : ''}" onclick="this.classList.toggle('expanded')">
                 <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
                   <div style="flex:1;min-width:0">
                     <div style="font-weight:700">${g.name}<span class="mobile-collapse-arrow">⌄</span></div>
                     <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">${g.funder} · $${g.amount}</div>
                     <div style="color:var(--text-secondary);font-size:12px;margin-top:2px">📅 ${g.deadline}</div>
                   </div>
-                  <div style="background:#2D6A4F;color:#fff;padding:4px 10px;border-radius:6px;font-size:13px;font-weight:700;white-space:nowrap;flex-shrink:0">${g.score}/100</div>
+                  <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+                    ${_grD ? (window.__optDismiss?.undismissBtn('grants', g.name) || '') : (window.__optDismiss?.dismissBtn('grants', g.name, g.name) || '')}
+                    <div style="background:#2D6A4F;color:#fff;padding:4px 10px;border-radius:6px;font-size:13px;font-weight:700;white-space:nowrap">${g.score}/100</div>
+                  </div>
                 </div>
                 <div class="mobile-expand-indicator">Tap to see details…</div>
                 <div class="mobile-hidden-content">
@@ -2682,9 +2820,17 @@
         document.getElementById('dataSourcesTable').innerHTML = sourcesHTML;
 
         // Candidates
-        const candidatesHTML = data.candidates.map(c => `
-          <div class="skill-card">
-            <div class="skill-rank">#${c.rank}</div>
+        const _sk_showD = window.__optDismiss?.isShowingDismissed('skills');
+        const _sk_dCount = window.__optDismiss?.getDismissedCount('skills', data.candidates, c => c.name) || 0;
+        const _sk_visible = _sk_showD ? data.candidates : data.candidates.filter(c => !window.__optDismiss?.isDismissed('skills', c.name));
+        const candidatesHTML = (window.__optDismiss?.toggleBar('skills', _sk_dCount) || '') + _sk_visible.map(c => {
+          const _skD = window.__optDismiss?.isDismissed('skills', c.name);
+          return `
+          <div class="skill-card${_skD ? ' dismissed-item-wrap' : ''}" style="${_skD ? 'opacity:0.45' : ''}">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2px">
+              <div class="skill-rank">#${c.rank}</div>
+              ${_skD ? (window.__optDismiss?.undismissBtn('skills', c.name) || '') : (window.__optDismiss?.dismissBtn('skills', c.name, c.name) || '')}
+            </div>
             <div class="skill-title">${c.name}</div>
             <div class="skill-meta">
               <div class="skill-stat"><strong>${c.score}</strong> Score</div>
@@ -2700,7 +2846,8 @@
               </div>
             </div>
           </div>
-        `).join('');
+          `;
+        }).join('');
         document.getElementById('skillCandidates').innerHTML = candidatesHTML;
 
         // Cross-source patterns
@@ -2764,18 +2911,21 @@
           this.renderTinker();
         };
 
+        const _tk_showD = window.__optDismiss?.isShowingDismissed('tinker');
+        const _tk_dCount = window.__optDismiss?.getDismissedCount('tinker', data.ideas, i => i.name) || 0;
         const starred = getStarred();
-        const ideas = [...data.ideas].sort((a, b) =>
-          (starred.includes(b.name) ? 1 : 0) - (starred.includes(a.name) ? 1 : 0)
-        );
+        const ideas = [...data.ideas]
+          .sort((a, b) => (starred.includes(b.name) ? 1 : 0) - (starred.includes(a.name) ? 1 : 0))
+          .filter(idea => _tk_showD || !window.__optDismiss?.isDismissed('tinker', idea.name));
         window.__tinkerIdeas = ideas;
 
         const dots = (val) => Array.from({length: 5}, (_, i) =>
           `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${i < val ? '#F59E0B' : 'var(--border)'}"></span>`
         ).join('');
 
-        el.innerHTML = ideas.map((idea, idx) => {
+        el.innerHTML = (window.__optDismiss?.toggleBar('tinker', _tk_dCount) || '') + ideas.map((idea, idx) => {
           const isStarred = starred.includes(idea.name);
+          const _tkD = window.__optDismiss?.isDismissed('tinker', idea.name);
           const tags = (idea.tags || []).map(t =>
             `<span style="display:inline-block;background:var(--bg-el);color:var(--text-secondary);padding:2px 8px;border-radius:4px;font-size:11px;margin:2px 4px 2px 0">${t}</span>`
           ).join('');
@@ -2783,7 +2933,7 @@
             ? `obsidian://open?vault=Stefan-Brain&file=wiki/tinker/${encodeURIComponent(idea.brainLink)}`
             : '';
           return `
-            <div class="card" style="border-top:3px solid #F59E0B;margin-bottom:16px">
+            <div class="card${_tkD ? ' dismissed-item-wrap' : ''}" style="border-top:3px solid #F59E0B;margin-bottom:16px${_tkD ? ';opacity:0.45' : ''}">
               <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:10px">
                 <div style="font-size:18px;font-weight:700">${idea.emoji || '🔧'} ${idea.name}</div>
                 <div style="display:flex;gap:6px;flex-wrap:wrap">
@@ -2804,6 +2954,7 @@
                 ${idea.claudePrompt ? `<button data-tinker-copy="${idx}" onclick="window.__tinkerCopyPrompt(${idx})" style="background:var(--bg-el);border:1px solid var(--border);color:var(--text-primary);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;min-height:36px">📋 Copy Claude prompt</button>` : ''}
                 <button onclick="window.__tinkerToggleStar(${JSON.stringify(idea.name)})" style="background:${isStarred ? 'rgba(245,158,11,0.2)' : 'var(--bg-el)'};border:1px solid ${isStarred ? '#F59E0B' : 'var(--border)'};color:${isStarred ? '#F59E0B' : 'var(--text-secondary)'};padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;min-height:36px">${isStarred ? '⭐ Starred' : '☆ Star'}</button>
                 ${brainUrl ? `<a href="${brainUrl}" target="_blank" style="display:inline-flex;align-items:center;background:var(--bg-el);border:1px solid var(--border);color:var(--text-secondary);padding:6px 14px;border-radius:6px;font-size:12px;text-decoration:none;min-height:36px">→ View in Brain</a>` : ''}
+                ${_tkD ? (window.__optDismiss?.undismissBtn('tinker', idea.name) || '') : (window.__optDismiss?.dismissBtn('tinker', idea.name, idea.name) || '')}
               </div>
             </div>`;
         }).join('');
@@ -3009,8 +3160,126 @@
       }
     }
 
+    // ============================================
+    // DISMISS SYSTEM
+    // ============================================
+    window.__optDismiss = (() => {
+      const STORAGE_KEY = 'optimus-dismissed-v1';
+      const SHOW_KEY    = 'optimus-show-dismissed';
+
+      const load = () => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; } };
+      const save = d  => localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
+      const loadShow = () => { try { return JSON.parse(localStorage.getItem(SHOW_KEY) || '{}'); } catch(e) { return {}; } };
+
+      const isDismissed       = (cat, id) => !!(load()[cat] || []).find(e => e.id === String(id));
+      const isShowingDismissed= (cat)     => !!loadShow()[cat];
+      const getDismissedCount = (cat, items, idFn) => items.filter(x => isDismissed(cat, idFn(x))).length;
+
+      function toggleShowDismissed(cat) {
+        const s = loadShow(); s[cat] = !s[cat];
+        localStorage.setItem(SHOW_KEY, JSON.stringify(s));
+        const app = window.__optimusApp;
+        if (!app) return;
+        const map = { bumblebee: 'renderIdeas', tinker: 'renderTinker', skills: 'renderSkills', grants: 'renderNourish', decisions: 'renderForDecision' };
+        if (map[cat]) app[map[cat]]();
+      }
+
+      let _cat, _id, _title;
+
+      function openModal(cat, id, title) {
+        _cat = cat; _id = String(id); _title = title;
+        document.getElementById('dismissModalTitle').textContent = title;
+        document.getElementById('dismissModalReason').value = '';
+        document.getElementById('dismissModalOverlay').classList.add('open');
+        setTimeout(() => document.getElementById('dismissModalReason')?.focus(), 60);
+      }
+
+      function closeModal() {
+        document.getElementById('dismissModalOverlay').classList.remove('open');
+        _cat = _id = _title = null;
+      }
+
+      function confirmFromModal() {
+        const reason = (document.getElementById('dismissModalReason')?.value || '').trim();
+        confirmDismiss(_cat, _id, _title, reason);
+        closeModal();
+      }
+
+      function confirmDismiss(cat, id, title, reason) {
+        const date = new Date().toISOString().slice(0, 10);
+        const d = load();
+        if (!d[cat]) d[cat] = [];
+        d[cat] = d[cat].filter(e => e.id !== String(id));
+        d[cat].push({ id: String(id), title, dismissedAt: date, reason: reason || '' });
+        save(d);
+        const prompt = buildPrompt(cat, String(id), title, reason || '', date);
+        navigator.clipboard.writeText(prompt).catch(() => console.warn('[Dismiss] clipboard failed; prompt:', prompt));
+        const app = window.__optimusApp;
+        if (app) {
+          const map = { bumblebee: 'renderIdeas', tinker: 'renderTinker', skills: 'renderSkills', grants: 'renderNourish', decisions: 'renderForDecision' };
+          if (map[cat]) app[map[cat]]();
+        }
+      }
+
+      function undismiss(cat, id) {
+        const d = load();
+        const entry = (d[cat] || []).find(e => e.id === String(id));
+        const title = entry?.title || String(id);
+        if (d[cat]) d[cat] = d[cat].filter(e => e.id !== String(id));
+        save(d);
+        const prompt = buildUndismissPrompt(cat, String(id), title);
+        navigator.clipboard.writeText(prompt).catch(() => {});
+        const app = window.__optimusApp;
+        if (app) {
+          const map = { bumblebee: 'renderIdeas', tinker: 'renderTinker', skills: 'renderSkills', grants: 'renderNourish', decisions: 'renderForDecision' };
+          if (map[cat]) app[map[cat]]();
+        }
+      }
+
+      function buildPrompt(cat, id, title, reason, date) {
+        const reasonLine = reason ? `\n  reason: "${reason}"` : '';
+        if (cat === 'grants') {
+          return `Dismiss the grant "${title}" from NOURISH tracking.\n1. Search for the grant page: obsidian-vault MCP search_notes("${title}", limit: 3)\n2. Update frontmatter: status: dismissed, dismissed-at: ${date}, dismissed-reason: "${reason}"\n3. Commit and push Stefan-Brain.`;
+        } else if (cat === 'decisions') {
+          return `Dismiss the decision "${title}" (id: "${id}").\n1. Find its source file via obsidian-vault MCP.\n2. In the decision's frontmatter: set status: dismissed, add dismissed-at: ${date}, dismissed-reason: "${reason}"\n3. Run decisions-aggregator to refresh the pending list.`;
+        } else {
+          return `Update wiki/_dismissed/${cat}.md in Stefan-Brain.\nRead current frontmatter, then append to the dismissed YAML array:\n- id: "${id}"\n  title: "${title}"\n  dismissed-at: ${date}${reasonLine}\n  expires-at: null\nUse obsidian-vault MCP update_frontmatter. Then commit and push Stefan-Brain.`;
+        }
+      }
+
+      function buildUndismissPrompt(cat, id, title) {
+        if (cat === 'grants') {
+          return `Un-dismiss the grant "${title}".\n1. obsidian-vault MCP search_notes("${title}", limit: 3)\n2. Remove status: dismissed, dismissed-at, dismissed-reason from frontmatter (or set status: new)\n3. Commit and push Stefan-Brain.`;
+        } else if (cat === 'decisions') {
+          return `Un-dismiss decision "${title}" (id: "${id}").\n1. Find source file via obsidian-vault MCP.\n2. Set status: pending, remove dismissed-at/dismissed-reason.\n3. Run decisions-aggregator to refresh.`;
+        } else {
+          return `Update wiki/_dismissed/${cat}.md in Stefan-Brain.\nRemove the entry with id "${id}" from the dismissed YAML array.\nUse obsidian-vault MCP update_frontmatter. Then commit and push Stefan-Brain.`;
+        }
+      }
+
+      function dismissBtn(cat, id, title) {
+        const safeId  = String(id).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        const safeTitle = JSON.stringify(title);
+        return `<button class="dismiss-btn-inline" onclick="event.stopPropagation();window.__optDismiss.openModal('${cat}','${safeId}',${safeTitle})" title="Dismiss">🗑️</button>`;
+      }
+
+      function undismissBtn(cat, id) {
+        const safeId = String(id).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        return `<button class="btn-undismiss" onclick="event.stopPropagation();window.__optDismiss.undismiss('${cat}','${safeId}')">↩ Undismiss</button>`;
+      }
+
+      function toggleBar(cat, count) {
+        const showing = isShowingDismissed(cat);
+        if (count === 0 && !showing) return '';
+        const label = showing ? '👁 Hide dismissed' : `👁 Show ${count} dismissed`;
+        return `<div class="dismiss-toggle-bar"><button class="dismiss-toggle-btn" onclick="window.__optDismiss.toggleShowDismissed('${cat}')">${label}</button></div>`;
+      }
+
+      return { openModal, closeModal, confirmFromModal, confirmDismiss, undismiss, toggleShowDismissed, isDismissed, isShowingDismissed, getDismissedCount, dismissBtn, undismissBtn, toggleBar };
+    })();
+
     // Initialize
-    new Optimus();
+    window.__optimusApp = new Optimus();
   </script>
 </body>
 </html>
