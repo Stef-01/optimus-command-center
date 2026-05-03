@@ -1,0 +1,1315 @@
+{
+  "overview": {
+    "weekStart": "2026-04-27",
+    "weekEnd": "2026-05-03",
+    "generatedAt": "2026-05-03T13:15:00Z",
+    "stats": {
+      "granola": 6,
+      "airtableTasks": 138,
+      "airtableOverdueDelta": 51,
+      "omi": 0,
+      "notion": 0,
+      "slack": 0,
+      "grantsActive": 67,
+      "grantsTotal": 82
+    },
+    "granola": {
+      "meetingsReviewed": 6,
+      "transcriptsRead": 1,
+      "keyDecisions": 8,
+      "topDecisions": [
+        "Rebrand NOURISH messaging from 'culturally tailored / equity-centered' to 'cuisine-based / taste-forward' to align with ADA bipartisan priorities.",
+        "PCORI LOI submitted (~$1M, prediabetes focus); secondary disease focus = cardiovascular.",
+        "Funding confirmed through October per Eli; aiming to stretch to November.",
+        "Stefan returns 1.5 days/week to NSW disability research stream starting Friday at Surry Hills.",
+        "Dalia recommends fixed-term research coordinators (4-month engagements); FAEM scouting candidates.",
+        "Adopted 'one Word doc per grant' format Eli requested \u2014 Stefan to send all-grants summary by Monday.",
+        "MAHA ELEVATE Accelerator due May 5; Linda lead writer; Eli letter of collaboration secured.",
+        "South Asian cohort expansion: Cupertino MD partner offers 9 incremental patients + 4 for current study."
+      ]
+    },
+    "airtable": {
+      "tasksScanned": 138,
+      "overdueAndNotStarted": 51,
+      "highPriorityOverdue": 23,
+      "topOverdueWorkstreams": [
+        "WS3 Research",
+        "WS1 Partnerships",
+        "WS5 Program Mgmt"
+      ]
+    },
+    "omi": null,
+    "notion": {
+      "available": false,
+      "note": "Notion MCP not authenticated this Cowork session"
+    },
+    "slack": {
+      "available": false,
+      "note": "Slack MCP not authenticated this Cowork session"
+    },
+    "alerts": [
+      {
+        "level": "WARN",
+        "category": "mcp",
+        "message": "OMI MCP returned 0 conversations for date window \u2014 check OMI connectivity / run from Code session"
+      },
+      {
+        "level": "WARN",
+        "category": "mcp",
+        "message": "Notion MCP not available \u2014 Notion-derived tasks excluded this run"
+      },
+      {
+        "level": "WARN",
+        "category": "mcp",
+        "message": "Slack MCP not available \u2014 team digest section omitted this run"
+      }
+    ]
+  },
+  "optimus": {
+    "execSummary": [
+      "**MAHA ELEVATE Accelerator due May 5 (T+2 days)** \u2014 Linda leads writing; Stefan owes the cross-grant Word doc to Eli by Monday so Eli can guide ROI/SERA/RMG budget paths.",
+      "Funding runway only confirmed through October (Eli); team scoping to stretch to November because December is naturally idle. Hiring posture is fixed-term RC (4-month tour) per Dalia, not volunteer interns.",
+      "**Website is the chokepoint.** Mona at Roses Lab and other potential interns/collaborators bounce off NOURISH because there's no public site. The new directive is 4-week sprint to a v1 they can be 'happy with.'",
+      "Cuisine-based / taste-forward repositioning is the single biggest message change in 6 months. Every artifact (placemat, ADA pitch, video series, About page) needs language audit before going public.",
+      "**ADA partnership stalled on rewrite request** \u2014 they reject the block-format placemat and want a rewrite. Dalia owns; Mehek+Stephanie were original drafters.",
+      "Razor (Dustin) consulting deal is governance-blocked \u2014 Stanford OTL Chelsea says they don't broker consulting agreements. Don't reveal Stefan's hand; Dr. Moharir will request follow-up first.",
+      "Ankita Patel raised ~$3M for medical-misinformation startup partnered with AHA. Strategic fit is 'community-oriented misinformation' \u2014 too early for exact collab; right move is intro deck + 3-way call.",
+      "Dr. Rosas's intern Mona is researching MTM reimbursement pathways; 12-month ROI window bottleneck. CGM glycemic-marker outcome shortens horizon \u2014 possible Sous angle but MD-billing constraint blocks it.",
+      "South Asian cohort: Cupertino obesity-medicine partner offers 9 incremental patients + 4 current. Filipino cohort target = 15 (or fallback 5+5).",
+      "**Stefan re-onboarding to NSW disability policy team** \u2014 Friday return at Surry Hills, 1.5 days/week. NDRP admin ($13.7M ending Dec 2027), NDIS outcomes review (Mark), disability research (Louisa Ratz).",
+      "Stanford Health Library wins as canonical NOURISH video host \u2014 better analytics + clinical credibility than AEM. Pitch sequence: Nicole Scandlyn \u2192 Lisa Kim \u2192 Maya Adam \u2192 SoM editors.",
+      "Stefan is **47 NOURISH tasks overdue or Not Started** in Task Registry, including pre-March commitments (VMED Poster, Stanford Continuing Ed, ADA placemat). Recommend 90-min triage block this week.",
+      "Razor + Granpadilla + Dr. Rosas + ICO + Isabella + Sylvia (P0 intro doc) are 6 stalled relationships. Each will burn social capital if not touched this week \u2014 5 short '~3 line' emails on Monday.",
+      "Eli is the gating relationship for funding ops \u2014 he wants visibility on every grant before the team commits time. The Word doc is the single most leveraged deliverable Stefan can ship this week.",
+      "Sous V1 + craving-parser is starting to look like an under-leveraged research asset for grants. The Sous food-recognition + CGM + behavior data combo is exactly what NSF Smart Health, Google.org, and AHRQ R21 fund.",
+      "Linda's PCORI LOI submission unblocks $1M cardiovascular comparative-effectiveness path \u2014 and she pulled Le Cordon Bleu chefs into NOURISH plating principles. Cross-pollinating culinary expertise into Sous is a sleeper differentiator."
+    ],
+    "topPriorities": [
+      {
+        "title": "Send Eli the all-grants Word doc by Monday EOD",
+        "rationale": "Eli explicitly told Dr. Moharir on Friday he needs this doc to guide budget, SERA, RMG, waivers across the pipeline.",
+        "evidence": "Granola transcript d5f6c5d6 (May 1)",
+        "urgency": "HIGH",
+        "owner": "Stefan",
+        "due": "2026-05-04"
+      },
+      {
+        "title": "MAHA ELEVATE Accelerator submission shepherding",
+        "rationale": "Due May 5. Linda is writer and Eli's letter of collab is in. Stefan's job: review IDIO + sanity-check.",
+        "evidence": "Granola transcript d5f6c5d6",
+        "urgency": "HIGH",
+        "owner": "Stefan + Linda",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Reach out to Sylvia (intro doc 3+ days past commitment)",
+        "rationale": "Re-flagged from Apr 24; highest-cost stalled relationship.",
+        "evidence": "wiki/_log/2026-04-24.md",
+        "urgency": "HIGH",
+        "owner": "Stefan",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Trigger NOURISH website 4-week sprint",
+        "rationale": "Confirmed by Dr. Moharir as May\u2013June priority alongside CGM stat-analysis.",
+        "evidence": "Granola transcript d5f6c5d6",
+        "urgency": "HIGH",
+        "owner": "Stefan + new CS hire",
+        "due": "2026-06-01"
+      },
+      {
+        "title": "Triage 47 overdue/not-started Airtable tasks",
+        "rationale": "Many pre-March; each adds drag and obscures live work.",
+        "evidence": "Airtable task registry",
+        "urgency": "MEDIUM",
+        "owner": "Stefan",
+        "due": "2026-05-07"
+      }
+    ],
+    "crossSourceMatrix": [
+      {
+        "theme": "MAHA ELEVATE Accelerator",
+        "granola": "May 1 NOURISH roadmap",
+        "airtable": "WS1 Partnerships pipeline",
+        "alignment": "STRONG"
+      },
+      {
+        "theme": "NOURISH website launch",
+        "granola": "May 1 \u2014 '4-week build'",
+        "airtable": "Multiple WS4 tasks pending",
+        "alignment": "STRONG"
+      },
+      {
+        "theme": "Cuisine-forward repositioning",
+        "granola": "Apr 28 media-strategy decision",
+        "airtable": "ADA placemat + others use old framing",
+        "alignment": "STRONG"
+      },
+      {
+        "theme": "Eli all-grants Word doc",
+        "granola": "May 1 explicit ask",
+        "airtable": "Not yet a Task Registry record",
+        "alignment": "MEDIUM"
+      }
+    ]
+  },
+  "life": {
+    "tasks": [
+      {
+        "title": "Email Eli the all-grants Word document",
+        "context": "From May 1 NOURISH roadmap meeting (Granola d5f6c5d6): Eli wants visibility on every grant. He'll guide budget, SERA, RMG, waivers per grant.",
+        "urgency": "HIGH",
+        "claudePrompt": "Open Airtable Submitted Proposals + Grant Scout. Copy each row's grant name + funder + amount + deadline + status into a single Word doc grouped by status. Add 1-line description per grant. Save 'NOURISH Grants Pipeline \u2014 May 2026.docx', email Eli with subject 'NOURISH grants pipeline overview as you requested.'",
+        "due": "2026-05-04"
+      },
+      {
+        "title": "Reply to Sylvia and send the intro doc",
+        "context": "wiki/_log/2026-04-24.md flagged 3 days past verbal commitment. Highest social-capital cost.",
+        "urgency": "HIGH",
+        "claudePrompt": "Draft 4-line email: 1) apology for delay, 2) intro doc attached, 3) one-line on NOURISH + ask if useful, 4) offer call this/next week. Use the 3-slide deck + intro video as attachments.",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Send Isabella the NOURISH 3-slide deck + 2 videos + 1 recipe booklet",
+        "context": "From May 1 meeting: Dr. Moharir said send the intro pack now instead of waiting.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Compose 3-line email to Isabella: 'Lovely connecting last week. As discussed, here's a quick orientation pack \u2014 3-slide overview + 2 NOURISH videos + a recipe booklet. Happy to set up a call once you've had a look.' Attach Christopher 3-slide deck + intro video link.",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Review IDIO doc + Linda PDFs on the plane",
+        "context": "From May 1 meeting: Dr. Moharir asked Stefan to review on plane or before flying out.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Open IDIO doc + Linda PDFs offline before boarding. Annotate edits. Send consolidated reply with: top-3 changes per doc, blocking questions, sign-off readiness.",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Confirm Razor follow-up with Dr. Moharir",
+        "context": "Don't tip Stanford OTL Chelsea's hand on consulting structure.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Draft 2-line email Dr. Moharir can send to Dustin: 'Got a chance to think more \u2014 would love to connect again to run a couple of thoughts by you. Are there 30 min next week?' CC Stefan.",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Call 1-800-42 to reactivate disability-team IT account",
+        "context": "From Apr 29 onboarding meeting: NSW disability policy team needs IT live before Friday return.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Set 15-min calendar block at 9am tomorrow titled 'Reactivate NDRP IT account.' Call 1-800-42, log ticket number into daily log.",
+        "due": "2026-05-05"
+      },
+      {
+        "title": "Send Stanford Continuing Ed co-teaching email (already drafted)",
+        "context": "Airtable rec0dqLIqq5MgK99M (Mar 13 due, Not Started). Draft body in task notes.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Open Airtable rec0dqLIqq5MgK99M, copy draft body verbatim into Outlook, send to Stanford Continuing Studies, mark task Done.",
+        "due": "2026-05-06"
+      },
+      {
+        "title": "Send NOURISH intro pack to Ankita Patel",
+        "context": "From May 1 meeting: Stefan to send 3-slide deck + intro video + ask for 3-way call when back on campus.",
+        "urgency": "LOW",
+        "claudePrompt": "Compose 4-line email to Ankita: 1) great chat, 2) NOURISH overview attached, 3) overlap with AHA + misinformation work, 4) want 3-way call with Dr. Moharir when I'm back at Stanford for commencement.",
+        "due": "2026-05-08"
+      },
+      {
+        "title": "Triage 47 overdue Airtable tasks",
+        "context": "138-row registry with 51 Not Started + In Progress overdue. ~30 are stale.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Run airtable-task-registry-hygiene-sop in direct-context mode. For each Not Started task with due < today: classify Close / Push / Kill. Push = update due date; Kill = mark Done with note 'No longer pursuing.' Aim 30+ in one sitting.",
+        "due": "2026-05-07"
+      },
+      {
+        "title": "Reach out to Dr. Rosas with Mona MTM reference",
+        "context": "MD-billing constraint blocks Sous-MTM angle but relationship is worth keeping warm.",
+        "urgency": "LOW",
+        "claudePrompt": "Draft 5-line email: hi, Mona shared MTM-reimbursement research, Sous + CGM angle could shorten 12-month ROI if MD-billing solved, want to keep thread alive, 3-slide deck attached.",
+        "due": "2026-05-10"
+      },
+      {
+        "title": "Schedule Mon/Tue with Dr. Moharir for email-by-email task split",
+        "context": "From May 1 meeting: Mon = email-split, Tue = collaborator-list, Wed = proposals. She's out Thu\u2013Sat.",
+        "urgency": "MEDIUM",
+        "claudePrompt": "Open calendar, find 60-min slots Mon + Tue afternoon next week. Send invite to Dr. Moharir with title 'NOURISH ops \u2014 email + collaborator + proposal triage' and pre-fill agenda.",
+        "due": "2026-05-04"
+      },
+      {
+        "title": "Add Eli all-grants doc commitment as Airtable Task Registry record",
+        "context": "Currently verbal-only. Adding to Airtable forces tracking.",
+        "urgency": "LOW",
+        "claudePrompt": "Run airtable-task-registry-hygiene-sop. Create record: 'Email Eli all-grants Word doc'; WS1; Project = Admin; Owner = Stefan; Due = 2026-05-04; Priority = High; Notes = link verbal commitment from May 1 meeting.",
+        "due": "2026-05-04"
+      },
+      {
+        "title": "Update Sous strategy doc with Le Cordon Bleu plating-principles thread",
+        "context": "From Apr 28 Linda meeting: Paris chefs return June 28 with plating principles.",
+        "urgency": "LOW",
+        "claudePrompt": "Open Sous STRATEGY.md, add a 1-paragraph entry under 'Compounding Moats' titled 'Le Cordon Bleu plating principles': Linda's Paris chefs return June 28; encode plating principles as Sous coaching plating-mastery ladder. Commit + push.",
+        "due": "2026-05-12"
+      },
+      {
+        "title": "Confirm Filipino cohort recruitment with Chef Andrew",
+        "context": "Need 9 (or fallback 5) Filipino patients for next cohort starting July.",
+        "urgency": "LOW",
+        "claudePrompt": "Draft email to Chef Andrew: 'For next CGM cohort (mid-July start), targeting 5\u20139 Filipino patients. Which week works for kickoff session? Plus you good for plating-techniques cameo per Linda's recap?' Send.",
+        "due": "2026-05-09"
+      }
+    ]
+  },
+  "nourish": {
+    "grants": [
+      {
+        "id": "GR-073",
+        "name": "RWJF \u2014 From Insight to Action: Health Equity Research that Meets This Moment",
+        "funder": "Robert Wood Johnson Foundation",
+        "amount": "$500K (incl. 15% indirects) over 3 years; $8M total pool",
+        "deadline": "May 14, 2026 (LOI; 3 pm ET)",
+        "score": 84,
+        "match": "**Why Stefan can win:** RWJF explicitly seeks community-rooted research that 'values cultural and community knowledge as equally important' \u2014 NOURISH's API-population dietary intervention is exactly that thesis. **Asset:** 408K-view public-health talk demonstrates community reach + 2+ years of API community partnerships. **Aim 1:** Community-engaged CER comparing culturally-tailored Sous coaching vs. generic dietary education for T2D risk reduction in South Asian/Filipino adults, primary outcome A1C and Mediterranean-diet adherence at 6 months. **Risk:** Co-PI must be a community-based-organization leader \u2014 confirm Cupertino partner or Filipino community contact will sign as co-PI BEFORE LOI submission.",
+        "url": "https://www.rwjf.org/en/grants/active-funding-opportunities/2026/from-insight-to-action-health-equity-research-that-meets-this-moment.html",
+        "urgent": true
+      },
+      {
+        "id": "GR-053",
+        "name": "HHS MAHA ELEVATE \u2014 PCPH AI Nutrition Counseling Add-On",
+        "funder": "CMS Innovation Center / HHS (MAHA Commission)",
+        "amount": "Add-on track to PCPH digital infrastructure base award",
+        "deadline": "May 15, 2026",
+        "score": 82,
+        "match": "**Why Stefan can win:** NORA (meal-pairer AI) is operational; PCPH Stanford partnership gives clinician deployment site \u2014 the rare combination ELEVATE wants. **Aim 1:** Embed NORA-driven culturally-tailored nutrition counseling into a Stanford PCPH primary-care workflow for prediabetes patients; measure clinician adoption rate, patient A1C delta, time-per-encounter. **Risk:** MAHA add-on requires MAHA-Commission-aligned framing (chronic-disease-prevention via lifestyle) \u2014 align Aim 1 narrative to MAHA pillars before submitting.",
+        "url": "https://innovation.cms.gov/innovation-models/maha-elevate",
+        "urgent": true
+      },
+      {
+        "id": "GR-076",
+        "name": "NIH PRIMED-AI \u2014 Translating AI/ML Models to the Clinic (RFA-RM-26-013)",
+        "funder": "NIH Common Fund (Office of the Director) \u2014 PRIMED-AI",
+        "amount": "Up to ~$1.5M direct cost over 4 years (cooperative agreement)",
+        "deadline": "June 17, 2026 (LOI due May 18, 2026)",
+        "score": 82,
+        "match": "**Why Stefan can win:** PRIMED-AI explicitly targets translation of validated AI models into clinical workflows \u2014 NOURISH has NORA (clinical-grade meal-pairer) + Stanford PCPH deployment site. **Aim 1:** Translate NORA from research-validated to clinically-deployed nutrition-counseling CDS in Stanford PCPH primary care; measure clinician adoption, patient outcomes, workflow integration. **Risk:** Cooperative agreement = active NIH program-staff involvement; identify PRIMED-AI program officer and initiate contact BEFORE May 18 LOI.",
+        "url": "https://simpler.grants.gov/opportunity/2c2f5b03-ec3a-4dc7-bf45-0a89d3efc8c9",
+        "urgent": true
+      },
+      {
+        "id": "GR-051",
+        "name": "Ardmore Institute of Health \u2014 Culinary Medicine Teaching Kitchen Grant",
+        "funder": "Ardmore Institute of Health",
+        "amount": "Up to $250K (typical range $100K\u2013$250K)",
+        "deadline": "May 15, 2026",
+        "score": 78,
+        "match": "**Why Stefan can win:** Ardmore funded Dr. Linda Koh\u2019s prior teaching-kitchen work \u2014 warm precedent. **Asset:** PBDI Teaching Kitchen curriculum already developed; Koh has the publication record (Frontiers in Nutrition 2024, JAMA Network Open) Ardmore reviewers want to see. **Aim 1:** RCT of culturally-tailored teaching-kitchen vs. standard nutrition education for South Asian and Filipino adults at T2D risk; primary outcome 6-month dietary adherence + A1C. **Risk:** Ardmore favors established teaching-kitchen sites \u2014 must name a confirmed kitchen partner (Cantor PBDI kitchen or Koh\u2019s UMass site) in proposal. **Owner: Dr. Linda Koh.**",
+        "url": "https://ardmoreinstituteofhealth.org/grants",
+        "urgent": true
+      },
+      {
+        "id": "GR-006",
+        "name": "ADA Pathway to Stop Diabetes \u2014 Accelerator Award",
+        "funder": "American Diabetes Association",
+        "amount": "$325K/year \u00d7 5 years = $1.625M",
+        "deadline": "May 19, 2026 (LOI)",
+        "score": 78,
+        "match": "**Why Stefan can win:** Pathway Accelerator targets mid-career investigators with novel high-impact diabetes ideas \u2014 culturally-tailored digital diabetes prevention is an underserved Pathway theme. **Aim 1:** Develop and validate Sous AI-coach as a 5-year longitudinal intervention for prediabetes-to-T2D conversion prevention in API populations. **Risk:** Pathway is competitive and biased toward bench science \u2014 must frame Sous as a behavioral mechanism (decision-support \u2192 dietary-pattern shift \u2192 metabolic outcome) rather than a tech demo.",
+        "url": "https://professional.diabetes.org/research-grants/current-funding-opportunities-pathway",
+        "urgent": true
+      },
+      {
+        "id": "GR-076-PAS",
+        "name": "NIDDK Small R01s for Clinical Trials (PAS-25-102)",
+        "funder": "NIH / NIDDK",
+        "amount": "Up to $250K direct/year over 3 years",
+        "deadline": "May 7, 2026",
+        "score": 75,
+        "match": "**Why Stefan can win:** Small R01 mechanism is the right size for a focused CGM-Sous pilot trial in API populations. **Aim 1:** Single-site RCT (Stanford) of Sous AI-coach + CGM vs. CGM-alone for prediabetes T2D conversion prevention in South Asian adults; primary outcome A1C + dietary-pattern adherence at 6 months. **Risk:** 4-day window to deadline; must have IRB-approved protocol or skip this cycle and target next R01 standard date (June 5).",
+        "url": "https://grants.nih.gov/grants/guide/pa-files/PAS-25-102.html",
+        "urgent": true
+      },
+      {
+        "id": "GR-001",
+        "name": "AHRQ Digital Healthcare Solutions R21/R33",
+        "funder": "AHRQ / NIH",
+        "amount": "R21: $275K (2 yr); R33: $1M (3 yr)",
+        "deadline": "June 16, 2026",
+        "score": 92,
+        "match": "**Why Stefan can win:** NOURISH CGM cohort (n=60, 2 ethnicities) is the AHRQ-favored 'point-of-care digital tool with embedded outcome data' phenotype. **Aim 1:** RCT of Sous AI-coach app vs. usual care for newly-diagnosed T2D in API populations; primary outcome HbA1c at 12 weeks. **Risk:** AHRQ wants implementation plan more than novelty \u2014 commit to two-site rollout (Stanford PCPH + Cupertino partner) in cover letter.",
+        "url": "https://digital.ahrq.gov/ahrq-digital-healthcare-research-funding-opportunities",
+        "urgent": false
+      },
+      {
+        "id": "GR-024",
+        "name": "PCORI Phased Large Awards for Comparative Effectiveness Research \u2014 Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "Phase 1: $1M (1 yr planning); Phase 2: up to $20M (4 yr trial)",
+        "deadline": "Application Sept 1, 2026 (LOI Apr 28 PASSED)",
+        "score": 88,
+        "match": "**Why Stefan can win:** Phased Large mechanism rewards CER teams ready for a national pragmatic trial. **Aim 1:** National-scale CER comparing Sous AI-coach vs. usual primary-care nutrition counseling for T2D-risk reduction across 10\u201320 sites in API-dense regions. **Risk:** LOI window CLOSED Apr 28 \u2014 if not submitted, pivot to Cycle 1 2027 (LOI typically Jan 2027). If submitted, await June 2 status notification.",
+        "url": "https://www.pcori.org/funding-opportunities/announcement/phased-large-awards-comparative-effectiveness-research-pcori-funding-announcement-cycle-2-2026",
+        "urgent": false
+      },
+      {
+        "id": "GR-028",
+        "name": "NIH Dissemination and Implementation Research in Health (PAR-25-144) R01",
+        "funder": "NIH (multi-IC)",
+        "amount": "R01 standard ($500K\u2013$2.5M direct cost over 5 yr)",
+        "deadline": "Standard NIH R01 dates (Feb 5, Jun 5, Oct 5 annually)",
+        "score": 88,
+        "match": "**Why Stefan can win:** D&I R01 is the natural follow-on to AHRQ R21/R33 \u2014 fund the implementation arm of Sous-in-clinic deployment. **Aim 1:** Implementation-effectiveness hybrid trial measuring uptake, fidelity, cost, and clinician acceptance of NORA in Stanford PCPH (vs. unassisted clinician baseline). **Risk:** D&I R01 requires partnered evaluator team \u2014 confirm Russ Glasgow / Borsika Rabin (CU Anschutz) or Tracy Finch (UK) collaboration before submission.",
+        "url": "https://grants.nih.gov/grants/guide/pa-files/PAR-25-144.html",
+        "urgent": false
+      },
+      {
+        "id": "GR-004",
+        "name": "PCORI Broad Pragmatic Studies \u2014 Cycle 2 2026",
+        "funder": "PCORI",
+        "amount": "Up to $5M (Cat 1) / $12M (Cat 2 & 3); $120M total pool",
+        "deadline": "Application Sept 1, 2026 (LOI Apr 28 PASSED)",
+        "score": 86,
+        "match": "**Why Stefan can win:** Diabetes Prevention/Care/Treatment is a named Special Area of Emphasis for Cycle 2 2026 \u2014 direct fit. **Aim 1:** Pragmatic trial of teaching-kitchen + Sous coaching vs. printed nutrition education in primary-care prediabetes patients across PCPH + 2 partner clinics; primary outcome A1C + 6-month dietary adherence. **Risk:** LOI window CLOSED Apr 28 \u2014 same status pathway as GR-024.",
+        "url": "https://www.pcori.org/funding-opportunities/announcement/broad-pragmatic-studies-pcori-funding-announcement-cycle-2-2026",
+        "urgent": false
+      },
+      {
+        "id": "GR-056",
+        "name": "HRSA FY2026 Expanding Nutrition Services (ENS) \u2014 $125M",
+        "funder": "HRSA (Bureau of Primary Health Care)",
+        "amount": "Up to $125M total tranche; per-applicant award TBD (typical $250K\u2013$1M for FQHC-affiliated)",
+        "deadline": "June 9, 2026",
+        "score": 85,
+        "match": "**Why Stefan can win:** ENS funds direct nutrition services in FQHC-affiliated networks \u2014 NOURISH cookbook + teaching kitchen + Sous app together form a deployable nutrition-services package. **Aim 1:** Deploy NOURISH stack at 3 FQHCs serving API populations in Bay Area + Hawaii; measure utilization rate, patient-reported dietary change, clinician time-savings. **Risk:** Eligibility limited to active H80 award holders; must subcontract under an established FQHC prime \u2014 identify Bay Area FQHC partner (Asian Health Services Oakland?) before LOI.",
+        "url": "https://simpler.grants.gov/opportunity/70a4b713-f79e-4a6f-808e-91c6bba400ca",
+        "urgent": false
+      },
+      {
+        "id": "GR-027",
+        "name": "NIH RFA-DK-26-315 \u2014 Digital Health Technology for Type 2 Diabetes Management",
+        "funder": "NIH / NIDDK",
+        "amount": "Up to $1.5M total cost across 3 awards in FY26 + $3M/year FY27\u201330",
+        "deadline": "October 6, 2026",
+        "score": 85,
+        "match": "**Why Stefan can win:** RFA-DK-26-315 names CGM + telemedicine for remote T2D management as priority \u2014 NOURISH CGM cohort + Sous + NORA stack maps directly. **Aim 1:** RCT testing multimodal digital intervention (CGM + Sous + NORA) vs. CGM-only for T2D management in newly-diagnosed API patients; primary outcome A1C at 6 months. **Risk:** R01 mechanism requires preliminary feasibility data \u2014 use the rest of 2026 to publish a CGM cohort feasibility paper as bridge evidence.",
+        "url": "https://grants.nih.gov/grants/guide/rfa-files/RFA-DK-26-315.html",
+        "urgent": false
+      },
+      {
+        "id": "GR-029",
+        "name": "NIH Intervention Research to Improve Native American Health (IRINAH) R34",
+        "funder": "NIH Multi-IC + THRO",
+        "amount": "Up to $450K direct cost over 3 years",
+        "deadline": "October 21, 2026",
+        "score": 84,
+        "match": "**Why Stefan can win:** IRINAH R34 funds intervention development for Native American/Indigenous populations \u2014 NOURISH PFEME Nepal arm extends naturally to Indigenous food-systems framing. **Aim 1:** Co-develop a culturally-grounded indigenous-food nutrition curriculum with Nepal partner network; pilot dietary-diversity-score change in maternal/child cohort. **Risk:** R34 is intervention-development-only; cannot fund efficacy trial. Position as pre-R01 feasibility, with explicit roadmap to R01.",
+        "url": "https://grants.nih.gov/grants/guide/rfa-files/RFA-MD-25-021.html",
+        "urgent": false
+      },
+      {
+        "id": "GR-016",
+        "name": "NIDDK High Impact Interdisciplinary Science (RC2)",
+        "funder": "NIH / NIDDK",
+        "amount": "Up to $1M direct/year \u00d7 4 years",
+        "deadline": "June 3, 2026",
+        "score": 80,
+        "match": "**Why Stefan can win:** RC2 mechanism rewards risky-but-potentially-paradigm-shifting interdisciplinary work \u2014 culturally-tailored AI dietary coaching for API T2D prevention is underexplored at NIH. **Aim 1:** Build and validate the first culturally-adaptive digital-twin metabolic model for API populations using the NOURISH CGM cohort. **Risk:** RC2 favors established PIs; pair with senior co-PI (Christopher Gardner or Latha Palaniappan) for credibility.",
+        "url": "https://grants.nih.gov/grants/guide/pa-files/PAR-25-244.html",
+        "urgent": false
+      },
+      {
+        "id": "GR-080",
+        "name": "CMS Rural Health Transformation (RHT) \u2014 Technology Catalyst Fund",
+        "funder": "CMS / OBBBA",
+        "amount": "$50B federal pool FY26\u201330; per-vendor $500K\u2013$20M depending on state",
+        "deadline": "Rolling \u2014 state-level solicitations FY26\u201330",
+        "score": 78,
+        "match": "**Why Stefan can win:** Single largest new federal digital-health funding stream this decade; nutrition-based chronic-disease prevention is named priority. **Asset:** Sous + NORA + CGM bundle is exactly the consumer + clinical digital-health stack RHT seeks. **Aim 1:** Deploy NOURISH stack in [State X]'s rural FQHC network; measure 12-month A1C reduction + total cost of care. **Risk:** New-vendor risk is the #1 rejection factor \u2014 subcontract under state-Medicaid prime (Maximus, Gainwell, Accenture, Deloitte State Health) before approaching states directly.",
+        "url": "https://www.cms.gov/priorities/innovation/innovation-models/rural-health-transformation-program",
+        "urgent": false
+      }
+    ],
+    "tasksByWorkstream": {
+      "WS1 Partnerships": [
+        {
+          "title": "Send Eli the all-grants Word doc",
+          "due": "2026-05-04",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "MAHA ELEVATE Accelerator submission",
+          "due": "2026-05-05",
+          "owner": "Linda + Stefan",
+          "status": "In Progress"
+        },
+        {
+          "title": "Razor follow-up email (Dr. Moharir to send)",
+          "due": "2026-05-05",
+          "owner": "Dr. Moharir",
+          "status": "Not Started"
+        },
+        {
+          "title": "Send NOURISH pack to Isabella",
+          "due": "2026-05-05",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "Reach out to Sylvia (intro doc, 3 days late)",
+          "due": "2026-05-05",
+          "owner": "Stefan",
+          "status": "URGENT \u2014 overdue"
+        },
+        {
+          "title": "Outreach: Granpadilla + Dr. Rosas + Razor + Undergrad cohort + ICO Chelsea",
+          "due": "2026-05-08",
+          "owner": "Stefan + Dr. Moharir",
+          "status": "Not Started"
+        }
+      ],
+      "WS2 Education": [
+        {
+          "title": "Stanford Continuing Ed co-teaching email (drafted, send)",
+          "due": "2026-05-06",
+          "owner": "Stefan",
+          "status": "Not Started \u2014 overdue from Mar 13"
+        },
+        {
+          "title": "Collate culinary medicine V1 curriculum",
+          "due": "2026-03-20",
+          "owner": "TBD",
+          "status": "Overdue 6 weeks"
+        },
+        {
+          "title": "Conduct PFEME pilot setup",
+          "due": "2026-05-15",
+          "owner": "Stefan",
+          "status": "Awaiting edtech reply ($800\u20131K, Option B/C)"
+        }
+      ],
+      "WS3 Research": [
+        {
+          "title": "PCORI LOI submitted (Apr 28)",
+          "due": "Submitted",
+          "owner": "Linda",
+          "status": "Done"
+        },
+        {
+          "title": "PCORI full app drafting (Sept 1 deadline)",
+          "due": "2026-09-01",
+          "owner": "Linda + Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "CGM data cleaning + statistical analysis",
+          "due": "2026-06-30",
+          "owner": "Sania + Reha",
+          "status": "In Progress"
+        },
+        {
+          "title": "Patient handbook draft + revision",
+          "due": "2026-03-01",
+          "owner": "Reha + Mehek",
+          "status": "In Progress \u2014 overdue 8 weeks"
+        },
+        {
+          "title": "VMED poster final polish",
+          "due": "2026-03-04",
+          "owner": "Stephanie + Mehek",
+          "status": "In Progress \u2014 overdue 8 weeks"
+        },
+        {
+          "title": "South Asian + Filipino cohort recruitment (next cohort)",
+          "due": "2026-07-15",
+          "owner": "Mehek + Dr. Moharir",
+          "status": "Planning"
+        }
+      ],
+      "WS4 Website": [
+        {
+          "title": "NOURISH v1 website 4-week build",
+          "due": "2026-06-01",
+          "owner": "Stefan + new CS hire",
+          "status": "Kickoff this week"
+        },
+        {
+          "title": "Stanford Health Library video hosting setup",
+          "due": "2026-06-10",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "Reach Nicole Scandlyn for partnership boilerplate",
+          "due": "2026-05-10",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "Lisa Kim outreach for lab Q&A",
+          "due": "2026-05-15",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "Maya Adam podcast outreach",
+          "due": "2026-05-15",
+          "owner": "Stefan",
+          "status": "Not Started"
+        }
+      ],
+      "WS5 Program Mgmt": [
+        {
+          "title": "Hire 2 fixed-term research coordinators (4-month tour)",
+          "due": "2026-06-01",
+          "owner": "Dr. Moharir + Dalia + FAEM",
+          "status": "Recommended; not yet posted"
+        },
+        {
+          "title": "Triage 47 overdue Airtable tasks",
+          "due": "2026-05-07",
+          "owner": "Stefan",
+          "status": "Not Started"
+        },
+        {
+          "title": "Add 'Email Eli grants doc' as Airtable record",
+          "due": "2026-05-04",
+          "owner": "Stefan",
+          "status": "Not Started"
+        }
+      ]
+    },
+    "relationshipHealth": {
+      "needsFollowup": [
+        {
+          "name": "Sylvia",
+          "reason": "Intro doc 3+ days past verbal commitment",
+          "lastTouch": "2026-04-21"
+        },
+        {
+          "name": "Razor (Dustin)",
+          "reason": "Awaiting Dr. Moharir follow-up; OTL governance question open",
+          "lastTouch": "2026-04-24"
+        },
+        {
+          "name": "Isabella",
+          "reason": "Awaiting NOURISH pack from Stefan",
+          "lastTouch": "2026-04-29"
+        },
+        {
+          "name": "Dr. Rosas",
+          "reason": "MTM research overlap warm but uncontacted directly",
+          "lastTouch": "2026-04-15"
+        },
+        {
+          "name": "Eli",
+          "reason": "Word doc commitment due Monday",
+          "lastTouch": "2026-05-01"
+        },
+        {
+          "name": "Granpadilla",
+          "reason": "On Dr. Moharir's outreach list, not yet emailed",
+          "lastTouch": "Stale"
+        }
+      ],
+      "newConnectionsThisWeek": [
+        {
+          "name": "Ankita Patel",
+          "context": "Stanford grad-school cohort; raised ~$3M for medical-misinformation startup partnered with AHA",
+          "intent": "Possible NOURISH cross-promotion + 3-way call when Stefan back on campus"
+        },
+        {
+          "name": "Cupertino obesity-medicine MD (name TBC)",
+          "context": "Offered 9 incremental South Asian patients + 4 for current study; wants NOURISH program in her clinic",
+          "intent": "Onboard as study partner; needs 'NOURISH-in-a-box' bundle"
+        },
+        {
+          "name": "Mona (Roses Lab intern)",
+          "context": "Master's CHPR; researching MTM reimbursement pathways",
+          "intent": "Keep warm; track research output for Sous angle"
+        },
+        {
+          "name": "Linda (Paris chefs)",
+          "context": "Le Cordon Bleu network; returns June 28 with plating principles",
+          "intent": "Build into Sous plating-mastery coaching ladder"
+        }
+      ]
+    },
+    "teamActivity": {
+      "available": false,
+      "note": "Slack MCP not connected; Varsha / Emi / Taralyn activity not pulled."
+    }
+  },
+  "ideas": {
+    "ideas": [
+      {
+        "title": "The Grandmother Hypothesis of Nutrition Science",
+        "essay": "Every food scientist ignores grandmothers. **That's the mistake.** Stefan's NOURISH cohort + FlavorDB access + CGM trial infrastructure make him the first person who could actually validate this claim with controlled data: traditional cuisines encode generations of glycemic-response selection that modern dietetic dogma never measured.",
+        "mechanism": "Cluster traditional South Asian + Filipino recipe corpora using FlavorDB molecular signatures, run them through the existing CGM cohort, compare predicted vs. observed glycemic AUC; publish the deltas as 'inherited culinary wisdom that beats RDN-prescribed plates.'",
+        "seeds": [
+          "NOURISH CGM cohort",
+          "FlavorDB integration in Sous",
+          "South Asian + Filipino recipe corpus from current study"
+        ],
+        "impact": "Very High \u2014 Nature Food paper + viral essay",
+        "novelty": 9,
+        "edge": "Stefan is uniquely positioned: he has the cohort data + the food chemistry + the AI pipeline + the cultural credibility from the NOURISH framing. Nobody else has all four.",
+        "claudePrompt": "Draft a 1,500-word essay titled 'The Grandmother Hypothesis of Nutrition Science.' Open with the 2-sentence hook above. Argue: traditional cuisines encode selection pressure for glycemic-friendly meals; modern dietetics threw this out; Stefan's data lets us measure the gap. Include 3 specific examples from NOURISH CGM data. Close with the call to fund a 'Cultural Glycemic Atlas' project."
+      },
+      {
+        "title": "FlavorDB \u00d7 CGM = the missing pairing engine",
+        "essay": "Sous already does cuisine-aware pairing. Layer FlavorDB molecular vectors on top + CGM observed responses, and you get a deterministic engine that predicts glycemic impact from recipe text alone. This is what Google.org and NSF Smart Health are funding for $500K\u2013$1.2M each.",
+        "mechanism": "Encode each recipe as FlavorDB molecule vector \u2192 train regressor on CGM AUC labels from cohort \u2192 ship API as research-by-default. Repurpose Sous craving-parser as the recipe ingestion front-end.",
+        "seeds": [
+          "Sous craving-parser pipeline",
+          "FlavorDB molecular encoding",
+          "CGM cohort labels"
+        ],
+        "impact": "Very High \u2014 direct grant ammunition",
+        "novelty": 8,
+        "edge": "Stefan owns the only consumer-facing app that's already FlavorDB-integrated AND has CGM ground-truth.",
+        "claudePrompt": "Open Cursor scaffold for Next.js + Python service. Python: FastAPI /predict that takes recipe text, calls Sous craving-parser \u2192 ingredient list \u2192 FlavorDB lookup \u2192 simple feedforward predictor for AUC. Train on placeholder CGM labels CSV. Wire Sous frontend to show predicted AUC alongside recipe. Save in /sous/labs/glycemic-predictor/."
+      },
+      {
+        "title": "The CGM Sommelier \u2014 pair wines to glucose curves",
+        "essay": "Wine pairing today is purely sensory. Stefan's NOURISH CGM data + Mike-the-winery-manager pipeline (via Linda) is the perfect test bed for a sommelier model that pairs wines to predicted glucose response. Wine industry hasn't been hit by digital biomarkers yet; this is greenfield.",
+        "mechanism": "Run plant-forward charcuterie + wine pairing dinner Linda already proposed, instrument every guest with a CGM, cluster pairings by glucose response, train small model. Publish as viral 'wines that don't spike you' guide.",
+        "seeds": [
+          "Mike (Saratoga winery manager) intro from Linda",
+          "Plant-forward charcuterie event Dr. Moharir already discussed",
+          "NOURISH CGM cohort"
+        ],
+        "impact": "High \u2014 niche viral product",
+        "novelty": 9,
+        "edge": "Wine industry has no digital biomarker reflex. Nutrition industry has no wine reflex. Stefan sits at the only intersection.",
+        "claudePrompt": "Outline 3-screen mobile site: (1) wine intake form + CGM upload, (2) live AUC chart with wine label, (3) ranking of all wines tested. Use Tailwind + Recharts. Save to /sous/labs/cgm-sommelier/."
+      },
+      {
+        "title": "Misinformation as a public-health pairing problem",
+        "essay": "Ankita Patel raised $3M to fight medical misinformation. Misinformation isn't a content problem \u2014 it's a *pairing* problem. People believe whichever claim shows up next to a trusted face. NOURISH + Ankita's startup can A/B-test pairing strategies across statin + nutrition content and ship the first IRB-grade misinformation pairing engine.",
+        "mechanism": "Treat content + influencer pairs as recommender problem. Use NOURISH cohort as population. Outcome: belief change at 30 days. Publish + grant pitch.",
+        "seeds": [
+          "Ankita Patel cohort + AHA partnership",
+          "NOURISH community participants",
+          "Sous pairing engine architecture (already exists)"
+        ],
+        "impact": "High \u2014 joint grant pitch",
+        "novelty": 8,
+        "edge": "Stefan owns the pairing-engine intellectual stack from food science. Translating to misinformation is a 1-year sprint.",
+        "claudePrompt": "Draft 2-page joint research proposal between NOURISH and Ankita's startup: 'Pairing Theory of Misinformation Resistance.' Title + 1 paragraph background + 3 aims + 1 figure outline + 5-line budget rationale. Focus on statins as the test case."
+      },
+      {
+        "title": "MTM reimbursement shortcut via CGM glycemic ROI",
+        "essay": "Mona at Roses Lab is solving a 12-month MTM reimbursement ROI problem. CGM glycemic markers compress that ROI window to ~30 days. Bottleneck is MD-billing for monitoring. Fix is a population-health structure where MDs sign off in batches.",
+        "mechanism": "Design 'Glycemic ROI MTM' regulatory wrapper: MD attestation + CGM data + Sous coaching, billed as population health intervention with CMS RHT Technology Catalyst alignment. This is the GR-080 pool.",
+        "seeds": [
+          "Mona's MTM research thread",
+          "CGM cohort infrastructure",
+          "GR-080 CMS RHT Technology Catalyst $50B pool"
+        ],
+        "impact": "Very High \u2014 $50B addressable",
+        "novelty": 7,
+        "edge": "Stefan has CGM + MD network + AI coaching stack. MTM providers don't. MTM providers have meal supply chain. The handshake is the value.",
+        "claudePrompt": "Draft 1-page concept memo titled 'CGM-anchored MTM ROI: 30 days, not 12 months.' Audience: Dr. Rosas + Stefan + Eli. Sections: problem, fix, evidence ask, asks. Save to wiki/nourish/concepts/."
+      },
+      {
+        "title": "The Cultural Glycemic Atlas \u2014 open dataset",
+        "essay": "Right now nutrition data is locked behind RCTs and proprietary apps. NOURISH cohort + Stefan's open-by-default disposition makes a Cultural Glycemic Atlas inevitable: ethnic cuisine \u00d7 CGM response, public, citable. Funders love public goods.",
+        "mechanism": "De-identify CGM cohort meal+response pairs, anchor each meal to cuisine label + FlavorDB profile, publish on Hugging Face + Stanford Digital Repository. Pair with paper.",
+        "seeds": [
+          "NOURISH CGM cohort (n=60+)",
+          "FlavorDB integration",
+          "Stanford Digital Repository pipeline"
+        ],
+        "impact": "High \u2014 citation engine + grant magnet",
+        "novelty": 7,
+        "edge": "First mover. Nobody else has cohort + cuisine breadth + open ethics.",
+        "claudePrompt": "Draft README + LICENSE + data-card for Hugging Face dataset 'NOURISH-cultural-glycemic-atlas-v0.' Include schema, ethics statement, 3 example queries, citation entry. Save to /sous/labs/atlas/."
+      },
+      {
+        "title": "Sous-as-grant-data \u2014 package the app's telemetry",
+        "essay": "Sous already collects food-recognition + craving + behavior data on consenting users. This is exactly the phenotype AHRQ R21/R33 is willing to fund \u2014 point-of-care digital tool with embedded outcome data. Reframe Sous from 'app' to 'research data acquisition platform' in next grant.",
+        "mechanism": "Re-write Sous data flow doc to surface: every meal logged is N-of-1 micro-study; every coaching cycle is behavior-change event; every craving parse is intent capture. Attach to GR-001 narrative.",
+        "seeds": [
+          "Sous V1 deployment",
+          "Anthropic Claude integration",
+          "Existing AHRQ R21/R33 grant fit"
+        ],
+        "impact": "Very High \u2014 $1M R33 path",
+        "novelty": 7,
+        "edge": "Most app companies don't think of telemetry as research data; most academic groups don't have apps. Stefan does both.",
+        "claudePrompt": "Open Sous /docs/Sous_whitepaper_PRD_v1.docx. Create sibling doc 'Sous as a Research Data Platform \u2014 AHRQ R21/R33 framing.' 1-page exec summary + 3-page research case + telemetry schema appendix. Save to /sous/docs/."
+      },
+      {
+        "title": "Plate Method 2.0 \u2014 generative plate composition",
+        "essay": "ADA's Plate Method is iconic but static. With Sous's recognition stack you can ship a plate scanner that says 'half-plate veggies, quarter protein' \u2014 but in real time, with cuisine-correct examples. Plate Method 2.0 = picture-aware, cuisine-aware, immediate.",
+        "mechanism": "Pipe Sous's existing food-recognition output into plate-area calculator + cuisine-rule overlay. Ship as feature inside Sous + as standalone PWA partnered with ADA.",
+        "seeds": [
+          "Sous food recognition",
+          "ADA partnership thread",
+          "Linda's plating principles from Le Cordon Bleu"
+        ],
+        "impact": "High \u2014 ADA reposition + product feature",
+        "novelty": 7,
+        "edge": "ADA wants to modernize without losing brand recognition. Plate Method 2.0 keeps the brand and adds AI without changing the symbol.",
+        "claudePrompt": "Mock Sous screen: user takes plate photo, sees cuisine-aware quadrant overlay + score + nudge. Tailwind + Next.js. Save to /sous/components/today/plate-method-v2.tsx."
+      },
+      {
+        "title": "The 'Cuisine-Forward' Grant Cover Letter Template",
+        "essay": "The Apr 28 media-strategy meeting decided to drop 'culturally tailored / equity-centered' in favor of 'cuisine-based / taste-forward.' Same reframe applies to grant cover letters. Write this template once, reuse across every NOURISH grant.",
+        "mechanism": "Build 1-page boilerplate template + 3 grant-specific variants (AHRQ, PCORI, HRSA). Template auto-fills funder, amount, mechanism. Stash in Stefan-Brain/wiki/nourish/templates/.",
+        "seeds": [
+          "Granola Apr 28 media-strategy decision",
+          "Top-12 active grants list",
+          "Eli's Word doc request"
+        ],
+        "impact": "Medium \u2014 every grant we write benefits",
+        "novelty": 6,
+        "edge": "Templates compound \u2014 every reuse saves 30 min and improves consistency. This week the team needs at least 3 cover letters.",
+        "claudePrompt": "Write 'NOURISH Cuisine-Forward Grant Cover Letter \u2014 Boilerplate v1.docx.' 4 sections: 1-paragraph NOURISH overview, 2-paragraph project alignment with funder priorities, mechanism + budget anchor, named-PI + collaborators paragraph. Variables in {{double curly}}. Save to wiki/nourish/templates/."
+      },
+      {
+        "title": "The Surry Hills Disability-Research Bridge",
+        "essay": "Stefan returns to NSW disability policy 1.5 days/week. NOURISH has zero disability-research presence. There's a $13.7M NDRP grant ending Dec 2027 that could fund a disability-nutrition crossover study. Build the bridge while embedded both places.",
+        "mechanism": "Pitch Louisa Ratz on disability-nutrition thesis: 'How does CGM coaching work for people with intellectual or physical disabilities who struggle with traditional dietary advice?' Use Stefan's mixed-methods background as entry credential.",
+        "seeds": [
+          "Apr 29 onboarding meeting",
+          "Stefan's Aboriginal research + assistive tech evaluation background",
+          "NDRP $13.7M grant"
+        ],
+        "impact": "High \u2014 $1M+ disability research",
+        "novelty": 7,
+        "edge": "Stefan has both feet in the doorways. Nobody else has nutrition + AI + disability + Aboriginal research credentials.",
+        "claudePrompt": "Draft 1-page concept note 'Disability-Aware Glycemic Coaching: NOURISH meets NDRP.' Sections: opportunity, proposed mechanism, Stefan's qualifications, ask (15-min meeting with Louisa). Email-formatted, 250 words."
+      },
+      {
+        "title": "MAHA grant as plain-language essay",
+        "essay": "May 1 meeting flagged Linda's MAHA draft needs significant plain-language rewrite. Symptom of broader thesis: most NOURISH grants are over-academic for actual reviewers. Treat plain-language rewriting as workflow + asset, not one-off.",
+        "mechanism": "Build plain-language rewriter prompt + workflow. Run every grant through it before submission. Audit 3 past grants retroactively to validate.",
+        "seeds": [
+          "Linda's MAHA draft",
+          "Stefan's Claude pipeline expertise",
+          "Granola Apr 28 plain-language note"
+        ],
+        "impact": "Medium \u2014 every grant cleaner",
+        "novelty": 5,
+        "edge": "Rewrite quality compounds. Each grant submitted in plain language increases the next one's quality through better reviewer feedback.",
+        "claudePrompt": "Write Claude prompt template 'plain-language-grant-rewriter.md' that takes a paragraph and outputs the same content rewritten at 9th-grade reading level. Save to ~/.claude/prompts/."
+      },
+      {
+        "title": "Patient Handbook \u2192 Audiobook + Podcast pipeline",
+        "essay": "Mehek + Reha have Patient Handbook in revision. Once stable, the same content can be re-rendered as audiobook + episodic podcast. ElevenLabs + Maya Adam connection makes this nearly free to produce.",
+        "mechanism": "Stable handbook \u2192 ElevenLabs voice clone \u2192 12-episode podcast structure. Maya Adam pitch is distribution. Health Library is host.",
+        "seeds": [
+          "Patient Handbook in revision",
+          "Maya Adam podcast outreach already in motion",
+          "Stanford Health Library video host decision"
+        ],
+        "impact": "Medium \u2014 content compounding",
+        "novelty": 6,
+        "edge": "Most academic groups produce handbooks. Few re-cut them as audio. Stefan + NOURISH have the AI infrastructure to do it without burning team hours.",
+        "claudePrompt": "Outline 12-episode podcast series structure based on Patient Handbook. Each episode: title, 1-paragraph summary, 3 talking points, suggested guest. Save as 'NOURISH-podcast-season-1.md' in wiki/nourish/."
+      },
+      {
+        "title": "ADA Placemat 2.0 \u2014 the rewrite they want",
+        "essay": "ADA explicitly rejected the block-format placemat. The fix is rewrite that's narrative-first, image-second. Design new placemat as story arc: meal scenarios \u2192 swap suggestions \u2192 confidence cue. Cuisine-forward framing per Apr 28 decision.",
+        "mechanism": "Storyboard 3-panel placemat: scenario, swap, confidence. South Asian + Filipino versions. Mehek + Stephanie can ship in 5 days if narrative is locked.",
+        "seeds": [
+          "ADA rewrite request from May 1 meeting",
+          "Mehek + Stephanie original draft (Mar 17 task)",
+          "Cuisine-forward repositioning"
+        ],
+        "impact": "Medium \u2014 unblocks ADA partnership",
+        "novelty": 5,
+        "edge": "We have the team + content + ADA relationship. The blocker is design narrative, not capacity.",
+        "claudePrompt": "Storyboard 'ADA Placemat 2.0 \u2014 South Asian.' 3 panels: meal scenario (e.g., dosa breakfast), swap (paneer instead of potato filling), confidence cue (with this swap, your post-meal glucose stays under 140). Pair with Filipino version. Format: Markdown with image-prompt placeholders."
+      },
+      {
+        "title": "The 'NOURISH-in-a-Box' Clinic Onboarding Kit",
+        "essay": "Cupertino obesity-MD wants NOURISH in her clinic. Right now there's no onboarding kit. Build one once: video series + plate method poster + recipe booklet + 1-page partner agreement. Reusable for every future clinic partnership inquiry.",
+        "mechanism": "Bundle existing assets into single Notion-published kit. 1-page partner agreement is only new artifact. Anyone on team can deploy.",
+        "seeds": [
+          "Cupertino MD partnership inquiry from May 1",
+          "Existing NOURISH video series + recipe booklets",
+          "Dr. Moharir's bandwidth constraints"
+        ],
+        "impact": "High \u2014 scales clinic partnerships without team scale",
+        "novelty": 6,
+        "edge": "Stefan + Dr. Moharir's most-asked question from external clinics is 'what does it take to bring NOURISH to my practice?' Right now answer is 'we'll figure it out.' This makes it 'click here.'",
+        "claudePrompt": "Outline 'NOURISH-in-a-Box: Clinic Onboarding Kit v1.' Cover page + 5 contents: 1-page program description, video links, plate-method poster (PDF), recipe booklet (PDF), 1-page partner MOU. Save to wiki/nourish/clinic-kit/."
+      },
+      {
+        "title": "Cookbook as Stanford Press monograph play",
+        "essay": "Once nutrition labels are validated (Stephanie + Dahlia), NOURISH cookbook can be pitched to Stanford Press as monograph rather than self-published. Stanford Press = academic credibility + Stanford bookstore distribution + perpetual royalty stream.",
+        "mechanism": "Identify Stanford Press editor + format for monograph submission. Reframe cookbook from consumer to academic-with-recipes.",
+        "seeds": [
+          "Cookbook in nutrition-label review",
+          "Stanford institutional credibility",
+          "ADA + culturally-tailored framing"
+        ],
+        "impact": "Medium \u2014 long-tail asset + credibility",
+        "novelty": 6,
+        "edge": "Most cookbook teams target Penguin Random House. Going Stanford Press first is academic-credibility-first, which compounds with grant strategy.",
+        "claudePrompt": "Draft 1-page Stanford Press inquiry email + 1-page monograph proposal. Sections: working title, scope, audience, comp titles, author qualifications, evidence base. Save to wiki/nourish/cookbook/."
+      },
+      {
+        "title": "Sous + GLP-1 user \u2014 the next research cohort",
+        "essay": "GLP-1 users don't get good nutrition coaching. Sous + GLP-1 user cohort is the next obvious research expansion \u2014 they have measurable outcomes (weight + glycemic), monitored adherence, and an ROI window.",
+        "mechanism": "Recruit 30 GLP-1 users via Cupertino MD partner + Stanford clinics. Run Sous coaching for 12 weeks. Outcome: glycemic + qualitative satisfaction. Pitch to NIH NIDDK Digital Health for T2D (GR-006).",
+        "seeds": [
+          "GR-006 NIH Digital Health for T2D",
+          "Cupertino MD partner pipeline",
+          "Sous V1 prototype"
+        ],
+        "impact": "High \u2014 $250\u2013500K/year R01-level",
+        "novelty": 6,
+        "edge": "GLP-1 nutrition coaching is the topic of 2026. Stefan can run a tight 12-week study faster than incumbent GLP-1 lifestyle apps.",
+        "claudePrompt": "Outline 1-page R21 specific aims for 'Sous AI Coaching for GLP-1 Users: Glycemic and Behavioral Outcomes at 12 Weeks.' Standard 3-aim structure. Save to wiki/nourish/grants/."
+      },
+      {
+        "title": "Health Trust $5K micro-grant pilot",
+        "essay": "Dr. Moharir flagged Health Trust on May 1 \u2014 they fund $5K small grants for community food/nutrition work. Tiny effort to apply, fast turnaround, easy citation. Use as 'first win' before larger HRSA-tier grants.",
+        "mechanism": "Apply for $5K Health Trust grant. Use proceeds to fund one targeted asset (e.g., AI-app development microsprint or cohort recruitment cycle).",
+        "seeds": [
+          "Granola May 1 mention of Health Trust + Teresa Johnson",
+          "PFEME application style as template",
+          "$5K micro-grant velocity"
+        ],
+        "impact": "Low\u2013Medium \u2014 first easy win",
+        "novelty": 4,
+        "edge": "Quick wins generate momentum. Easy grants are referenceable in larger applications.",
+        "claudePrompt": "Draft 1-page Health Trust LOI with 250-word program description, $5K budget breakdown, named-PI paragraph. Save to wiki/nourish/grants/lois/."
+      },
+      {
+        "title": "The Disability \u00d7 Nutrition adjacency thesis paper",
+        "essay": "Disability + nutrition is under-researched intersection. Stefan's two-track positioning (NSW disability + NOURISH) lets him write the canonical adjacency paper. Once cited, future grants in either domain reference it.",
+        "mechanism": "Lit-review week. Write 5-page perspective paper. Submit to Disability and Health Journal or American Journal of Public Health.",
+        "seeds": [
+          "Apr 29 NSW disability return",
+          "NOURISH research credibility",
+          "Stefan's mixed-methods evaluatory background"
+        ],
+        "impact": "Medium \u2014 citation engine for next grants",
+        "novelty": 7,
+        "edge": "Adjacency papers are easier to publish than RCTs and have asymmetric citation upside.",
+        "claudePrompt": "Outline 5-page perspective paper 'Disability-Aware Digital Nutrition Coaching: An Underexplored Intersection.' 4 sections: scope of gap, why now, three case studies, call to research. Save to wiki/research/papers/."
+      },
+      {
+        "title": "Sous Sommelier \u00d7 AHA Statin Misinformation Bridge",
+        "essay": "Two Bumblebee threads converge: misinformation pairing engine + AHA partnership via Ankita. Convergence: AHA wants better statin compliance content, NOURISH cuisine-forward framing fits, Sous can deliver pairing-aware misinformation rebuttal.",
+        "mechanism": "Joint NOURISH-Ankita pitch to AHA: 'cuisine-forward statin support.' Pair statin myths with traditional-food rebuttals. Test in NOURISH cohort.",
+        "seeds": [
+          "Ankita's AHA partnership",
+          "NOURISH cuisine-forward framing",
+          "Sous pairing engine"
+        ],
+        "impact": "High \u2014 joint funding pitch",
+        "novelty": 8,
+        "edge": "Cross-org joint pitches are hard for big orgs but easy for small ones to assemble. NOURISH + Ankita = first mover.",
+        "claudePrompt": "Draft 1-page joint pitch deck (5 slides) 'Cuisine-Forward Statin Support: NOURISH \u00d7 Ankita Patel \u00d7 AHA.' Save as Markdown with slide-break markers. Save to wiki/nourish/joint-pitches/."
+      },
+      {
+        "title": "Operation Coach \u2014 a CGM-aware Operation game for med students",
+        "essay": "If clinical-signs-game is the flagship tinker, Operation Coach is the next: a board-game style learning tool where med students place coaching interventions on a virtual patient and watch CGM curves respond. Operation meets clinical reasoning meets behavioral nutrition.",
+        "mechanism": "Cartoony patient with CGM trace; player intervenes (food swap, exercise, GLP-1 dose) and sees curve update; data captured = which interventions students reach for. Research-by-accident: 'what do future docs miss when CGM coaching gets gamified?'",
+        "seeds": [
+          "Septris archetype + clinical-signs-game tinker",
+          "NOURISH CGM cohort archive",
+          "Stefan's medical-education thread"
+        ],
+        "impact": "High \u2014 viral med-ed product",
+        "novelty": 9,
+        "edge": "Med-ed games haven't been hit by digital biomarkers. CGM coaching education hasn't been gamified. The combination is virgin territory.",
+        "claudePrompt": "Scaffold Next.js + SVG project 'operation-coach.' One screen: patient body, CGM curve at top, intervention chips at bottom. Click chip \u2192 curve animates. Save to /tinker/operation-coach/."
+      }
+    ]
+  },
+  "tinker": {
+    "ideas": [
+      {
+        "name": "Operation Coach",
+        "tagline": "Operation board game, but each click adjusts a CGM glucose curve.",
+        "mechanic": "Tap intervention chip \u2192 cartoony patient's CGM trace updates in real time.",
+        "techStack": "Next.js + SVG + Vercel; client-only",
+        "buildEstimate": 2,
+        "researchAngle": "Captures which interventions med students reach for first; surfaces gaps in CGM coaching education.",
+        "impactRating": 5,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "domain": "medical-education + nutrition",
+        "claudePrompt": "Scaffold Next.js + Tailwind + Framer Motion. One page. Cartoony body SVG with CGM trace at top. 6 intervention chips at bottom (food swap, exercise, GLP-1, hydration, sleep, none). Click \u2192 animate CGM trace. Use placeholder physiology. Save to /tinker/operation-coach/."
+      },
+      {
+        "name": "FlavorBingo",
+        "tagline": "5-minute weekly bingo card of culturally-paired flavor combinations to try.",
+        "mechanic": "Spin \u2192 bingo card of 9 flavor pairs (FlavorDB-derived); tick what you cook this week.",
+        "techStack": "Next.js + Tailwind; static FlavorDB JSON",
+        "buildEstimate": 1,
+        "researchAngle": "Tracks which cross-cuisine pairings users actually try; feeds Sous recommendation engine.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "domain": "food + games",
+        "claudePrompt": "One-page Next.js. On load, randomly pick 9 flavor pairs from hardcoded FlavorDB sample. Show as 3x3 bingo grid with tap-to-mark-done. Add 'spin again Monday' message. Save to /tinker/flavorbingo/."
+      },
+      {
+        "name": "GlucoSimulator",
+        "tagline": "Predict the glucose curve from a recipe photo before you eat \u2014 in 10 seconds.",
+        "mechanic": "Upload photo \u2192 see predicted CGM curve overlay \u2192 eat \u2192 upload real CGM data \u2192 score your prediction.",
+        "techStack": "Next.js + Sous food-recognition API + Recharts",
+        "buildEstimate": 2,
+        "researchAngle": "Trains people to predict their own glycemic response; surfaces individual prediction errors that inform coaching.",
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 3,
+        "domain": "food + measurement",
+        "claudePrompt": "Next.js: upload photo \u2192 call Sous /predict \u2192 render predicted CGM curve via Recharts. Then upload-real-CGM input \u2192 overlay both curves + show prediction-error score. Save to /tinker/glucosimulator/."
+      },
+      {
+        "name": "RecipeHaiku",
+        "tagline": "Reduce any recipe to a haiku that captures cuisine, technique, and flavor in 17 syllables.",
+        "mechanic": "Paste recipe \u2192 AI generates haiku \u2192 user taps Like or Re-Roll.",
+        "techStack": "Next.js + Anthropic Claude API + Vercel",
+        "buildEstimate": 1,
+        "researchAngle": "Captures what humans rate as 'true to the recipe' \u2014 useful signal for Sous craving-parser quality.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "domain": "food + culture",
+        "claudePrompt": "Single-page Next.js. Paste textarea \u2192 Claude API call with system prompt 'Output exactly one haiku capturing the recipe's cuisine, primary technique, and flavor.' Render output + Like/Re-Roll. Save to /tinker/recipehaiku/."
+      },
+      {
+        "name": "PlateRoulette",
+        "tagline": "Spin to get tonight's dinner: cuisine + protein + side, all from your CGM-friendly bank.",
+        "mechanic": "Big spin button \u2192 3-slot result (cuisine, protein, side); tap a slot to re-roll just that one.",
+        "techStack": "Next.js + Framer Motion",
+        "buildEstimate": 1,
+        "researchAngle": "Captures which combinations users keep vs. re-roll \u2014 passive preference signal for Sous.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "domain": "food + games",
+        "claudePrompt": "Single-page Next.js. Big spin button. On click, animate 3 slots. Hardcoded options for cuisine/protein/side. Each slot tappable to re-roll. Save to /tinker/plateroulette/."
+      },
+      {
+        "name": "CuisineSeeker",
+        "tagline": "Like Pok\u00e9mon GO for cuisines \u2014 walk to a restaurant, log a dish, level up the cuisine card.",
+        "mechanic": "Geolocation \u2192 nearest restaurant \u2192 photo log \u2192 cuisine XP \u2192 cuisine card progresses.",
+        "techStack": "Next.js + Geolocation API + Leaflet for map",
+        "buildEstimate": 2,
+        "researchAngle": "Maps real-world cuisine consumption patterns by neighborhood \u2014 useful for NOURISH cohort framing.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + measurement + games",
+        "claudePrompt": "Next.js mobile-first PWA. Use browser Geolocation \u2192 query Overpass API for nearby restaurants \u2192 user picks one + uploads dish photo \u2192 award XP to cuisine card. Save to /tinker/cuisineseeker/."
+      },
+      {
+        "name": "SymphonyOfMeals",
+        "tagline": "Each ingredient becomes a musical note \u2014 your shopping cart plays a song.",
+        "mechanic": "Add ingredient \u2192 assigned a Tone.js note \u2192 cart plays melody when checked out; export to MIDI.",
+        "techStack": "Next.js + Tone.js",
+        "buildEstimate": 1,
+        "researchAngle": "Captures emotional resonance of meal compositions \u2014 orthogonal data for Sous recommendation.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "domain": "food + music",
+        "claudePrompt": "Next.js + Tone.js. Type ingredient \u2192 mapped to note via hash. Build cart list. Click 'Play cart' \u2192 plays melody in sequence. Add MIDI export. Save to /tinker/symphony-of-meals/."
+      },
+      {
+        "name": "GlossaryGarden",
+        "tagline": "A garden where each plant is a nutrition term you've learned this week.",
+        "mechanic": "Read NOURISH micro-lesson \u2192 unlock plant \u2192 garden grows; share screenshot.",
+        "techStack": "Next.js + SVG illustrations + LocalStorage",
+        "buildEstimate": 2,
+        "researchAngle": "Tracks which terms get shared most \u2014 content traction signal.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "domain": "education + games",
+        "claudePrompt": "Next.js + Tailwind + SVG. Garden grid (4x4). Each cell is plant SVG, locked by default. Mini-lesson modal unlocks each. Persist via localStorage. Save to /tinker/glossarygarden/."
+      },
+      {
+        "name": "DiseaseDispatch",
+        "tagline": "PagerDuty for chronic disease: gamified clinical-decision dispatching for med students.",
+        "mechanic": "Patient case pings in (cardiac, T2D) \u2192 student picks intervention pathway \u2192 score on outcome + cost.",
+        "techStack": "Next.js + simple pathway tree JSON",
+        "buildEstimate": 2,
+        "researchAngle": "Records what pathways novice clinicians choose; what they miss.",
+        "impactRating": 5,
+        "funRating": 4,
+        "feasibilityRating": 4,
+        "domain": "medical-education",
+        "claudePrompt": "Next.js. Pager-style alert UI. New 'patient' shows case summary. Student picks from 4 pathways. Score reveal screen. Add 'next case' loop. Save to /tinker/diseasedispatch/."
+      },
+      {
+        "name": "WellnessWordle",
+        "tagline": "Wordle, but the daily word is a nutrition term and you learn its etymology after solving.",
+        "mechanic": "Standard Wordle 5-letter mechanic; reveal screen includes 30-second etymology lesson.",
+        "techStack": "Next.js + word list",
+        "buildEstimate": 1,
+        "researchAngle": "Tracks daily streaks; captures which terms drive repeat plays.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 5,
+        "domain": "language-learning + education",
+        "claudePrompt": "Single-page Next.js. Wordle clone with curated 200-word nutrition list. Reveal screen includes etymology + 1-line clinical relevance. Save to /tinker/wellnesswordle/."
+      },
+      {
+        "name": "RhythmEater",
+        "tagline": "Tap food onto the plate in time with the beat \u2014 physics-based plate composition game.",
+        "mechanic": "Music drives spawning; user taps food onto plate; physics keeps half-plate veggies; score on visual + nutrition balance.",
+        "techStack": "Next.js + Matter.js + Tone.js",
+        "buildEstimate": 2,
+        "researchAngle": "Embodied learning of plate-method principles; tap-pattern data shows where the rule breaks down.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + music + games",
+        "claudePrompt": "Next.js + Matter.js for plate physics + Tone.js for beat. Spawn food items in sync; user taps to drop them on plate. Show score with plate-method rule alignment. Save to /tinker/rhythmeater/."
+      },
+      {
+        "name": "MicroMonologue",
+        "tagline": "60-second voice diary on what you ate \u2014 Sous transcribes + scores it.",
+        "mechanic": "Hold-to-record \u2192 release \u2192 transcript + auto-extracted ingredient list + glycemic risk pill.",
+        "techStack": "Next.js + Web Speech API + Sous craving-parser",
+        "buildEstimate": 1,
+        "researchAngle": "Voice-first food diaries; captures effort + descriptive richness, useful for Sous coaching context.",
+        "impactRating": 4,
+        "funRating": 4,
+        "feasibilityRating": 4,
+        "domain": "food + voice + measurement",
+        "claudePrompt": "Next.js. Hold-to-record button using Web Speech API. On release: transcript shown + Sous craving-parser API call \u2192 ingredient list + glycemic-risk pill. Save to /tinker/micromonologue/."
+      },
+      {
+        "name": "PostureCheck",
+        "tagline": "Sit up \u2014 Sous reminds you with a 5-second breathing animation every 25 minutes.",
+        "mechanic": "Background timer fires \u2192 soft sound + on-screen breathing circle \u2192 tap to dismiss.",
+        "techStack": "Next.js PWA + Service Worker + Notification API",
+        "buildEstimate": 1,
+        "researchAngle": "Tracks dismissal patterns; reveals which times of day reminders are stickiest.",
+        "impactRating": 3,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "domain": "wellness + body",
+        "claudePrompt": "Next.js PWA. Service worker schedules notification every 25 min. Tapping notification opens full-screen breathing animation (5 inhale, 5 hold, 5 exhale). Save to /tinker/posturecheck/."
+      },
+      {
+        "name": "RecipeRoulette-VR",
+        "tagline": "Three random recipes appear in a 3D wheel \u2014 flick to spin, point to pick.",
+        "mechanic": "Three.js 3D wheel with recipe cards; flick to rotate; tap to choose; share rotation as GIF.",
+        "techStack": "Next.js + Three.js",
+        "buildEstimate": 2,
+        "researchAngle": "Captures dwell-time on each recipe option \u2014 proxy for desirability.",
+        "impactRating": 3,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + 3D",
+        "claudePrompt": "Next.js + Three.js. 3D rotating wheel with 3 recipe cards as textures. Flick gesture rotates; tap selects; export rotation as GIF. Save to /tinker/recipe-roulette-vr/."
+      },
+      {
+        "name": "DiabetesDuel",
+        "tagline": "Two-player blood-glucose strategy game: pick meals + activity to keep AUC low for 24h.",
+        "mechanic": "Each player picks 24-hour meal+activity plan; simulated AUC computed; lowest AUC wins.",
+        "techStack": "Next.js + simple AUC simulator",
+        "buildEstimate": 2,
+        "researchAngle": "Captures which strategies people invent for AUC management; useful for coaching content.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 4,
+        "domain": "health + games",
+        "claudePrompt": "Next.js. Two-player setup. Each picks 3 meals + 1 activity. Run simple AUC simulator (placeholder physiology). Show winner + breakdown. Save to /tinker/diabetesduel/."
+      },
+      {
+        "name": "ClinicCompass",
+        "tagline": "Find the nearest culturally-aligned dietitian with one tap.",
+        "mechanic": "Geolocation \u2192 list of RDs filtered by language + cuisine + insurance; tap to call.",
+        "techStack": "Next.js + Geolocation + curated RD directory JSON",
+        "buildEstimate": 1,
+        "researchAngle": "Captures demand patterns for cuisine-aligned RDs; informs NOURISH partner recruitment.",
+        "impactRating": 4,
+        "funRating": 3,
+        "feasibilityRating": 5,
+        "domain": "health + measurement",
+        "claudePrompt": "Next.js. Geolocation \u2192 query directory JSON \u2192 list with filters (language, cuisine, insurance). Tap-to-call (tel:). Save to /tinker/cliniccompass/."
+      },
+      {
+        "name": "SpiceShelf",
+        "tagline": "Photograph your spice shelf \u2014 get 7 dinner ideas for the week.",
+        "mechanic": "Photo \u2192 CV identifies spices \u2192 AI proposes 7 cuisine-aware dinners using only those spices.",
+        "techStack": "Next.js + Sous food-recognition + Claude",
+        "buildEstimate": 2,
+        "researchAngle": "Captures real-world spice inventories; useful for Sous personalization.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + measurement",
+        "claudePrompt": "Next.js. Upload photo \u2192 call Sous food-recognition (tuned for spice jars) \u2192 list extracted spices \u2192 Claude API for 7 dinner ideas. Save to /tinker/spiceshelf/."
+      },
+      {
+        "name": "WhistleStop",
+        "tagline": "When you start cooking, the screen becomes a 3-min hourglass \u2014 no notifications get through.",
+        "mechanic": "Tap 'cooking now' \u2192 fullscreen hourglass + Do-Not-Disturb. After 3 min, soft chime + photo prompt.",
+        "techStack": "Next.js PWA + Wake Lock API",
+        "buildEstimate": 1,
+        "researchAngle": "Captures cooking session lengths; benchmarks 'when do people give up?'",
+        "impactRating": 3,
+        "funRating": 4,
+        "feasibilityRating": 5,
+        "domain": "food + body",
+        "claudePrompt": "Next.js PWA. Single button 'cooking now.' Activates wake-lock + fullscreen hourglass animation. After 3 min, chime + photo upload prompt. Save to /tinker/whistlestop/."
+      },
+      {
+        "name": "CGMComic",
+        "tagline": "Your day's CGM trace becomes a 4-panel comic with cartoonish meal characters.",
+        "mechanic": "Upload CGM CSV \u2192 app extracts meal events \u2192 renders 4-panel comic with cartoon-style meal characters.",
+        "techStack": "Next.js + SVG comic generation + Claude for caption",
+        "buildEstimate": 2,
+        "researchAngle": "Comics are highly shareable \u2014 turns CGM data into social content; tracks which days users export.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + culture + measurement",
+        "claudePrompt": "Next.js. CSV upload \u2192 identify meal events (peak detection) \u2192 generate 4 SVG panels with cartoon characters per meal + Claude API for funny captions. Save to /tinker/cgmcomic/."
+      },
+      {
+        "name": "MealMimic",
+        "tagline": "Pick a chef's signature dish \u2014 Sous tells you what's in your kitchen that approximates it.",
+        "mechanic": "Pick chef + dish \u2192 Sous compares ingredient list to your pantry photo \u2192 returns delta + substitution map.",
+        "techStack": "Next.js + Sous food-recognition + ingredient knowledge base",
+        "buildEstimate": 2,
+        "researchAngle": "Captures substitution patterns; useful for Sous coaching content.",
+        "impactRating": 4,
+        "funRating": 5,
+        "feasibilityRating": 3,
+        "domain": "food + culture",
+        "claudePrompt": "Next.js. Dropdown: chef + dish. Pantry-photo upload. Compute ingredient delta + substitution suggestions via Claude. Save to /tinker/mealmimic/."
+      }
+    ]
+  },
+  "skills": {
+    "candidates": [
+      {
+        "name": "all-grants-doc-writer",
+        "pattern": "Stefan repeatedly compiles cross-grant Word docs. 3+ instances in last 30 days.",
+        "action": "Skill that pulls Airtable Submitted Proposals + Grant Scout, generates Word doc grouped by status with 1-line description per grant.",
+        "score": 9,
+        "evidence": "wiki/_log/ + May 1 Granola transcript explicit ask",
+        "buildHours": 3,
+        "saveHoursPerMonth": 4
+      },
+      {
+        "name": "plain-language-grant-rewriter",
+        "pattern": "Linda's MAHA grant + past PCORI drafts \u2014 repeated 'rewrite for plain language' cycle.",
+        "action": "Claude prompt template that takes any grant paragraph and outputs 9th-grade-reading-level rewrite while preserving technical claims.",
+        "score": 9,
+        "evidence": "Granola May 1 + Apr 28 Linda meeting summary",
+        "buildHours": 1,
+        "saveHoursPerMonth": 6
+      },
+      {
+        "name": "nourish-clinic-onboarding-kit-deploy",
+        "pattern": "Cupertino MD inquiry + future inquiries \u2014 every clinic ask requires same artifact bundle.",
+        "action": "Skill that, given clinic name + cuisine, generates partner MOU, video link bundle, recipe booklet, personalized cover note.",
+        "score": 8,
+        "evidence": "May 1 Granola \u2014 Cupertino MD partnership ask",
+        "buildHours": 4,
+        "saveHoursPerMonth": 3
+      },
+      {
+        "name": "weekly-airtable-task-triage",
+        "pattern": "47 tasks Not Started/In Progress overdue from Feb\u2013March; weekly review accumulates drag.",
+        "action": "Skill that scans Task Registry weekly, groups overdue tasks by recommended action (Close / Push / Kill), proposes Airtable updates for batch approval.",
+        "score": 9,
+        "evidence": "Airtable list_records_for_table \u2014 138 records, 51 overdue Not Started",
+        "buildHours": 3,
+        "saveHoursPerMonth": 4
+      },
+      {
+        "name": "granola-to-airtable-task-sync",
+        "pattern": "Every Granola meeting yields tasks; Stefan currently transcribes manually.",
+        "action": "Skill polls new Granola meetings, extracts action items, runs them through SOP, creates Airtable records in batch.",
+        "score": 9,
+        "evidence": "wiki/_log/ \u2014 repeated invocations of airtable-task-registry-hygiene-sop in Granola mode",
+        "buildHours": 5,
+        "saveHoursPerMonth": 4
+      },
+      {
+        "name": "grant-deadline-radar",
+        "pattern": "Stefan misses grant deadlines (Apr 28 PCORI LOI was last-minute). Want 14-day-out daily nudge.",
+        "action": "Daily scheduled task scans grant-registry.md, surfaces grants with deadlines in 14 days, posts Slack/Granola summary.",
+        "score": 9,
+        "evidence": "82 grants in registry; 12 active with imminent deadlines",
+        "buildHours": 2,
+        "saveHoursPerMonth": 0.5
+      },
+      {
+        "name": "cuisine-forward-language-auditor",
+        "pattern": "Apr 28 decision: every NOURISH artifact needs cuisine-forward audit before public.",
+        "action": "Skill scans asset (PDF, doc, slide deck) for 'culturally tailored / equity-centered' language; proposes cuisine-forward replacements.",
+        "score": 8,
+        "evidence": "Granola Apr 28 media-strategy decision",
+        "buildHours": 2,
+        "saveHoursPerMonth": 2
+      },
+      {
+        "name": "video-podcast-pipeline",
+        "pattern": "NOURISH videos exist but aren't promoted; cookbook + handbook content not yet repurposed.",
+        "action": "Skill takes any NOURISH content asset and proposes 3 derivative formats (podcast episode, social clip, blog post) with copy-paste scripts.",
+        "score": 7,
+        "evidence": "Apr 28 media-strategy meeting outputs",
+        "buildHours": 4,
+        "saveHoursPerMonth": 3
+      },
+      {
+        "name": "intro-pack-mailer",
+        "pattern": "Stefan sends NOURISH intro pack to multiple new contacts every week.",
+        "action": "Skill that, given contact + context, generates personalized 4-line email + attachment bundle, saves as draft in Outlook.",
+        "score": 8,
+        "evidence": "Sylvia, Isabella, Ankita, Cupertino MD \u2014 4 in this week alone",
+        "buildHours": 2,
+        "saveHoursPerMonth": 3
+      },
+      {
+        "name": "stefan-brain-log-auto-rollup",
+        "pattern": "Daily logs accumulate; weekly synthesis is manual.",
+        "action": "Skill reads wiki/_log/ for week, produces 5-bullet weekly synthesis, posts to wiki/_log/_weekly/.",
+        "score": 7,
+        "evidence": "Stefan-Brain CLAUDE.md Law 5 + this run's manual synthesis",
+        "buildHours": 3,
+        "saveHoursPerMonth": 2
+      },
+      {
+        "name": "mtm-roi-shortcut-tracker",
+        "pattern": "Mona's research thread + GR-080 CMS RHT alignment is high-leverage thread that needs ongoing tracking.",
+        "action": "Skill watches Mona's outputs + CMS publications + Sous CGM data; surfaces actionable insights monthly.",
+        "score": 6,
+        "evidence": "May 1 Granola + GR-080 from prior week's grant scan",
+        "buildHours": 4,
+        "saveHoursPerMonth": 1
+      },
+      {
+        "name": "sous-strategy-doc-auditor",
+        "pattern": "Sous CLAUDE.md mandates STRATEGY.md consultation before features; reality is occasional drift.",
+        "action": "Pre-commit hook + skill that, on any feature commit, asks 'does this serve strategic thesis?' and refuses commits without 1-line answer.",
+        "score": 6,
+        "evidence": "Sous CLAUDE.md rule 8",
+        "buildHours": 3,
+        "saveHoursPerMonth": 1
+      },
+      {
+        "name": "tinker-deploy-wizard",
+        "pattern": "Stefan wants to ship many small tinker projects. Friction = setting up Vercel + Next.js boilerplate every time.",
+        "action": "Skill that, given tinker name + 1-line description, scaffolds Next.js + Tailwind + Vercel-ready repo with README and deploys it.",
+        "score": 8,
+        "evidence": "Tinker tab has 20 ideas; wiki/tinker shows only 2 active builds",
+        "buildHours": 4,
+        "saveHoursPerMonth": 4
+      },
+      {
+        "name": "collaborator-touch-cadence-monitor",
+        "pattern": "Sylvia (3 days late) + Razor + Granpadilla + 4 others \u2014 weekly cadence drift accumulates.",
+        "action": "Daily skill scans Collaborators table for Last Touch + Touch Cadence; surfaces overdue contacts as 5-name daily nudge.",
+        "score": 8,
+        "evidence": "Stefan-Brain wiki + Airtable Collaborators table",
+        "buildHours": 2,
+        "saveHoursPerMonth": 2
+      }
+    ]
+  }
+}
